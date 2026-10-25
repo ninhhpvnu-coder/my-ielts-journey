@@ -368,9 +368,9 @@
     <!-- KPI Overview Row -->
     <div class="kpi-grid">
         <div class="kpi-card">
-            <div class="kpi-label">📚 Giáo Trình Foundation</div>
-            <div class="kpi-value" id="kpi_units_done">0 / 5 Units</div>
-            <div class="kpi-sub">75 Từ Vựng Cốt Lõi & 35 Bài Lab</div>
+            <div class="kpi-label">📚 Giáo Trình Foundation (30 Units)</div>
+            <div class="kpi-value" id="kpi_units_done">0 / 10 Units</div>
+            <div class="kpi-sub">150 / 450 Từ Vựng Cốt Lõi • Đã mở Chặng 1 & 2</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">🎯 Độ Chính Xác Quiz</div>
@@ -391,14 +391,80 @@
 
     <!-- Main Section Switcher -->
     <div class="hub-tabs">
-        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Chặng 1: Giáo Trình Foundation (5 Units)</button>
-        <button class="hub-tab-btn" onclick="switchHubTab('vocab_c1', this)">🧠 Chặng 2: Nâng Cấp Từ Vựng C1-C2 & Anki</button>
-        <button class="hub-tab-btn" onclick="switchHubTab('cambridge', this)">📊 Chặng 3: Khảo Thí & Chẩn Đoán Đề Cambridge (1-20)</button>
+        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Giáo Trình Foundation (10/30 Units Đã Mở)</button>
+        <button class="hub-tab-btn" onclick="switchHubTab('roadmap30', this)">🗺️ Bản Đồ Quy Hoạch 30 Units (6 Chặng)</button>
+        <button class="hub-tab-btn" onclick="switchHubTab('vocab_c1', this)">🧠 Nâng Cấp Từ Vựng C1-C2 & Anki</button>
+        <button class="hub-tab-btn" onclick="switchHubTab('cambridge', this)">📊 Khảo Thí & Chẩn Đoán Đề Cambridge (1-20)</button>
     </div>
 
-    <!-- SECTION 1: 5 FOUNDATION UNITS -->
+    <!-- SECTION 1: ACTIVE FOUNDATION UNITS (STAGE 1 & STAGE 2) -->
     <div id="foundation" class="hub-section active">
+        <div class="topic-pills" style="margin-bottom: 18px;">
+            <button class="topic-pill active" onclick="filterUnitsByStage('all', this)">🌟 Tất Cả Đang Mở (Units 01 — 10)</button>
+            <button class="topic-pill" onclick="filterUnitsByStage(1, this)">🌱 Chặng 1: Units 01 — 05 (Band 3.5 ➔ 4.0)</button>
+            <button class="topic-pill" onclick="filterUnitsByStage(2, this)">🏙️ Chặng 2: Units 06 — 10 (Band 4.0 ➔ 4.5 • Map & Xã Hội)</button>
+        </div>
         <div class="units-grid" id="units_cards_container"></div>
+    </div>
+
+    <!-- SECTION 1B: 30-UNIT MASTER ROADMAP -->
+    <div id="roadmap30" class="hub-section">
+        <div class="panel-box">
+            <h2 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 8px;">🗺️ Bản Quy Hoạch Tổng Thể 30 Units Foundation (6 Chặng • 450 Họ Từ Học Thuật)</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
+                Lộ trình bậc thang 3 tầng độ khó (Band 3.5 ➔ 5.5+) bao phủ 98% chủ đề IELTS, tích hợp trọn vẹn <b>6 dạng biểu đồ Writing Task 1</b> và <b>mọi dạng bài luận Writing Task 2</b>:
+            </p>
+            <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 12px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Chặng Học Tập</th>
+                            <th>Danh Sách 5 Units Trong Chặng</th>
+                            <th>Trọng Tâm Khảo Thí & Writing Task 1/2</th>
+                            <th>Trạng Thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b style="color:#34d399;">🌱 Chặng 1 (Units 01–05)</b><br><small>Band 3.5 ➔ 4.0</small></td>
+                            <td>U1: Community • U2: Education • U3: Environment • U4: Health & Sports • U5: Technology & AI</td>
+                            <td>Câu đơn/câu ghép chuẩn xác, các thì cơ bản, câu điều kiện loại 1, đoạn văn học thuật PEEL</td>
+                            <td><span style="color:#34d399; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#38bdf8;">🏙️ Chặng 2 (Units 06–10)</b><br><small>Band 4.0 ➔ 4.5</small></td>
+                            <td>U6: Family & Generations • <b>U7: Housing & Map</b> • U8: Transport • U9: Ecotourism & Heritage • U10: History & Archaeology</td>
+                            <td>So sánh nâng cao, Hiện tại hoàn thành, <b>Chuyên đề Task 1: MAP COMPARISON</b>, Nguyên nhân - Giải pháp</td>
+                            <td><span style="color:#38bdf8; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#fbbf24;">💼 Chặng 3 (Units 11–15)</b><br><small>Band 4.5 ➔ 5.0</small></td>
+                            <td>U11: Work & Careers • <b>U12: Finance & Line Graph</b> • U13: Advertising • <b>U14: E-Commerce & Bar Chart</b> • U15: Crime & Law</td>
+                            <td>Mệnh đề quan hệ, Câu điều kiện loại 2, <b>Chuyên đề Task 1: LINE GRAPH & BAR CHART</b></td>
+                            <td><span style="color:#94a3b8;">⏳ Chuẩn bị sản xuất</span></td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#f472b6;">🔬 Chặng 4 (Units 16–20)</b><br><small>Band 5.0</small></td>
+                            <td>U16: Healthcare • <b>U17: Clean Energy & Process</b> • U18: Food & Agriculture • U19: Wildlife & Marine • <b>U20: Water & Table</b></td>
+                            <td>Thể bị động học thuật, V-ing/To-V, <b>Chuyên đề Task 1: PROCESS DIAGRAM & TABLE</b></td>
+                            <td><span style="color:#94a3b8;">⏳ Chuẩn bị sản xuất</span></td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#a78bfa;">🌍 Chặng 5 (Units 21–25)</b><br><small>Band 5.0 ➔ 5.5</small></td>
+                            <td><b>U21: Demographics & Pie Chart</b> • U22: Art & Literature • U23: Media & Journalism • U24: Psychology • U25: Human Behavior</td>
+                            <td>Cấu trúc nhượng bộ (Despite/Although), <b>Chuyên đề Task 1: PIE CHART</b>, Speaking Part 2 Cue Card</td>
+                            <td><span style="color:#94a3b8;">⏳ Chuẩn bị sản xuất</span></td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#fb7185;">🚀 Chặng 6 (Units 26–30)</b><br><small>Band 5.5+ (Cầu nối 6.5+)</small></td>
+                            <td>U26: Space Exploration • U27: Globalization • U28: Public Policy • U29: Bioethics • <b>U30: AI Future & Mixed Charts</b></td>
+                            <td>Danh hóa (Nominalisation), Cụm phân từ rút gọn, <b>Chuyên đề Task 1: MIXED CHARTS</b> & Tổng duyệt</td>
+                            <td><span style="color:#94a3b8;">⏳ Chuẩn bị sản xuất</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <!-- SECTION 2: C1-C2 VOCAB UPGRADE MATRIX & ANKI -->
@@ -496,6 +562,8 @@
 const UNITS_META = [
     {
         id: "01",
+        stage: 1,
+        stageLabel: "CHẶNG 1 • BAND 3.5-4.0",
         title: "Unit 1: My World, My Community & Global Voices",
         file: "unit_01_interactive_practice.html",
         desc: "Hiện tại đơn vs Hiện tại tiếp diễn, Động từ trạng thái (Stative Verbs), Nghe điền biểu mẫu Section 1, Đọc lướt Skim/Scan & Viết câu ghép FANBOYS.",
@@ -503,6 +571,8 @@ const UNITS_META = [
     },
     {
         id: "02",
+        stage: 1,
+        stageLabel: "CHẶNG 1 • BAND 3.5-4.0",
         title: "Unit 2: Education, Learning Habits & Campus Life",
         file: "unit_02_interactive_practice.html",
         desc: "Quá khứ đơn vs Hiện tại hoàn thành, Mạo từ A/An/The, Câu phức với Because/Although, Nghe tư vấn học thuật & Viết đoạn văn PEEL.",
@@ -510,24 +580,75 @@ const UNITS_META = [
     },
     {
         id: "03",
+        stage: 1,
+        stageLabel: "CHẶNG 1 • BAND 3.5-4.0",
         title: "Unit 3: Nature, Environment & Sustainable Places",
         file: "unit_03_interactive_practice.html",
-        desc: "So sánh hơn, So sánh nhất & So sánh kép, Giới từ chỉ vị trí cho bài Map Labelling, Đọc hiểu hệ sinh thái đô thị & Bảo tồn đa dạng sinh học.",
+        desc: "Danh từ đếm được/không đếm được & Lượng từ, Giới từ chỉ vị trí, Đọc hiểu hệ sinh thái đô thị & Bảo tồn đa dạng sinh học.",
         vocabPreview: "ecosystem, biodiversity, conservation, habitat, renewable, emission, preserve..."
     },
     {
         id: "04",
+        stage: 1,
+        stageLabel: "CHẶNG 1 • BAND 3.5-4.0",
         title: "Unit 4: Leisure, Sports & Healthy Living",
         file: "unit_04_interactive_practice.html",
-        desc: "Danh từ đếm được/Không đếm được, Lượng từ (much/many/a few/a little), Động từ khuyết thiếu & Cụm danh động từ V-ing làm chủ ngữ.",
+        desc: "Quá khứ đơn & Cấu trúc thói quen quá khứ (used to), Lượng từ, Động từ khuyết thiếu & Cụm danh động từ V-ing làm chủ ngữ.",
         vocabPreview: "nutrition, balanced, obesity, stamina, sedentary, workout, immunity, wellbeing..."
     },
     {
         id: "05",
+        stage: 1,
+        stageLabel: "CHẶNG 1 • BAND 3.5-4.0",
         title: "Unit 5: Technology, Digital Media & Future Communication",
         file: "unit_05_interactive_practice.html",
         desc: "Phân biệt các thì tương lai (Will vs Going to), Câu điều kiện loại 1 (If / Unless), Từ nối lập luận tương phản (On the other hand / However).",
         vocabPreview: "innovation, artificial, automate, accessible, efficiency, cybersecurity, privacy..."
+    },
+    {
+        id: "06",
+        stage: 2,
+        stageLabel: "CHẶNG 2 • BAND 4.0-4.5",
+        title: "Unit 6: Family Structure, Generations & Relationships",
+        file: "unit_06_interactive_practice.html",
+        desc: "Cấp so sánh hơn, so sánh nhất & so sánh bằng (as...as), Trạng từ nhấn mạnh cấp so sánh (much/far more) & Liên từ đối chiếu While/Whereas.",
+        vocabPreview: "generation, nuclear, extended, upbringing, sibling, adolescence, nurture, harmony..."
+    },
+    {
+        id: "07",
+        stage: 2,
+        stageLabel: "CHẶNG 2 • TASK 1 MAP",
+        title: "Unit 7: Housing, Architecture & Urban Transformation",
+        file: "unit_07_interactive_practice.html",
+        desc: "Chuyên đề IELTS Writing Task 1 MAP COMPARISON: Hiện tại hoàn thành bị động (have been demolished/converted into) & Hệ thống giới từ định vị bản đồ.",
+        vocabPreview: "accommodation, residential, construct, demolish, renovate, expand, convert, adjacent..."
+    },
+    {
+        id: "08",
+        stage: 2,
+        stageLabel: "CHẶNG 2 • BAND 4.0-4.5",
+        title: "Unit 8: Transport, Traffic Congestion & Public Transit",
+        file: "unit_08_interactive_practice.html",
+        desc: "Phân biệt Because/Since + Mệnh đề vs. Due to/Owing to + Cụm danh từ, Từ nối hệ quả học thuật (Therefore, Consequently) & Bài luận Problem-Solution.",
+        vocabPreview: "congestion, commute, passenger, vehicle, infrastructure, railway, reliable, subsidize..."
+    },
+    {
+        id: "09",
+        stage: 2,
+        stageLabel: "CHẶNG 2 • BAND 4.0-4.5",
+        title: "Unit 9: Travel, Ecotourism & Cultural Heritage",
+        file: "unit_09_interactive_practice.html",
+        desc: "Động từ khuyết thiếu chủ động & bị động trong quy định bảo tồn (should, ought to, must be regulated, must not) & Du lịch bền vững.",
+        vocabPreview: "destination, heritage, itinerary, hospitality, indigenous, fragile, landmark, regulate..."
+    },
+    {
+        id: "10",
+        stage: 2,
+        stageLabel: "CHẶNG 2 • MILESTONE",
+        title: "Unit 10: History, Archaeology, Museums & Ancient Civilizations",
+        file: "unit_10_interactive_practice.html",
+        desc: "Phối hợp Quá khứ tiếp diễn & Quá khứ đơn (While... was excavating, discovered...), Cụm mốc thời gian lịch sử (Prior to, Subsequently) & Tổng ôn Chặng 2.",
+        vocabPreview: "civilization, ancient, excavate, artifact, monument, empire, historian, exhibition..."
     }
 ];
 
@@ -613,14 +734,46 @@ function loadMasterProgress() {
         .catch(() => renderUnitCards(localUnits));
 }
 
+let CURRENT_STAGE_FILTER = 'all';
+let CACHED_UNITS_PROGRESS = {};
+
+function filterUnitsByStage(stage, btn) {
+    CURRENT_STAGE_FILTER = stage;
+    if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll(".topic-pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+    }
+    renderUnitCards(CACHED_UNITS_PROGRESS);
+}
+
 function renderUnitCards(unitsProgress) {
+    CACHED_UNITS_PROGRESS = unitsProgress || {};
     const container = document.getElementById("units_cards_container");
     let completedCount = 0;
     let totalQuizEarned = 0;
     let totalQuizPossible = 0;
 
-    const cardsHtml = UNITS_META.map(u => {
-        const p = unitsProgress[u.id] || null;
+    UNITS_META.forEach(u => {
+        const p = CACHED_UNITS_PROGRESS[u.id] || null;
+        if (p) {
+            const earned = (p.vocab_score || 0) + (p.grammar_score || 0);
+            const poss = (p.vocab_total || 20) + (p.grammar_total || 10);
+            if (earned > 0) {
+                totalQuizEarned += earned;
+                totalQuizPossible += poss;
+            }
+            if ((p.vocab_score || 0) >= 14 && (p.grammar_score || 0) >= 7) {
+                completedCount++;
+            }
+        }
+    });
+
+    const filteredUnits = CURRENT_STAGE_FILTER === 'all'
+        ? UNITS_META
+        : UNITS_META.filter(u => u.stage === CURRENT_STAGE_FILTER);
+
+    const cardsHtml = filteredUnits.map(u => {
+        const p = CACHED_UNITS_PROGRESS[u.id] || null;
         let statusText = "Chưa làm bài";
         let statusStyle = "background: rgba(148,163,184,0.15); color: #94a3b8;";
 
@@ -633,13 +786,7 @@ function renderUnitCards(unitsProgress) {
 
         if (p) {
             const earned = (p.vocab_score || 0) + (p.grammar_score || 0);
-            const poss = (p.vocab_total || 20) + (p.grammar_total || 10);
-            if (earned > 0) {
-                totalQuizEarned += earned;
-                totalQuizPossible += poss;
-            }
             if ((p.vocab_score || 0) >= 14 && (p.grammar_score || 0) >= 7) {
-                completedCount++;
                 statusText = "✓ Đã hoàn thành tốt";
                 statusStyle = "background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4);";
             } else if (earned > 0 || p.writing_completed || p.speaking_completed) {
@@ -652,7 +799,7 @@ function renderUnitCards(unitsProgress) {
             <div class="unit-card">
                 <div>
                     <div class="unit-top">
-                        <span class="unit-num-pill">FOUNDATION • UNIT ${u.id}</span>
+                        <span class="unit-num-pill">${u.stageLabel || ('FOUNDATION • UNIT ' + u.id)}</span>
                         <span class="unit-status-pill" style="${statusStyle}">${statusText}</span>
                     </div>
                     <div class="unit-title">${u.title}</div>
@@ -677,7 +824,7 @@ function renderUnitCards(unitsProgress) {
     });
 
     container.innerHTML = cardsHtml.join("");
-    document.getElementById("kpi_units_done").innerText = `${completedCount} / 5 Units`;
+    document.getElementById("kpi_units_done").innerText = `${completedCount} / ${UNITS_META.length} Units`;
     if (totalQuizPossible > 0) {
         const pct = Math.round((totalQuizEarned / totalQuizPossible) * 100);
         document.getElementById("kpi_avg_quiz").innerText = `${pct}%`;
