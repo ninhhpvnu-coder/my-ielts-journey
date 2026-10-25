@@ -369,8 +369,8 @@
     <div class="kpi-grid">
         <div class="kpi-card">
             <div class="kpi-label">📚 Giáo Trình Foundation (30 Units)</div>
-            <div class="kpi-value" id="kpi_units_done">0 / 10 Units</div>
-            <div class="kpi-sub">150 / 450 Từ Vựng Cốt Lõi • Đã mở Chặng 1 & 2</div>
+            <div class="kpi-value" id="kpi_units_done">0 / 15 Units</div>
+            <div class="kpi-sub">225 / 450 Từ Vựng Cốt Lõi • Đã mở Chặng 1, 2 & 3</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">🎯 Độ Chính Xác Quiz</div>
@@ -391,18 +391,19 @@
 
     <!-- Main Section Switcher -->
     <div class="hub-tabs">
-        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Giáo Trình Foundation (10/30 Units Đã Mở)</button>
+        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Giáo Trình Foundation (15/30 Units Đã Mở)</button>
         <button class="hub-tab-btn" onclick="switchHubTab('roadmap30', this)">🗺️ Bản Đồ Quy Hoạch 30 Units (6 Chặng)</button>
         <button class="hub-tab-btn" onclick="switchHubTab('vocab_c1', this)">🧠 Nâng Cấp Từ Vựng C1-C2 & Anki</button>
         <button class="hub-tab-btn" onclick="switchHubTab('cambridge', this)">📊 Khảo Thí & Chẩn Đoán Đề Cambridge (1-20)</button>
     </div>
 
-    <!-- SECTION 1: ACTIVE FOUNDATION UNITS (STAGE 1 & STAGE 2) -->
+    <!-- SECTION 1: ACTIVE FOUNDATION UNITS (STAGE 1, STAGE 2 & STAGE 3) -->
     <div id="foundation" class="hub-section active">
         <div class="topic-pills" style="margin-bottom: 18px;">
-            <button class="topic-pill active" onclick="filterUnitsByStage('all', this)">🌟 Tất Cả Đang Mở (Units 01 — 10)</button>
+            <button class="topic-pill active" onclick="filterUnitsByStage('all', this)">🌟 Tất Cả Đang Mở (Units 01 — 15)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(1, this)">🌱 Chặng 1: Units 01 — 05 (Band 3.5 ➔ 4.0)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(2, this)">🏙️ Chặng 2: Units 06 — 10 (Band 4.0 ➔ 4.5 • Map & Xã Hội)</button>
+            <button class="topic-pill" onclick="filterUnitsByStage(3, this)">💼 Chặng 3: Units 11 — 15 (Band 4.5 ➔ 5.0 • Line Graph & Bar Chart)</button>
         </div>
         <div class="units-grid" id="units_cards_container"></div>
     </div>
@@ -441,7 +442,7 @@
                             <td><b style="color:#fbbf24;">💼 Chặng 3 (Units 11–15)</b><br><small>Band 4.5 ➔ 5.0</small></td>
                             <td>U11: Work & Careers • <b>U12: Finance & Line Graph</b> • U13: Advertising • <b>U14: E-Commerce & Bar Chart</b> • U15: Crime & Law</td>
                             <td>Mệnh đề quan hệ, Câu điều kiện loại 2, <b>Chuyên đề Task 1: LINE GRAPH & BAR CHART</b></td>
-                            <td><span style="color:#94a3b8;">⏳ Chuẩn bị sản xuất</span></td>
+                            <td><span style="color:#fbbf24; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
                         </tr>
                         <tr>
                             <td><b style="color:#f472b6;">🔬 Chặng 4 (Units 16–20)</b><br><small>Band 5.0</small></td>
@@ -649,6 +650,51 @@ const UNITS_META = [
         file: "unit_10_interactive_practice.html",
         desc: "Phối hợp Quá khứ tiếp diễn & Quá khứ đơn (While... was excavating, discovered...), Cụm mốc thời gian lịch sử (Prior to, Subsequently) & Tổng ôn Chặng 2.",
         vocabPreview: "civilization, ancient, excavate, artifact, monument, empire, historian, exhibition..."
+    },
+    {
+        id: "11",
+        stage: 3,
+        stageLabel: "CHẶNG 3 • BAND 4.5-5.0",
+        title: "Unit 11: Work, Career Paths, Remote Employment & Work-Life Balance",
+        file: "unit_11_interactive_practice.html",
+        desc: "Mệnh đề quan hệ xác định & không xác định (who, which, where, whose, ', which leads to...'), Quản lý khối lượng công việc & Làm việc từ xa.",
+        vocabPreview: "profession, qualification, candidate, recruit, colleague, promotion, remuneration, burnout..."
+    },
+    {
+        id: "12",
+        stage: 3,
+        stageLabel: "CHẶNG 3 • TASK 1 LINE GRAPH",
+        title: "Unit 12: Personal Finance, Economic Trends & Task 1 Line Graph Mastery",
+        file: "unit_12_interactive_practice.html",
+        desc: "Chuyên đề IELTS Writing Task 1 LINE GRAPH: Hai công thức mô tả xu hướng (Verb+Adv & Adj+Noun), Hệ thống giới từ số liệu (from/to, by, peak at) & Tài chính cá nhân.",
+        vocabPreview: "expenditure, income, budget, investment, inflation, fluctuate, plummet, surge, stabilize..."
+    },
+    {
+        id: "13",
+        stage: 3,
+        stageLabel: "CHẶNG 3 • BAND 4.5-5.0",
+        title: "Unit 13: Consumerism, Advertising, Branding & Shopping Habits",
+        file: "unit_13_interactive_practice.html",
+        desc: "Câu điều kiện loại 2 giả định chính sách (If governments banned..., ... would...), Cấu trúc thuyết phục/tác động tâm lý (persuade/tempt + O + to V) & Đạo đức quảng cáo.",
+        vocabPreview: "consumer, commercial, persuade, endorse, celebrity, impulse, brand, loyalty, manipulate..."
+    },
+    {
+        id: "14",
+        stage: 3,
+        stageLabel: "CHẶNG 3 • TASK 1 BAR CHART",
+        title: "Unit 14: Retail, E-Commerce, Global Trade & Task 1 Bar Chart Mastery",
+        file: "unit_14_interactive_practice.html",
+        desc: "Chuyên đề IELTS Writing Task 1 BAR CHART: Cấu trúc so sánh tỷ trọng (account for, surpass, outnumber, dominate), Cách dùng 'respectively' & Thương mại điện tử.",
+        vocabPreview: "retail, transaction, delivery, convenience, storefront, competitor, revenue, respectively..."
+    },
+    {
+        id: "15",
+        stage: 3,
+        stageLabel: "CHẶNG 3 • MILESTONE",
+        title: "Unit 15: Law, Crime Prevention, Justice & Social Order",
+        file: "unit_15_interactive_practice.html",
+        desc: "Cấu trúc mục đích & hệ quả học thuật (in order to, so that, ', thereby + V-ing'), Bị động với Modal Verbs trong luật pháp & Tổng duyệt nửa chặng đường (15/30 Units).",
+        vocabPreview: "legislation, offense, deterrent, rehabilitate, offender, juvenile, surveillance, penalty..."
     }
 ];
 
