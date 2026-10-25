@@ -1924,9 +1924,36 @@
             <div id="word_counter" style="text-align:right; font-size:0.85rem; color:var(--text-muted); margin-top:6px;">Words: 0 / 75 words</div>
         </div>
 
-        <div class="action-bar">
-            <button class="btn-primary" onclick="evaluateWriting()">🔍 Chấm Chữa Bài Viết</button>
+        <div class="action-bar" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+            <button class="btn-primary" onclick="evaluateWriting()" style="background: linear-gradient(135deg, #38bdf8, #0284c7); color: #0b1120; font-weight: 800;">
+                🔍 Chấm Điểm Nghiêm Ngặt (Strict Cambridge v3.0)
+            </button>
+            <button type="button" class="btn-primary" onclick="evaluateWritingWithGeminiAI()" style="background: linear-gradient(135deg, #a855f7, #6366f1); color: #ffffff; font-weight: 700;">
+                🤖 Chấm Sâu Bằng AI Giám Khảo (Gemini)
+            </button>
+            <button type="button" class="btn-secondary" onclick="copyExaminerPrompt('writing')" style="border-color: rgba(56, 189, 248, 0.45); color: #7dd3fc;">
+                📋 Copy Lệnh Chấm Cho AI Coach
+            </button>
+            <button type="button" class="btn-secondary" onclick="toggleGeminiApiKeyPanel('writing')" style="font-size: 0.82rem; padding: 8px 12px;">
+                🔑 Cài API Key
+            </button>
             <button class="btn-secondary" onclick="document.getElementById('essay_input').value=''; checkWordCount(); document.getElementById('writing_eval_box').style.display='none';">Xóa Làm Lại</button>
+        </div>
+
+        <!-- Gemini API Key Setup Panel (Writing) -->
+        <div id="gemini_key_panel_writing" style="display: none; margin-top: 12px; background: rgba(15, 23, 42, 0.92); border: 1.5px solid rgba(168, 85, 247, 0.45); border-radius: 12px; padding: 14px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                <b style="color: #c084fc; font-size: 0.92rem;">🔑 Cấu Hình Google Gemini API Key (Dùng Chung Cho Cả 30 Units):</b>
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" style="font-size: 0.8rem; color: #38bdf8; text-decoration: underline;">👉 Lấy API Key miễn phí tại Google AI Studio ↗</a>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 10px;">
+                Nhập mã Gemini API Key (bắt đầu bằng <code>AIza...</code>) để kích hoạt Giám khảo AI chấm chữa từng câu trực tiếp trên trình duyệt. Khóa chỉ lưu an toàn trên thiết bị của bạn (LocalStorage). Nếu không dùng khóa, bạn luôn có thể bấm <b>"📋 Copy Lệnh Chấm Cho AI Coach"</b>!
+            </p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <input type="password" id="gemini_api_key_input_writing" placeholder="Dán Gemini API Key (AIzaSy...) vào đây" style="flex: 1; min-width: 220px; padding: 9px 12px; background: #0b1120; color: #fff; border: 1px solid var(--border); border-radius: 8px; font-family: monospace; font-size: 0.88rem;">
+                <button type="button" class="btn-primary" onclick="saveGeminiApiKey('writing')" style="background: #10b981; color: #0b1120; padding: 9px 16px; border-radius: 8px; font-weight: 700;">💾 Lưu Khóa</button>
+                <button type="button" class="btn-secondary" onclick="clearGeminiApiKey()" style="padding: 9px 12px;">Xóa Khóa</button>
+            </div>
         </div>
 
         <!-- Evaluation Results Display -->
@@ -2026,10 +2053,32 @@
             </div>
 
             <!-- Evaluation Trigger Button -->
-            <div style="text-align: center;">
-                <button id="btn_evaluate_speaking" class="btn-primary" style="background: linear-gradient(135deg, #10b981, #059669); font-size: 1rem; padding: 12px 28px; border-radius: 10px;" onclick="evaluateSpeakingComprehensive()">
-                    🔍 Chấm Điểm & Chẩn Đoán Lỗi Phát Âm
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; align-items: center;">
+                <button id="btn_evaluate_speaking" class="btn-primary" style="background: linear-gradient(135deg, #10b981, #059669); font-size: 0.96rem; padding: 11px 22px; border-radius: 10px; font-weight: 800;" onclick="evaluateSpeakingComprehensive()">
+                    🔍 Chấm Điểm Nghiêm Ngặt (Strict v3.0)
                 </button>
+                <button type="button" class="btn-primary" style="background: linear-gradient(135deg, #a855f7, #6366f1); color: #fff; font-size: 0.94rem; padding: 11px 20px; border-radius: 10px; font-weight: 700;" onclick="evaluateSpeakingWithGeminiAI()">
+                    🤖 Chấm Sâu Bằng AI Giám Khảo (Gemini)
+                </button>
+                <button type="button" class="btn-secondary" style="border-color: rgba(56, 189, 248, 0.45); color: #7dd3fc; padding: 10px 16px;" onclick="copyExaminerPrompt('speaking')">
+                    📋 Copy Lệnh Chấm Cho AI Coach
+                </button>
+                <button type="button" class="btn-secondary" style="font-size: 0.82rem; padding: 10px 12px;" onclick="toggleGeminiApiKeyPanel('speaking')">
+                    🔑 Cài API Key
+                </button>
+            </div>
+
+            <!-- Gemini API Key Setup Panel (Speaking) -->
+            <div id="gemini_key_panel_speaking" style="display: none; margin-top: 14px; background: rgba(11, 17, 32, 0.95); border: 1.5px solid rgba(168, 85, 247, 0.45); border-radius: 12px; padding: 14px 16px; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                    <b style="color: #c084fc; font-size: 0.92rem;">🔑 Cấu Hình Google Gemini API Key (Dùng Chung Cho Cả 30 Units):</b>
+                    <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" style="font-size: 0.8rem; color: #38bdf8; text-decoration: underline;">👉 Lấy API Key miễn phí tại Google AI Studio ↗</a>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <input type="password" id="gemini_api_key_input_speaking" placeholder="Dán Gemini API Key (AIzaSy...) vào đây" style="flex: 1; min-width: 220px; padding: 9px 12px; background: #070d19; color: #fff; border: 1px solid var(--border); border-radius: 8px; font-family: monospace; font-size: 0.88rem;">
+                    <button type="button" class="btn-primary" onclick="saveGeminiApiKey('speaking')" style="background: #10b981; color: #0b1120; padding: 9px 16px; border-radius: 8px; font-weight: 700;">💾 Lưu Khóa</button>
+                    <button type="button" class="btn-secondary" onclick="clearGeminiApiKey()" style="padding: 9px 12px;">Xóa Khóa</button>
+                </div>
             </div>
         </div>
 
@@ -2753,77 +2802,183 @@ function resetReading() {
     if (scoreBox) scoreBox.innerText = `Điểm: 0/${Object.keys(readingAnswers).length}`;
 }
 
-// Writing Engine — CAMBRIDGE EXAMINER ENGINE v2.0 (WRITING & SPEAKING)
+// Writing Engine — STRICT CAMBRIDGE EXAMINER ENGINE v3.0 + DEEP AI EXAMINER (WRITING & SPEAKING)
 const writingConfig = {"targetWords": 75, "unitVocab": ["congestion", "commute", "passenger", "vehicle", "infrastructure", "railway", "reliable", "punctual", "cyclist", "delay", "subsidize", "convenient", "alternative", "exhaust", "network"], "modelEssay": "In many major cities, severe traffic congestion occurs mainly due to the excessive use of private vehicles during the morning commute. This not only causes long delays for passengers but also releases toxic exhaust fumes into the air. To solve this problem, governments should invest heavily in modern transport infrastructure, such as expanding the underground railway network and building safe lanes for cyclists. Furthermore, if authorities subsidize ticket fares to make buses more punctual, reliable, and convenient, citizens will gladly choose public transit as an eco-friendly alternative.", "modelAnalysis": ["<b>Câu 1 & 2 (Nêu nguyên nhân & Hệ quả - Cause & Effect):</b> Dùng cụm giới từ học thuật <code>mainly due to the excessive use of private vehicles</code> kết hợp <code>traffic congestion</code>, <code>commute</code>, <code>delays</code> và <code>toxic exhaust fumes</code>.", "<b>Câu 3 (Giải pháp hạ tầng - Solution 1):</b> Đề xuất <code>invest heavily in modern transport infrastructure</code>, <code>railway network</code> và <code>safe lanes for cyclists</code>.", "<b>Câu 4 (Giải pháp chính sách - Solution 2):</b> Khai thác động từ <code>subsidize ticket fares</code> cùng bộ 3 tính từ <code>punctual, reliable, and convenient</code> + <code>eco-friendly alternative</code>."], "modelTranslation": "Tại nhiều thành phố lớn, tình trạng ùn tắc giao thông nghiêm trọng xảy ra chủ yếu do việc sử dụng quá mức các phương tiện cá nhân trong giờ đi làm buổi sáng. Điều này không chỉ gây ra sự chậm trễ kéo dài cho hành khách mà còn thải ra khí thải độc hại vào không khí. Để giải quyết vấn đề này, chính phủ nên đầu tư mạnh vào cơ sở hạ tầng giao thông hiện đại, chẳng hạn như mở rộng mạng lưới đường sắt ngầm và xây dựng làn đường an toàn cho người đi xe đạp. Hơn nữa, nếu chính quyền trợ giá vé để xe buýt đúng giờ, đáng tin cậy và thuận tiện hơn, người dân sẽ sẵn lòng chọn giao thông công cộng như một giải pháp thay thế thân thiện với môi trường."};
 
-// 35+ Diagnostic Grammar, Collocation & Cohesion Rules (Diagnose -> Explain -> Upgrade)
+// 48+ Strict Diagnostic Grammar, Vietlish, Register, Collocation & Cohesion Rules (Diagnose -> Explain -> Upgrade)
 const CAMBRIDGE_DIAGNOSTIC_RULES = [
     {
-        regex: /\b(informations|accommodations|advices|equipments|knowledges|researches|pollutions|traffics|furnitures|homeworks|luggages|sceneries|offsprings)\b/gi,
+        regex: /\b(informations|accommodations|advices|equipments|knowledges|researches|pollutions|traffics|furnitures|homeworks|luggages|sceneries|offsprings|evidences|feedbacks|progresses)\b/gi,
         category: "GRA / LR",
+        severity: "critical",
         title: "Lỗi Danh từ không đếm được thêm '-s' (Uncountable Noun Pluralization)",
-        explain: "Trong tiếng Anh học thuật, các danh từ như <i>information, accommodation, advice, equipment, knowledge, research, pollution, traffic, scenery</i> là <b>danh từ không đếm được</b> nên tuyệt đối không bao giờ có đuôi <b>-s</b>.",
+        explain: "Trong tiếng Anh học thuật Cambridge, các danh từ như <i>information, accommodation, advice, equipment, knowledge, research, pollution, traffic, scenery, evidence, feedback</i> là <b>danh từ không đếm được</b> nên tuyệt đối không bao giờ có đuôi <b>-s</b>.",
         upgrade: "Bỏ đuôi <b>-s</b> (ví dụ: <code>affordable accommodation</code>, <code>traffic congestion</code>, <code>scientific research</code>) và chia động từ theo ngôi số ít."
+    },
+    {
+        regex: /\b(am|is|are|was|were)\s+(wake|wakes|go|goes|come|comes|live|lives|work|works|study|studies|learn|learns|help|helps|make|makes|do|does|play|plays|eat|eats|drink|drinks|sleep|sleeps|use|uses|clean|cleans|protect|protects|participate|participates|collect|collects|recycle|recycles|travel|travels|commute|commutes|visit|visits|preserve|preserves|keep|keeps|take|takes|give|gives|have|has|want|wants|need|needs|like|likes|love|loves|think|thinks|know|knows|feel|feels|see|sees|watch|watches|buy|buys|sell|sells|build|builds|create|creates|cause|causes|reduce|reduces|increase|increases|improve|improves|spend|spends|pollute|pollutes)\b/gi,
+        category: "GRA (Lỗi Sơ Cấp Nặng)",
+        severity: "critical",
+        title: "Lỗi Ghép Động từ 'to be' (am/is/are/was/were) + Động từ thường nguyên mẫu (Vietlish Double Verb)",
+        explain: "Đây là lỗi ngữ pháp sơ cấp rất nặng làm khóa trần GRA ở mức Band 4.0. Trong tiếng Anh, <b>không bao giờ</b> dùng <i>am/is/are/was/were</i> đứng trực tiếp trước một động từ thường nguyên mẫu (như <i>I am wake up, people are participate, it is help</i>).",
+        upgrade: "Nếu diễn tả thói quen/sự thật ở Hiện tại đơn, hãy <b>bỏ am/is/are</b> và chia thẳng động từ thường (ví dụ: <code>I wake up</code>, <code>people participate</code>, <code>it helps</code>). Nếu diễn tả hành động đang diễn ra, dùng <code>am/is/are + V-ing</code>. Nếu là câu bị động, dùng <code>is/are + V3/ed</code>."
+    },
+    {
+        regex: /\b(very|so|too|really)\s+(like|likes|love|loves|enjoy|enjoys|hate|hates|need|needs|want|wants|help|helps|agree|agrees|support|supports|care|cares|respect|respects|prefer|prefers|appreciate|appreciates)\b/gi,
+        category: "GRA / LR (Vietlish)",
+        severity: "critical",
+        title: "Lỗi Dịch từng từ 'very/so + Động từ' (Adverb Modifying Verb Error)",
+        explain: "Do ảnh hưởng tiếng Việt (<i>'rất thích', 'rất giúp ích', 'rất cần'</i>), người học hay ghép <i>very + Verb</i>. Trong ngữ pháp tiếng Anh, <b>very / so / too</b> chỉ bổ nghĩa cho Tính từ hoặc Trạng từ, tuyệt đối <b>không</b> đứng trước Động từ.",
+        upgrade: "Đổi sang trạng từ học thuật đi sau hoặc trước động từ: <code>greatly enjoy / Keenly interested in</code>, <code>significantly help / prove highly beneficial</code>, hoặc <code>badly need / urgently require</code>."
+    },
+    {
+        regex: /\bthere\s+(have|has|had)\b/gi,
+        category: "GRA (Vietlish)",
+        severity: "critical",
+        title: "Lỗi Cấu trúc 'There have / There has' (Existential 'There' Error)",
+        explain: "Dịch từ tiếng Việt <i>'Ở đó có...'</i> thành <i>There have/has</i> là lỗi ngữ pháp nghiêm trọng. Cấu trúc tồn tại trong tiếng Anh bắt buộc dùng <b>There + to be</b>.",
+        upgrade: "Đổi thành <code>There is + Danh từ số ít/không đếm được</code> hoặc <code>There are + Danh từ số nhiều</code> (hoặc <code>There has been / There have been</code> ở thì Hiện tại hoàn thành)."
+    },
+    {
+        regex: /\bthere\s+(is|are|was|were)\s+([a-z]+\s+){1,5}(live|lives|work|works|study|studies|play|plays|use|uses|participate|clean|help|helps|go|come|want|need|like|pollute|throw|visit|travel|commute|suffer|buy|eat)\b/gi,
+        category: "GRA (Lỗi Câu 2 Động Từ)",
+        severity: "critical",
+        title: "Lỗi Hai động từ chia thì trong câu 'There is/are + N + V' (Existential Double Verb)",
+        explain: "Trong câu <i>'There are many people live...'</i>, bạn đã dùng 2 động từ chính (<i>are</i> và <i>live</i>) trong cùng 1 mệnh đề mà không có đại từ quan hệ hay phân từ nối.",
+        upgrade: "Cách 1 (Rút gọn V-ing): <code>There are many people living / participating in...</code><br>Cách 2 (Mệnh đề quan hệ): <code>There are many citizens who live / participate in...</code><br>Cách 3 (Bỏ There are): <code>Many citizens live / participate in...</code>"
+    },
+    {
+        regex: /\b(in|on|at|for|about|without|by|after|before|of|from|into)\s+(clean|protect|help|study|learn|improve|build|make|use|recycle|reduce|save|develop|create|live|work|go|solve|prevent|preserve|maintain|support|achieve|keep|take|give|find|buy|eat|drink|play|watch|read|write|commute|travel|pollute|encourage)\b/gi,
+        category: "GRA",
+        severity: "major",
+        title: "Lỗi Giới từ + Động từ nguyên mẫu (Preposition + Bare Verb Error)",
+        explain: "Theo quy tắc ngữ pháp tiếng Anh chuẩn, mọi động từ đứng ngay sau giới từ (<i>in, on, at, for, about, without, by, before, after, of...</i>) bắt buộc phải chuyển sang dạng <b>Danh động từ (Gerund: V-ing)</b>.",
+        upgrade: "Thêm đuôi <b>-ing</b> vào động từ sau giới từ (ví dụ: <code>participate in cleaning</code>, <code>responsible for protecting</code>, <code>by reducing emissions</code>)."
+    },
+    {
+        regex: /\b(he|she|it|this\s+[a-z]+|that\s+[a-z]+|every\s+[a-z]+|each\s+[a-z]+|my\s+(?:mother|father|mom|dad|sister|brother|friend|teacher|family|city|hometown|neighborhood|country|school|company)|the\s+(?:government|city|school|environment|community|company|system|museum|trend|process|diagram|map|chart|graph))\s+(help|make|create|give|take|have|do|go|need|want|use|play|teach|collect|support|protect|pollute|cause|provide|offer|allow|encourage|bring|show|illustrate|indicate|require|lead|reduce|increase|improve|affect|change|work|live|like|love|wake|spend|keep)\b/gi,
+        category: "GRA",
+        severity: "critical",
+        title: "Lỗi Quên chia Động từ ngôi thứ 3 số ít (Missing 3rd-Person Singular '-s/-es')",
+        explain: "Khi chủ ngữ là ngôi thứ 3 số ít (<i>he, she, it, this habit, every citizen, my sister, the government, the environment...</i>) ở thì Hiện tại đơn, động từ bắt buộc phải thêm đuôi <b>-s / -es</b> (hoặc đổi <i>have ➔ has, do ➔ does, go ➔ goes</i>).",
+        upgrade: "Thêm <b>-s/-es</b> vào động từ (ví dụ: <code>this habit helps</code>, <code>the government needs to</code>, <code>my sister collects</code>, <code>it plays a vital role</code>)."
+    },
+    {
+        regex: /\b(i|we|you|they|people|children|students|citizens|parents|tourists|commuters|villagers|workers|governments|companies|schools|cities|residents|individuals)\s+(is|was|has|does|helps|makes|creates|gives|takes|goes|needs|wants|uses|plays|collects|supports|protects|pollutes|causes|provides|offers|allows|encourages|brings|shows|requires|leads|reduces|increases|improves|affects|works|lives|likes|loves|wakes|spends|keeps)\b/gi,
+        category: "GRA",
+        severity: "critical",
+        title: "Lỗi Chia dư '-s' hoặc dùng động từ số ít cho Chủ ngữ số nhiều / ngôi 'I, We, They'",
+        explain: "Các chủ ngữ <i>I, we, you, they, people, children, students, citizens, residents...</i> đi với động từ nguyên mẫu không '-s' ở thì Hiện tại đơn.",
+        upgrade: "Bỏ đuôi <b>-s</b> ở động từ (hoặc đổi <i>is ➔ are/am, has ➔ have</i>): <code>I wake up</code>, <code>people help</code>, <code>citizens need</code>."
     },
     {
         regex: /\b(must|should|can|could|will|would|may|might)\s+to\s+([a-z]+)\b/gi,
         category: "GRA",
+        severity: "critical",
         title: "Lỗi Động từ khuyết thiếu + 'to' (Modal Verb + To-Infinitive Error)",
-        explain: "Sau các động từ khuyết thiếu (<i>must, should, can, will, may, might</i>), động từ chính bắt buộc ở dạng <b>nguyên mẫu không 'to' (bare infinitive)</b>. Chỉ có <i>ought to</i> và <i>have to</i> mới đi kèm <i>to</i>.",
-        upgrade: "Bỏ giới từ <b>to</b> (ví dụ: <code>governments must regulate</code>, <code>tourists should respect</code>, hoặc dùng bị động <code>must be protected</code>)."
+        explain: "Sau các động từ khuyết thiếu (<i>must, should, can, will, may, might</i>), động từ chính bắt buộc ở dạng <b>nguyên mẫu không 'to' (bare infinitive)</b>.",
+        upgrade: "Bỏ giới từ <b>to</b> (ví dụ: <code>governments must regulate</code>, <code>citizens should recycle</code>)."
+    },
+    {
+        regex: /\b(can|could|will|would|must|should|may|might)\s+(helps|makes|creates|gives|takes|goes|needs|wants|uses|plays|collects|supports|protects|pollutes|causes|provides|reduces|increases|improves|works|lives|wakes|spends|keeps|helped|made|created|went|needed|wanted|used|played|collected|supported|protected|polluted|caused|provided|reduced|increased|improved|worked|lived|helping|making|going|working|living|using|cleaning|protecting)\b/gi,
+        category: "GRA",
+        severity: "critical",
+        title: "Lỗi Chia thêm '-s / -ed / -ing' sau Động từ khuyết thiếu (Modal + Inflected Verb)",
+        explain: "Động từ theo sau <i>can, will, must, should, may, might</i> luôn phải ở dạng <b>nguyên mẫu gốc (V-infinitive)</b>, không bao giờ thêm <i>-s, -ed</i> hay <i>-ing</i>.",
+        upgrade: "Đưa động từ về nguyên mẫu (ví dụ: <code>can help</code>, <code>should protect</code>, hoặc bị động <code>should be protected</code>)."
+    },
+    {
+        regex: /\b(like|likes|love|loves|hate|hates|want|wants|need|needs|hope|hopes|decide|decides|plan|plans|try|tries|start|starts|begin|begins|continue|continues|prefer|prefers)\s+(wake|go|come|live|work|study|learn|help|make|do|play|eat|drink|sleep|use|clean|protect|participate|collect|recycle|travel|commute|visit|preserve|keep|take|give|buy|build|reduce|improve)\b/gi,
+        category: "GRA",
+        severity: "critical",
+        title: "Lỗi Ghép 2 Động từ liên tiếp thiếu 'to' hoặc '-ing' (Bare Double Verb Error)",
+        explain: "Trong tiếng Anh, không được ghép trực tiếp 2 động từ như <i>want protect, need recycle, like play, try study</i> như tiếng Việt.",
+        upgrade: "Thêm <b>to + V</b> hoặc <b>V-ing</b>: <code>want to protect</code>, <code>need to recycle</code>, <code>like playing / to play</code>, <code>strive to improve</code>."
+    },
+    {
+        regex: /\b(enjoy|enjoys|avoid|avoids|mind|minds|finish|finishes|keep|keeps|suggest|suggests|consider|considers|practice|practices)\s+(?:to\s+)?(wake|go|come|live|work|study|learn|help|make|do|play|eat|drink|sleep|use|clean|protect|participate|collect|recycle|travel|commute|visit|preserve|read|write|watch|listen|talk|speak|buy|build|reduce)\b/gi,
+        category: "GRA",
+        severity: "major",
+        title: "Lỗi Cấu trúc Danh động từ (Gerund V-ing) sau 'enjoy / avoid / keep / suggest'",
+        explain: "Sau các động từ <i>enjoy, avoid, mind, finish, keep, suggest, consider, practice</i>, động từ theo sau bắt buộc phải ở dạng <b>V-ing</b>, không dùng <i>to-V</i> hay <i>V nguyên mẫu</i>.",
+        upgrade: "Đổi sang <b>V-ing</b> (ví dụ: <code>enjoy participating in</code>, <code>avoid using plastic bags</code>, <code>suggest investing in</code>)."
+    },
+    {
+        regex: /\bto\s+(helping|making|doing|going|working|studying|learning|living|using|cleaning|protecting|building|creating|improving|reducing|increasing|playing|eating|drinking|buying|taking|giving|having|getting|helped|made|done|gone|worked|studied|learned|lived|used|cleaned|protected)\b/gi,
+        category: "GRA",
+        severity: "critical",
+        title: "Lỗi Dùng 'to + V-ing / V-ed' sai cấu trúc nguyên mẫu (Infinitive Error)",
+        explain: "Sau <i>to</i> (trong cấu trúc chỉ mục đích <i>in order to, want to, need to, have to, able to</i>), động từ bắt buộc ở dạng <b>nguyên mẫu gốc</b>.",
+        upgrade: "Đổi về <code>to + V nguyên mẫu</code> (ví dụ: <code>to protect</code>, <code>to improve</code>, <code>to reduce</code>)."
+    },
+    {
+        regex: /\b(am|is|was|become|becomes|became|as)\s+(student|citizen|teacher|doctor|worker|engineer|volunteer|leader|member|child|person|adult|teenager|global\s+citizen|good\s+habit|bad\s+habit|important\s+role|big\s+problem|good\s+way|nuclear\s+family|extended\s+family)\b/gi,
+        category: "GRA",
+        severity: "major",
+        title: "Lỗi Thiếu Mạo từ 'a / an / the' trước Danh từ đếm được số ít (Missing Article)",
+        explain: "Trong tiếng Anh, danh từ đếm được số ít (như <i>student, citizen, good habit, nuclear family, global citizen</i>) không bao giờ đứng trơ trọi một mình mà không có mạo từ (<i>a/an/the</i>) hoặc tính từ sở hữu.",
+        upgrade: "Thêm mạo từ <b>a / an / the</b> (ví dụ: <code>I am a student</code>, <code>become a responsible global citizen</code>, <code>is a beneficial habit</code>)."
+    },
+    {
+        regex: /\b(importants|differents|difficults|usefuls|helpfuls|beautifuls|traditionals|naturals|environmentals|socials|globals|locals|historicals|convenients|expensives|cheaps|healthys|moderns)\b/gi,
+        category: "GRA",
+        severity: "critical",
+        title: "Lỗi Thêm '-s' vào Tính từ (Adjective Pluralization Error)",
+        explain: "Trong tiếng Anh, <b>Tính từ (Adjectives)</b> không bao giờ biến đổi theo số nhiều (không bao giờ có đuôi <i>-s</i> dù bổ nghĩa cho danh từ số nhiều).",
+        upgrade: "Bỏ đuôi <b>-s</b> ở tính từ (ví dụ: <code>important factors</code>, <code>different perspectives</code>, <code>environmental issues</code>)."
     },
     {
         regex: /\b(although|even though|though)\b[^.!?]{2,120}\bbut\b/gi,
         category: "GRA / CC",
+        severity: "major",
         title: "Lỗi Thừa liên từ 'Although ... but ...' (Double Conjunction Error)",
-        explain: "Do ảnh hưởng dịch từng từ từ tiếng Việt (<i>'Mặc dù... nhưng...'</i>), học viên hay dùng cả <i>Although</i> và <i>but</i> trong cùng một câu. Trong ngữ pháp Cambridge, một câu chỉ được phép dùng <b>Although</b> HOẶC <b>but</b>.",
+        explain: "Do ảnh hưởng dịch từ tiếng Việt (<i>'Mặc dù... nhưng...'</i>), học viên hay dùng cả <i>Although</i> và <i>but</i> trong cùng một câu. Trong ngữ pháp Cambridge, một câu chỉ được phép dùng <b>Although</b> HOẶC <b>but</b>.",
         upgrade: "Xóa bỏ từ <b>but</b>, chỉ giữ lại dấu phẩy ngăn cách 2 mệnh đề: <code>Although [Mệnh đề 1], [Mệnh đề 2].</code>"
     },
     {
         regex: /\b(because|since|as)\b[^.!?]{2,120}\b(so|therefore)\b/gi,
         category: "GRA / CC",
+        severity: "major",
         title: "Lỗi Thừa liên từ 'Because ... so ...' (Redundant Cause-Effect Conjunction)",
-        explain: "Tương tự cấu trúc tiếng Việt <i>'Vì... nên...'</i>, việc dùng cả <i>Because</i> lẫn <i>so/therefore</i> trong một câu là lỗi ngữ pháp cơ bản làm trừ điểm GRA.",
+        explain: "Tương tự cấu trúc tiếng Việt <i>'Vì... nên...'</i>, việc dùng cả <i>Because</i> lẫn <i>so/therefore</i> trong một câu là lỗi ngữ pháp cơ bản làm trừ điểm GRA và CC.",
         upgrade: "Chọn 1 trong 2 cách chuẩn C1: <code>Because [Mệnh đề nguyên nhân], [Mệnh đề kết quả]</code> HOẶC <code>[Mệnh đề nguyên nhân]; therefore, [Mệnh đề kết quả].</code>"
     },
     {
         regex: /\b(because of|due to|owing to)\s+(people|students|citizens|parents|children|governments|workers|tourists|they|we|it|he|she|cars|companies)\s+(are|is|was|were|have|has|had|can|will|do|did|spend|use|make|live|want|need|drive|work|study|travel|pollute|consume)\b/gi,
         category: "GRA",
-        title: "Lỗi dùng 'Because of / Due to' trước một Mệnh đề (S + V)",
-        explain: "<i>Because of, due to, owing to</i> là các <b>cụm giới từ</b> nên sau chúng bắt buộc phải là một <b>Cụm danh từ (Noun Phrase)</b> hoặc <b>V-ing</b>, không được đi với mệnh đề có chủ ngữ và động từ chia thì.",
+        severity: "major",
+        title: "Lỗi Dùng 'Because of / Due to' trước một Mệnh đề (S + V)",
+        explain: "<i>Because of, due to, owing to</i> là các <b>cụm giới từ</b> nên sau chúng bắt buộc phải là một <b>Cụm danh từ (Noun Phrase)</b> hoặc <b>V-ing</b>, không được đi với mệnh đề S + V.",
         upgrade: "Đổi sang liên từ <code>because / since + S + V</code>, hoặc danh hóa thành cụm danh từ: <code>due to the excessive use of... / owing to the rapid growth of...</code>"
-    },
-    {
-        regex: /\b(people|children|students|citizens|parents|tourists|commuters|villagers|historians)\s+(is|was|has|does|livings|wants|needs|uses|makes)\b/gi,
-        category: "GRA",
-        title: "Lỗi Hòa hợp Chủ ngữ số nhiều & Động từ số ít (Subject-Verb Agreement)",
-        explain: "Các danh từ <i>people, children, students, citizens...</i> là <b>chủ ngữ số nhiều</b>, nhưng động từ theo sau lại đang chia ở ngôi số ít (<i>is, was, has, V-s</i>).",
-        upgrade: "Chia động từ ở dạng số nhiều: <code>people are / have / need</code>, <code>children learn</code>."
     },
     {
         regex: /\b(everyone|everybody|someone|somebody|nobody|anybody|each\s+student|each\s+person|each\s+citizen)\s+(are|were|have|do)\b/gi,
         category: "GRA",
+        severity: "major",
         title: "Lỗi Đại từ bất định (Everyone / Each) chia động từ số nhiều",
         explain: "Trong tiếng Anh, các đại từ <i>everyone, everybody, someone, nobody, each + N số ít</i> luôn được tính là <b>ngôi thứ ba số ít</b>.",
         upgrade: "Chia động từ số ít: <code>everyone has a responsibility</code>, <code>every citizen plays a vital role</code>."
     },
     {
-        regex: /\b(the\s+environment|pollution|traffic|congestion|education|technology|accommodation|heritage|information|nutrition|obesity|wildlife)\s+(are|were|have)\b/gi,
+        regex: /\b(the\s+environment|pollution|traffic|congestion|education|technology|accommodation|heritage|information|nutrition|obesity|wildlife|society|nature|water|air|energy|knowledge)\s+(are|were|have)\b/gi,
         category: "GRA",
+        severity: "major",
         title: "Lỗi Chủ ngữ trừu tượng/không đếm được đi với động từ số nhiều",
-        explain: "Chủ ngữ là danh từ số ít hoặc không đếm được (<i>environment, pollution, traffic, education, technology...</i>) bắt buộc đi với động từ số ít (<i>is, was, has, V-s/es</i>).",
+        explain: "Chủ ngữ là danh từ số ít hoặc không đếm được (<i>environment, pollution, traffic, education, technology, society...</i>) bắt buộc đi với động từ số ít (<i>is, was, has, V-s/es</i>).",
         upgrade: "Đổi sang động từ số ít: <code>is / has / plays / requires</code>."
     },
     {
-        regex: /(?:^|[.!?]\s+)(However|Therefore|Furthermore|Moreover|Consequently|Nevertheless|Subsequently|Meanwhile)\s+[a-zA-Z]/g,
-        category: "CC",
+        regex: /(?:^|[.!?]\s+)(However|Therefore|Furthermore|Moreover|Consequently|Nevertheless|Subsequently|Meanwhile|In addition|As a result|For example|For instance|In conclusion|Overall)\s+[a-zA-Z]/g,
+        category: "CC / GRA",
+        severity: "minor",
         title: "Thiếu dấu phẩy (,) sau Trạng từ liên kết đứng đầu câu",
-        explain: "Khi các trạng từ liên kết học thuật (<i>However, Therefore, Furthermore, Moreover, Consequently...</i>) đứng đầu câu, quy chuẩn dấu câu Cambridge bắt buộc phải có <b>dấu phẩy (,)</b> ngay sau từ đó.",
-        upgrade: "Thêm dấu phẩy ngay sau từ nối: <code>However, ...</code> / <code>Therefore, ...</code> / <code>Consequently, ...</code>"
+        explain: "Khi các trạng từ/cụm liên kết học thuật (<i>However, Therefore, Furthermore, Moreover, Consequently, In addition, For example, Overall...</i>) đứng đầu câu, quy chuẩn dấu câu Cambridge bắt buộc phải có <b>dấu phẩy (,)</b> ngay sau đó.",
+        upgrade: "Thêm dấu phẩy ngay sau từ nối: <code>However, ...</code> / <code>Therefore, ...</code> / <code>Furthermore, ...</code>"
     },
     {
         regex: /\bparticipate\s+(on|at|to|with)\b/gi,
         category: "LR",
+        severity: "minor",
         title: "Sai giới từ đi kèm (Collocation Preposition Error): 'participate'",
         explain: "Động từ <i>participate</i> mang nghĩa 'tham gia vào' luôn đi kèm giới từ <b>in</b>.",
         upgrade: "Sửa thành <code>participate in + Noun/V-ing</code> (hoặc <code>take part in / engage in</code>)."
@@ -2831,6 +2986,7 @@ const CAMBRIDGE_DIAGNOSTIC_RULES = [
     {
         regex: /\badjacent\s+(with|in|at|from|by)\b/gi,
         category: "LR / GRA",
+        severity: "minor",
         title: "Sai giới từ định vị bản đồ: 'adjacent'",
         explain: "Tính từ <i>adjacent</i> (liền kề, sát cạnh) trong IELTS Writing Task 1 Map và Listening luôn đi với giới từ <b>to</b>.",
         upgrade: "Sửa thành <code>adjacent to + Noun</code> (ví dụ: <code>located directly adjacent to the park</code>)."
@@ -2838,30 +2994,48 @@ const CAMBRIDGE_DIAGNOSTIC_RULES = [
     {
         regex: /\bspend\s+(time|money|hours|years|a lot of time|too much time|more time)\s+to\s+([a-z]+)\b/gi,
         category: "GRA",
+        severity: "major",
         title: "Lỗi cấu trúc 'spend time to V'",
         explain: "Cấu trúc chuẩn với động từ <i>spend</i> là <code>spend + time/money + (on) + V-ing</code> chứ không dùng <i>to-V</i>.",
-        upgrade: "Đổi động từ sau <i>spend time</i> sang dạng <b>V-ing</b> (ví dụ: <code>spend too much time scrolling on smartphones</code>)."
+        upgrade: "Đổi động từ sau <i>spend time</i> sang dạng <b>V-ing</b> (ví dụ: <code>spend time participating in community service</code>)."
     },
     {
-        regex: /\bmany\s+(information|pollution|traffic|accommodation|equipment|furniture|homework|knowledge|advice|waste|energy)\b/gi,
+        regex: /\bmany\s+(information|pollution|traffic|accommodation|equipment|furniture|homework|knowledge|advice|waste|energy|money|time|water|litter|rubbish|garbage)\b/gi,
         category: "GRA",
+        severity: "major",
         title: "Dùng lượng từ 'many' cho Danh từ không đếm được",
-        explain: "<i>Many</i> chỉ đi với danh từ đếm được số nhiều. Với danh từ không đếm được (<i>pollution, traffic, information, waste, energy...</i>), không được dùng <i>many</i>.",
-        upgrade: "Đổi <i>many</i> thành <code>much / a great deal of / a large amount of</code>."
+        explain: "<i>Many</i> chỉ đi với danh từ đếm được số nhiều. Với danh từ không đếm được (<i>pollution, traffic, information, waste, energy, time, money...</i>), không được dùng <i>many</i>.",
+        upgrade: "Đổi <i>many</i> thành <code>much / a great deal of / a large amount of / substantial</code>."
+    },
+    {
+        regex: /\b(don't|doesn't|didn't|can't|won't|isn't|aren't|wasn't|weren't|haven't|hasn't|shouldn't|wouldn't|couldn't|i'm|it's|that's|there's|they're|we're|you're|gonna|wanna|gotta|kinda|kids|guys|stuff)\b/gi,
+        category: "LR / Văn Phong Học Thuật",
+        severity: "minor",
+        onlyWriting: true,
+        title: "Dùng từ viết tắt hoặc khẩu ngữ trong IELTS Academic Writing (Informal Contractions / Slang)",
+        explain: "Trong bài thi IELTS Academic Writing (Task 1 & Task 2), giám khảo yêu cầu văn phong trang trọng (Formal Academic Register). Không nên dùng dạng rút gọn (<i>don't, can't, it's, I'm</i>) hay từ lóng (<i>kids, guys, stuff, gonna</i>).",
+        upgrade: "Viết đầy đủ: <code>do not, cannot, it is, I am</code>; đổi <i>kids ➔ children/adolescents</i>, <i>stuff ➔ items/materials/factors</i>."
     }
 ];
 
 // Basic A1/A2 Lexical Phrases -> Band 8.0+ Academic Upgrades
 const LEXICAL_UPGRADE_MAP = [
-    { pattern: /\ba lot of\b|\blots of\b/gi, basic: "a lot of / lots of", c1: "a substantial number of / a great deal of / numerous", note: "Tránh dùng 'a lot of' (văn nói) trong bài viết học thuật." },
-    { pattern: /\bvery good\b/gi, basic: "very good", c1: "exceptionally beneficial / highly effective / advantageous", note: "Thay tính từ chung chung 'very good' bằng cụm tính từ học thuật." },
-    { pattern: /\bvery bad\b/gi, basic: "very bad", c1: "severely detrimental / harmful / counterproductive", note: "Dùng 'detrimental (to)' hoặc 'harmful' nâng điểm LR lên Band 7.5+." },
-    { pattern: /\bvery important\b/gi, basic: "very important", c1: "crucial / vital / of paramount importance / indispensable", note: "Cụm 'play a vital/crucial role' tự nhiên và học thuật hơn 'very important'." },
+    { pattern: /\ba lot of\b|\blots of\b/gi, basic: "a lot of / lots of", c1: "a substantial number of / a great deal of / numerous", note: "Tránh dùng 'a lot of' (văn nói sơ cấp) trong bài học thuật." },
+    { pattern: /\bvery good\b|\breally good\b/gi, basic: "very good / really good", c1: "exceptionally beneficial / highly effective / advantageous", note: "Thay tính từ chung chung 'very good' bằng cụm tính từ học thuật C1." },
+    { pattern: /\bvery bad\b|\breally bad\b/gi, basic: "very bad / really bad", c1: "severely detrimental / harmful / counterproductive", note: "Dùng 'detrimental (to)' hoặc 'adverse' nâng điểm LR lên Band 7.5+." },
+    { pattern: /\bvery important\b|\bso important\b/gi, basic: "very important", c1: "crucial / vital / of paramount importance / indispensable", note: "Cụm 'play a vital/crucial role' tự nhiên và học thuật hơn 'very important'." },
     { pattern: /\bbig problem\b|\bbig problems\b/gi, basic: "big problem(s)", c1: "pressing challenge(s) / serious issue(s) / major dilemma", note: "Kết hợp Collocation 'pressing challenge' hoặc 'serious issue'." },
-    { pattern: /\bmany people think\b/gi, basic: "many people think", c1: "it is widely argued that / many sociologists contend that", note: "Mở bài Task 2 bằng cấu trúc bị động khách quan chuẩn Cambridge." },
-    { pattern: /\bthings\b|\bthing\b/gi, basic: "thing / things", c1: "factors / aspects / measures / items / elements", note: "Từ 'things' quá mơ hồ; hãy cụ thể hóa thành 'factors', 'aspects' hoặc 'measures'." },
-    { pattern: /\bmake\s+\w+\s+better\b|\bget better\b/gi, basic: "make ... better / get better", c1: "enhance / improve significantly / upgrade", note: "Sử dụng động từ đơn học thuật mạnh mẽ thay cho cụm từ khẩu ngữ." }
+    { pattern: /\bmany people think\b/gi, basic: "many people think", c1: "it is widely argued that / many sociologists contend that", note: "Mở bài bằng cấu trúc bị động khách quan chuẩn Cambridge." },
+    { pattern: /\bthings\b|\bthing\b/gi, basic: "thing / things", c1: "factors / aspects / measures / initiatives / elements", note: "Từ 'things' quá mơ hồ (Band 4.0 LR); hãy cụ thể hóa thành 'factors', 'aspects' hoặc 'initiatives'." },
+    { pattern: /\bmake\s+\w+\s+better\b|\bget better\b/gi, basic: "make ... better / get better", c1: "enhance / improve significantly / upgrade", note: "Sử dụng động từ đơn học thuật mạnh mẽ thay cho cụm từ khẩu ngữ." },
+    { pattern: /\bgood way\b|\bbest way\b/gi, basic: "good way / best way", c1: "effective measure / optimal approach / viable solution", note: "Thay 'good way' bằng 'effective measure' hoặc 'viable approach'." },
+    { pattern: /\bnowadays\b/gi, basic: "nowadays", c1: "in the contemporary era / in modern society / in recent decades", note: "Mở đầu bằng 'In the contemporary era,' giúp câu mở đoạn đạt chuẩn Band 7.5+." }
 ];
+
+// Official IELTS Writing & Speaking Round-Down Rule (.25 -> .0, .75 -> .5)
+function roundIeltsCamBand(rawScore) {
+    return Math.floor((rawScore + 0.0001) * 2) / 2;
+}
 
 function checkWordCount() {
     const text = document.getElementById('essay_input').value.trim();
@@ -2883,10 +3057,10 @@ function buildAnnotatedEssayHtml(rawText, unitVocab, detectedErrors, detectedBas
 
     // 1. Highlight detected grammar/collocation errors in Red Wavy Underline
     detectedErrors.forEach(err => {
-        if (err.matchedText && err.matchedText.length > 2) {
+        if (err.matchedText && err.matchedText.length > 1) {
             const safeMatch = err.matchedText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             html = html.replace(new RegExp(safeMatch, 'g'),
-                `<span title="Lỗi: ${escapeHtmlSafe(err.title)}" style="background:rgba(244,63,94,0.22); color:#fda4af; border-bottom:2px wavy #f43f5e; padding:1px 5px; border-radius:4px; font-weight:600;">$&</span>`
+                `<span title="Lỗi: ${escapeHtmlSafe(err.title)}" style="background:rgba(244,63,94,0.25); color:#fda4af; border-bottom:2px wavy #f43f5e; padding:1px 5px; border-radius:4px; font-weight:700;">$&</span>`
             );
         }
     });
@@ -2894,12 +3068,12 @@ function buildAnnotatedEssayHtml(rawText, unitVocab, detectedErrors, detectedBas
     // 2. Highlight basic A1/A2 phrases in Amber
     detectedBasic.forEach(b => {
         html = html.replace(b.pattern,
-            `<span title="Gợi ý nâng cấp C1: ${escapeHtmlSafe(b.c1)}" style="background:rgba(245,158,11,0.2); color:#fcd34d; border-bottom:1px dashed #f59e0b; padding:1px 5px; border-radius:4px;">$&</span>`
+            `<span title="Từ sơ cấp A1/A2 ➔ Gợi ý C1: ${escapeHtmlSafe(b.c1)}" style="background:rgba(245,158,11,0.22); color:#fcd34d; border-bottom:1px dashed #f59e0b; padding:1px 5px; border-radius:4px;">$&</span>`
         );
     });
 
     // 3. Highlight Academic Connectors in Sky Blue
-    const academicConns = ['however', 'therefore', 'furthermore', 'moreover', 'consequently', 'nevertheless', 'subsequently', 'meanwhile', 'whereas', 'although', 'despite', 'in addition', 'as a result', 'on the one hand', 'on the other hand', 'prior to', 'due to', 'owing to'];
+    const academicConns = ['however', 'therefore', 'furthermore', 'moreover', 'consequently', 'nevertheless', 'subsequently', 'meanwhile', 'whereas', 'although', 'despite', 'in addition', 'as a result', 'on the one hand', 'on the other hand', 'prior to', 'due to', 'owing to', 'for instance', 'in conclusion', 'overall'];
     academicConns.forEach(c => {
         const reg = new RegExp(`\\b(${c})\\b`, 'gi');
         html = html.replace(reg, `<span style="background:rgba(56,189,248,0.2); color:#7dd3fc; padding:1px 5px; border-radius:4px; font-weight:600;">$1</span>`);
@@ -2915,44 +3089,91 @@ function buildAnnotatedEssayHtml(rawText, unitVocab, detectedErrors, detectedBas
     return html;
 }
 
-function analyzeTextDiagnostics(text) {
+function analyzeTextDiagnostics(text, mode) {
+    const isWriting = (mode !== 'speaking');
     const foundErrors = [];
     CAMBRIDGE_DIAGNOSTIC_RULES.forEach(rule => {
+        if (rule.onlyWriting && !isWriting) return;
         rule.regex.lastIndex = 0;
-        const m = rule.regex.exec(text);
-        if (m) {
+        let matchCount = 0;
+        let m;
+        while ((m = rule.regex.exec(text)) !== null && matchCount < 3) {
+            matchCount++;
             foundErrors.push({
                 matchedText: m[0],
                 category: rule.category,
+                severity: rule.severity || "major",
                 title: rule.title,
                 explain: rule.explain,
                 upgrade: rule.upgrade
             });
+            if (!rule.regex.global) break;
         }
     });
 
+    // Check lowercase 'i' pronoun
+    const lowerIMatch = text.match(/(?:^|\s)(i\s+(?:am|was|have|had|will|would|can|could|should|think|believe|agree|disagree|like|love|want|need|wake|go|live|work|study|do|make|feel|see|know))\b/);
+    if (lowerIMatch && isWriting) {
+        foundErrors.push({
+            matchedText: lowerIMatch[1],
+            category: "GRA (Quy Chuẩn Viết Hoa)",
+            severity: "minor",
+            title: "Đại từ nhân xưng ngôi thứ nhất 'I' viết thường",
+            explain: "Trong tiếng Anh, đại từ nhân xưng <b>I</b> (tôi) bắt buộc phải viết hoa ở mọi vị trí trong câu.",
+            upgrade: `Đổi <code>i</code> thành <code>I</code> (ví dụ: <code>${lowerIMatch[1].replace(/^i\b/, 'I')}</code>).`
+        });
+    }
+
     const rawSentences = text.split(/(?<=[.!?])\s+/);
-    rawSentences.forEach(s => {
-        const trimmed = s.trim();
-        if (trimmed.length > 3 && /^[a-z]/.test(trimmed)) {
+    if (isWriting) {
+        rawSentences.forEach(s => {
+            const trimmed = s.trim();
+            if (trimmed.length > 3 && /^[a-z]/.test(trimmed)) {
+                foundErrors.push({
+                    matchedText: trimmed.split(/\s+/).slice(0, 3).join(" "),
+                    category: "GRA",
+                    severity: "minor",
+                    title: "Không viết hoa chữ cái đầu câu (Capitalization Error)",
+                    explain: "Chữ cái đầu tiên của mỗi câu sau dấu chấm bắt buộc phải được viết hoa.",
+                    upgrade: `Viết hoa chữ cái đầu: <code>${trimmed.charAt(0).toUpperCase() + trimmed.slice(1, 25)}...</code>`
+                });
+            }
+        });
+
+        // Comma splice detector (e.g. ", I ", ", it ", ", they ", ", we ", ", he ", ", she ", ", people ")
+        const commaSpliceMatch = text.match(/,\s+(I|it|they|we|he|she|people|students|citizens|this|that)\s+(am|is|are|was|were|have|has|will|can|should|must|need|want|like|live|work|help|make|do|go|use|participate)\b/);
+        if (commaSpliceMatch) {
             foundErrors.push({
-                matchedText: trimmed.split(/\s+/).slice(0, 3).join(" "),
-                category: "GRA",
-                title: "Không viết hoa chữ cái đầu câu (Capitalization Error)",
-                explain: "Chữ cái đầu tiên của mỗi câu sau dấu chấm bắt buộc phải được viết hoa.",
-                upgrade: `Viết hoa chữ cái đầu: <code>${trimmed.charAt(0).toUpperCase() + trimmed.slice(1, 25)}...</code>`
+                matchedText: commaSpliceMatch[0],
+                category: "GRA / CC (Comma Splice)",
+                severity: "major",
+                title: "Lỗi Nối hai câu độc lập chỉ bằng dấu phẩy (Comma Splice Error)",
+                explain: "Trong tiếng Anh học thuật, <b>không được</b> dùng một dấu phẩy (,) đơn thuần để nối 2 mệnh đề độc lập (S + V , S + V) mà không có liên từ.",
+                upgrade: "Tách thành 2 câu bằng dấu chấm (<code>. Therefore,</code> / <code>. Moreover,</code>), dùng dấu chấm phẩy (<code>;</code>), hoặc thêm liên từ (<code>, and / , so / , because</code>)."
             });
         }
-    });
+
+        if (!/[.!?]["']?$/.test(text.trim())) {
+            foundErrors.push({
+                matchedText: text.trim().split(/\s+/).slice(-3).join(" "),
+                category: "GRA (Dấu Câu)",
+                severity: "minor",
+                title: "Thiếu dấu chấm kết thúc câu ở cuối đoạn văn",
+                explain: "Câu cuối cùng của đoạn văn chưa có dấu chấm kết câu (.).",
+                upgrade: "Đặt dấu chấm (<code>.</code>) ngay cuối câu."
+            });
+        }
+    }
 
     rawSentences.forEach(s => {
         const wCount = s.trim().split(/\s+/).filter(Boolean).length;
-        if (wCount > 42) {
+        if (wCount > 40) {
             foundErrors.push({
                 matchedText: s.trim().split(/\s+/).slice(0, 5).join(" ") + "...",
                 category: "CC / GRA",
-                title: `Câu quá dài (${wCount} từ) dễ gây rối mạch ý (Run-on Sentence)`,
-                explain: "Một câu học thuật chuẩn IELTS chỉ nên dài từ 15 – 28 từ. Câu quá 40 từ thường bị nối chồng chéo quá nhiều mệnh đề.",
+                severity: "major",
+                title: `Câu quá dài (${wCount} từ) gây rối mạch ý (Run-on Sentence)`,
+                explain: "Một câu học thuật chuẩn IELTS chỉ nên dài từ 15 – 28 từ. Câu quá 40 từ thường nối chồng chéo quá nhiều mệnh đề thiếu kiểm soát.",
                 upgrade: "Tách thành 2 câu rõ ràng và liên kết bằng <code>Furthermore, / Therefore, / However,</code>."
             });
         }
@@ -2975,7 +3196,22 @@ function analyzeTextDiagnostics(text) {
     });
     const repeatedWords = Object.keys(wordFreq).filter(w => wordFreq[w] >= 3);
 
-    return { foundErrors, foundBasic, repeatedWords, sentences: rawSentences.filter(s => s.trim().length > 0) };
+    // Lexical Sophistication Index (LSI)
+    const cleanTokens = (text.toLowerCase().match(/\b[a-z]+\b/g) || []);
+    const totalTokens = Math.max(1, cleanTokens.length);
+    const shortA1Tokens = cleanTokens.filter(w => w.length <= 4).length;
+    const academicLongTokens = cleanTokens.filter(w => w.length >= 7).length;
+    const shortWordRatio = shortA1Tokens / totalTokens;
+    const academicWordRatio = academicLongTokens / totalTokens;
+
+    return {
+        foundErrors,
+        foundBasic,
+        repeatedWords,
+        sentences: rawSentences.filter(s => s.trim().length > 0),
+        shortWordRatio,
+        academicWordRatio
+    };
 }
 
 function evaluateWriting() {
@@ -2984,8 +3220,8 @@ function evaluateWriting() {
     const badge = document.getElementById('eval_band_badge');
     const content = document.getElementById('eval_feedback_content');
 
-    if (!text || text.split(/\s+/).filter(Boolean).length < 10) {
-        alert("Vui lòng viết tối thiểu 10 từ để hệ thống Giám khảo Cambridge tiến hành phân tích 4 tiêu chí và chấm chữa từng câu!");
+    if (!text || text.split(/\s+/).filter(Boolean).length < 5) {
+        alert("Vui lòng viết tối thiểu 5 từ để hệ thống Giám khảo Cambridge tiến hành phân tích 4 tiêu chí và chấm chữa từng câu!");
         return;
     }
 
@@ -2993,44 +3229,88 @@ function evaluateWriting() {
     const words = text.split(/\s+/).filter(Boolean);
     const count = words.length;
     const target = writingConfig.targetWords || 70;
-    const diag = analyzeTextDiagnostics(text);
+    const diag = analyzeTextDiagnostics(text, 'writing');
     const sentenceCount = diag.sentences.length;
+    const avgSentenceLen = count / Math.max(1, sentenceCount);
+    const criticalErrorCount = diag.foundErrors.filter(e => e.severity === 'critical').length;
+    const totalErrorCount = diag.foundErrors.length;
 
-    // 1. TASK RESPONSE / ACHIEVEMENT (TR)
-    let trScore = 4.5;
+    let activeBandCaps = [];
+    let maxOverallCap = 9.0;
+
+    // 1. TASK RESPONSE / ACHIEVEMENT (TR) — Strict Baseline 3.5
+    const minPassWords = Math.min(50, Math.round(target * 0.72));
+    let trScore = 3.5;
     let trNotes = [];
-    if (count >= target * 0.85 && count <= target * 1.65 && sentenceCount >= 3) {
-        trScore = 6.5;
-        trNotes.push(`✓ <b>Độ dài & Bố cục đoạn văn đạt chuẩn (${count} từ / ${sentenceCount} câu):</b> Phát triển đầy đủ Mở đoạn (Topic Sentence), Thân đoạn (Supporting Ideas) và Kết đoạn.`);
-    } else if (count >= 45 && sentenceCount >= 2) {
-        trScore = 5.5;
-        trNotes.push(`✓ <b>Độ dài đạt mức cơ bản (${count} từ / ${sentenceCount} câu):</b> Đã trả lời đúng trọng tâm đề bài.`);
-    } else {
+    if (count < 30) {
+        trScore = 3.5;
+        maxOverallCap = Math.min(maxOverallCap, 3.5);
+        activeBandCaps.push(`Độ dài quá ngắn (${count}/${target} từ < 30 từ) ➔ Khóa trần Overall tối đa <b>Band 3.5</b> (Underlength Penalty).`);
+        trNotes.push(`🔴 <b>Chưa đạt độ dài tối thiểu (${count}/${target} từ):</b> Bài viết quá ngắn (${sentenceCount} câu), chưa hình thành được đoạn văn học thuật hoàn chỉnh.`);
+    } else if (count < 45) {
         trScore = 4.0;
-        trNotes.push(`⚠️ <b>Độ dài chưa đạt yêu cầu (${count}/${target} từ):</b> Bài viết còn quá ngắn (${sentenceCount} câu), chưa đủ luận cứ phát triển ý.`);
+        maxOverallCap = Math.min(maxOverallCap, 4.0);
+        activeBandCaps.push(`Độ dài dưới ngưỡng cơ bản (${count}/${target} từ < 45 từ) ➔ Khóa trần Overall tối đa <b>Band 4.0</b>.`);
+        trNotes.push(`⚠️ <b>Độ dài còn yếu (${count}/${target} từ):</b> Ý tưởng mới dừng ở mức liệt kê sơ sài, thiếu câu giải thích (Explanation) và ví dụ (Example).`);
+    } else if (count < minPassWords) {
+        trScore = 5.0;
+        maxOverallCap = Math.min(maxOverallCap, 5.0);
+        activeBandCaps.push(`Độ dài chưa đủ chuẩn học thuật (${count}/${target} từ) ➔ Khóa trần Overall tối đa <b>Band 5.0</b>.`);
+        trNotes.push(`⚠️ <b>Độ dài trung bình (${count}/${target} từ • ${sentenceCount} câu):</b> Đã nêu được luận điểm nhưng cần mở rộng thêm dẫn chứng.`);
+    } else if (sentenceCount >= 3 && count >= minPassWords) {
+        trScore = 6.0;
+        if (diag.academicWordRatio >= 0.22 && totalErrorCount === 0 && avgSentenceLen >= 13) {
+            trScore = 8.0;
+        } else if (diag.academicWordRatio >= 0.18 && totalErrorCount <= 1 && avgSentenceLen >= 12) {
+            trScore = 7.0;
+        } else if (totalErrorCount <= 2) {
+            trScore = 6.5;
+        }
+        trNotes.push(`✓ <b>Độ dài & Triển khai đoạn văn đạt chuẩn (${count} từ • ${sentenceCount} câu • TB ${avgSentenceLen.toFixed(1)} từ/câu):</b> Đảm bảo cấu trúc Topic Sentence ➔ Supporting Sentences ➔ Concluding Sentence.`);
+    } else {
+        trScore = 5.0;
+        trNotes.push(`⚠️ <b>Cấu trúc câu chưa cân đối (${count} từ / ${sentenceCount} câu):</b> Một đoạn văn chuẩn nên gồm 3 – 5 câu phát triển mạch lạc.`);
     }
 
-    // 2. COHERENCE & COHESION (CC)
-    const basicConns = ['and', 'but', 'so', 'because', 'also', 'first', 'second', 'finally'];
-    const advConns = ['however', 'therefore', 'furthermore', 'moreover', 'consequently', 'although', 'while', 'whereas', 'in addition', 'as a result', 'on the one hand', 'on the other hand', 'meanwhile', 'subsequently', 'firstly', 'secondly', 'overall', 'due to', 'despite'];
+    if (avgSentenceLen < 9.5) {
+        trScore = Math.min(trScore, 4.5);
+        maxOverallCap = Math.min(maxOverallCap, 4.5);
+        activeBandCaps.push(`Độ dài câu trung bình quá ngắn (${avgSentenceLen.toFixed(1)} từ/câu) — toàn câu đơn cụt ý ➔ Khóa trần tối đa <b>Band 4.5</b>.`);
+    }
+
+    // 2. COHERENCE & COHESION (CC) — Strict Tier Cap (including Reference & Participial Cohesion)
+    const basicConns = ['and', 'but', 'so', 'because', 'also', 'first', 'second', 'finally', 'then'];
+    const advConns = ['however', 'therefore', 'furthermore', 'moreover', 'consequently', 'although', 'even though', 'while', 'whereas', 'in addition', 'as a result', 'on the one hand', 'on the other hand', 'meanwhile', 'subsequently', 'firstly', 'secondly', 'overall', 'due to', 'despite', 'for instance', 'for example', 'in conclusion', 'nevertheless', 'prior to', 'both', 'not only', 'throughout', 'ultimately', 'specifically'];
     const usedBasicConn = basicConns.filter(c => new RegExp(`\\b${c}\\b`, 'i').test(text));
     const usedAdvConn = advConns.filter(c => new RegExp(`\\b${c}\\b`, 'i').test(text));
-
-    let ccScore = 4.5;
-    let ccNotes = [];
-    if (usedAdvConn.length >= 2) {
-        ccScore = 7.0;
-        ccNotes.push(`✓ <b>Liên kết học thuật xuất sắc:</b> Sử dụng linh hoạt các từ nối B2/C1 (<i>${usedAdvConn.join(', ')}</i>).`);
-    } else if (usedAdvConn.length === 1 || usedBasicConn.length >= 2) {
-        ccScore = 6.0;
-        const allC = [...usedAdvConn, ...usedBasicConn];
-        ccNotes.push(`✓ <b>Mạch văn rõ ràng:</b> Đã kết nối các câu bằng từ nối (<i>${allC.join(', ')}</i>). Hãy bổ sung thêm <i>However, Therefore, Furthermore</i> để nâng lên Band 7.0+.`);
-    } else {
-        ccScore = 4.5;
-        ccNotes.push(`⚠️ <b>Thiếu từ nối chuyển ý (Cohesive Devices):</b> Các câu còn rời rạc. Hãy thêm <i>Firstly, Furthermore, However, Therefore</i>.`);
+    const hasReferenceCohesion = /\b(this|these|such)\s+[a-z]{4,}\b/i.test(text);
+    if (hasReferenceCohesion && !usedAdvConn.includes('this/these + Noun (Reference Cohesion)')) {
+        usedAdvConn.push('this/these + Noun (Liên kết quy chiếu)');
     }
 
-    // 3. LEXICAL RESOURCE (LR)
+    let ccScore = 3.5;
+    let ccNotes = [];
+    if (usedAdvConn.length >= 2 && sentenceCount >= 3 && avgSentenceLen >= 13 && totalErrorCount === 0) {
+        ccScore = 7.5;
+        ccNotes.push(`✓ <b>Liên kết học thuật & Quy chiếu mạch lạc xuất sắc (Band 7.5):</b> Sử dụng linh hoạt các phương tiện liên kết B2/C1 (<i>${usedAdvConn.join(', ')}</i>).`);
+    } else if (usedAdvConn.length >= 2 && sentenceCount >= 3) {
+        ccScore = 6.5;
+        ccNotes.push(`✓ <b>Liên kết mạch văn tốt:</b> Đã vận dụng các từ nối & quy chiếu học thuật (<i>${usedAdvConn.join(', ')}</i>).`);
+    } else if (usedAdvConn.length === 1) {
+        ccScore = 5.5;
+        ccNotes.push(`⚠️ <b>Mới chỉ có 1 phương tiện liên kết nâng cao (<i>${usedAdvConn[0]}</i>):</b> Hãy bổ sung thêm <i>Furthermore, Therefore, However, For instance</i> để nâng lên Band 7.0+.`);
+    } else if (usedBasicConn.length >= 2) {
+        ccScore = 4.5;
+        activeBandCaps.push(`Chỉ dùng từ nối sơ cấp A1/A2 (${usedBasicConn.join(', ')}), thiếu liên từ học thuật B2/C1 ➔ Tiêu chí CC bị khóa ở <b>Band 4.5</b>.`);
+        ccNotes.push(`⚠️ <b>Chỉ dùng từ nối sơ cấp A1/A2 (<i>${usedBasicConn.join(', ')}</i> — Max CC 4.5):</b> Muốn vượt qua Band 5.0+, bạn bắt buộc phải sử dụng Discourse Markers học thuật như <i>However, Therefore, Furthermore, Consequently, Whereas</i> hoặc cụm quy chiếu <i>This sustainable habit...</i>`);
+    } else {
+        ccScore = 3.5;
+        maxOverallCap = Math.min(maxOverallCap, 4.0);
+        activeBandCaps.push(`Bài viết rời rạc, thiếu hoàn toàn từ nối chuyển ý (Cohesive Devices) ➔ Tiêu chí CC đạt <b>Band 3.5</b>.`);
+        ccNotes.push(`🔴 <b>Các câu rời rạc, thiếu từ nối (Band 3.5):</b> Bạn chưa sử dụng từ nối học thuật để dẫn dắt lập luận.`);
+    }
+
+    // 3. LEXICAL RESOURCE (LR) — Strict Unit Vocab + Sophistication Ratio
     const vocabList = writingConfig.unitVocab || [];
     const foundVocab = vocabList.filter(w => {
         const stem = w.length > 5 ? w.slice(0, -1) : w;
@@ -3039,72 +3319,138 @@ function evaluateWriting() {
     const missingVocab = vocabList.filter(w => !foundVocab.includes(w)).slice(0, 6);
     const uniqueWords = new Set(words.map(w => w.toLowerCase().replace(/[^a-z]/g, '')).filter(Boolean));
     const ttr = Math.round((uniqueWords.size / Math.max(1, count)) * 100);
+    const academicPct = Math.round(diag.academicWordRatio * 100);
 
-    let lrScore = 4.5;
+    let lrScore = 3.5;
     let lrNotes = [];
-    if (foundVocab.length >= 5) {
-        lrScore = 7.5;
-        lrNotes.push(`✓ <b>Vốn từ vựng học thuật vượt trội (${foundVocab.length}/15 từ chủ đề):</b> <i>${foundVocab.join(', ')}</i>.`);
+    if (foundVocab.length >= 5 && diag.academicWordRatio >= 0.22) {
+        lrScore = 8.0;
+        lrNotes.push(`✓ <b>Vốn từ vựng học thuật xuất sắc (${foundVocab.length}/15 từ chủ đề • ${academicPct}% từ học thuật C1/C2):</b> <i>${foundVocab.join(', ')}</i>.`);
+    } else if (foundVocab.length >= 3 && diag.academicWordRatio >= 0.20) {
+        lrScore = 7.0;
+        lrNotes.push(`✓ <b>Vận dụng tốt từ vựng cốt lõi & Collocations (${foundVocab.length} từ • ${academicPct}% từ dài học thuật):</b> <i>${foundVocab.join(', ')}</i>.`);
     } else if (foundVocab.length >= 3) {
-        lrScore = 6.5;
-        lrNotes.push(`✓ <b>Vận dụng tốt từ vựng cốt lõi (${foundVocab.length} từ):</b> <i>${foundVocab.join(', ')}</i>.`);
-    } else if (foundVocab.length >= 1) {
-        lrScore = 5.5;
-        lrNotes.push(`✓ <b>Đã sử dụng ${foundVocab.length} từ vựng Unit:</b> <i>${foundVocab.join(', ')}</i>. Gợi ý bổ sung thêm: <b>${missingVocab.join(', ')}</b>.`);
+        lrScore = 6.0;
+        lrNotes.push(`✓ <b>Đã sử dụng ${foundVocab.length} từ vựng cốt lõi:</b> <i>${foundVocab.join(', ')}</i>.`);
+    } else if (foundVocab.length === 2) {
+        lrScore = 5.0;
+        lrNotes.push(`⚠️ <b>Mới sử dụng 2 từ vựng Unit (<i>${foundVocab.join(', ')}</i>):</b> Cần đưa thêm ít nhất 2–3 từ nữa như <b>${missingVocab.join(', ')}</b> để đạt Band 6.0+.`);
+    } else if (foundVocab.length === 1) {
+        lrScore = 4.5;
+        lrNotes.push(`⚠️ <b>Vốn từ còn hạn chế (Mới dùng 1 từ Unit: <i>${foundVocab[0]}</i>):</b> Hãy tích cực áp dụng các từ như <b>${missingVocab.join(', ')}</b>.`);
     } else {
-        lrScore = 4.0;
-        lrNotes.push(`⚠️ <b>Chưa dùng từ vựng học thuật của Unit:</b> Hãy lồng ghép các từ như <b>${missingVocab.join(', ')}</b> vào bài viết.`);
+        lrScore = diag.academicWordRatio >= 0.22 ? 4.5 : 3.5;
+        maxOverallCap = Math.min(maxOverallCap, 4.0);
+        activeBandCaps.push(`Không sử dụng từ vựng học thuật của Unit (0/15 từ) ➔ Khóa trần Overall tối đa <b>Band 4.0</b>.`);
+        lrNotes.push(`🔴 <b>Chưa dùng từ vựng học thuật của Unit (0/15 từ):</b> Hãy lồng ghép các từ trọng tâm như <b>${missingVocab.join(', ')}</b> vào bài viết.`);
     }
 
+    if (diag.shortWordRatio > 0.66) {
+        lrScore = Math.min(lrScore, 4.5);
+        maxOverallCap = Math.min(maxOverallCap, 4.5);
+        activeBandCaps.push(`Tỷ lệ từ đơn âm tiết sơ cấp quá cao (${Math.round(diag.shortWordRatio * 100)}% từ ≤ 4 chữ cái) ➔ Khóa trần LR & Overall <b>Band 4.5</b>.`);
+        lrNotes.push(`⚠️ <b>Tỷ lệ từ đơn âm tiết sơ cấp quá cao (${Math.round(diag.shortWordRatio * 100)}% từ ≤ 4 chữ cái):</b> Văn phong còn mang tính khẩu ngữ A1/A2.`);
+    }
+    if (diag.foundBasic.length > 0) {
+        lrScore = Math.max(3.5, lrScore - (diag.foundBasic.length * 0.5));
+        lrNotes.push(`⚠️ <b>Phát hiện ${diag.foundBasic.length} cụm từ sơ cấp A1/A2</b> (<i>${diag.foundBasic.map(b => b.basic).join(', ')}</i>) làm giảm điểm Từ vựng học thuật.`);
+    }
     if (diag.repeatedWords.length > 0) {
-        lrScore = Math.max(4.0, lrScore - 0.5);
-        lrNotes.push(`⚠️ <b>Cảnh báo lặp từ (Repetition):</b> Từ <b>"${diag.repeatedWords.join('", "')}"</b> bị lặp lại ≥ 3 lần. Hãy dùng từ đồng nghĩa (Paraphrase).`);
-    }
-    if (diag.foundBasic.length >= 2) {
-        lrScore = Math.max(4.5, lrScore - 0.5);
+        lrScore = Math.max(3.5, lrScore - 0.5);
+        lrNotes.push(`⚠️ <b>Lỗi lặp từ (Repetition):</b> Từ <b>"${diag.repeatedWords.join('", "')}"</b> lặp lại ≥ 3 lần. Hãy dùng từ đồng nghĩa (Synonyms).`);
     }
 
-    // 4. GRAMMATICAL RANGE & ACCURACY (GRA)
-    const hasSubordinate = /\b(because|since|although|even though|while|whereas|if|unless|when|whenever|so that|in order that)\b/i.test(text);
-    const hasRelative = /\b(who|which|that|where|whose)\b/i.test(text);
-    const hasPassive = /\b(is|are|was|were|be|been)\s+([a-z]+ed|built|made|done|taken|given|found|known|seen|written|taught|spoken|broken|chosen|driven|eaten|fallen|forgotten|frozen|grown|hidden|held|kept|led|left|lost|met|paid|put|read|ridden|risen|run|said|sent|set|shown|shut|sung|sunk|sat|slept|sold|spent|spoken|spread|stood|stolen|struck|sworn|swum|taught|thought|thrown|understood|woken|worn|won)\b/i.test(text);
+    // 4. GRAMMATICAL RANGE & ACCURACY (GRA) — Strict Baseline 3.5 + Heavy Error Penalties
+    const hasB1Subordinate = /\b(because|since|when|whenever|if|so that|in order to|motivates\s+\w+\s+to)\b/i.test(text);
+    const hasC1Subordinate = /\b(although|even though|while|whereas|unless|provided that|in order that|despite)\b/i.test(text);
+    const hasAcademicRelative = /\b(which|whose|where|whom|who|that\s+[a-z]+s)\b/i.test(text);
+    const hasGerundParticiple = /\b(in\s+[a-z]+ing|for\s+[a-z]+ing|by\s+[a-z]+ing|maintaining|participating|preserving|reducing|developing)\b/i.test(text);
+    const hasPassive = /\b(is|are|was|were|be|been)\s+([a-z]+ed|built|made|done|taken|given|found|known|seen|written|taught|spoken|broken|chosen|driven|eaten|fallen|forgotten|frozen|grown|hidden|held|kept|led|left|lost|met|paid|put|read|ridden|risen|run|said|sent|set|shown|shut|sung|sunk|sat|slept|sold|spent|spread|stood|stolen|struck|sworn|swum|thought|thrown|understood|woken|worn|won)\b/i.test(text);
 
     let complexStructuresUsed = [];
-    if (hasSubordinate) complexStructuresUsed.push("Mệnh đề phụ thuộc (Complex Clause)");
-    if (hasRelative) complexStructuresUsed.push("Mệnh đề quan hệ (Relative Clause)");
-    if (hasPassive) complexStructuresUsed.push("Thể bị động học thuật (Passive Voice)");
+    let graScore = 3.5;
+    if (hasB1Subordinate) {
+        graScore += 0.75;
+        complexStructuresUsed.push("Mệnh đề phụ thuộc / Mục đích (because/if/when/in order to)");
+    }
+    if (hasC1Subordinate) {
+        graScore += 1.0;
+        complexStructuresUsed.push("Mệnh đề nhượng bộ/tương phản B2/C1 (although/whereas/while)");
+    }
+    if (hasAcademicRelative) {
+        graScore += 1.0;
+        complexStructuresUsed.push("Mệnh đề quan hệ học thuật (that/which/who/where)");
+    }
+    if (hasGerundParticiple) {
+        graScore += 0.75;
+        complexStructuresUsed.push("Cấu trúc Danh động từ / Phân từ (V-ing Clause)");
+    }
+    if (hasPassive) {
+        graScore += 0.75;
+        complexStructuresUsed.push("Thể bị động học thuật (Passive Voice)");
+    }
+    if (count >= minPassWords && sentenceCount >= 3 && totalErrorCount === 0 && complexStructuresUsed.length >= 2 && avgSentenceLen >= 13) {
+        graScore += 1.0;
+    }
 
-    let graScore = 5.0 + (complexStructuresUsed.length * 0.75);
-    graScore = Math.min(7.5, graScore);
-    graScore = Math.max(3.5, graScore - (diag.foundErrors.length * 0.5));
+    graScore = Math.min(8.0, graScore);
+    const errorPenalty = (criticalErrorCount * 0.9) + ((totalErrorCount - criticalErrorCount) * 0.55);
+    graScore = Math.max(3.0, graScore - errorPenalty);
+
+    // Hard Error Caps on GRA & Overall
+    if (criticalErrorCount >= 2 || totalErrorCount >= 3) {
+        graScore = Math.min(graScore, 4.0);
+        maxOverallCap = Math.min(maxOverallCap, 4.0);
+        activeBandCaps.push(`Mắc ${totalErrorCount} lỗi ngữ pháp/từ loại (trong đó có ${criticalErrorCount} lỗi ngữ pháp sơ cấp nặng) ➔ Khóa trần GRA & Overall tối đa <b>Band 4.0</b>.`);
+    } else if (criticalErrorCount === 1 || totalErrorCount === 2) {
+        graScore = Math.min(graScore, 4.5);
+        maxOverallCap = Math.min(maxOverallCap, 4.5);
+        activeBandCaps.push(`Mắc ${totalErrorCount} lỗi ngữ pháp (có lỗi câu sơ cấp) ➔ Khóa trần GRA & Overall tối đa <b>Band 4.5</b>.`);
+    } else if (totalErrorCount === 1) {
+        graScore = Math.min(graScore, 5.5);
+        maxOverallCap = Math.min(maxOverallCap, 5.5);
+    }
 
     let graNotes = [];
     if (complexStructuresUsed.length > 0) {
-        graNotes.push(`✓ <b>Độ đa dạng cấu trúc câu:</b> Đã áp dụng <b>${complexStructuresUsed.join(' + ')}</b>.`);
+        graNotes.push(`✓ <b>Cấu trúc ngữ pháp ghi nhận:</b> ${complexStructuresUsed.join(' + ')}.`);
     } else {
-        graNotes.push(`⚠️ <b>Toàn bộ là câu đơn:</b> Hãy kết hợp mệnh đề quan hệ (<i>which/who</i>), câu điều kiện (<i>If/Unless</i>) hoặc mệnh đề nhượng bộ (<i>Although/While</i>).`);
+        graScore = Math.min(graScore, 4.0);
+        maxOverallCap = Math.min(maxOverallCap, 4.5);
+        activeBandCaps.push(`100% câu đơn (Simple Sentences), không có mệnh đề phức hay mệnh đề quan hệ ➔ Khóa trần GRA <b>Band 4.0</b>.`);
+        graNotes.push(`🔴 <b>Toàn bộ là câu đơn sơ cấp (Max GRA 4.0):</b> Chưa có bất kỳ mệnh đề phụ thuộc (<i>although, whereas, because</i>), mệnh đề quan hệ (<i>which, who</i>) hay câu bị động nào.`);
     }
 
-    if (diag.foundErrors.length === 0) {
-        graNotes.push(`✓ <b>Độ chính xác ngữ pháp cao:</b> Không phát hiện lỗi chia động từ, danh từ không đếm được hay lỗi dấu câu.`);
+    if (totalErrorCount === 0) {
+        graNotes.push(`✓ <b>Độ chính xác ngữ pháp tốt:</b> Không phát hiện lỗi chia động từ, lỗi câu 2 động từ hay danh từ không đếm được.`);
     } else {
-        graNotes.push(`⚠️ <b>Phát hiện ${diag.foundErrors.length} điểm cần sửa về Ngữ pháp / Dấu câu / Từ loại</b> (Xem bảng Chẩn đoán 3 bước bên dưới).`);
+        graNotes.push(`🔴 <b>Phát hiện ${totalErrorCount} lỗi Ngữ pháp / Cấu trúc câu / Dấu câu</b> làm trừ điểm trực tiếp (Xem bảng Chẩn đoán 3 bước bên dưới).`);
     }
 
-    trScore = Math.round(trScore * 2) / 2;
-    ccScore = Math.round(ccScore * 2) / 2;
-    lrScore = Math.round(lrScore * 2) / 2;
-    graScore = Math.round(graScore * 2) / 2;
+    trScore = roundIeltsCamBand(trScore);
+    ccScore = roundIeltsCamBand(ccScore);
+    lrScore = roundIeltsCamBand(lrScore);
+    graScore = roundIeltsCamBand(graScore);
 
     const rawOverall = (trScore + ccScore + lrScore + graScore) / 4;
-    const roundedBand = (Math.round(rawOverall * 2) / 2).toFixed(1);
+    const finalOverallNum = Math.min(maxOverallCap, roundIeltsCamBand(rawOverall));
+    const roundedBand = finalOverallNum.toFixed(1);
 
-    badge.innerText = `Ước tính: Band ${roundedBand}`;
+    badge.innerText = `Chấm Nghiêm Ngặt: Band ${roundedBand}`;
     setTimeout(saveUnitProgress, 100);
-    badge.style.background = roundedBand >= 6.0 ? 'rgba(16, 185, 129, 0.25)' : (roundedBand >= 5.0 ? 'rgba(56, 189, 248, 0.25)' : 'rgba(245, 158, 11, 0.25)');
-    badge.style.color = roundedBand >= 6.0 ? '#34d399' : (roundedBand >= 5.0 ? '#38bdf8' : '#fbbf24');
+    badge.style.background = finalOverallNum >= 6.5 ? 'rgba(16, 185, 129, 0.25)' : (finalOverallNum >= 5.0 ? 'rgba(56, 189, 248, 0.25)' : 'rgba(244, 63, 94, 0.25)');
+    badge.style.color = finalOverallNum >= 6.5 ? '#34d399' : (finalOverallNum >= 5.0 ? '#38bdf8' : '#fb7185');
 
     const annotatedHtml = buildAnnotatedEssayHtml(text, vocabList, diag.foundErrors, diag.foundBasic);
+
+    const capBannerHtml = activeBandCaps.length > 0 ? `
+        <div style="margin-bottom: 16px; background: rgba(244, 63, 94, 0.14); border: 1.5px solid rgba(244, 63, 94, 0.45); border-left: 5px solid #f43f5e; border-radius: 10px; padding: 12px 16px; font-size: 0.88rem; color: #fecdd3; line-height: 1.65;">
+            <b style="color: #fb7185; font-size: 0.95rem;">⚖️ Chốt Chặn Khảo Thí Cambridge (Strict Band Cap Active):</b>
+            <ul style="margin-top: 6px; margin-left: 18px;">
+                ${activeBandCaps.map(c => `<li>${c}</li>`).join('')}
+            </ul>
+        </div>
+    ` : '';
 
     let diagnoseHtml = "";
     if (diag.foundErrors.length > 0 || diag.foundBasic.length > 0) {
@@ -3128,7 +3474,7 @@ function evaluateWriting() {
         const lexicalCards = diag.foundBasic.map(b => `
             <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(245, 158, 11, 0.4); border-left: 4px solid #f59e0b; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px;">
                 <div style="font-weight: 700; color: #fbbf24; margin-bottom: 4px;">
-                    🟡 [Nâng cấp Từ vựng LR] Từ sơ cấp A1/A2: "${b.basic}"
+                    🟡 [Nâng cấp Từ vựng LR] Cụm từ sơ cấp A1/A2: "${b.basic}"
                 </div>
                 <div style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 4px;">
                     <b>Giải thích:</b> ${b.note}
@@ -3149,33 +3495,38 @@ function evaluateWriting() {
     } else {
         diagnoseHtml = `
             <div style="margin-bottom: 18px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 10px; padding: 12px 16px; color: #6ee7b7;">
-                ✓ <b>Tuyệt vời!</b> Hệ thống quét 35+ quy tắc ngữ pháp & từ loại không phát hiện lỗi sai cơ bản hay từ vựng khẩu ngữ A1 nào trong đoạn văn của bạn.
+                ✓ <b>Tốt lắm!</b> Bộ quét 48+ quy tắc ngữ pháp & Vietlish không phát hiện lỗi sai cấu trúc cơ bản trong đoạn văn của bạn. Bạn có thể bấm nút <b>"🤖 Chấm Sâu Bằng AI Giám Khảo (Gemini)"</b> để chấm sâu thêm về mặt logic lập luận và nâng cấp từng câu lên Band 8.5+!
             </div>
         `;
     }
 
     content.innerHTML = `
+        <!-- AI DEEP EVALUATION CONTAINER (Populated when user clicks Gemini AI Examiner) -->
+        <div id="writing_ai_deep_box" style="display: none; margin-bottom: 18px;"></div>
+
+        ${capBannerHtml}
+
         <!-- 4 CAMBRIDGE CRITERIA BREAKDOWN -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 10px; margin-bottom: 16px;">
             <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">1. Task Response (TR)</div>
                 <div style="font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-top: 4px;">Band ${trScore.toFixed(1)}</div>
-                <div style="font-size: 0.74rem; color: var(--text-muted);">${count} từ • ${sentenceCount} câu</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted);">${count}/${target} từ • ${sentenceCount} câu</div>
             </div>
             <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">2. Coherence (CC)</div>
                 <div style="font-size: 1.3rem; font-weight: 800; color: #34d399; margin-top: 4px;">Band ${ccScore.toFixed(1)}</div>
-                <div style="font-size: 0.74rem; color: var(--text-muted);">${usedAdvConn.length + usedBasicConn.length} từ nối mạch văn</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted);">${usedAdvConn.length} từ nối B2/C1</div>
             </div>
             <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">3. Lexical Resource (LR)</div>
                 <div style="font-size: 1.3rem; font-weight: 800; color: #f59e0b; margin-top: 4px;">Band ${lrScore.toFixed(1)}</div>
-                <div style="font-size: 0.74rem; color: var(--text-muted);">${foundVocab.length}/15 từ Unit • Đa dạng ${ttr}%</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted);">${foundVocab.length}/15 từ Unit • C1 ${academicPct}%</div>
             </div>
             <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">4. Grammar (GRA)</div>
                 <div style="font-size: 1.3rem; font-weight: 800; color: #a78bfa; margin-top: 4px;">Band ${graScore.toFixed(1)}</div>
-                <div style="font-size: 0.74rem; color: var(--text-muted);">${diag.foundErrors.length} lỗi phát hiện</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted);">${totalErrorCount} lỗi phát hiện</div>
             </div>
         </div>
 
@@ -3186,8 +3537,8 @@ function evaluateWriting() {
                 <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.75rem;">
                     <span style="background:rgba(16,185,129,0.22); color:#6ee7b7; padding:2px 8px; border-radius:4px;">🟩 Từ vựng Unit</span>
                     <span style="background:rgba(56,189,248,0.2); color:#7dd3fc; padding:2px 8px; border-radius:4px;">🟦 Từ nối học thuật</span>
-                    <span style="background:rgba(245,158,11,0.2); color:#fcd34d; padding:2px 8px; border-radius:4px;">🟨 Từ sơ cấp cần nâng cấp</span>
-                    <span style="background:rgba(244,63,94,0.22); color:#fda4af; padding:2px 8px; border-radius:4px;">🟥 Lỗi ngữ pháp/từ loại</span>
+                    <span style="background:rgba(245,158,11,0.2); color:#fcd34d; padding:2px 8px; border-radius:4px;">🟨 Từ sơ cấp A1/A2</span>
+                    <span style="background:rgba(244,63,94,0.22); color:#fda4af; padding:2px 8px; border-radius:4px;">🟥 Lỗi ngữ pháp/Vietlish</span>
                 </div>
             </div>
             <div style="font-size: 0.98rem; line-height: 1.9; color: #e2e8f0;">${annotatedHtml}</div>
@@ -3195,7 +3546,7 @@ function evaluateWriting() {
 
         <!-- CRITERIA SUMMARY NOTES -->
         <div style="margin-bottom: 16px; background: rgba(15, 23, 42, 0.75); padding: 14px 16px; border-radius: 10px; border-left: 3px solid var(--primary); font-size: 0.9rem; line-height: 1.7;">
-            <b style="color: var(--primary);">📋 Nhận Xét Theo 4 Tiêu Chí Khảo Thí:</b>
+            <b style="color: var(--primary);">📋 Nhận Xét Nghiêm Ngặt Theo 4 Tiêu Chí Khảo Thí Cambridge:</b>
             <div style="margin-top: 6px;">
                 ${[...trNotes, ...ccNotes, ...lrNotes, ...graNotes].join('<br>')}
             </div>
@@ -3209,7 +3560,7 @@ function evaluateWriting() {
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 10px;">
                 <div>
                     <h4 style="color: #38bdf8; font-size: 1.15rem; margin-bottom: 2px;">🏆 Bài Viết Mẫu Đạt Chuẩn (Benchmark Model Paragraph)</h4>
-                    <span style="font-size: 0.82rem; color: var(--text-muted);">Độ dài: ${writingConfig.modelEssay.split(/\s+/).length} từ • Chuẩn Học Thuật Cambridge</span>
+                    <span style="font-size: 0.82rem; color: var(--text-muted);">Độ dài: ${writingConfig.modelEssay.split(/\s+/).length} từ • Chuẩn Học Thuật Cambridge Band 8.0+</span>
                 </div>
                 <button class="btn-primary" style="background: var(--primary); color: #0b1120; font-size: 0.88rem; padding: 8px 16px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;" onclick="speakModelEssay()">
                     🔊 Nghe Giọng Đọc Mẫu
@@ -3243,7 +3594,7 @@ function speakModelEssay() {
     AudioEngine.play('model_essay', txt, null);
 }
 
-// Speaking Engine v2.0 (Acoustic Telemetry + Linguistic NLP + Sample Answers)
+// Speaking Engine v3.0 (Strict Acoustic Telemetry + Linguistic NLP + Sample Answers)
 const speakingConfig = {"questions": [{"id": "q1", "text": "Q1: How do you usually commute to school or work every day?", "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu phương tiện đi lại (electric bus / metro railway / bicycle) + Giải thích lý do bằng because/due to (convenient, punctual, helps avoid traffic congestion).", "sample_answer": "Every morning, I commute to university by electric bus because it is affordable and convenient. Since the city created dedicated bus lanes last year, the service has become much more punctual and helps me avoid rush-hour traffic delays.", "sample_audio_key": "speaking_q1"}, {"id": "q2", "text": "Q2: What is the biggest traffic problem in your city at the moment?", "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu vấn đề (severe rush-hour congestion and toxic exhaust fumes) + Chỉ ra nguyên nhân (too many private vehicles and narrow road infrastructure).", "sample_answer": "The biggest challenge in my city is severe traffic congestion due to the overwhelming number of private vehicles. During peak hours, millions of motorbikes and cars cause long delays and release toxic exhaust fumes into the air.", "sample_audio_key": "speaking_q2"}, {"id": "q3", "text": "Q3: How can the government encourage more people to use public transport?", "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu 2 giải pháp (upgrade the metro network to make it more reliable + subsidize ticket prices for passengers and cyclists).", "sample_answer": "To encourage people to leave their cars at home, the government should upgrade transport infrastructure and expand the underground railway network. Furthermore, authorities ought to subsidize ticket fares so that public transit becomes a reliable alternative for every passenger.", "sample_audio_key": "speaking_q3"}], "targetedSounds": [{"word": "congestion", "sound": "/kənˈdʒestʃən/", "note": "Nhấn âm tiết thứ 2: -GES- (/ˈdʒestʃən/)"}, {"word": "infrastructure", "sound": "/ˈɪnfrəstrʌktʃə(r)/", "note": "Nhấn âm tiết đầu tiên: IN-fra-struc-ture"}, {"word": "vehicle", "sound": "/ˈviːəkl/", "note": "Âm 'h' câm, nhấn âm đầu: VEE-uh-kl"}, {"word": "punctual", "sound": "/ˈpʌŋktʃuəl/", "note": "Nhấn âm đầu tiên: PUNC-tchu-al"}, {"word": "exhaust", "sound": "/ɪɡˈzɔːst/", "note": "Âm 'ex-' phát âm là /ɪɡˈz/, 'h' câm"}], "lexicalWords": ["congestion", "commute", "passenger", "vehicle", "infrastructure", "railway", "reliable", "punctual", "cyclist", "delay", "subsidize", "convenient", "alternative", "exhaust", "network"]};
 let audioContext = null;
 let analyserNode = null;
@@ -3518,7 +3869,7 @@ function stopAcousticRecordingSession() {
     if (micIcon) micIcon.innerText = '🎙️';
     if (micText) micText.innerText = 'Bật Mic Bắt Đầu Nói';
     if (statusText) {
-        statusText.innerText = 'Đã hoàn tất thu âm! Bấm "Chấm Điểm & Chẩn Đoán Lỗi Phát Âm" để nhận báo cáo.';
+        statusText.innerText = 'Đã hoàn tất thu âm! Bấm "Chấm Điểm Nghiêm Ngặt" hoặc "Chấm Sâu Bằng AI Giám Khảo" để nhận báo cáo.';
         statusText.style.color = 'var(--text-muted)';
     }
 }
@@ -3548,46 +3899,69 @@ function evaluateSpeakingComprehensive() {
     box.style.display = 'block';
     const words = text ? text.split(/\s+/).filter(Boolean) : [];
     const wordCount = words.length;
-    const diag = analyzeTextDiagnostics(text);
+    const diag = analyzeTextDiagnostics(text, 'speaking');
     const currentQ = getCurrentSpeakingQuestionItem();
+    const totalErrorCount = diag.foundErrors.length;
+    const criticalErrorCount = diag.foundErrors.filter(e => e.severity === 'critical').length;
 
-    const effectiveSeconds = spokenSec > 2 ? spokenSec : (elapsed > 3 ? elapsed * 0.75 : Math.max(8, wordCount / 2.1));
+    const effectiveSeconds = spokenSec > 2 ? spokenSec : (elapsed > 3 ? elapsed * 0.75 : Math.max(8, wordCount / 2.0));
     const wpm = wordCount > 0 ? Math.round((wordCount / effectiveSeconds) * 60) : 0;
-    const fluencyRatio = elapsed > 0 ? Math.min(100, Math.round((spokenSec / elapsed) * 100)) : (wordCount >= 20 ? 78 : 55);
+    const fluencyRatio = elapsed > 0 ? Math.min(100, Math.round((spokenSec / elapsed) * 100)) : (wordCount >= 35 ? 74 : (wordCount >= 20 ? 58 : 42));
 
-    let fluencyScore = 4.5;
-    let pronunciationScore = 4.5;
-    let lexicalScore = 4.5;
-    let grammarScore = 4.5;
+    let fluencyScore = 3.5;
+    let pronunciationScore = 3.5;
+    let lexicalScore = 3.5;
+    let grammarScore = 3.5;
+    let maxSpeakingCap = 9.0;
+    let speakingCaps = [];
 
     let fluencyFeedback = [];
     let pronunciationFeedback = [];
     let lexicalFeedback = [];
     let grammarFeedback = [];
 
-    // 1. FLUENCY & COHERENCE (FC)
-    const discourseMarkers = ['because', 'since', 'for example', 'for instance', 'actually', 'well', 'to be honest', 'in addition', 'moreover', 'furthermore', 'however', 'although', 'while', 'therefore', 'so'];
-    const foundMarkers = discourseMarkers.filter(c => new RegExp(`\\b${c}\\b`, 'i').test(text));
-
-    if (wordCount >= 28 && wpm >= 100 && wpm <= 165 && pauseCount <= 2) {
-        fluencyScore = 6.5;
-        fluencyFeedback.push(`✓ <b>Tốc độ & Độ trôi chảy rất tốt (${wpm} từ/phút • ${wordCount} từ):</b> Đạt ngưỡng phản xạ tự nhiên của IELTS Part 1 (110–150 WPM), ít ngắt quãng (${pauseCount} lần dừng >1.2s).`);
-    } else if (wordCount >= 16) {
-        fluencyScore = 5.5;
-        fluencyFeedback.push(`✓ <b>Độ dài câu trả lời đạt chuẩn (${wordCount} từ • ~${wpm} WPM):</b> Đã triển khai được ý theo công thức 1+2.`);
-    } else if (wordCount > 0) {
-        fluencyScore = 4.0;
-        fluencyFeedback.push(`⚠️ <b>Câu trả lời còn quá ngắn (${wordCount} từ):</b> Trong IELTS Speaking Part 1, bạn nên nói từ 25 – 45 từ (3–4 câu) cho mỗi câu hỏi.`);
-    } else {
-        fluencyScore = fluencyRatio >= 65 ? 5.0 : 4.0;
-        fluencyFeedback.push(`ℹ️ <b>Đã ghi nhận sóng âm (${spokenSec.toFixed(1)}s nói thực / ${pauseCount} khoảng dừng):</b> Trình duyệt chưa nhận diện hết chữ tự động; bạn có thể gõ/chỉnh lại lời thoại để chấm sâu cả từ vựng & ngữ pháp.`);
+    // 1. FLUENCY & COHERENCE (FC) — Strict Word Count & Discourse Marker Checks
+    const advDiscourseMarkers = ['for example', 'for instance', 'actually', 'to be honest', 'in addition', 'moreover', 'furthermore', 'however', 'although', 'while', 'whereas', 'therefore', 'consequently', 'personally', 'specifically', 'well', 'throughout', 'every morning', 'every afternoon', 'nowadays', 'in my view', 'definitely', 'certainly', 'undoubtedly'];
+    const basicDiscourseMarkers = ['because', 'since', 'so', 'and', 'but', 'also'];
+    const foundAdvMarkers = advDiscourseMarkers.filter(c => new RegExp(`\\b${c}\\b`, 'i').test(text));
+    const foundBasicMarkers = basicDiscourseMarkers.filter(c => new RegExp(`\\b${c}\\b`, 'i').test(text));
+    if (/\b(this|these)\s+[a-z]{4,}\b/i.test(text) && !foundAdvMarkers.includes('this/these + N')) {
+        foundAdvMarkers.push('this/these + N');
     }
 
-    if (foundMarkers.length >= 2) {
-        fluencyScore = Math.min(7.5, fluencyScore + 0.5);
-        fluencyFeedback.push(`✓ <b>Discourse Markers (Từ nối tự nhiên):</b> Vận dụng tốt <i>${foundMarkers.join(', ')}</i> để dẫn dắt lý do và ví dụ.`);
+    if (wordCount === 0) {
+        fluencyScore = 3.5;
+        maxSpeakingCap = 4.0;
+        speakingCaps.push(`Chưa có văn bản lời thoại nhận diện được (0 từ) ➔ Khóa trần tối đa <b>Band 4.0</b>.`);
+        fluencyFeedback.push(`⚠️ <b>Chưa có lời thoại văn bản:</b> Trình duyệt chưa nhận diện được chữ; hãy nói rõ hơn hoặc gõ lại lời bạn vừa nói vào ô văn bản để chấm chính xác từ vựng & ngữ pháp.`);
+    } else if (wordCount < 15) {
+        fluencyScore = 3.5;
+        maxSpeakingCap = Math.min(maxSpeakingCap, 3.5);
+        speakingCaps.push(`Câu trả lời quá ngắn (${wordCount} từ < 15 từ) — trả lời cụt ngủn ➔ Khóa trần Speaking tối đa <b>Band 3.5</b>.`);
+        fluencyFeedback.push(`🔴 <b>Câu trả lời quá ngắn (${wordCount} từ — Max Band 3.5):</b> Trong IELTS Speaking Part 1, trả lời dưới 15 từ bị coi là thiếu khả năng mở rộng ý.`);
+    } else if (wordCount < 25) {
+        fluencyScore = 4.5;
+        maxSpeakingCap = Math.min(maxSpeakingCap, 4.5);
+        speakingCaps.push(`Độ dài câu nói còn ngắn (${wordCount} từ < 25 từ) ➔ Khóa trần Speaking tối đa <b>Band 4.5</b>.`);
+        fluencyFeedback.push(`⚠️ <b>Độ dài còn hạn chế (${wordCount} từ • ~${wpm} WPM):</b> Bạn cần mở rộng câu trả lời lên 35 – 50 từ (3 – 4 câu đầy đủ Lý do + Ví dụ thực tế).`);
+    } else if (wordCount < 35) {
+        fluencyScore = 5.0;
+        maxSpeakingCap = Math.min(maxSpeakingCap, 5.5);
+        fluencyFeedback.push(`⚠️ <b>Độ dài mức trung bình (${wordCount} từ • ~${wpm} WPM):</b> Đã có ý cơ bản nhưng cần phát triển sâu hơn và dùng thêm từ nối tự nhiên để đạt Band 6.0+.`);
+    } else if (wpm >= 95 && wpm <= 170 && pauseCount <= 2 && fluencyRatio >= 60) {
+        fluencyScore = 7.0;
+        fluencyFeedback.push(`✓ <b>Tốc độ & Độ trôi chảy rất tốt (${wpm} từ/phút • ${wordCount} từ):</b> Đạt ngưỡng phản xạ tự nhiên của IELTS Part 1 (110–150 WPM), ít ngắt quãng.`);
     } else {
-        fluencyFeedback.push(`🎯 <b>Mẹo nâng điểm FC:</b> Hãy mở đầu bằng <i>"Well, to be honest..."</i>, nối lý do bằng <i>"mainly because..."</i> và thêm ví dụ <i>"For instance,..."</i>.`);
+        fluencyScore = 6.0;
+        fluencyFeedback.push(`✓ <b>Độ dài đạt yêu cầu (${wordCount} từ • ~${wpm} WPM):</b> Hãy giữ nhịp nói đều đặn hơn (tránh ngập ngừng > 1.2 giây).`);
+    }
+
+    if (foundAdvMarkers.length >= 2 && wordCount >= 35) {
+        fluencyScore = Math.min(8.0, fluencyScore + 0.5);
+        fluencyFeedback.push(`✓ <b>Discourse Markers (Từ nối tự nhiên):</b> Vận dụng tốt <i>${foundAdvMarkers.join(', ')}</i>.`);
+    } else if (foundAdvMarkers.length === 0) {
+        fluencyScore = Math.min(fluencyScore, 4.5);
+        fluencyFeedback.push(`⚠️ <b>Thiếu Discourse Markers học thuật (Max FC 4.5):</b> Hãy mở đầu bằng <i>"Well, to be honest,..."</i> và đưa ví dụ bằng <i>"For instance,..."</i> hoặc <i>"Moreover,..."</i>.`);
     }
 
     // 2. PRONUNCIATION & INTONATION (PR)
@@ -3600,15 +3974,18 @@ function evaluateSpeakingComprehensive() {
         }
     });
 
-    if (matchedSounds.length >= 2) {
+    if (matchedSounds.length >= 2 && wordCount >= 35 && totalErrorCount === 0) {
+        pronunciationScore = 7.0;
+        pronunciationFeedback.push(`✓ <b>Phát âm rõ các từ học thuật đa âm tiết (${matchedSounds.length}/${sounds.length} từ):</b> <b>${matchedSounds.map(s => s.word).join(', ')}</b>.`);
+    } else if (matchedSounds.length >= 1 && wordCount >= 35 && diag.academicWordRatio >= 0.18 && totalErrorCount === 0) {
         pronunciationScore = 6.5;
-        pronunciationFeedback.push(`✓ <b>Phát âm rõ các từ học thuật đa âm tiết:</b> Hệ thống nhận diện chính xác phát âm của bạn cho từ <b>${matchedSounds.map(s => s.word).join(', ')}</b>.`);
-    } else if (matchedSounds.length === 1) {
-        pronunciationScore = 5.5;
-        pronunciationFeedback.push(`✓ <b>Đã phát âm chuẩn từ trọng tâm:</b> <b>${matchedSounds[0].word}</b> (${matchedSounds[0].sound}).`);
+        pronunciationFeedback.push(`✓ <b>Phát âm chuẩn từ trọng tâm & các từ học thuật đa âm tiết:</b> <b>${matchedSounds.map(s => s.word).join(', ')}</b>.`);
+    } else if (matchedSounds.length >= 1) {
+        pronunciationScore = 5.0;
+        pronunciationFeedback.push(`⚠️ <b>Mới xuất hiện ${matchedSounds.length} từ trọng âm mục tiêu (<b>${matchedSounds.map(s => s.word).join(', ')}</b>):</b> Hãy luyện phát âm thêm các từ trong bảng IPA bên dưới.`);
     } else {
-        pronunciationScore = 4.5;
-        pronunciationFeedback.push(`⚠️ <b>Chưa xuất hiện các từ trọng âm mục tiêu của Unit:</b> Hãy bấm nút 🔊 ở bảng Phiên âm IPA bên dưới để luyện phát âm 5 từ trọng tâm.`);
+        pronunciationScore = 4.0;
+        pronunciationFeedback.push(`🔴 <b>Chưa sử dụng các từ trọng âm mục tiêu của Unit (0/${sounds.length} từ):</b> Hãy bấm nút 🔊 ở bảng Phiên âm IPA bên dưới để luyện nhấn trọng âm chuẩn.`);
     }
 
     // 3. LEXICAL RESOURCE (LR)
@@ -3619,38 +3996,85 @@ function evaluateSpeakingComprehensive() {
     });
     const suggestedLex = lex.filter(w => !foundLex.includes(w)).slice(0, 5);
 
-    if (foundLex.length >= 3) {
-        lexicalScore = 7.0;
+    if (foundLex.length >= 3 && wordCount >= 35) {
+        lexicalScore = 7.5;
         lexicalFeedback.push(`✓ <b>Vốn từ vựng Speaking xuất sắc (${foundLex.length} từ chủ đề):</b> <i>${foundLex.join(', ')}</i>.`);
-    } else if (foundLex.length >= 1) {
+    } else if (foundLex.length === 2 && diag.academicWordRatio >= 0.18 && wordCount >= 35) {
+        lexicalScore = 7.0;
+        lexicalFeedback.push(`✓ <b>Vận dụng tự nhiên từ vựng chủ đề & Collocations (${foundLex.join(', ')}):</b> Tỷ lệ từ học thuật đạt ${Math.round(diag.academicWordRatio * 100)}%.`);
+    } else if (foundLex.length === 2) {
         lexicalScore = 5.5;
-        lexicalFeedback.push(`✓ <b>Đã lồng ghép từ vựng bài học:</b> <i>${foundLex.join(', ')}</i>. Có thể thêm: <b>${suggestedLex.join(', ')}</b>.`);
-    } else {
+        lexicalFeedback.push(`⚠️ <b>Đã dùng 2 từ vựng bài học (<i>${foundLex.join(', ')}</i>):</b> Hãy bổ sung thêm: <b>${suggestedLex.join(', ')}</b>.`);
+    } else if (foundLex.length === 1) {
         lexicalScore = 4.5;
-        lexicalFeedback.push(`⚠️ <b>Thiếu từ vựng chủ đề (Topic Vocabulary):</b> Hãy đưa ít nhất 2–3 từ như <b>${suggestedLex.join(', ')}</b> vào câu trả lời.`);
+        lexicalFeedback.push(`⚠️ <b>Vốn từ còn mỏng (1 từ: <i>${foundLex[0]}</i>):</b> Cần đưa thêm ít nhất 2–3 từ chủ đề vào bài nói.`);
+    } else {
+        lexicalScore = 3.5;
+        maxSpeakingCap = Math.min(maxSpeakingCap, 4.0);
+        speakingCaps.push(`Không sử dụng từ vựng học thuật của Unit (0/15 từ) ➔ Khóa trần Speaking tối đa <b>Band 4.0</b>.`);
+        lexicalFeedback.push(`🔴 <b>Chưa dùng từ vựng chủ đề của Unit (0/15 từ — Band 3.5):</b> Hãy đưa các từ như <b>${suggestedLex.join(', ')}</b> vào câu trả lời.`);
+    }
+
+    if (diag.foundBasic.length > 0) {
+        lexicalScore = Math.max(3.5, lexicalScore - 0.5);
     }
 
     // 4. GRAMMATICAL RANGE & ACCURACY (GRA)
-    const hasComplexSpeech = /\b(because|although|while|whereas|if|unless|which|who|that|since)\b/i.test(text);
-    grammarScore = hasComplexSpeech ? 6.0 : 5.0;
-    if (wordCount >= 30 && hasComplexSpeech) grammarScore = 6.5;
-    grammarScore = Math.max(4.0, grammarScore - (diag.foundErrors.length * 0.5));
+    const hasB2SpeechClause = /\b(although|even though|while|whereas|unless|which|who|where|whose|maintaining|participating|preserving|to\s+concentrate|in\s+order\s+to)\b/i.test(text);
+    const hasB1SpeechClause = /\b(because|since|if|when|so that|that|to\s+do|to\s+help|to\s+protect)\b/i.test(text);
 
-    if (hasComplexSpeech && diag.foundErrors.length === 0) {
-        grammarFeedback.push(`✓ <b>Cấu trúc câu nói linh hoạt & chính xác:</b> Đã sử dụng mệnh đề phức mà không mắc lỗi ngữ pháp cơ bản.`);
-    } else if (diag.foundErrors.length > 0) {
-        grammarFeedback.push(`⚠️ <b>Phát hiện ${diag.foundErrors.length} lỗi ngữ pháp trong lời nói:</b> ${diag.foundErrors.map(e => `<i>"${escapeHtmlSafe(e.matchedText)}"</i> (${e.title})`).join('; ')}.`);
-    } else {
-        grammarFeedback.push(`🎯 <b>Mẹo nâng điểm GRA:</b> Hãy nối câu đơn thành câu phức bằng <i>because, although, which, who</i>.`);
+    grammarScore = 3.5;
+    if (hasB1SpeechClause) grammarScore += 1.0;
+    if (hasB2SpeechClause) grammarScore += 1.5;
+    if (wordCount >= 35 && totalErrorCount === 0 && (hasB1SpeechClause || hasB2SpeechClause)) {
+        grammarScore += 1.5;
+    }
+    grammarScore = Math.min(8.0, grammarScore);
+    grammarScore = Math.max(3.0, grammarScore - (criticalErrorCount * 0.9) - ((totalErrorCount - criticalErrorCount) * 0.55));
+
+    if (criticalErrorCount >= 2 || totalErrorCount >= 3) {
+        grammarScore = Math.min(grammarScore, 4.0);
+        maxSpeakingCap = Math.min(maxSpeakingCap, 4.0);
+        speakingCaps.push(`Mắc ${totalErrorCount} lỗi ngữ pháp khi nói (có lỗi câu sơ cấp) ➔ Khóa trần GRA & Overall tối đa <b>Band 4.0</b>.`);
+    } else if (criticalErrorCount === 1 || totalErrorCount === 2) {
+        grammarScore = Math.min(grammarScore, 4.5);
+        maxSpeakingCap = Math.min(maxSpeakingCap, 4.5);
+        speakingCaps.push(`Mắc ${totalErrorCount} lỗi ngữ pháp cơ bản ➔ Khóa trần GRA & Overall tối đa <b>Band 4.5</b>.`);
+    } else if (totalErrorCount === 1) {
+        grammarScore = Math.min(grammarScore, 5.5);
+        maxSpeakingCap = Math.min(maxSpeakingCap, 5.5);
     }
 
-    const overallBand = (fluencyScore + pronunciationScore + lexicalScore + grammarScore) / 4;
-    const roundedBand = (Math.round(overallBand * 2) / 2).toFixed(1);
+    if (totalErrorCount > 0) {
+        grammarFeedback.push(`🔴 <b>Phát hiện ${totalErrorCount} lỗi ngữ pháp trong lời nói:</b> ${diag.foundErrors.map(e => `<code style="color:#fda4af;">"${escapeHtmlSafe(e.matchedText)}"</code> (${e.title} ➔ ${e.upgrade})`).join('<br>• ')}.`);
+    } else if (hasB2SpeechClause) {
+        grammarFeedback.push(`✓ <b>Cấu trúc câu nói linh hoạt & chính xác:</b> Đã sử dụng mệnh đề phức/quan hệ mà không mắc lỗi ngữ pháp.`);
+    } else {
+        grammarFeedback.push(`⚠️ <b>Câu nói còn đơn giản:</b> Hãy mở rộng câu bằng <i>although, whereas, which, who</i> để nâng điểm GRA lên Band 6.0+.`);
+    }
+
+    fluencyScore = roundIeltsCamBand(fluencyScore);
+    pronunciationScore = roundIeltsCamBand(pronunciationScore);
+    lexicalScore = roundIeltsCamBand(lexicalScore);
+    grammarScore = roundIeltsCamBand(grammarScore);
+
+    const rawOverall = (fluencyScore + pronunciationScore + lexicalScore + grammarScore) / 4;
+    const finalSpeakingNum = Math.min(maxSpeakingCap, roundIeltsCamBand(rawOverall));
+    const roundedBand = finalSpeakingNum.toFixed(1);
 
     badge.innerText = `Band ${roundedBand}`;
     setTimeout(saveUnitProgress, 100);
-    badge.style.background = roundedBand >= 6.0 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(56, 189, 248, 0.25)';
-    badge.style.color = roundedBand >= 6.0 ? '#34d399' : '#38bdf8';
+    badge.style.background = finalSpeakingNum >= 6.0 ? 'rgba(16, 185, 129, 0.25)' : (finalSpeakingNum >= 5.0 ? 'rgba(56, 189, 248, 0.25)' : 'rgba(244, 63, 94, 0.25)');
+    badge.style.color = finalSpeakingNum >= 6.0 ? '#34d399' : (finalSpeakingNum >= 5.0 ? '#38bdf8' : '#fb7185');
+
+    const capBannerSpeakingHtml = speakingCaps.length > 0 ? `
+        <div style="margin-bottom: 16px; background: rgba(244, 63, 94, 0.14); border: 1.5px solid rgba(244, 63, 94, 0.45); border-left: 5px solid #f43f5e; border-radius: 10px; padding: 12px 16px; font-size: 0.88rem; color: #fecdd3; line-height: 1.65;">
+            <b style="color: #fb7185; font-size: 0.95rem;">⚖️ Chốt Chặn Khảo Thí Speaking (Strict Band Cap Active):</b>
+            <ul style="margin-top: 6px; margin-left: 18px;">
+                ${speakingCaps.map(c => `<li>${c}</li>`).join('')}
+            </ul>
+        </div>
+    ` : '';
 
     const ipaRowsHtml = sounds.map(s => {
         const isHit = matchedSounds.some(m => m.word === s.word);
@@ -3685,11 +4109,16 @@ function evaluateSpeakingComprehensive() {
     ` : '';
 
     content.innerHTML = `
+        <!-- AI DEEP EVALUATION CONTAINER (Populated when user clicks Gemini AI Examiner) -->
+        <div id="speaking_ai_deep_box" style="display: none; margin-bottom: 18px;"></div>
+
+        ${capBannerSpeakingHtml}
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 18px;">
             <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <span style="font-size:0.76rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">1. Fluency (FC)</span>
                 <div style="font-size:1.25rem; font-weight:800; color:var(--primary); margin-top:4px;">Band ${fluencyScore.toFixed(1)}</div>
-                <div style="font-size:0.74rem; color:var(--text-muted);">${wpm} WPM • Lưu loát ${fluencyRatio}%</div>
+                <div style="font-size:0.74rem; color:var(--text-muted);">${wordCount} từ • ${wpm} WPM</div>
             </div>
             <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <span style="font-size:0.76rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">2. Pronunciation (PR)</span>
@@ -3704,12 +4133,12 @@ function evaluateSpeakingComprehensive() {
             <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <span style="font-size:0.76rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">4. Grammar (GRA)</span>
                 <div style="font-size:1.25rem; font-weight:800; color:#a78bfa; margin-top:4px;">Band ${grammarScore.toFixed(1)}</div>
-                <div style="font-size:0.74rem; color:var(--text-muted);">${diag.foundErrors.length} lỗi ngữ pháp</div>
+                <div style="font-size:0.74rem; color:var(--text-muted);">${totalErrorCount} lỗi ngữ pháp</div>
             </div>
         </div>
 
         <div style="margin-bottom: 14px; background: rgba(11, 17, 32, 0.65); padding: 14px; border-radius: 10px; border-left: 3px solid var(--primary);">
-            <b style="color:var(--primary);">🎙️ Phân Tích Độ Lưu Loát, Từ Vựng & Ngữ Pháp Khi Nói:</b>
+            <b style="color:var(--primary);">🎙️ Phân Tích Nghiêm Ngặt Độ Lưu Loát, Từ Vựng & Ngữ Pháp Khi Nói:</b>
             <div style="margin-top:6px; line-height:1.7;">
                 ${[...fluencyFeedback, ...lexicalFeedback, ...grammarFeedback].join('<br>')}
             </div>
@@ -3744,6 +4173,294 @@ function updateSpeakingPrompt() {
     const box = document.getElementById('speaking_sample_preview_box');
     if (box && box.style.display === 'block' && item.sample_answer) {
         box.innerHTML = `<b style="color:#34d399;">🏆 Câu trả lời mẫu (${(item.id || 'Q1').toUpperCase()} - Band 7.5+):</b><br><i>"${escapeHtmlSafe(item.sample_answer)}"</i>`;
+    }
+}
+
+// ================= DEEP AI SENIOR EXAMINER (GEMINI API + 1-CLICK COPY PROMPT) =================
+const GEMINI_KEY_STORAGE = 'ielts_gemini_api_key';
+
+function getStoredGeminiApiKey() {
+    try {
+        return (localStorage.getItem(GEMINI_KEY_STORAGE) || '').trim();
+    } catch (e) {
+        return '';
+    }
+}
+
+function toggleGeminiApiKeyPanel(section) {
+    const panel = document.getElementById('gemini_key_panel_' + section);
+    const input = document.getElementById('gemini_api_key_input_' + section);
+    if (!panel) return;
+    if (panel.style.display === 'none' || !panel.style.display) {
+        panel.style.display = 'block';
+        if (input) input.value = getStoredGeminiApiKey();
+    } else {
+        panel.style.display = 'none';
+    }
+}
+
+function saveGeminiApiKey(section) {
+    const input = document.getElementById('gemini_api_key_input_' + section);
+    if (!input) return;
+    const val = input.value.trim();
+    if (!val) {
+        alert('Vui lòng dán mã Gemini API Key (bắt đầu bằng AIza...) vào ô trống!');
+        return;
+    }
+    try {
+        localStorage.setItem(GEMINI_KEY_STORAGE, val);
+        const wInput = document.getElementById('gemini_api_key_input_writing');
+        const sInput = document.getElementById('gemini_api_key_input_speaking');
+        if (wInput) wInput.value = val;
+        if (sInput) sInput.value = val;
+        alert('✓ Đã lưu Gemini API Key thành công! Khóa này sẽ tự động áp dụng cho toàn bộ 30 Units trên trình duyệt của bạn.');
+        const panel = document.getElementById('gemini_key_panel_' + section);
+        if (panel) panel.style.display = 'none';
+    } catch (e) {
+        alert('Không thể lưu vào LocalStorage: ' + e.message);
+    }
+}
+
+function clearGeminiApiKey() {
+    try {
+        localStorage.removeItem(GEMINI_KEY_STORAGE);
+        const wInput = document.getElementById('gemini_api_key_input_writing');
+        const sInput = document.getElementById('gemini_api_key_input_speaking');
+        if (wInput) wInput.value = '';
+        if (sInput) sInput.value = '';
+        alert('Đã xóa Gemini API Key khỏi trình duyệt.');
+    } catch (e) {}
+}
+
+function buildSeniorExaminerPrompt(mode) {
+    const vocabList = (writingConfig.unitVocab || []).join(', ');
+    if (mode === 'writing') {
+        const studentText = (document.getElementById('essay_input').value || '').trim();
+        return `Bạn là IELTS Senior Academic Examiner (Giám khảo khảo thí Cambridge cấp cao, chấm cực kỳ nghiêm khắc, tuyệt đối không chấm nương tay hay tâng bốc điểm số).
+Hãy chấm và chữa chi tiết bài IELTS Writing sau đây theo đúng chuẩn Cambridge IELTS Band Descriptors và quy tắc 3 bước (Diagnose -> Explain -> Upgrade):
+
+- Chủ đề Unit: ${document.title}
+- Đề bài (Prompt): ${writingConfig.promptText || 'Academic Writing Paragraph'}
+- Độ dài mục tiêu: tối thiểu ${writingConfig.targetWords || 70} từ
+- 15 Từ vựng học thuật mục tiêu của Unit: ${vocabList}
+
+- Bài làm của học viên (${studentText ? studentText.split(/\s+/).length : 0} từ):
+---
+${studentText}
+---
+
+YÊU CẦU CHẤM NGHIÊM NGẶT:
+1. Chấm điểm 4 tiêu chí (TR, CC, LR, GRA) và Overall (làm tròn xuống theo quy tắc IELTS: .25 -> .0, .75 -> .5). Nếu bài viết ngắn dưới chuẩn, chỉ dùng câu đơn, hoặc có từ 2 lỗi ngữ pháp cơ bản trở lên (như 'am/is/are + V nguyên mẫu', quên chia ngôi 3 số ít, 'very + V'...), bắt buộc khóa trần Overall ở mức Band 3.5 - 4.5 (tuyệt đối không cho 5.5 - 6.0).
+2. Phân tích từng câu theo đúng 3 bước:
+   - Bước 1 (Diagnose): Trích dẫn chính xác cụm từ/câu sai và gọi tên lỗi theo tiêu chí TR/CC/LR/GRA.
+   - Bước 2 (Explain): Giải thích vì sao giám khảo trừ điểm.
+   - Bước 3 (Upgrade): Sửa lại câu đó ở 2 cấp độ: [Bản sửa đúng tự nhiên Band 6.5] và [Bản nâng cấp học thuật C1/C2 Band 8.5+].
+3. Viết lại hoàn chỉnh toàn bộ đoạn văn của học viên ở 2 phiên bản: (A) Band 6.5 (giữ nguyên ý của học viên nhưng sạch lỗi) và (B) Band 8.5+ Benchmark (lồng ghép tự nhiên từ vựng Unit).`;
+    } else {
+        const currentQ = getCurrentSpeakingQuestionItem();
+        const studentText = (document.getElementById('speech_transcript_textarea').value || '').trim();
+        return `Bạn là IELTS Senior Speaking Examiner (Giám khảo khảo thí Cambridge cấp cao, chấm cực kỳ nghiêm khắc, không chấm lỏng tay).
+Hãy chấm và chữa chi tiết câu trả lời IELTS Speaking sau đây theo đúng 4 tiêu chí (FC, LR, GRA, PR) và quy tắc 3 bước (Diagnose -> Explain -> Upgrade):
+
+- Chủ đề Unit: ${document.title}
+- Câu hỏi Speaking: ${currentQ.text || ''}
+- 15 Từ vựng mục tiêu của Unit: ${vocabList}
+- Thông số âm thanh ghi nhận: Thời gian nói thực ${actualSpeechSeconds.toFixed(1)}s, Số lần ngập ngừng ${pauseCount} lần.
+
+- Lời nói (Transcript) của học viên (${studentText ? studentText.split(/\s+/).length : 0} từ):
+---
+${studentText}
+---
+
+YÊU CẦU CHẤM NGHIÊM NGẶT:
+1. Chấm điểm 4 tiêu chí (FC, LR, GRA, PR) và Overall (làm tròn xuống theo chuẩn IELTS). Nếu câu trả lời ngắn (< 25 từ), thiếu từ nối tự nhiên (Discourse Markers), hoặc mắc lỗi ngữ pháp sơ cấp, bắt buộc chấm ở khung Band 3.5 - 4.5.
+2. Chữa từng câu nói theo 3 bước: Diagnose (Chỉ lỗi) -> Explain (Giải thích bản ngữ) -> Upgrade (Nâng cấp tự nhiên).
+3. Cung cấp 2 câu trả lời hoàn chỉnh dựa trên ý của học viên: (A) Band 6.5 Natural Spoken English và (B) Band 8.5+ Idiomatic & Academic Response.`;
+    }
+}
+
+function copyExaminerPrompt(mode) {
+    const inputEl = mode === 'writing' ? document.getElementById('essay_input') : document.getElementById('speech_transcript_textarea');
+    const txt = inputEl ? inputEl.value.trim() : '';
+    if (!txt || txt.split(/\s+/).filter(Boolean).length < 3) {
+        alert(mode === 'writing'
+            ? 'Vui lòng nhập bài viết của bạn vào ô soạn thảo trước khi Copy lệnh chấm!'
+            : 'Vui lòng thu âm hoặc nhập câu trả lời Speaking vào ô văn bản trước khi Copy lệnh chấm!');
+        return;
+    }
+    const promptText = buildSeniorExaminerPrompt(mode);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(promptText).then(() => {
+            alert('✓ Đã Copy Lệnh Chấm Khảo Thí Cambridge Nghiêm Ngặt vào bộ nhớ tạm!\n\n👉 Bạn có thể dán (Ctrl+V / Paste) trực tiếp vào khung chat Antigravity AI Coach, ChatGPT hoặc Gemini để nhận bài chữa chi tiết từng câu.');
+        }).catch(() => fallbackCopyPrompt(promptText));
+    } else {
+        fallbackCopyPrompt(promptText);
+    }
+}
+
+function fallbackCopyPrompt(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand('copy');
+        alert('✓ Đã Copy Lệnh Chấm Khảo Thí Cambridge vào bộ nhớ tạm! Bạn có thể dán (Paste) vào khung chat AI Coach.');
+    } catch (e) {
+        alert('Không thể tự động copy. Vui lòng kiểm tra quyền trình duyệt.');
+    }
+    document.body.removeChild(ta);
+}
+
+async function callGeminiSeniorExaminerAPI(promptText) {
+    const apiKey = getStoredGeminiApiKey();
+    if (!apiKey) {
+        throw new Error('MISSING_API_KEY');
+    }
+
+    const models = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
+    let lastError = null;
+
+    for (const modelName of models) {
+        try {
+            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${encodeURIComponent(apiKey)}`;
+            const resp = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ role: 'user', parts: [{ text: promptText }] }],
+                    generationConfig: {
+                        temperature: 0.2,
+                        maxOutputTokens: 2048
+                    }
+                })
+            });
+            const data = await resp.json();
+            if (!resp.ok) {
+                lastError = new Error((data && data.error && data.error.message) || `HTTP ${resp.status}`);
+                continue;
+            }
+            const candidateText = data?.candidates?.[0]?.content?.parts?.map(p => p.text || '').join('\n') || '';
+            if (candidateText) {
+                return { text: candidateText, model: modelName };
+            }
+        } catch (err) {
+            lastError = err;
+        }
+    }
+    throw lastError || new Error('Không thể kết nối tới Gemini API.');
+}
+
+function formatMarkdownToHtml(md) {
+    let safe = escapeHtmlSafe(md);
+    safe = safe.replace(/^###\s+(.*)$/gm, '<h4 style="color:#38bdf8; margin:12px 0 6px 0; font-size:1rem;">$1</h4>');
+    safe = safe.replace(/^##\s+(.*)$/gm, '<h3 style="color:#c084fc; margin:14px 0 8px 0; font-size:1.08rem;">$1</h3>');
+    safe = safe.replace(/\*\*(.*?)\*\*/g, '<b style="color:#f8fafc;">$1</b>');
+    safe = safe.replace(/`([^`]+)`/g, '<code style="background:rgba(56,189,248,0.15); color:#7dd3fc; padding:2px 6px; border-radius:4px;">$1</code>');
+    safe = safe.replace(/\n/g, '<br>');
+    return safe;
+}
+
+async function evaluateWritingWithGeminiAI() {
+    const text = (document.getElementById('essay_input').value || '').trim();
+    if (!text || text.split(/\s+/).filter(Boolean).length < 5) {
+        alert('Vui lòng viết tối thiểu 5 từ trước khi gọi Giám khảo AI chấm bài!');
+        return;
+    }
+
+    // First run the built-in Strict Examiner v3.0 so the 4 criteria & annotated essay are visible
+    evaluateWriting();
+
+    const apiKey = getStoredGeminiApiKey();
+    if (!apiKey) {
+        const panel = document.getElementById('gemini_key_panel_writing');
+        if (panel) panel.style.display = 'block';
+        alert('🔑 Để chấm trực tiếp bằng AI Gemini trên trình duyệt, vui lòng dán mã Gemini API Key (miễn phí từ Google AI Studio) vào khung cấu hình vừa mở.\n\n💡 MẸO NHANH: Nếu không muốn dùng API Key, bạn chỉ cần bấm nút "📋 Copy Lệnh Chấm Cho AI Coach" ngay bên cạnh rồi dán vào khung chat Antigravity!');
+        return;
+    }
+
+    const aiBox = document.getElementById('writing_ai_deep_box');
+    if (!aiBox) return;
+    aiBox.style.display = 'block';
+    aiBox.innerHTML = `
+        <div style="background: linear-gradient(135deg, rgba(88, 28, 135, 0.35), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(168, 85, 247, 0.55); border-radius: 12px; padding: 16px; color: #e9d5ff;">
+            ⏳ <b>Đang kết nối Giám Khảo Cấp Cao AI (Gemini Senior Examiner)...</b> Đang phân tích từng câu theo quy chuẩn Cambridge Band Descriptors (Diagnose ➔ Explain ➔ Upgrade)...
+        </div>
+    `;
+
+    try {
+        const promptText = buildSeniorExaminerPrompt('writing');
+        const result = await callGeminiSeniorExaminerAPI(promptText);
+        aiBox.innerHTML = `
+            <div style="background: linear-gradient(135deg, rgba(46, 16, 101, 0.45), rgba(15, 23, 42, 0.98)); border: 1.5px solid #a855f7; border-radius: 14px; padding: 18px 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid rgba(168, 85, 247, 0.35); padding-bottom: 10px; margin-bottom: 12px;">
+                    <h4 style="color: #d8b4fe; font-size: 1.08rem; margin: 0;">🤖 Báo Cáo Chấm Sâu Từng Câu Từ AI Senior Examiner (${result.model})</h4>
+                    <span style="background: rgba(168, 85, 247, 0.25); color: #e9d5ff; padding: 3px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 700;">Chuẩn Khảo Thí Cambridge</span>
+                </div>
+                <div style="font-size: 0.92rem; line-height: 1.75; color: #e2e8f0;">
+                    ${formatMarkdownToHtml(result.text)}
+                </div>
+            </div>
+        `;
+    } catch (err) {
+        aiBox.innerHTML = `
+            <div style="background: rgba(244, 63, 94, 0.15); border: 1px solid #f43f5e; border-radius: 10px; padding: 14px; color: #fecdd3; font-size: 0.9rem;">
+                ⚠️ <b>Không thể gọi Gemini API:</b> ${escapeHtmlSafe(err.message)}<br>
+                👉 Hãy kiểm tra lại API Key (nút <b>🔑 Cài API Key</b>) hoặc bấm <b>"📋 Copy Lệnh Chấm Cho AI Coach"</b> để dán trực tiếp vào khung chat Antigravity!
+            </div>
+        `;
+    }
+}
+
+async function evaluateSpeakingWithGeminiAI() {
+    const text = (document.getElementById('speech_transcript_textarea').value || '').trim();
+    if (!text || text.split(/\s+/).filter(Boolean).length < 3) {
+        alert('Vui lòng thu âm giọng nói hoặc nhập câu trả lời Speaking vào ô văn bản trước khi gọi Giám khảo AI!');
+        return;
+    }
+
+    evaluateSpeakingComprehensive();
+
+    const apiKey = getStoredGeminiApiKey();
+    if (!apiKey) {
+        const panel = document.getElementById('gemini_key_panel_speaking');
+        if (panel) panel.style.display = 'block';
+        alert('🔑 Để chấm trực tiếp bằng AI Gemini trên trình duyệt, vui lòng dán mã Gemini API Key vào khung cấu hình vừa mở.\n\n💡 MẸO NHANH: Bạn cũng có thể bấm nút "📋 Copy Lệnh Chấm Cho AI Coach" để dán vào khung chat Antigravity!');
+        return;
+    }
+
+    const aiBox = document.getElementById('speaking_ai_deep_box');
+    if (!aiBox) return;
+    aiBox.style.display = 'block';
+    aiBox.innerHTML = `
+        <div style="background: linear-gradient(135deg, rgba(88, 28, 135, 0.35), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(168, 85, 247, 0.55); border-radius: 12px; padding: 16px; color: #e9d5ff;">
+            ⏳ <b>Đang kết nối Giám Khảo Speaking Cấp Cao AI (Gemini Senior Examiner)...</b> Đang phân tích lời nói theo 4 tiêu chí FC, LR, GRA, PR...
+        </div>
+    `;
+
+    try {
+        const promptText = buildSeniorExaminerPrompt('speaking');
+        const result = await callGeminiSeniorExaminerAPI(promptText);
+        aiBox.innerHTML = `
+            <div style="background: linear-gradient(135deg, rgba(46, 16, 101, 0.45), rgba(15, 23, 42, 0.98)); border: 1.5px solid #a855f7; border-radius: 14px; padding: 18px 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid rgba(168, 85, 247, 0.35); padding-bottom: 10px; margin-bottom: 12px;">
+                    <h4 style="color: #d8b4fe; font-size: 1.08rem; margin: 0;">🤖 Báo Cáo Chấm Sâu Speaking Từ AI Senior Examiner (${result.model})</h4>
+                    <span style="background: rgba(168, 85, 247, 0.25); color: #e9d5ff; padding: 3px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 700;">Chuẩn Khảo Thí Cambridge</span>
+                </div>
+                <div style="font-size: 0.92rem; line-height: 1.75; color: #e2e8f0;">
+                    ${formatMarkdownToHtml(result.text)}
+                </div>
+            </div>
+        `;
+    } catch (err) {
+        aiBox.innerHTML = `
+            <div style="background: rgba(244, 63, 94, 0.15); border: 1px solid #f43f5e; border-radius: 10px; padding: 14px; color: #fecdd3; font-size: 0.9rem;">
+                ⚠️ <b>Không thể gọi Gemini API:</b> ${escapeHtmlSafe(err.message)}<br>
+                👉 Hãy kiểm tra lại API Key (nút <b>🔑 Cài API Key</b>) hoặc bấm <b>"📋 Copy Lệnh Chấm Cho AI Coach"</b>!
+            </div>
+        `;
     }
 }
 
