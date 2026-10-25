@@ -535,17 +535,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: How do you usually commute to school or work every day?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu phương tiện đi lại (electric bus / metro railway / bicycle) + Giải thích lý do bằng because/due to (convenient, punctual, helps avoid traffic congestion)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu phương tiện đi lại (electric bus / metro railway / bicycle) + Giải thích lý do bằng because/due to (convenient, punctual, helps avoid traffic congestion).",
+            "sample_answer": "Every morning, I commute to university by electric bus because it is affordable and convenient. Since the city created dedicated bus lanes last year, the service has become much more punctual and helps me avoid rush-hour traffic delays.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: What is the biggest traffic problem in your city at the moment?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu vấn đề (severe rush-hour congestion and toxic exhaust fumes) + Chỉ ra nguyên nhân (too many private vehicles and narrow road infrastructure)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu vấn đề (severe rush-hour congestion and toxic exhaust fumes) + Chỉ ra nguyên nhân (too many private vehicles and narrow road infrastructure).",
+            "sample_answer": "The biggest challenge in my city is severe traffic congestion due to the overwhelming number of private vehicles. During peak hours, millions of motorbikes and cars cause long delays and release toxic exhaust fumes into the air.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: How can the government encourage more people to use public transport?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu 2 giải pháp (upgrade the metro network to make it more reliable + subsidize ticket prices for passengers and cyclists)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu 2 giải pháp (upgrade the metro network to make it more reliable + subsidize ticket prices for passengers and cyclists).",
+            "sample_answer": "To encourage people to leave their cars at home, the government should upgrade transport infrastructure and expand the underground railway network. Furthermore, authorities ought to subsidize ticket fares so that public transit becomes a reliable alternative for every passenger.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [

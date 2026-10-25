@@ -536,17 +536,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: Do you live in a nuclear family or an extended family?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu rõ mô hình gia đình (nuclear / extended household) + Số lượng thành viên (parents, siblings) + Cảm nhận về sự gắn kết (strong emotional bond & supportive atmosphere)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu rõ mô hình gia đình (nuclear / extended household) + Số lượng thành viên (parents, siblings) + Cảm nhận về sự gắn kết (strong emotional bond & supportive atmosphere).",
+            "sample_answer": "I currently live in a small nuclear family with my parents and my younger sibling. Although our household is not as large as a traditional extended family, we share a very strong emotional bond and eat dinner together every evening.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: Who has been the most influential person in your upbringing?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng so sánh nhất (the most influential person is my mother/father/grandmother) + Giải thích cách họ nurture và dạy bạn tính tự lập (independent & responsible)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng so sánh nhất (the most influential person is my mother/father/grandmother) + Giải thích cách họ nurture và dạy bạn tính tự lập (independent & responsible).",
+            "sample_answer": "Without a doubt, my mother has been the most influential person in my upbringing. She has always been wonderfully supportive of my academic goals and taught me how to become an independent and responsible adult.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: How can parents and teenagers reduce the generation gap and live in harmony?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu giải pháp (open communication, sharing household chores) + Cách bố mẹ lắng nghe con cái trong giai đoạn adolescence để tránh family conflict."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu giải pháp (open communication, sharing household chores) + Cách bố mẹ lắng nghe con cái trong giai đoạn adolescence để tránh family conflict.",
+            "sample_answer": "In my view, open communication and mutual patience are the keys to family harmony. Parents should listen to teenagers empathetically during adolescence, while young people ought to share daily household chores to avoid unnecessary conflict.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [

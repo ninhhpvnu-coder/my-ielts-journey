@@ -534,17 +534,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: Do you enjoy visiting history museums and ancient monuments?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Trả lời trực tiếp + Nêu trải nghiệm xem các precious artifacts on display tại special exhibitions để hiểu về early civilizations và royal dynasties."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Trả lời trực tiếp + Nêu trải nghiệm xem các precious artifacts on display tại special exhibitions để hiểu về early civilizations và royal dynasties.",
+            "sample_answer": "Yes, I find history museums deeply fascinating. Whenever I attend a special exhibition and see ancient artifacts on public display, I can vividly imagine how early human civilizations and royal dynasties lived thousands of years ago.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: Tell me about an interesting historical event or monument you learned about at school.",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng thì Quá khứ đơn & Quá khứ tiếp diễn (While I was studying history...) + Mô tả một historic monument hoặc ancient ruin và ý nghĩa của nó."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng thì Quá khứ đơn & Quá khứ tiếp diễn (While I was studying history...) + Mô tả một historic monument hoặc ancient ruin và ý nghĩa của nó.",
+            "sample_answer": "At high school, I learned about the Imperial Citadel of Thang Long, a magnificent historic monument in Hanoi. While archaeologists were excavating the site, they discovered thousands of precious ceramics and stone ruins that chronicle our nation's proud origin.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: How can modern museums make history exhibitions more attractive to young people?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Đề xuất ứng dụng công nghệ (display 3D holograms, virtual reality tours of excavated ruins) + Tổ chức hoạt động tương tác cùng historians."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Đề xuất ứng dụng công nghệ (display 3D holograms, virtual reality tours of excavated ruins) + Tổ chức hoạt động tương tác cùng historians.",
+            "sample_answer": "Modern museums can attract young visitors by combining authentic artifacts with digital technology. For example, using virtual reality headsets and 3D holograms allows students to explore ancient empires interactively and appreciate the wisdom of their ancestors.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [

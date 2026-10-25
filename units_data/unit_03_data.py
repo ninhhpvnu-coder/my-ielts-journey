@@ -536,17 +536,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: Are there many green parks or natural landscapes near where you live?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Mô tả công viên trong khu vực urban của bạn + So sánh không khí ở đó (much cleaner and quieter than busy streets) + Hoạt động bạn thường làm."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Mô tả công viên trong khu vực urban của bạn + So sánh không khí ở đó (much cleaner and quieter than busy streets) + Hoạt động bạn thường làm.",
+            "sample_answer": "Fortunately, yes. I live near a large botanical park in my urban area. The air inside the park is much cleaner and fresher than on the busy streets, and the green landscape provides a safe habitat for local bird species.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: What is the most serious environmental problem in your city today?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu vấn đề lớn nhất (air pollution / plastic waste) + Giải thích nguyên nhân (carbon emissions from motorbikes) + Đề xuất cách khắc phục."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu vấn đề lớn nhất (air pollution / plastic waste) + Giải thích nguyên nhân (carbon emissions from motorbikes) + Đề xuất cách khắc phục.",
+            "sample_answer": "In my opinion, the most serious environmental problem in my city is air pollution caused by heavy traffic emissions. To solve this issue, the government should expand public transport and invest more in renewable solar energy.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: What do you and your family do to protect the environment and recycle waste?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Kể thói quen recycle glass/paper tại nhà + Hạn chế túi nilon để preserve the ecosystem + Khuyến khích bạn bè cùng thực hiện."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Kể thói quen recycle glass/paper tại nhà + Hạn chế túi nilon để preserve the ecosystem + Khuyến khích bạn bè cùng thực hiện.",
+            "sample_answer": "My family tries our best to live an eco-friendly life and preserve the natural ecosystem. For example, we always separate plastic bottles and paper to recycle them weekly, and we bring reusable cloth bags whenever we go shopping.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [

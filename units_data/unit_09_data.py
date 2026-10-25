@@ -534,17 +534,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: What is your favourite tourist destination in your country?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu tên điểm đến (Ha Long Bay / Hoi An / Sapa) + Mô tả cảnh quan và văn hóa (spectacular scenery, historic landmarks, warm hospitality, authentic cuisine)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu tên điểm đến (Ha Long Bay / Hoi An / Sapa) + Mô tả cảnh quan và văn hóa (spectacular scenery, historic landmarks, warm hospitality, authentic cuisine).",
+            "sample_answer": "My favourite tourist destination in Vietnam is Hoi An Ancient Town, which is a famous UNESCO World Heritage site. Visitors are always charmed by its historic landmarks, warm local hospitality, and authentic central cuisine.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: Do you usually plan a detailed itinerary before travelling, or do you prefer spontaneous excursions?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu thói quen lập travel itinerary + Giải thích lý do (giúp tiết kiệm thời gian, đặt vé tham quan cultural heritage sites và mua handmade souvenirs)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu thói quen lập travel itinerary + Giải thích lý do (giúp tiết kiệm thời gian, đặt vé tham quan cultural heritage sites và mua handmade souvenirs).",
+            "sample_answer": "I usually prepare a flexible travel itinerary before my trip. Planning ahead helps me book guided day excursions to spectacular natural sites while still leaving free time to explore local markets and buy handmade souvenirs.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: How should tourists behave when visiting fragile natural parks or indigenous villages?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng should / must (Tourists must be respectful of local customs, must not litter in fragile ecosystems, and authorities should regulate visitor numbers)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng should / must (Tourists must be respectful of local customs, must not litter in fragile ecosystems, and authorities should regulate visitor numbers).",
+            "sample_answer": "When visiting fragile ecosystems or indigenous villages, tourists must be strictly respectful of local customs. Moreover, authorities should regulate daily visitor numbers and ban single-use plastics to protect cultural heritage for future generations.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [

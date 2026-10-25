@@ -536,17 +536,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: What kind of sports or daily workout do you do to stay healthy?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Kể môn thể thao hoặc morning workout bạn yêu thích + Giải thích lợi ích (build physical stamina & relieve academic stress) + Tần suất tập luyện."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Kể môn thể thao hoặc morning workout bạn yêu thích + Giải thích lợi ích (build physical stamina & relieve academic stress) + Tần suất tập luyện.",
+            "sample_answer": "To avoid a sedentary lifestyle, I do a thirty-minute workout every afternoon. I usually go jogging or swimming with my brother because regular exercise is highly beneficial for building physical stamina and relieving academic stress.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: Do you think you have a balanced diet? What healthy foods do you usually consume?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Đánh giá chế độ ăn (balanced diet rich in nutrition) + Kể các thực phẩm lành mạnh giúp boost immunity + Hạn chế đồ ngọt để prevent obesity."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Đánh giá chế độ ăn (balanced diet rich in nutrition) + Kể các thực phẩm lành mạnh giúp boost immunity + Hạn chế đồ ngọt để prevent obesity.",
+            "sample_answer": "Yes, I try to maintain a balanced diet rich in natural nutrition. Every day, I consume plenty of fresh vegetables, fruit, and fish to boost my immunity, while limiting sugary fast food to prevent obesity.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: How do you usually relax and protect your mental wellbeing after a busy week?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu hoạt động outdoor recreation (đi bộ công viên, đạp xe cùng bạn bè) + Tránh thói quen sedentary + Cảm giác tươi mới đạt overall wellbeing."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu hoạt động outdoor recreation (đi bộ công viên, đạp xe cùng bạn bè) + Tránh thói quen sedentary + Cảm giác tươi mới đạt overall wellbeing.",
+            "sample_answer": "After a stressful week at university, I love spending time on outdoor recreation. Going cycling by the lake or hiking in the countryside refreshes my mind and protects my overall mental wellbeing.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [

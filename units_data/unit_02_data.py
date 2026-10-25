@@ -545,17 +545,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: Do you prefer studying alone or studying with friends? Why?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Khẳng định lựa chọn (alone / with friends) + Nêu lý do (collaborate làm bài tập / dễ concentrate) + Đưa ví dụ buổi học thực tế."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Khẳng định lựa chọn (alone / with friends) + Nêu lý do (collaborate làm bài tập / dễ concentrate) + Đưa ví dụ buổi học thực tế.",
+            "sample_answer": "To be honest, I prefer a combination of both, depending on the task. When I need to revise for exams or write an academic essay, I study alone in the library so I can concentrate deeply. However, I love collaborating with friends on group assignments because we can share creative ideas.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: What subject do you like most in your curriculum?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu môn học yêu thích trong giáo trình + Giải thích lý do (bài giảng lecture hấp dẫn, giảng viên tutor tận tâm) + Kết quả đạt được."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu môn học yêu thích trong giáo trình + Giải thích lý do (bài giảng lecture hấp dẫn, giảng viên tutor tận tâm) + Kết quả đạt được.",
+            "sample_answer": "My favourite subject in our university curriculum is Economics. The lectures are always fascinating, and my course tutor uses real-world case studies that help us absorb complex theories easily and unlock our full potential.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: How do you usually concentrate when you have an important assignment?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu không gian học tập (thư viện yên tĩnh) + Biện pháp tự kỷ luật self-discipline (tắt smartphone) + Mục tiêu nộp bài trước deadline."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu không gian học tập (thư viện yên tĩnh) + Biện pháp tự kỷ luật self-discipline (tắt smartphone) + Mục tiêu nộp bài trước deadline.",
+            "sample_answer": "Whenever I have an important assignment with a strict deadline, I practice strong self-discipline. For instance, I turn off my smartphone notifications and break the research into smaller steps so I can finish everything on time.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [

@@ -535,17 +535,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: Do you live in a house in the suburbs or an apartment in the city centre?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu nơi ở hiện tại (residential suburb / city apartment) + Mô tả không gian (spacious rooms, affordable rent) + Tiện ích xung quanh (adjacent to public facilities)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu nơi ở hiện tại (residential suburb / city apartment) + Mô tả không gian (spacious rooms, affordable rent) + Tiện ích xung quanh (adjacent to public facilities).",
+            "sample_answer": "I live in a quiet residential suburb on the eastern edge of the city. Houses in my neighbourhood are much more spacious and affordable than tiny city-centre flats, and our home is located directly adjacent to a lovely community park.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: How has your hometown changed over the last ten years?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng Hiện tại hoàn thành (My hometown has modernized rapidly) + Nêu các công trình mới (glass skyscrapers constructed, old markets renovated, parks expanded)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng Hiện tại hoàn thành (My hometown has modernized rapidly) + Nêu các công trình mới (glass skyscrapers constructed, old markets renovated, parks expanded).",
+            "sample_answer": "Over the last ten years, my hometown has been significantly modernized. Several old factories along the river have been demolished to make way for glass office skyscrapers, and the historic market street has been converted into a clean pedestrian zone.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: What kind of recreational facilities would you like to see added to your neighbourhood?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu tiện ích mong muốn (a car-free pedestrian zone or an indoor sports facility) + Giải thích lợi ích cho người dân trong khu dân cư (residential community)."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu tiện ích mong muốn (a car-free pedestrian zone or an indoor sports facility) + Giải thích lợi ích cho người dân trong khu dân cư (residential community).",
+            "sample_answer": "I would love to see the local council construct an indoor sports facility and expand the public library in our suburb. Having modern recreational facilities nearby would encourage residents of all ages to stay active and connected.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [

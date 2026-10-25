@@ -535,17 +535,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: What digital device do you use most often for your daily study?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu thiết bị (laptop / smartphone) + Giải thích cách dùng truy cập e-learning platform giúp việc học easily accessible và productive + Ví dụ cụ thể."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu thiết bị (laptop / smartphone) + Giải thích cách dùng truy cập e-learning platform giúp việc học easily accessible và productive + Ví dụ cụ thể.",
+            "sample_answer": "The digital device I use most frequently is my portable laptop. It allows me to access interactive e-learning platforms and online libraries from anywhere, which makes my daily exam revision much more efficient and productive.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: How do you think artificial intelligence (AI) will transform education in the future?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng thì tương lai (AI will transform...) + Nêu lợi ích (virtual tutors, automate translation, improve efficiency) + Lưu ý tránh phụ thuộc."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Dùng thì tương lai (AI will transform...) + Nêu lợi ích (virtual tutors, automate translation, improve efficiency) + Lưu ý tránh phụ thuộc.",
+            "sample_answer": "I believe artificial intelligence will transform higher education in remarkable ways. Smart virtual tutors will automate routine grading and personalize lessons for each student, although learners must still think critically for themselves.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: What do you do to avoid smartphone addiction and protect your privacy online?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu biện pháp tránh screen addiction (tắt thông báo khi học) + Cách bảo vệ data privacy & cybersecurity (mật khẩu mạnh) + Lợi ích đạt được."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu biện pháp tránh screen addiction (tắt thông báo khi học) + Cách bảo vệ data privacy & cybersecurity (mật khẩu mạnh) + Lợi ích đạt được.",
+            "sample_answer": "To prevent smartphone addiction, I set a two-hour daily screen limit and leave my phone outside my bedroom at night. In addition, I use strong passwords and two-factor authentication to strengthen cybersecurity and protect my personal data privacy.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [

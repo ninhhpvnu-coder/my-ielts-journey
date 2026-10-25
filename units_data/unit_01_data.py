@@ -537,17 +537,23 @@ SPEAKING_TASK = {
         {
             "id": "q1",
             "text": "Q1: Tell me about your daily routine. What do you usually do in the morning?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu giờ thức dậy trong morning routine + Kể 2 hoạt động chính (tập thể dục, ăn sáng) + Nêu lợi ích cho healthy lifestyle."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu giờ thức dậy trong morning routine + Kể 2 hoạt động chính (tập thể dục, ăn sáng) + Nêu lợi ích cho healthy lifestyle.",
+            "sample_answer": "Well, I follow quite a productive daily routine. Every morning, I wake up at six o'clock to do a light workout and enjoy a healthy breakfast with my family. Maintaining this habit gives me plenty of energy to concentrate on my studies throughout the day.",
+            "sample_audio_key": "speaking_q1"
         },
         {
             "id": "q2",
             "text": "Q2: Do you like your neighborhood? What do people in your community often do together?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Khẳng định yêu thích khu phố neighborhood + Kể hoạt động cộng đồng (participate in cleaning, planting trees) + Nêu cảm nhận."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Khẳng định yêu thích khu phố neighborhood + Kể hoạt động cộng đồng (participate in cleaning, planting trees) + Nêu cảm nhận.",
+            "sample_answer": "Yes, I really love my neighborhood because the local community is extremely warm and supportive. On weekends, residents often participate in cleaning the public park and planting trees together, which creates a clean and sustainable living environment.",
+            "sample_audio_key": "speaking_q2"
         },
         {
             "id": "q3",
             "text": "Q3: Have you ever done any volunteer work to protect the environment?",
-            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu hoạt động volunteer đã/đang tham gia + Giải thích tác động tạo sustainable environment + Nêu mục tiêu goal sắp tới."
+            "guide": "💡 <b>Gợi ý công thức 1+2:</b> Nêu hoạt động volunteer đã/đang tham gia + Giải thích tác động tạo sustainable environment + Nêu mục tiêu goal sắp tới.",
+            "sample_answer": "Yes, definitely. Last summer, I worked as a student volunteer for a coastal cleanup project. It was a wonderful opportunity to reduce plastic waste and fulfill my responsibility as a global citizen.",
+            "sample_audio_key": "speaking_q3"
         }
     ],
     "targeted_sounds": [
