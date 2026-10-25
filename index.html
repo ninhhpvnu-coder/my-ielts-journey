@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IELTS 8.0">
+    <link rel="manifest" href="manifest.json">
+    <title>My IELTS journey — Command Center (Target: Band 8.0)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b1120;
+            --surface-color: #1e293b;
+            --card-color: #334155;
+            --primary: #38bdf8;
+            --primary-hover: #0ea5e9;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --purple: #a78bfa;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 14px 12px 48px 12px;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 28px 24px 60px 24px;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 26px 18px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.96));
+            border-radius: 20px;
+            border: 1.5px solid rgba(56, 189, 248, 0.28);
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
+            margin-bottom: 22px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.16);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.65rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.35rem;
+            }
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* KPI Stats Row */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .kpi-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+            }
+        }
+
+        .kpi-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .kpi-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .kpi-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .kpi-sub {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Navigation Tabs */
+        .hub-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            margin-bottom: 22px;
+        }
+
+        .hub-tab-btn {
+            background: var(--surface-color);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .hub-tab-btn.active, .hub-tab-btn:hover {
+            background: var(--primary);
+            color: #0b1120;
+            border-color: var(--primary);
+            box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
+        }
+
+        .hub-section {
+            display: none;
+        }
+
+        .hub-section.active {
+            display: block;
+            animation: fadeIn 0.25s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Unit Cards Grid */
+        .units-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .units-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .unit-card {
+            background: var(--surface-color);
+            border: 1.5px solid var(--border);
+            border-radius: 18px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .unit-card:hover {
+            border-color: rgba(56, 189, 248, 0.55);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+        }
+
+        .unit-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .unit-num-pill {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 999px;
+        }
+
+        .unit-status-pill {
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-muted);
+        }
+
+        .unit-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .unit-desc {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .unit-scores-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            background: rgba(11, 17, 32, 0.65);
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 16px;
+            font-size: 0.78rem;
+        }
+
+        .score-mini {
+            text-align: center;
+        }
+
+        .score-mini b {
+            display: block;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .btn-launch {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            color: #0b1120;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 12px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-launch:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+        }
+
+        /* C1-C2 Matrix & Cambridge Box */
+        .panel-box {
+            background: var(--surface-color);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+        .topic-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .topic-pill {
+            background: rgba(11, 17, 32, 0.8);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .topic-pill.active {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            border-color: #10b981;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+        }
+
+        .input-box {
+            background: #0b1120;
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="badge">My IELTS journey</span>
+        <h1>🎯 IELTS Mastery Command Center</h1>
+        <p class="subtitle">Hệ thống huấn luyện 4 kỹ năng chuẩn Cambridge (2026 — 2028) • Từ nền tảng Foundation (Band 5.0) vươn tới đỉnh cao Academic Band 8.0+</p>
+    </header>
+
+    <!-- KPI Overview Row -->
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-label">📚 Giáo Trình Foundation</div>
+            <div class="kpi-value" id="kpi_units_done">0 / 5 Units</div>
+            <div class="kpi-sub">75 Từ Vựng Cốt Lõi & 35 Bài Lab</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">🎯 Độ Chính Xác Quiz</div>
+            <div class="kpi-value" id="kpi_avg_quiz" style="color: var(--success);">--%</div>
+            <div class="kpi-sub">Trung bình Từ vựng & Ngữ pháp</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">🧠 Kho Từ Vựng C1-C2</div>
+            <div class="kpi-value" style="color: var(--warning);">7 Chuyên Đề</div>
+            <div class="kpi-sub">76+ Thẻ Anki & Nominalisation</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">🏆 Đích Đến Mục Tiêu</div>
+            <div class="kpi-value" id="kpi_cam_latest" style="color: var(--purple);">Band 8.0+</div>
+            <div class="kpi-sub">L:8.5 • R:8.5 • W:7.5 • S:7.5</div>
+        </div>
+    </div>
+
+    <!-- Main Section Switcher -->
+    <div class="hub-tabs">
+        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Chặng 1: Giáo Trình Foundation (5 Units)</button>
+        <button class="hub-tab-btn" onclick="switchHubTab('vocab_c1', this)">🧠 Chặng 2: Nâng Cấp Từ Vựng C1-C2 & Anki</button>
+        <button class="hub-tab-btn" onclick="switchHubTab('cambridge', this)">📊 Chặng 3: Khảo Thí & Chẩn Đoán Đề Cambridge (1-20)</button>
+    </div>
+
+    <!-- SECTION 1: 5 FOUNDATION UNITS -->
+    <div id="foundation" class="hub-section active">
+        <div class="units-grid" id="units_cards_container"></div>
+    </div>
+
+    <!-- SECTION 2: C1-C2 VOCAB UPGRADE MATRIX & ANKI -->
+    <div id="vocab_c1" class="hub-section">
+        <div class="panel-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;">
+                <div>
+                    <h2 style="color: var(--primary); font-size: 1.3rem;">🧠 Ma Trận Chuyển Hóa Từ Vựng B1-B2 ➔ C1-C2 (Band 8.0+ Upgrade)</h2>
+                    <p style="color: var(--text-muted); font-size: 0.86rem;">Chọn chuyên đề bên dưới để học cách thay thế từ vựng cơ bản bằng Academic Collocations & Nominalisation chuẩn giám khảo Cambridge:</p>
+                </div>
+                <a href="anki_decks/personal_vocab_vault_anki.tsv" download class="mode-btn" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; padding: 8px 14px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.84rem;">📥 Tải Trọn Bộ Thẻ Anki (.TSV)</a>
+            </div>
+
+            <div class="topic-pills" id="c1_topic_pills"></div>
+
+            <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 12px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Diễn Đạt Cơ Bản (Band 5.5 - 6.0)</th>
+                            <th>Nâng Cấp Học Thuật C1-C2 (Band 8.0+)</th>
+                            <th>Câu Ứng Dụng Mẫu Trong Writing Task 2</th>
+                        </tr>
+                    </thead>
+                    <tbody id="c1_matrix_tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: CAMBRIDGE 1-20 DIAGNOSTIC & BAND CALCULATOR -->
+    <div id="cambridge" class="hub-section">
+        <div class="panel-box">
+            <h2 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 6px;">📊 Công Cụ Quy Đổi Điểm & Lưu Hồ Sơ Đề Thi Cambridge (Cam 1 — 20)</h2>
+            <p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 18px;">
+                Sau khi làm đề trong thư mục <code>materials/cambridge/Cambridge_01..20</code>, nhập số câu đúng (/40) bên dưới để quy đổi ra Band Score chuẩn Academic và lưu thẳng vào sổ điểm AI (<code>score_history.md</code>):
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 18px;">
+                <div>
+                    <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Bộ Đề Cambridge:</label>
+                    <select id="cam_book" class="input-box">
+                        <option value="Cambridge 20">Cambridge IELTS 20</option>
+                        <option value="Cambridge 19">Cambridge IELTS 19</option>
+                        <option value="Cambridge 18">Cambridge IELTS 18</option>
+                        <option value="Cambridge 17">Cambridge IELTS 17</option>
+                        <option value="Cambridge 16">Cambridge IELTS 16</option>
+                        <option value="Cambridge 15">Cambridge IELTS 15</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Bài Test:</label>
+                    <select id="cam_test" class="input-box">
+                        <option value="Test 1">Test 1</option>
+                        <option value="Test 2">Test 2</option>
+                        <option value="Test 3">Test 3</option>
+                        <option value="Test 4">Test 4</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">🎧 Số Câu Đúng Listening (0-40):</label>
+                    <input type="number" id="cam_l_raw" class="input-box" min="0" max="40" value="35" oninput="updateCamCalculation()">
+                </div>
+                <div>
+                    <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">📖 Số Câu Đúng Reading (0-40):</label>
+                    <input type="number" id="cam_r_raw" class="input-box" min="0" max="40" value="35" oninput="updateCamCalculation()">
+                </div>
+            </div>
+
+            <div style="margin-bottom: 18px;">
+                <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">🔍 Nguyên Nhân Sai / Bẫy Đề Thi Gặp Phải (Trap Taxonomy):</label>
+                <input type="text" id="cam_trap_note" class="input-box" placeholder="Ví dụ: Bẫy Paraphrase Section 3, nhầm False vs Not Given ở Passage 2...">
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; background: rgba(11, 17, 32, 0.8); padding: 16px 20px; border-radius: 14px; border: 1px solid rgba(56, 189, 248, 0.3);">
+                <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">🎧 Listening Band:</span>
+                        <div id="cam_l_band_out" style="font-size: 1.4rem; font-weight: 800; color: var(--primary);">8.0</div>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">📖 Academic Reading Band:</span>
+                        <div id="cam_r_band_out" style="font-size: 1.4rem; font-weight: 800; color: var(--success);">8.0</div>
+                    </div>
+                </div>
+                <button onclick="saveCambridgeScore()" class="btn-launch" style="width: auto; padding: 12px 24px;">
+                    💾 Lưu Điểm Đề Thi Vào Sổ Tay AI
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const UNITS_META = [
+    {
+        id: "01",
+        title: "Unit 1: My World, My Community & Global Voices",
+        file: "unit_01_interactive_practice.html",
+        desc: "Hiện tại đơn vs Hiện tại tiếp diễn, Động từ trạng thái (Stative Verbs), Nghe điền biểu mẫu Section 1, Đọc lướt Skim/Scan & Viết câu ghép FANBOYS.",
+        vocabPreview: "routine, community, volunteer, citizen, participate, sustainable, environment..."
+    },
+    {
+        id: "02",
+        title: "Unit 2: Education, Learning Habits & Campus Life",
+        file: "unit_02_interactive_practice.html",
+        desc: "Quá khứ đơn vs Hiện tại hoàn thành, Mạo từ A/An/The, Câu phức với Because/Although, Nghe tư vấn học thuật & Viết đoạn văn PEEL.",
+        vocabPreview: "curriculum, academic, assignment, concentrate, discipline, collaborate, evaluate..."
+    },
+    {
+        id: "03",
+        title: "Unit 3: Nature, Environment & Sustainable Places",
+        file: "unit_03_interactive_practice.html",
+        desc: "So sánh hơn, So sánh nhất & So sánh kép, Giới từ chỉ vị trí cho bài Map Labelling, Đọc hiểu hệ sinh thái đô thị & Bảo tồn đa dạng sinh học.",
+        vocabPreview: "ecosystem, biodiversity, conservation, habitat, renewable, emission, preserve..."
+    },
+    {
+        id: "04",
+        title: "Unit 4: Leisure, Sports & Healthy Living",
+        file: "unit_04_interactive_practice.html",
+        desc: "Danh từ đếm được/Không đếm được, Lượng từ (much/many/a few/a little), Động từ khuyết thiếu & Cụm danh động từ V-ing làm chủ ngữ.",
+        vocabPreview: "nutrition, balanced, obesity, stamina, sedentary, workout, immunity, wellbeing..."
+    },
+    {
+        id: "05",
+        title: "Unit 5: Technology, Digital Media & Future Communication",
+        file: "unit_05_interactive_practice.html",
+        desc: "Phân biệt các thì tương lai (Will vs Going to), Câu điều kiện loại 1 (If / Unless), Từ nối lập luận tương phản (On the other hand / However).",
+        vocabPreview: "innovation, artificial, automate, accessible, efficiency, cybersecurity, privacy..."
+    }
+];
+
+const C1_TOPICS = [
+    {
+        id: "tech",
+        name: "🤖 1. Technology & AI",
+        anki: "anki_decks/topic_01_technology_ai_anki.tsv",
+        rows: [
+            ["new technology / modern tech", "cutting-edge technological innovations", "The adoption of cutting-edge technological innovations has revolutionized medical diagnostics."],
+            ["computers make people lose jobs", "automate routine tasks and precipitate workforce displacement", "Generative AI algorithms threaten to automate routine clerical tasks, precipitating workforce displacement."],
+            ["people use phones too much", "pervasive screen dependency / obsessive digital fixation", "Pervasive screen dependency exerts severe consequences on childhood cognitive development."],
+            ["bridge the technology gap", "bridge the pervasive digital divide", "Targeted public subsidies are imperative to bridge the pervasive digital divide in rural territories."]
+        ]
+    },
+    {
+        id: "env",
+        name: "🌿 2. Environment & Climate",
+        anki: "/anki_decks/topic_02_environment_climate_anki.tsv",
+        rows: [
+            ["harm the environment badly", "inflict irreversible ecological degradation", "Unregulated industrial expansion continues to inflict irreversible ecological degradation."],
+            ["reduce carbon gas", "curb anthropogenic greenhouse gas emissions", "Governments must enact stringent policies to curb anthropogenic greenhouse gas emissions."],
+            ["animals losing their homes", "habitat fragmentation and biodiversity loss", "Rampant deforestation accelerates habitat fragmentation and catastrophic biodiversity loss."]
+        ]
+    },
+    {
+        id: "edu",
+        name: "🎓 3. Education & Learning",
+        anki: "/anki_decks/topic_03_education_learning_anki.tsv",
+        rows: [
+            ["learn by heart without thinking", "rote memorisation and passive knowledge absorption", "Traditional pedagogy often prioritizes rote memorisation over critical inquiry."],
+            ["develop full ability", "cultivate holistic intellectual potential", "Higher education institutions should cultivate students' holistic intellectual potential."],
+            ["equal chance to study", "equitable access to quality tertiary education", "State scholarships ensure equitable access to quality tertiary education for disadvantaged youth."]
+        ]
+    },
+    {
+        id: "work",
+        name: "💼 4. Work & Globalisation",
+        anki: "/anki_decks/topic_04_work_economy_globalisation_anki.tsv",
+        rows: [
+            ["balance work and family", "reconcile professional obligations with domestic responsibilities", "Flexible teleworking enables parents to reconcile professional obligations with domestic life."],
+            ["fierce job competition", "intensifying labour market competitiveness", "University graduates face intensifying labour market competitiveness in the globalised economy."]
+        ]
+    },
+    {
+        id: "health",
+        name: "🏃 5. Health & Lifestyle",
+        anki: "/anki_decks/topic_05_health_lifestyle_anki.tsv",
+        rows: [
+            ["sit too much and don't move", "lead an increasingly sedentary lifestyle", "Urban white-collar employees predominantly lead an increasingly sedentary lifestyle."],
+            ["prevent sickness before it happens", "prioritise preventative healthcare interventions", "Allocating public funds to preventative healthcare interventions alleviates hospital overcrowding."]
+        ]
+    }
+];
+
+function switchHubTab(secId, btn) {
+    document.querySelectorAll(".hub-section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".hub-tab-btn").forEach(b => b.classList.remove("active"));
+    document.getElementById(secId).classList.add("active");
+    if (btn) btn.classList.add("active");
+}
+
+function loadMasterProgress() {
+    let localUnits = {};
+    try {
+        const raw = localStorage.getItem("ielts_master_progress_v1");
+        if (raw) {
+            const parsed = JSON.parse(raw);
+            localUnits = parsed.units || {};
+        }
+    } catch (e) {}
+
+    fetch("/api/status")
+        .then(r => r.json())
+        .then(res => {
+            if (res && res.ok && res.progress && res.progress.units) {
+                const merged = Object.assign({}, res.progress.units, localUnits);
+                renderUnitCards(merged);
+            } else {
+                renderUnitCards(localUnits);
+            }
+        })
+        .catch(() => renderUnitCards(localUnits));
+}
+
+function renderUnitCards(unitsProgress) {
+    const container = document.getElementById("units_cards_container");
+    let completedCount = 0;
+    let totalQuizEarned = 0;
+    let totalQuizPossible = 0;
+
+    const cardsHtml = UNITS_META.map(u => {
+        const p = unitsProgress[u.id] || null;
+        let statusText = "Chưa làm bài";
+        let statusStyle = "background: rgba(148,163,184,0.15); color: #94a3b8;";
+
+        const vScore = p ? `${p.vocab_score || 0}/${p.vocab_total || 20}` : "0/20";
+        const gScore = p ? `${p.grammar_score || 0}/${p.grammar_total || 10}` : "0/10";
+        const lScore = p ? `${p.listening_score || 0}/${p.listening_total || 6}` : "0/6";
+        const rScore = p ? `${p.reading_score || 0}/${p.reading_total || 6}` : "0/6";
+        const wBand = p && p.writing_band ? p.writing_band : "-";
+        const sBand = p && p.speaking_band ? p.speaking_band : "-";
+
+        if (p) {
+            const earned = (p.vocab_score || 0) + (p.grammar_score || 0);
+            const poss = (p.vocab_total || 20) + (p.grammar_total || 10);
+            if (earned > 0) {
+                totalQuizEarned += earned;
+                totalQuizPossible += poss;
+            }
+            if ((p.vocab_score || 0) >= 14 && (p.grammar_score || 0) >= 7) {
+                completedCount++;
+                statusText = "✓ Đã hoàn thành tốt";
+                statusStyle = "background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4);";
+            } else if (earned > 0 || p.writing_completed || p.speaking_completed) {
+                statusText = "⏳ Đang học dở";
+                statusStyle = "background: rgba(245,158,11,0.2); color: #fbbf24; border: 1px solid rgba(245,158,11,0.4);";
+            }
+        }
+
+        return `
+            <div class="unit-card">
+                <div>
+                    <div class="unit-top">
+                        <span class="unit-num-pill">FOUNDATION • UNIT ${u.id}</span>
+                        <span class="unit-status-pill" style="${statusStyle}">${statusText}</span>
+                    </div>
+                    <div class="unit-title">${u.title}</div>
+                    <p class="unit-desc">${u.desc}</p>
+                    <div style="font-size: 0.78rem; color: #38bdf8; margin-bottom: 14px; background: rgba(56,189,248,0.08); padding: 6px 10px; border-radius: 8px;">
+                        <b>15 Từ vựng trọng tâm:</b> <i>${u.vocabPreview}</i>
+                    </div>
+                </div>
+                <div>
+                    <div class="unit-scores-bar">
+                        <div class="score-mini"><span>🎯 Vocab</span><b>${vScore}</b></div>
+                        <div class="score-mini"><span>⚙️ Grammar</span><b>${gScore}</b></div>
+                        <div class="score-mini"><span>🎧 Listen</span><b>${lScore}</b></div>
+                        <div class="score-mini"><span>📰 Read</span><b>${rScore}</b></div>
+                        <div class="score-mini"><span>✍️ Write</span><b>Band ${wBand}</b></div>
+                        <div class="score-mini"><span>🗣️ Speak</span><b>Band ${sBand}</b></div>
+                    </div>
+                    <a href="${u.file}" class="btn-launch">🚀 Vào Học & Thực Hành Unit ${u.id}</a>
+                </div>
+            </div>
+        `;
+    });
+
+    container.innerHTML = cardsHtml.join("");
+    document.getElementById("kpi_units_done").innerText = `${completedCount} / 5 Units`;
+    if (totalQuizPossible > 0) {
+        const pct = Math.round((totalQuizEarned / totalQuizPossible) * 100);
+        document.getElementById("kpi_avg_quiz").innerText = `${pct}%`;
+    }
+}
+
+function initC1Matrix() {
+    const pillsContainer = document.getElementById("c1_topic_pills");
+    pillsContainer.innerHTML = C1_TOPICS.map((t, i) =>
+        `<button class="topic-pill ${i === 0 ? 'active' : ''}" onclick="renderC1Topic('${t.id}', this)">${t.name}</button>`
+    ).join("");
+    renderC1Topic(C1_TOPICS[0].id, null);
+}
+
+function renderC1Topic(topicId, btn) {
+    if (btn) {
+        document.querySelectorAll(".topic-pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+    }
+    const topic = C1_TOPICS.find(t => t.id === topicId) || C1_TOPICS[0];
+    const tbody = document.getElementById("c1_matrix_tbody");
+    tbody.innerHTML = topic.rows.map(r => `
+        <tr>
+            <td style="color: var(--text-muted);"><i>${r[0]}</i></td>
+            <td style="color: #34d399; font-weight: 700;">${r[1]}</td>
+            <td style="color: #f1f5f9;">"${r[2]}"</td>
+        </tr>
+    `).join("");
+}
+
+function rawToBandListening(raw) {
+    if (raw >= 39) return 9.0;
+    if (raw >= 37) return 8.5;
+    if (raw >= 35) return 8.0;
+    if (raw >= 32) return 7.5;
+    if (raw >= 30) return 7.0;
+    if (raw >= 26) return 6.5;
+    if (raw >= 23) return 6.0;
+    if (raw >= 18) return 5.5;
+    if (raw >= 16) return 5.0;
+    if (raw >= 13) return 4.5;
+    return 4.0;
+}
+
+function rawToBandReading(raw) {
+    if (raw >= 39) return 9.0;
+    if (raw >= 37) return 8.5;
+    if (raw >= 35) return 8.0;
+    if (raw >= 33) return 7.5;
+    if (raw >= 30) return 7.0;
+    if (raw >= 27) return 6.5;
+    if (raw >= 23) return 6.0;
+    if (raw >= 19) return 5.5;
+    if (raw >= 15) return 5.0;
+    if (raw >= 13) return 4.5;
+    return 4.0;
+}
+
+function updateCamCalculation() {
+    const lRaw = parseInt(document.getElementById("cam_l_raw").value) || 0;
+    const rRaw = parseInt(document.getElementById("cam_r_raw").value) || 0;
+    document.getElementById("cam_l_band_out").innerText = rawToBandListening(lRaw).toFixed(1);
+    document.getElementById("cam_r_band_out").innerText = rawToBandReading(rRaw).toFixed(1);
+}
+
+function saveCambridgeScore() {
+    const book = document.getElementById("cam_book").value;
+    const test = document.getElementById("cam_test").value;
+    const lRaw = parseInt(document.getElementById("cam_l_raw").value) || 0;
+    const rRaw = parseInt(document.getElementById("cam_r_raw").value) || 0;
+    const lBand = rawToBandListening(lRaw);
+    const rBand = rawToBandReading(rRaw);
+    const trap = document.getElementById("cam_trap_note").value;
+
+    try {
+        const rawLogs = localStorage.getItem("ielts_cambridge_logs_v1");
+        const logs = rawLogs ? JSON.parse(rawLogs) : [];
+        logs.unshift({
+            date: new Date().toLocaleDateString("vi-VN"),
+            book, test, lRaw, rRaw, lBand, rBand, trap
+        });
+        localStorage.setItem("ielts_cambridge_logs_v1", JSON.stringify(logs));
+    } catch (e) {}
+
+    fetch("/api/cambridge_sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            book: book,
+            test: test,
+            listening_raw: lRaw,
+            reading_raw: rRaw,
+            listening_band: lBand,
+            reading_band: rBand,
+            trap_note: trap
+        })
+    })
+    .then(r => r.json())
+    .then(res => {
+        if (res && res.ok) {
+            alert(`✅ Đã lưu kết quả ${book} - ${test} (Listening: ${lBand.toFixed(1)}, Reading: ${rBand.toFixed(1)}) vào bộ nhớ trình duyệt & sổ điểm AI!`);
+        } else {
+            throw new Error("Cloud static mode");
+        }
+    })
+    .catch(() => {
+        alert(`✅ Đã lưu kết quả ${book} - ${test} (Listening: Band ${lBand.toFixed(1)}, Reading: Band ${rBand.toFixed(1)}) vào bộ nhớ thiết bị của bạn!`);
+    });
+}
+
+window.addEventListener("load", () => {
+    loadMasterProgress();
+    initC1Matrix();
+    updateCamCalculation();
+});
+</script>
+</body>
+</html>

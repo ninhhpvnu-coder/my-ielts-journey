@@ -1,0 +1,10 @@
+{
+  "name": "My IELTS Journey — Target Band 8.0",
+  "short_name": "IELTS 8.0",
+  "description": "Hệ thống huấn luyện IELTS 4 kỹ năng cá nhân hóa từ Foundation lên Band 8.0 Academic",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b1120",
+  "theme_color": "#0b1120",
+  "orientation": "any"
+}
