@@ -362,6 +362,84 @@
             </div>
         </div>
 
+        <!-- Settings: Payment & VietQR Gateway -->
+        <div class="generator-card" style="border-color: rgba(56, 189, 248, 0.4); margin-bottom: 28px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                <div>
+                    <h2 style="font-size: 1.2rem; font-family: 'Space Grotesk', sans-serif; color: #fff;">
+                        ⚙️ Cấu Hình Thanh Toán & VietQR Tự Động
+                    </h2>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">
+                        Thông tin tài khoản nhận học phí và số hotline Zalo hỗ trợ học viên.
+                    </div>
+                </div>
+                <span style="font-size: 0.78rem; font-weight: 800; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); padding: 4px 10px; border-radius: 999px;">
+                    ✓ VietQR Techcombank Active
+                </span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <!-- Left Form -->
+                <div>
+                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 14px;">
+                        <div>
+                            <label>Ngân Hàng Nhận Học Phí</label>
+                            <select id="cfg_bank_select" onchange="previewAdminVietQR()">
+                                <option value="TCB" selected>Techcombank (TCB)</option>
+                                <option value="MB">MB Bank (Quân Đội)</option>
+                                <option value="VCB">Vietcombank</option>
+                                <option value="VPB">VPBank</option>
+                                <option value="ACB">ACB</option>
+                                <option value="BIDV">BIDV</option>
+                                <option value="CTG">Vietinbank</option>
+                                <option value="TPB">TPBank</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Số Tài Khoản *</label>
+                            <input type="text" id="cfg_account_no" value="366566999999" oninput="previewAdminVietQR()">
+                        </div>
+                    </div>
+
+                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 14px;">
+                        <div>
+                            <label>Tên Chủ Tài Khoản (In Hoa Không Dấu) *</label>
+                            <input type="text" id="cfg_account_name" value="NGO THI NINH" oninput="previewAdminVietQR()">
+                        </div>
+                        <div>
+                            <label>Mức Học Phí Foundation (VNĐ) *</label>
+                            <input type="number" id="cfg_amount" value="150000" oninput="previewAdminVietQR()">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 18px;">
+                        <label>Số Điện Thoại Zalo / Hotline Tư Vấn *</label>
+                        <input type="text" id="cfg_zalo_hotline" value="0869669659" placeholder="0869669659">
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="saveAdminPaymentSettings()" class="btn btn-primary">
+                            💾 Lưu Cấu Hình Thanh Toán
+                        </button>
+                        <button onclick="resetDefaultPaymentSettings()" class="btn btn-secondary">
+                            Khôi Phục Mặc Định
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Live Preview -->
+                <div style="background: #0f172a; border: 1px solid var(--border); border-radius: 16px; padding: 18px; text-align: center;">
+                    <div style="font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; margin-bottom: 10px;">
+                        Xem Trước Mã VietQR Thực Tế
+                    </div>
+                    <img id="admin_vietqr_preview" src="https://img.vietqr.io/image/TCB-366566999999-compact2.png?amount=150000&addInfo=IELTS%20FD%20DEMO&accountName=NGO%20THI%20NINH" alt="Preview QR" style="width: 190px; height: auto; border-radius: 12px; background: #fff; padding: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); margin: 0 auto 10px; display: block;">
+                    <div style="font-size: 0.78rem; color: #94a3b8;">
+                        Học viên quét mã này sẽ tự động chuyển đúng số tiền và cú pháp chứa SĐT của họ.
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Table: Student List -->
         <div class="table-card">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 12px;">
@@ -544,6 +622,7 @@ function deleteStudentRecord(idx) {
 }
 
 function refreshAdminData() {
+    loadAdminPaymentSettings();
     const vault = getStoredVault();
     document.getElementById("kpi_total_keys").textContent = vault.length;
     document.getElementById("kpi_active_students").textContent = vault.filter(v => v.deviceId).length;
@@ -613,6 +692,87 @@ function exportToJSON() {
     a.href = URL.createObjectURL(blob);
     a.download = `Backup_IELTS_Vault_${new Date().toISOString().slice(0,10)}.json`;
     a.click();
+}
+
+// Payment Settings handlers
+function loadAdminPaymentSettings() {
+    const cfg = IELTSAuth.getPaymentConfig();
+    const bSel = document.getElementById("cfg_bank_select");
+    const aNo = document.getElementById("cfg_account_no");
+    const aName = document.getElementById("cfg_account_name");
+    const amt = document.getElementById("cfg_amount");
+    const zalo = document.getElementById("cfg_zalo_hotline");
+
+    if (bSel) bSel.value = cfg.bankId || "TCB";
+    if (aNo) aNo.value = cfg.accountNumber || "366566999999";
+    if (aName) aName.value = cfg.accountName || "NGO THI NINH";
+    if (amt) amt.value = cfg.amount || 150000;
+    if (zalo) zalo.value = cfg.hotlineZalo || "0869669659";
+
+    previewAdminVietQR();
+}
+
+function previewAdminVietQR() {
+    const bankId = document.getElementById("cfg_bank_select")?.value || "TCB";
+    const accountNo = (document.getElementById("cfg_account_no")?.value || "366566999999").trim();
+    const accountName = (document.getElementById("cfg_account_name")?.value || "NGO THI NINH").trim();
+    const amount = document.getElementById("cfg_amount")?.value || 150000;
+    const img = document.getElementById("admin_vietqr_preview");
+
+    if (img) {
+        const url = `https://img.vietqr.io/image/${bankId}-${accountNo}-compact2.png?amount=${amount}&addInfo=IELTS%20FD%20DEMO&accountName=${encodeURIComponent(accountName)}`;
+        img.src = url;
+    }
+}
+
+function saveAdminPaymentSettings() {
+    const bankId = document.getElementById("cfg_bank_select")?.value || "TCB";
+    const accountNo = (document.getElementById("cfg_account_no")?.value || "").trim();
+    const accountName = (document.getElementById("cfg_account_name")?.value || "").trim().toUpperCase();
+    const amount = parseInt(document.getElementById("cfg_amount")?.value || "150000", 10);
+    const hotlineZalo = (document.getElementById("cfg_zalo_hotline")?.value || "").trim();
+
+    if (!accountNo || accountNo.length < 5) {
+        alert("Vui lòng nhập Số tài khoản hợp lệ!");
+        return;
+    }
+    if (!accountName || accountName.length < 3) {
+        alert("Vui lòng nhập Tên chủ tài khoản!");
+        return;
+    }
+
+    const bankNames = {
+        'TCB': 'Techcombank',
+        'MB': 'MB Bank',
+        'VCB': 'Vietcombank',
+        'VPB': 'VPBank',
+        'ACB': 'ACB',
+        'BIDV': 'BIDV',
+        'CTG': 'Vietinbank',
+        'TPB': 'TPBank'
+    };
+
+    const cfg = {
+        bankId: bankId,
+        bankName: bankNames[bankId] || bankId,
+        accountNumber: accountNo,
+        accountName: accountName,
+        amount: amount,
+        amountFormatted: Number(amount).toLocaleString('vi-VN') + ' VNĐ',
+        hotlineZalo: hotlineZalo,
+        zaloLink: `https://zalo.me/${hotlineZalo}`
+    };
+
+    IELTSAuth.savePaymentConfig(cfg);
+    alert("✓ Đã lưu cấu hình Thanh Toán & VietQR thành công! Hệ thống học viên sẽ lập tức áp dụng số tài khoản này.");
+}
+
+function resetDefaultPaymentSettings() {
+    if (confirm("Khôi phục thông tin Techcombank mặc định?")) {
+        localStorage.removeItem("ielts_payment_config");
+        loadAdminPaymentSettings();
+        alert("✓ Đã khôi phục cài đặt mặc định!");
+    }
 }
 
 // Auto check login session

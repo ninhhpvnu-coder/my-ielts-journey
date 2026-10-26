@@ -18,6 +18,19 @@
     const STORAGE_KEY_STUDENT = "ielts_student_profile";
     const STORAGE_KEY_DEVICE = "ielts_device_fingerprint";
     const STORAGE_KEY_KEYS_VAULT = "ielts_admin_issued_keys";
+    const STORAGE_KEY_PAYMENT = "ielts_payment_config";
+
+    const DEFAULT_PAYMENT_CONFIG = {
+        bankId: "TCB",
+        bankName: "Techcombank",
+        accountNumber: "366566999999",
+        accountName: "NGO THI NINH",
+        amount: 150000,
+        amountFormatted: "150.000 VNĐ",
+        originalPrice: "1.200.000 VNĐ",
+        hotlineZalo: "0869669659",
+        zaloLink: "https://zalo.me/0869669659"
+    };
 
     const TIERS_META = {
         'FD': { name: 'Giáo Trình Foundation (30 Units)', color: '#38bdf8', icon: '📚' },
@@ -28,6 +41,70 @@
     };
 
     const IELTSAuth = {
+        // --- 0. PAYMENT CONFIG & VIETQR ENGINE ---
+        getPaymentConfig: function () {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY_PAYMENT);
+                if (stored) {
+                    return { ...DEFAULT_PAYMENT_CONFIG, ...JSON.parse(stored) };
+                }
+            } catch (e) {}
+            return { ...DEFAULT_PAYMENT_CONFIG };
+        },
+
+        savePaymentConfig: function (cfg) {
+            localStorage.setItem(STORAGE_KEY_PAYMENT, JSON.stringify(cfg));
+        },
+
+        buildVietQRUrl: function (phone, amount) {
+            const cfg = this.getPaymentConfig();
+            const finalAmt = amount || cfg.amount || 150000;
+            const cleanPhone = (phone || '').replace(/[^0-9]/g, '');
+            const memo = cleanPhone.length >= 6 ? `IELTS FD ${cleanPhone}` : 'IELTS FD 30 UNITS';
+            const encodedMemo = encodeURIComponent(memo);
+            const encodedName = encodeURIComponent(cfg.accountName);
+            return `https://img.vietqr.io/image/${cfg.bankId}-${cfg.accountNumber}-compact2.png?amount=${finalAmt}&addInfo=${encodedMemo}&accountName=${encodedName}`;
+        },
+
+        updateRegisterVietQR: function () {
+            const phone = (document.getElementById('reg_student_phone')?.value || '').trim();
+            const qrImg = document.getElementById('reg_vietqr_img');
+            const memoEl = document.getElementById('reg_transfer_memo');
+            const zaloBtn = document.getElementById('reg_zalo_btn');
+            const cfg = this.getPaymentConfig();
+
+            const cleanPhone = phone.replace(/[^0-9]/g, '');
+            const memo = cleanPhone.length >= 6 ? `IELTS FD ${cleanPhone}` : 'IELTS FD [SĐT_CỦA_BẠN]';
+            if (memoEl) memoEl.textContent = memo;
+
+            if (qrImg) {
+                qrImg.src = this.buildVietQRUrl(cleanPhone);
+            }
+
+            if (zaloBtn) {
+                const name = (document.getElementById('reg_student_name')?.value || '').trim();
+                const studentInfo = name ? `em là ${name} (SĐT: ${cleanPhone || '...'}), ` : '';
+                const msg = encodeURIComponent(`Chào Cô Ninh, ${studentInfo}em vừa chuyển khoản 150.000đ đăng ký khóa học IELTS Foundation 30 Units (Cú pháp CK: ${memo}). Nhờ cô kiểm tra và gửi mã kích hoạt giúp em với ạ!`);
+                zaloBtn.href = `https://zalo.me/${cfg.hotlineZalo}?text=${msg}`;
+            }
+        },
+
+        switchToActivateWithPrefill: function () {
+            const name = (document.getElementById('reg_student_name')?.value || '').trim();
+            const phone = (document.getElementById('reg_student_phone')?.value || '').trim();
+            this.switchModalTab('activate');
+            if (name) {
+                const nInput = document.getElementById('auth_student_name');
+                if (nInput) nInput.value = name;
+            }
+            if (phone) {
+                const cInput = document.getElementById('auth_student_contact');
+                if (cInput) cInput.value = phone;
+            }
+            const kInput = document.getElementById('auth_student_key');
+            if (kInput) kInput.focus();
+        },
+
         // --- 1. DEVICE FINGERPRINTING ---
         getDeviceId: function () {
             let devId = localStorage.getItem(STORAGE_KEY_DEVICE);
@@ -466,31 +543,96 @@
                             </button>
                         </div>
 
-                        <!-- Tab 2: Đăng Ký Mới -->
-                        <div id="modal_tab_register" style="padding: 24px; display: none;">
-                            <div style="background: rgba(11, 17, 32, 0.65); border: 1px solid #334155; border-radius: 16px; padding: 18px; margin-bottom: 18px;">
-                                <div style="font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 6px;">📚 Khóa Học IELTS Foundation 4 Kỹ Năng (30 Units)</div>
-                                <div style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5; margin-bottom: 12px;">
-                                    • Độc quyền chuẩn Cambridge (2026 — 2028)<br>
-                                    • 450 từ vựng học thuật C1-C2, 1.021 file audio chất lượng cao<br>
-                                    • 60 bài kiểm tra ngữ pháp & từ vựng có giải thích cặn kẽ<br>
-                                    • Chữa bài Writing 3 bước & Giám khảo ảo AI Band 8.5
+                        <!-- Tab 2: Đăng Ký Mới & Thanh Toán VietQR -->
+                        <div id="modal_tab_register" style="padding: 22px 24px; max-height: 80vh; overflow-y: auto; display: none;">
+                            <!-- Pricing & Course Summary -->
+                            <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(197, 139, 98, 0.4); border-radius: 16px; padding: 16px; margin-bottom: 18px;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+                                    <div>
+                                        <div style="font-size: 0.75rem; font-weight: 800; color: #c58b62; text-transform: uppercase; letter-spacing: 1px;">Khóa Học Trực Tuyến 24/7</div>
+                                        <div style="font-size: 0.98rem; font-weight: 800; color: #fff; margin-top: 2px;">📚 IELTS Foundation 4 Kỹ Năng (30 Units)</div>
+                                    </div>
+                                    <div style="text-align: right; flex-shrink: 0;">
+                                        <div style="font-size: 0.75rem; color: #94a3b8; text-decoration: line-through;">1.200.000đ</div>
+                                        <div style="font-size: 1.35rem; font-weight: 800; color: #34d399;">150.000đ</div>
+                                        <span style="display: inline-block; background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.68rem; font-weight: 800; padding: 1px 6px; border-radius: 999px;">Ưu Đãi 88%</span>
+                                    </div>
                                 </div>
-                                <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px dashed #334155; padding-top: 10px;">
-                                    <span style="font-size: 0.85rem; color: #cbd5e1;">Học phí trọn khóa:</span>
-                                    <span style="font-size: 1.25rem; font-weight: 800; color: #34d399;">Ưu Đãi Đặc Biệt</span>
+                                <div style="font-size: 0.8rem; color: #cbd5e1; margin-top: 8px; line-height: 1.4;">
+                                    ✓ Trọn bộ 30 Unit tương tác • 450 từ vựng C1-C2 • 1.021 audio bản ngữ • Chấm AI 4 kỹ năng.
                                 </div>
                             </div>
 
-                            <div style="background: rgba(197, 139, 98, 0.1); border: 1px solid rgba(197, 139, 98, 0.35); border-radius: 14px; padding: 14px; text-align: center; margin-bottom: 16px;">
-                                <div style="font-size: 0.82rem; color: #c58b62; font-weight: 700; margin-bottom: 4px;">LIÊN HỆ TRỰC TIẾP ĐỂ NHẬN MÃ KÍCH HOẠT NHANH</div>
-                                <div style="font-size: 0.95rem; font-weight: 800; color: #fff;">Zalo / Hotline: 098.xxx.xxxx (Cô Ninh)</div>
-                                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 4px;">Kích hoạt ngay trong 5 phút — Bảo hành hỗ trợ suốt quá trình học.</div>
+                            <!-- Step 1: Student Contact -->
+                            <div style="margin-bottom: 16px;">
+                                <div style="font-size: 0.82rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">
+                                    BƯỚC 1: Nhập thông tin để tự động tạo mã VietQR
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                                    <div>
+                                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 4px;">Họ và Tên *</label>
+                                        <input type="text" id="reg_student_name" placeholder="Nguyễn Văn An" oninput="IELTSAuth.updateRegisterVietQR()" style="width: 100%; box-sizing: border-box; background: #0b1120; border: 1px solid #334155; border-radius: 8px; padding: 9px 12px; color: #fff; font-size: 0.88rem;">
+                                    </div>
+                                    <div>
+                                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 4px;">Số Điện Thoại / Zalo *</label>
+                                        <input type="tel" id="reg_student_phone" placeholder="0988xxxxxx" oninput="IELTSAuth.updateRegisterVietQR()" style="width: 100%; box-sizing: border-box; background: #0b1120; border: 1.5px solid rgba(56, 189, 248, 0.5); border-radius: 8px; padding: 9px 12px; color: #38bdf8; font-size: 0.88rem; font-weight: 700;">
+                                    </div>
+                                </div>
                             </div>
 
-                            <button onclick="IELTSAuth.switchModalTab('activate')" style="width: 100%; background: #334155; color: #e2e8f0; border: none; font-weight: 700; font-size: 0.9rem; padding: 12px; border-radius: 10px; cursor: pointer;">
-                                Đã có mã kích hoạt? Chuyển sang kích hoạt ngay →
-                            </button>
+                            <!-- Step 2: VietQR Box -->
+                            <div style="background: #0f172a; border: 1.5px solid rgba(197, 139, 98, 0.4); border-radius: 16px; padding: 18px; margin-bottom: 16px; text-align: center;">
+                                <div style="font-size: 0.78rem; font-weight: 800; color: #c58b62; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
+                                    BƯỚC 2: Quét Mã VietQR Bằng Ứng Dụng Ngân Hàng
+                                </div>
+                                
+                                <div style="display: flex; justify-content: center; margin-bottom: 14px;">
+                                    <img id="reg_vietqr_img" src="https://img.vietqr.io/image/TCB-366566999999-compact2.png?amount=150000&addInfo=IELTS%20FD&accountName=NGO%20THI%20NINH" alt="Techcombank VietQR" style="width: 210px; height: auto; border-radius: 14px; background: #fff; padding: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.6);">
+                                </div>
+
+                                <!-- Bank Text Info with 1-Click Copy -->
+                                <div style="text-align: left; background: #0b1120; border: 1px solid #334155; border-radius: 12px; padding: 12px; font-size: 0.82rem; line-height: 1.8;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="color: #94a3b8;">Ngân hàng:</span>
+                                        <span style="font-weight: 800; color: #fff;">Techcombank (TCB)</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="color: #94a3b8;">Số tài khoản:</span>
+                                        <span style="display: flex; align-items: center; gap: 6px;">
+                                            <b style="color: #38bdf8; font-family: monospace; font-size: 0.95rem;">366566999999</b>
+                                            <button onclick="navigator.clipboard.writeText('366566999999'); IELTSAuth.showSecurityToast('✓ Đã sao chép Số tài khoản Techcombank!');" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; border-radius: 4px; padding: 2px 6px; font-size: 0.72rem; cursor: pointer;">Copy</button>
+                                        </span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="color: #94a3b8;">Chủ tài khoản:</span>
+                                        <span style="font-weight: 800; color: #fff;">NGO THI NINH</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="color: #94a3b8;">Số tiền:</span>
+                                        <span style="display: flex; align-items: center; gap: 6px;">
+                                            <b style="color: #34d399; font-size: 0.95rem;">150.000 VNĐ</b>
+                                            <button onclick="navigator.clipboard.writeText('150000'); IELTSAuth.showSecurityToast('✓ Đã sao chép Số tiền: 150.000đ!');" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; border-radius: 4px; padding: 2px 6px; font-size: 0.72rem; cursor: pointer;">Copy</button>
+                                        </span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #334155; margin-top: 4px; padding-top: 4px;">
+                                        <span style="color: #94a3b8;">Nội dung CK:</span>
+                                        <span style="display: flex; align-items: center; gap: 6px;">
+                                            <b id="reg_transfer_memo" style="color: #f59e0b; font-family: monospace;">IELTS FD [SĐT_CỦA_BẠN]</b>
+                                            <button onclick="navigator.clipboard.writeText(document.getElementById('reg_transfer_memo').innerText); IELTSAuth.showSecurityToast('✓ Đã sao chép Cú pháp chuyển khoản!');" style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; border-radius: 4px; padding: 2px 6px; font-size: 0.72rem; cursor: pointer;">Copy</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Fast Actions -->
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <a id="reg_zalo_btn" href="https://zalo.me/0869669659" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #0284c7, #0369a1); color: #fff; font-weight: 800; font-size: 0.92rem; padding: 13px; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);">
+                                    📲 Nhắn Zalo Cô Ninh Để Nhận Mã Ngay (0869.669.659)
+                                </a>
+                                <button onclick="IELTSAuth.switchToActivateWithPrefill()" style="width: 100%; background: #334155; color: #e2e8f0; border: 1px solid #475569; font-weight: 700; font-size: 0.88rem; padding: 11px; border-radius: 10px; cursor: pointer;">
+                                    🔑 Tôi đã có Mã Kích Hoạt $\rightarrow$ Chuyển sang Mở Khóa
+                                </button>
+                            </div>
                         </div>
                     </div>
                 `;
