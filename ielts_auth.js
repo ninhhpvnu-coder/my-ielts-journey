@@ -27,7 +27,6 @@
         accountName: "NGO THI NINH",
         amount: 150000,
         amountFormatted: "150.000 VNĐ",
-        originalPrice: "1.200.000 VNĐ",
         hotlineZalo: "0869669659",
         zaloLink: "https://zalo.me/0869669659"
     };
@@ -545,21 +544,17 @@
 
                         <!-- Tab 2: Đăng Ký Mới & Thanh Toán VietQR -->
                         <div id="modal_tab_register" style="padding: 22px 24px; max-height: 80vh; overflow-y: auto; display: none;">
-                            <!-- Pricing & Course Summary -->
+                            <!-- Course & Tuition Fee -->
                             <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(197, 139, 98, 0.4); border-radius: 16px; padding: 16px; margin-bottom: 18px;">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
                                     <div>
                                         <div style="font-size: 0.75rem; font-weight: 800; color: #c58b62; text-transform: uppercase; letter-spacing: 1px;">Khóa Học Trực Tuyến 24/7</div>
-                                        <div style="font-size: 0.98rem; font-weight: 800; color: #fff; margin-top: 2px;">📚 IELTS Foundation 4 Kỹ Năng (30 Units)</div>
+                                        <div style="font-size: 1rem; font-weight: 800; color: #fff; margin-top: 2px;">📚 IELTS Foundation (30 Units)</div>
                                     </div>
                                     <div style="text-align: right; flex-shrink: 0;">
-                                        <div style="font-size: 0.75rem; color: #94a3b8; text-decoration: line-through;">1.200.000đ</div>
-                                        <div style="font-size: 1.35rem; font-weight: 800; color: #34d399;">150.000đ</div>
-                                        <span style="display: inline-block; background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.68rem; font-weight: 800; padding: 1px 6px; border-radius: 999px;">Ưu Đãi 88%</span>
+                                        <div style="font-size: 0.75rem; color: #94a3b8;">Học phí:</div>
+                                        <div style="font-size: 1.35rem; font-weight: 800; color: #34d399;">150.000 VNĐ</div>
                                     </div>
-                                </div>
-                                <div style="font-size: 0.8rem; color: #cbd5e1; margin-top: 8px; line-height: 1.4;">
-                                    ✓ Trọn bộ 30 Unit tương tác • 450 từ vựng C1-C2 • 1.021 audio bản ngữ • Chấm AI 4 kỹ năng.
                                 </div>
                             </div>
 
