@@ -18,6 +18,7 @@
     const STORAGE_KEY_STUDENT = "ielts_student_profile";
     const STORAGE_KEY_DEVICE = "ielts_device_fingerprint";
     const STORAGE_KEY_KEYS_VAULT = "ielts_admin_issued_keys";
+    const STORAGE_KEY_ADMIN = "ielts_admin_authenticated";
     const STORAGE_KEY_PAYMENT = "ielts_payment_config";
 
     const DEFAULT_PAYMENT_CONFIG = {
@@ -40,6 +41,20 @@
     };
 
     const IELTSAuth = {
+        // --- 00. MASTER ADMIN & OWNER DETECTION ---
+        isAdminOwner: function () {
+            return (sessionStorage.getItem(STORAGE_KEY_ADMIN) === 'true' || localStorage.getItem(STORAGE_KEY_ADMIN) === 'true');
+        },
+
+        setAdminOwner: function (enabled) {
+            if (enabled) {
+                sessionStorage.setItem(STORAGE_KEY_ADMIN, 'true');
+                localStorage.setItem(STORAGE_KEY_ADMIN, 'true');
+            } else {
+                sessionStorage.removeItem(STORAGE_KEY_ADMIN);
+                localStorage.removeItem(STORAGE_KEY_ADMIN);
+            }
+        },
         // --- 0. PAYMENT CONFIG & VIETQR ENGINE ---
         getPaymentConfig: function () {
             try {
@@ -233,6 +248,16 @@
 
         // --- 4. ACCESS GUARD FOR UNITS ---
         hasAccessToUnit: function (unitNum) {
+            // Master Admin Owner (Ms Ninh) has 100% UNRESTRICTED FULL ACCESS!
+            if (this.isAdminOwner()) {
+                return {
+                    allowed: true,
+                    isFreeTrial: false,
+                    isMasterAdmin: true,
+                    student: { name: 'Cô Ninh (Chủ Sở Hữu)', tier: 'VIP', tierName: 'Chủ Sở Hữu Hệ Thống' }
+                };
+            }
+
             const num = parseInt(unitNum, 10);
             // Units 1 and 2 are 100% FREE TRIAL for all visitors!
             if (num === 1 || num === 2) {
@@ -407,7 +432,11 @@
                 margin-left: auto;
             `;
 
-            if (access.isFreeTrial) {
+            if (access.isMasterAdmin) {
+                badge.style.borderColor = 'rgba(197, 139, 98, 0.7)';
+                badge.style.background = 'radial-gradient(circle at 10% 10%, rgba(197, 139, 98, 0.25) 0%, rgba(15, 23, 42, 0.9) 70%)';
+                badge.innerHTML = `<span>👑 <b>Cô Ninh (Chủ Sở Hữu)</b></span> <span style="color: #34d399;">• Toàn Quyền Quản Trị</span> <a href="admin.html" style="color: #38bdf8; text-decoration: underline; margin-left: 6px;">Quản Trị ⚙️</a>`;
+            } else if (access.isFreeTrial) {
                 badge.innerHTML = `<span>✨ <b>Học Thử Miễn Phí (Unit 01-02)</b></span> <a href="index.html#activate" style="color: #38bdf8; text-decoration: underline; margin-left: 6px;">Kích hoạt trọn bộ 30 Unit</a>`;
             } else if (access.student) {
                 badge.innerHTML = `<span>🎓 Học viên: <b style="color: #38bdf8;">${access.student.name}</b></span> <span style="color: #34d399;">• Đã kích hoạt (${access.student.tier})</span>`;
@@ -696,6 +725,35 @@
             const container = document.getElementById(containerId);
             if (!container) return;
 
+            // 1. MASTER ADMIN OWNER BAR
+            if (this.isAdminOwner()) {
+                container.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: space-between; background: radial-gradient(circle at 10% 20%, rgba(197, 139, 98, 0.2) 0%, rgba(30, 41, 59, 0.98) 75%); border: 1.5px solid rgba(197, 139, 98, 0.55); border-radius: 14px; padding: 12px 18px; margin-bottom: 20px; box-shadow: 0 6px 25px rgba(0,0,0,0.5), 0 0 15px rgba(197, 139, 98, 0.2); flex-wrap: wrap; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 1.6rem;">👑</span>
+                            <div>
+                                <div style="font-size: 0.92rem; color: #fff; font-weight: 800;">
+                                    Xin chào <span style="color: #c58b62;">Cô Ninh (Chủ Sở Hữu Website)</span>
+                                    <span style="display: inline-block; background: rgba(197, 139, 98, 0.2); color: #c58b62; border: 1px solid rgba(197, 139, 98, 0.45); font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; margin-left: 6px; font-weight: 800;">MASTER ADMIN</span>
+                                </div>
+                                <div style="font-size: 0.76rem; color: #94a3b8;">
+                                    Thiết bị này đã được mở khóa toàn quyền 30 Units & Full tính năng.
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <a href="admin.html" style="background: linear-gradient(135deg, #38bdf8, #0284c7); color: #0b1120; font-size: 0.82rem; font-weight: 800; padding: 8px 16px; border-radius: 10px; text-decoration: none; box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);">
+                                ⚙️ Quản Trị Học Viên
+                            </a>
+                            <button onclick="IELTSAuth.setAdminOwner(false); location.reload();" style="background: rgba(51, 65, 85, 0.8); border: 1px solid #475569; color: #cbd5e1; font-size: 0.78rem; font-weight: 700; padding: 8px 12px; border-radius: 10px; cursor: pointer;" title="Tạm thời chuyển sang chế độ khách để kiểm tra giao diện">
+                                👁️ Xem Dưới Góc Nhìn Khách
+                            </button>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
             const student = this.getStudent();
             if (student && !student.isDeviceMismatch) {
                 container.innerHTML = `
@@ -747,6 +805,27 @@
     };
 
     window.IELTSAuth = IELTSAuth;
+
+    // Secret Admin Click Trigger (Click avatar 3 times in 1.5s to unlock)
+    let _avatarClicks = 0, _avatarTimer = null;
+    document.addEventListener('click', function(e) {
+        if (e.target && (e.target.classList.contains('brand-avatar-img') || e.target.closest('.brand-avatar-img'))) {
+            _avatarClicks++;
+            clearTimeout(_avatarTimer);
+            _avatarTimer = setTimeout(function() { _avatarClicks = 0; }, 1200);
+            if (_avatarClicks >= 3) {
+                _avatarClicks = 0;
+                const pass = prompt("🔐 XÁC THỰC CHỦ SỞ HỮU WEBSITE:\nVui lòng nhập Mật Khẩu Quản Trị Viên (Admin Passkey) của Cô Ninh:");
+                if (pass === "NINH2026ADMIN") {
+                    IELTSAuth.setAdminOwner(true);
+                    alert("🎉 Xác thực thành công! Xin chào Cô Ninh.\nToàn bộ hệ thống 30 Unit đã được mở khóa toàn quyền trên thiết bị này.");
+                    window.location.reload();
+                } else if (pass !== null) {
+                    alert("Mật khẩu quản trị viên không chính xác!");
+                }
+            }
+        }
+    });
 
     // Auto-initialize anti-theft shield
     if (document.readyState === 'loading') {

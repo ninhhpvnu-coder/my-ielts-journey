@@ -858,7 +858,10 @@ function renderUnitCards(unitsProgress) {
         let actionBtn = "";
         let lockBadge = "";
 
-        if (isFree) {
+        if (access.isMasterAdmin) {
+            lockBadge = `<span style="font-size: 0.72rem; font-weight: 800; background: rgba(197, 139, 98, 0.2); color: #c58b62; border: 1px solid rgba(197, 139, 98, 0.5); padding: 3px 8px; border-radius: 999px;">👑 MASTER ADMIN</span>`;
+            actionBtn = `<a href="${u.file}" class="btn-launch" style="background: linear-gradient(135deg, #38bdf8, #0284c7);">🚀 Vào Học Unit ${u.id} (Toàn Quyền) →</a>`;
+        } else if (isFree) {
             lockBadge = `<span style="font-size: 0.72rem; font-weight: 800; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); padding: 3px 8px; border-radius: 999px;">✨ HỌC THỬ FREE</span>`;
             actionBtn = `<a href="${u.file}" class="btn-launch" style="background: linear-gradient(135deg, #38bdf8, #0284c7);">✨ Vào Học Thử Unit ${u.id} (Miễn Phí) →</a>`;
         } else if (isLocked) {

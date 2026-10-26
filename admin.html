@@ -293,10 +293,13 @@
                     <h1 style="font-size: 1.3rem; font-family: 'Space Grotesk', sans-serif;">Trung Tâm Quản Lý Mã Bản Quyền & Học Viên</h1>
                 </div>
             </div>
-            <div style="display: flex; gap: 10px; align-items: center;">
-                <a href="index.html" class="btn btn-secondary" style="text-decoration: none;">
-                    🌐 Xem Trang Chủ
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <a href="index.html" class="btn btn-primary" style="text-decoration: none;">
+                    🌐 Mở Trang Chủ (Toàn Quyền Admin)
                 </a>
+                <button onclick="localStorage.removeItem('ielts_admin_authenticated'); sessionStorage.removeItem('ielts_admin_authenticated'); window.location.href='index.html';" class="btn btn-secondary" title="Xem trang chủ dưới tư cách khách chưa đăng ký">
+                    👁️ Xem Dưới Tư Cách Khách
+                </button>
                 <button onclick="adminLogout()" class="btn btn-danger">
                     Đăng Xuất
                 </button>
@@ -491,6 +494,7 @@ function verifyAdminLogin() {
     const msg = document.getElementById("login_err_msg");
     if (input === ADMIN_MASTER_PASS) {
         sessionStorage.setItem(STORAGE_ADMIN_AUTH, "true");
+        localStorage.setItem(STORAGE_ADMIN_AUTH, "true"); // PERMANENT DEVICE RECOGNITION
         document.getElementById("login_screen").style.display = "none";
         document.getElementById("admin_dashboard").style.display = "block";
         refreshAdminData();
@@ -504,6 +508,7 @@ function verifyAdminLogin() {
 
 function adminLogout() {
     sessionStorage.removeItem(STORAGE_ADMIN_AUTH);
+    localStorage.removeItem(STORAGE_ADMIN_AUTH);
     window.location.reload();
 }
 
