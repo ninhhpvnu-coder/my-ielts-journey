@@ -1,10 +1,17 @@
 {
-  "name": "My IELTS Journey — Target Band 8.0",
-  "short_name": "IELTS 8.0",
-  "description": "Hệ thống huấn luyện IELTS 4 kỹ năng cá nhân hóa từ Foundation lên Band 8.0 Academic",
+  "name": "SayWise School — IELTS Mastery Command Center",
+  "short_name": "SayWise IELTS",
+  "description": "Cambridge-Standard 4-Skill Training System (2026 — 2028) • From Foundation Mastery (Band 5.0) to the Pinnacle of IELTS Excellence",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0b1120",
   "theme_color": "#0b1120",
-  "orientation": "any"
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/saywise_logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
 }

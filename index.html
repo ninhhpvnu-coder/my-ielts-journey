@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="IELTS 8.0">
+    <meta name="apple-mobile-web-app-title" content="SayWise IELTS">
+    <link rel="icon" type="image/png" href="assets/saywise_logo.png">
+    <link rel="apple-touch-icon" href="assets/saywise_logo.png">
     <link rel="manifest" href="manifest.json">
-    <title>My IELTS journey — Command Center (Target: Band 8.0)</title>
+    <title>SayWise School — IELTS Mastery Command Center (Target: Band 8.0+)</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -52,27 +54,103 @@
             margin: 0 auto;
         }
 
-        header {
+        header.hero-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            padding: 26px 18px;
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.96));
-            border-radius: 20px;
-            border: 1.5px solid rgba(56, 189, 248, 0.28);
-            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
-            margin-bottom: 22px;
+            gap: 20px;
+            padding: 24px 20px;
+            background: radial-gradient(circle at top left, rgba(200, 125, 85, 0.14), transparent 45%),
+                        linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98));
+            border-radius: 22px;
+            border: 1.5px solid rgba(56, 189, 248, 0.32);
+            box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.65);
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 820px) {
+            header.hero-header {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 28px;
+                padding: 28px 32px;
+            }
+        }
+
+        .hero-logo-card {
+            flex-shrink: 0;
+            background: #e6dfd5;
+            border-radius: 16px;
+            padding: 10px 14px;
+            border: 2px solid rgba(200, 125, 85, 0.55);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 20px rgba(200, 125, 85, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .hero-logo-card:hover {
+            transform: translateY(-2px) scale(1.015);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55), 0 0 26px rgba(56, 189, 248, 0.28);
+        }
+
+        .hero-logo-img {
+            width: 215px;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        @media (min-width: 820px) {
+            .hero-logo-img {
+                width: 235px;
+            }
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hero-badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 820px) {
+            .hero-badges-row {
+                justify-content: flex-start;
+            }
         }
 
         .badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             background: rgba(56, 189, 248, 0.16);
             color: var(--primary);
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 9999px;
-            font-weight: 700;
-            font-size: 0.82rem;
-            letter-spacing: 0.05em;
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .badge-gold {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border-color: rgba(245, 158, 11, 0.35);
         }
 
         h1 {
@@ -80,20 +158,57 @@
             font-size: 1.65rem;
             color: #ffffff;
             margin-bottom: 8px;
-            line-height: 1.25;
+            line-height: 1.22;
+            letter-spacing: -0.01em;
         }
 
         @media (min-width: 768px) {
             h1 {
-                font-size: 2.35rem;
+                font-size: 2.25rem;
             }
         }
 
         .subtitle {
+            color: #e2e8f0;
+            font-size: 0.96rem;
+            font-weight: 600;
+            max-width: 780px;
+            margin: 0 auto 12px auto;
+            line-height: 1.55;
+        }
+
+        @media (min-width: 820px) {
+            .subtitle {
+                margin: 0 0 14px 0;
+                font-size: 1.02rem;
+            }
+        }
+
+        .hero-pillars {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        @media (min-width: 820px) {
+            .hero-pillars {
+                justify-content: flex-start;
+            }
+        }
+
+        .hero-pillar-pill {
+            font-size: 0.78rem;
+            font-weight: 600;
             color: var(--text-muted);
-            font-size: 0.92rem;
-            max-width: 760px;
-            margin: 0 auto;
+            background: rgba(11, 17, 32, 0.65);
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            padding: 5px 12px;
+            border-radius: 8px;
+        }
+
+        .hero-pillar-pill b {
+            color: #38bdf8;
         }
 
         /* KPI Stats Row */
@@ -359,10 +474,25 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <span class="badge">My IELTS journey</span>
-        <h1>🎯 IELTS Mastery Command Center</h1>
-        <p class="subtitle">Hệ thống huấn luyện 4 kỹ năng chuẩn Cambridge (2026 — 2028) • Từ nền tảng Foundation (Band 5.0) vươn tới đỉnh cao Academic Band 8.0+</p>
+    <header class="hero-header">
+        <div class="hero-logo-card" title="SayWise School — Where English Meets Your Goals">
+            <img src="assets/saywise_logo_banner.png" alt="SayWise School — Where English Meets Your Goals" class="hero-logo-img">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badges-row">
+                <span class="badge">🏛️ SAYWISE SCHOOL</span>
+                <span class="badge badge-gold">✨ WHERE ENGLISH MEETS YOUR GOALS</span>
+            </div>
+            <h1>🎯 IELTS Mastery Command Center</h1>
+            <p class="subtitle">
+                Cambridge-Standard 4-Skill Training System (2026 — 2028) • From Foundation Mastery (Band 5.0) to the Pinnacle of IELTS Excellence
+            </p>
+            <div class="hero-pillars">
+                <span class="hero-pillar-pill">🎓 <b>Cambridge Rigor:</b> Listening • Reading • Writing • Speaking</span>
+                <span class="hero-pillar-pill">🚀 <b>Pathway:</b> Foundation (Band 5.0) ➔ Academic Peak (8.0+)</span>
+                <span class="hero-pillar-pill">📅 <b>Strategic Vision:</b> 2026 — 2028</span>
+            </div>
+        </div>
     </header>
 
     <!-- KPI Overview Row -->
