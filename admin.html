@@ -380,8 +380,8 @@
                 <div style="font-size: 0.85rem; color: #34d399; font-weight: 700;">✓ TẠO MÃ BẢN QUYỀN THÀNH CÔNG!</div>
                 <div class="key-display" id="gen_key_text">NINH-FD-0000-0000</div>
                 <div style="display: flex; gap: 10px; margin-top: 8px;">
-                    <button onclick="copyGeneratedKey()" class="btn btn-action">📋 Sao Chép Mã</button>
-                    <button onclick="copyStudentMessage()" class="btn btn-action" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">
+                    <button onclick="copyGeneratedKey(this)" class="btn btn-action">📋 Sao Chép Mã</button>
+                    <button onclick="copyStudentMessage(this)" class="btn btn-action" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">
                         ✉️ Sao Chép Toàn Bộ Tin Nhắn Zalo
                     </button>
                 </div>
@@ -903,18 +903,30 @@ Chúc bạn luyện tập thật tốt và sớm bứt phá Band điểm mục t
     document.getElementById("gen_student_contact").value = "";
 }
 
-function copyGeneratedKey() {
+function copyGeneratedKey(btnElement) {
     const key = document.getElementById("gen_key_text")?.textContent || "";
-    navigator.clipboard.writeText(key).then(() => {
-        alert("✓ Đã sao chép mã kích hoạt: " + key);
-    });
+    if (window.IELTSAuth && IELTSAuth.copyToClipboard) {
+        IELTSAuth.copyToClipboard(key, "✓ Đã sao chép mã kích hoạt: " + key, btnElement);
+    } else {
+        navigator.clipboard.writeText(key).then(() => {
+            alert("✓ Đã sao chép mã kích hoạt: " + key);
+        }).catch(() => {
+            alert("Mã kích hoạt: " + key);
+        });
+    }
 }
 
-function copyStudentMessage() {
+function copyStudentMessage(btnElement) {
     if (!generatedMessageCache) return;
-    navigator.clipboard.writeText(generatedMessageCache).then(() => {
-        alert("✓ Đã sao chép trọn bộ tin nhắn hướng dẫn! Bạn có thể dán (Paste) gửi ngay qua Zalo/Facebook cho học viên.");
-    });
+    if (window.IELTSAuth && IELTSAuth.copyToClipboard) {
+        IELTSAuth.copyToClipboard(generatedMessageCache, "✓ Đã sao chép trọn bộ tin nhắn hướng dẫn!", btnElement);
+    } else {
+        navigator.clipboard.writeText(generatedMessageCache).then(() => {
+            alert("✓ Đã sao chép trọn bộ tin nhắn hướng dẫn! Bạn có thể dán (Paste) gửi ngay qua Zalo/Facebook cho học viên.");
+        }).catch(() => {
+            alert("Không thể sao chép tự động, vui lòng chọn văn bản và sao chép thủ công.");
+        });
+    }
 }
 
 function resetStudentDevice(idx) {

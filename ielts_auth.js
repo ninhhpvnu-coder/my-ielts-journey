@@ -111,17 +111,98 @@
             localStorage.setItem(STORAGE_KEY_PAYMENT, JSON.stringify(cfg));
         },
 
-        buildVietQRUrl: function (phone, amount) {
+        removeVietnameseAccents: function (str) {
+            if (!str) return '';
+            return str
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/đ/g, 'd')
+                .replace(/Đ/g, 'D')
+                .replace(/[^a-zA-Z0-9\s]/g, '')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toUpperCase();
+        },
+
+        copyToClipboard: function (text, successMsg, btnElement) {
+            if (!text) return;
+            const self = this;
+            const notify = () => {
+                self.showSecurityToast(successMsg || '✓ Đã sao chép thành công!');
+                if (btnElement) {
+                    const origHtml = btnElement.innerHTML;
+                    btnElement.innerHTML = '✓ Đã chép';
+                    btnElement.style.background = '#10b981';
+                    btnElement.style.color = '#ffffff';
+                    btnElement.style.borderColor = '#10b981';
+                    setTimeout(() => {
+                        btnElement.innerHTML = origHtml;
+                        btnElement.style.background = '';
+                        btnElement.style.color = '';
+                        btnElement.style.borderColor = '';
+                    }, 1800);
+                }
+            };
+
+            // Attempt 1: Modern Async Clipboard API
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    notify();
+                }).catch(() => {
+                    self._fallbackCopy(text, notify);
+                });
+            } else {
+                // Attempt 2: Fallback via textarea execCommand
+                self._fallbackCopy(text, notify);
+            }
+        },
+
+        _fallbackCopy: function (text, onSuccess) {
+            try {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-999999px";
+                textArea.style.top = "-999999px";
+                textArea.setAttribute('readonly', '');
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                const successful = document.execCommand('copy');
+                document.body.removeChild(textArea);
+                if (successful) {
+                    if (onSuccess) onSuccess();
+                } else {
+                    prompt("Nhấn Ctrl+C để sao chép:", text);
+                }
+            } catch (err) {
+                prompt("Nhấn Ctrl+C để sao chép:", text);
+            }
+        },
+
+        buildVietQRUrl: function (name, phone, amount) {
             const cfg = this.getPaymentConfig();
             const finalAmt = amount || cfg.amount || 150000;
             const cleanPhone = (phone || '').replace(/[^0-9]/g, '');
-            const memo = cleanPhone.length >= 6 ? `IELTS FD ${cleanPhone}` : 'IELTS FD 30 UNITS';
+            const cleanName = this.removeVietnameseAccents(name || '');
+
+            let memoParts = ['IELTS'];
+            if (cleanName) {
+                memoParts.push(cleanName.slice(0, 18));
+            } else {
+                memoParts.push('FD');
+            }
+            if (cleanPhone) {
+                memoParts.push(cleanPhone);
+            }
+            const memo = memoParts.join(' ');
             const encodedMemo = encodeURIComponent(memo);
             const encodedName = encodeURIComponent(cfg.accountName);
             return `https://img.vietqr.io/image/${cfg.bankId}-${cfg.accountNumber}-compact2.png?amount=${finalAmt}&addInfo=${encodedMemo}&accountName=${encodedName}`;
         },
 
         updateRegisterVietQR: function () {
+            const name = (document.getElementById('reg_student_name')?.value || '').trim();
             const phone = (document.getElementById('reg_student_phone')?.value || '').trim();
             const qrImg = document.getElementById('reg_vietqr_img');
             const memoEl = document.getElementById('reg_transfer_memo');
@@ -129,17 +210,28 @@
             const cfg = this.getPaymentConfig();
 
             const cleanPhone = phone.replace(/[^0-9]/g, '');
-            const memo = cleanPhone.length >= 6 ? `IELTS FD ${cleanPhone}` : 'IELTS FD [SĐT_CỦA_BẠN]';
-            if (memoEl) memoEl.textContent = memo;
+            const cleanName = this.removeVietnameseAccents(name);
+
+            let memoDisplay = 'IELTS';
+            if (cleanName && cleanPhone) {
+                memoDisplay = `IELTS ${cleanName.slice(0, 18)} ${cleanPhone}`;
+            } else if (cleanName) {
+                memoDisplay = `IELTS ${cleanName.slice(0, 18)} [SĐT]`;
+            } else if (cleanPhone) {
+                memoDisplay = `IELTS [HỌ_TÊN] ${cleanPhone}`;
+            } else {
+                memoDisplay = 'IELTS [HỌ_TÊN] [SĐT]';
+            }
+
+            if (memoEl) memoEl.textContent = memoDisplay;
 
             if (qrImg) {
-                qrImg.src = this.buildVietQRUrl(cleanPhone);
+                qrImg.src = this.buildVietQRUrl(name, phone);
             }
 
             if (zaloBtn) {
-                const name = (document.getElementById('reg_student_name')?.value || '').trim();
-                const studentInfo = name ? `em là ${name} (SĐT: ${cleanPhone || '...'}), ` : '';
-                const msg = encodeURIComponent(`Chào Cô Ninh, ${studentInfo}em vừa chuyển khoản 150.000đ đăng ký khóa học IELTS Foundation 30 Units (Cú pháp CK: ${memo}). Nhờ cô kiểm tra và gửi mã kích hoạt giúp em với ạ!`);
+                const studentInfo = (name || cleanPhone) ? `em là ${name || ''} (SĐT: ${cleanPhone || '...'}), ` : '';
+                const msg = encodeURIComponent(`Chào Cô Ninh, ${studentInfo}em vừa chuyển khoản 150.000đ đăng ký khóa học IELTS Foundation 30 Units (Cú pháp CK: ${memoDisplay}). Nhờ cô kiểm tra và gửi mã kích hoạt giúp em với ạ!`);
                 zaloBtn.href = `https://zalo.me/${cfg.hotlineZalo}?text=${msg}`;
             }
         },
@@ -393,7 +485,7 @@
                     font-size: 0.88rem;
                     font-weight: 600;
                     box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 0 20px rgba(197, 139, 98, 0.3);
-                    z-index: 999999;
+                    z-index: 99999999;
                     pointer-events: none;
                     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
                     opacity: 0;
@@ -667,7 +759,7 @@
                                         <span style="color: #94a3b8;">Số tài khoản:</span>
                                         <span style="display: flex; align-items: center; gap: 6px;">
                                             <b style="color: #38bdf8; font-family: monospace; font-size: 0.95rem;">366566999999</b>
-                                            <button onclick="navigator.clipboard.writeText('366566999999'); IELTSAuth.showSecurityToast('✓ Đã sao chép Số tài khoản Techcombank!');" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; border-radius: 4px; padding: 2px 6px; font-size: 0.72rem; cursor: pointer;">Copy</button>
+                                            <button onclick="IELTSAuth.copyToClipboard('366566999999', '✓ Đã sao chép Số tài khoản Techcombank: 366566999999', this);" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; border-radius: 4px; padding: 2px 8px; font-size: 0.74rem; font-weight: 700; cursor: pointer; transition: all 0.2s;">Copy</button>
                                         </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -678,14 +770,14 @@
                                         <span style="color: #94a3b8;">Số tiền:</span>
                                         <span style="display: flex; align-items: center; gap: 6px;">
                                             <b style="color: #34d399; font-size: 0.95rem;">150.000 VNĐ</b>
-                                            <button onclick="navigator.clipboard.writeText('150000'); IELTSAuth.showSecurityToast('✓ Đã sao chép Số tiền: 150.000đ!');" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; border-radius: 4px; padding: 2px 6px; font-size: 0.72rem; cursor: pointer;">Copy</button>
+                                            <button onclick="IELTSAuth.copyToClipboard('150000', '✓ Đã sao chép Số tiền: 150.000đ', this);" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; border-radius: 4px; padding: 2px 8px; font-size: 0.74rem; font-weight: 700; cursor: pointer; transition: all 0.2s;">Copy</button>
                                         </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #334155; margin-top: 4px; padding-top: 4px;">
                                         <span style="color: #94a3b8;">Nội dung CK:</span>
                                         <span style="display: flex; align-items: center; gap: 6px;">
-                                            <b id="reg_transfer_memo" style="color: #f59e0b; font-family: monospace;">IELTS FD [SĐT_CỦA_BẠN]</b>
-                                            <button onclick="navigator.clipboard.writeText(document.getElementById('reg_transfer_memo').innerText); IELTSAuth.showSecurityToast('✓ Đã sao chép Cú pháp chuyển khoản!');" style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; border-radius: 4px; padding: 2px 6px; font-size: 0.72rem; cursor: pointer;">Copy</button>
+                                            <b id="reg_transfer_memo" style="color: #f59e0b; font-family: monospace;">IELTS [HỌ_TÊN] [SĐT]</b>
+                                            <button onclick="IELTSAuth.copyToClipboard(document.getElementById('reg_transfer_memo').textContent, '✓ Đã sao chép Cú pháp chuyển khoản!', this);" style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; border-radius: 4px; padding: 2px 8px; font-size: 0.74rem; font-weight: 700; cursor: pointer; transition: all 0.2s;">Copy</button>
                                         </span>
                                     </div>
                                 </div>
