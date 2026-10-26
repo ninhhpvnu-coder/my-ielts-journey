@@ -369,8 +369,8 @@
     <div class="kpi-grid">
         <div class="kpi-card">
             <div class="kpi-label">📚 Giáo Trình Foundation (30 Units)</div>
-            <div class="kpi-value" id="kpi_units_done">0 / 20 Units</div>
-            <div class="kpi-sub">300 / 450 Từ Vựng Cốt Lõi • Đã mở Chặng 1, 2, 3 & 4</div>
+            <div class="kpi-value" id="kpi_units_done">0 / 25 Units</div>
+            <div class="kpi-sub">375 / 450 Từ Vựng Cốt Lõi • Đã mở Chặng 1, 2, 3, 4 & 5</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">🎯 Độ Chính Xác Quiz</div>
@@ -391,20 +391,21 @@
 
     <!-- Main Section Switcher -->
     <div class="hub-tabs">
-        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Giáo Trình Foundation (20/30 Units Đã Mở)</button>
+        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Giáo Trình Foundation (25/30 Units Đã Mở)</button>
         <button class="hub-tab-btn" onclick="switchHubTab('roadmap30', this)">🗺️ Bản Đồ Quy Hoạch 30 Units (6 Chặng)</button>
         <button class="hub-tab-btn" onclick="switchHubTab('vocab_c1', this)">🧠 Nâng Cấp Từ Vựng C1-C2 & Anki</button>
         <button class="hub-tab-btn" onclick="switchHubTab('cambridge', this)">📊 Khảo Thí & Chẩn Đoán Đề Cambridge (1-20)</button>
     </div>
 
-    <!-- SECTION 1: ACTIVE FOUNDATION UNITS (STAGE 1, STAGE 2, STAGE 3 & STAGE 4) -->
+    <!-- SECTION 1: ACTIVE FOUNDATION UNITS (STAGE 1, STAGE 2, STAGE 3, STAGE 4 & STAGE 5) -->
     <div id="foundation" class="hub-section active">
         <div class="topic-pills" style="margin-bottom: 18px;">
-            <button class="topic-pill active" onclick="filterUnitsByStage('all', this)">🌟 Tất Cả Đang Mở (Units 01 — 20)</button>
+            <button class="topic-pill active" onclick="filterUnitsByStage('all', this)">🌟 Tất Cả Đang Mở (Units 01 — 25)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(1, this)">🌱 Chặng 1: Units 01 — 05 (Band 3.5 ➔ 4.0)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(2, this)">🏙️ Chặng 2: Units 06 — 10 (Band 4.0 ➔ 4.5 • Map & Xã Hội)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(3, this)">💼 Chặng 3: Units 11 — 15 (Band 4.5 ➔ 5.0 • Line Graph & Bar Chart)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(4, this)">🔬 Chặng 4: Units 16 — 20 (Band 5.0 • Process & Table)</button>
+            <button class="topic-pill" onclick="filterUnitsByStage(5, this)">🌍 Chặng 5: Units 21 — 25 (Band 5.0 ➔ 5.5 • Pie Chart & Tâm Lý)</button>
         </div>
         <div class="units-grid" id="units_cards_container"></div>
     </div>
@@ -454,8 +455,8 @@
                         <tr>
                             <td><b style="color:#a78bfa;">🌍 Chặng 5 (Units 21–25)</b><br><small>Band 5.0 ➔ 5.5</small></td>
                             <td><b>U21: Demographics & Pie Chart</b> • U22: Art & Literature • U23: Media & Journalism • U24: Psychology • U25: Human Behavior</td>
-                            <td>Cấu trúc nhượng bộ (Despite/Although), <b>Chuyên đề Task 1: PIE CHART</b>, Speaking Part 2 Cue Card</td>
-                            <td><span style="color:#94a3b8;">⏳ Chuẩn bị sản xuất</span></td>
+                            <td>Cấu trúc nhượng bộ (Despite/Although), <b>Chuyên đề Task 1: PIE CHART</b>, Câu chẻ & Đảo ngữ C1</td>
+                            <td><span style="color:#a78bfa; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
                         </tr>
                         <tr>
                             <td><b style="color:#fb7185;">🚀 Chặng 6 (Units 26–30)</b><br><small>Band 5.5+ (Cầu nối 6.5+)</small></td>
@@ -741,6 +742,51 @@ const UNITS_META = [
         file: "unit_20_interactive_practice.html",
         desc: "Chuyên đề IELTS Writing Task 1 DATA TABLE: Nhóm số liệu cực trị, nêu ngoại lệ (with the notable exception of), nhấn mạnh sự chênh lệch (striking disparity) & Ghép số liệu bằng 'respectively'.",
         vocabPreview: "scarcity, consumption, desalination, reservoir, contaminate, purify, domestic, disparity..."
+    },
+    {
+        id: "21",
+        stage: 5,
+        stageLabel: "CHẶNG 5 • TASK 1 PIE CHART",
+        title: "Unit 21: Demographics, Ageing Population, Migration & Task 1 Pie Chart Mastery",
+        file: "unit_21_interactive_practice.html",
+        desc: "Chuyên đề IELTS Writing Task 1 PIE CHART: Quy đổi số % sang Phân số (a quarter, two-thirds, a tiny fraction), Cấu trúc dự báo năm tương lai (is projected/forecast to) & Già hóa dân số.",
+        vocabPreview: "demographic, elderly, fertility, expectancy, pension, workforce, migration, fraction, segment..."
+    },
+    {
+        id: "22",
+        stage: 5,
+        stageLabel: "CHẶNG 5 • BAND 5.0-5.5",
+        title: "Unit 22: Arts, Literature, Music, Architecture & Public Funding",
+        file: "unit_22_interactive_practice.html",
+        desc: "Phân biệt mệnh đề nhượng bộ Although/Even though + Clause với cụm giới từ Despite/In spite of + Noun/V-ing/the fact that & Tranh luận tài trợ ngân sách cho Nghệ thuật vs Dịch vụ công.",
+        vocabPreview: "aesthetic, masterpiece, literature, sculpture, gallery, creativity, inspire, enrich, tangible..."
+    },
+    {
+        id: "23",
+        stage: 5,
+        stageLabel: "CHẶNG 5 • BAND 5.0-5.5",
+        title: "Unit 23: Media, Journalism, Censorship, Fake News & Information Ethics",
+        file: "unit_23_interactive_practice.html",
+        desc: "Động từ tường thuật & Cấu trúc bị động tường thuật C1 (accuse... of V-ing, blame... for V-ing, It is widely reported that...) & Cuộc chiến chống tin giả trên mạng xã hội.",
+        vocabPreview: "journalism, broadcast, coverage, bias, objective, sensational, verify, distort, credibility..."
+    },
+    {
+        id: "24",
+        stage: 5,
+        stageLabel: "CHẶNG 5 • BAND 5.0-5.5",
+        title: "Unit 24: Psychology, Stress Management, Sleep Science & Cognitive Development",
+        file: "unit_24_interactive_practice.html",
+        desc: "Cấu trúc So sánh kép Nhân - Quả (The more..., the more...), Cụm tính từ/động từ tác động C1 (detrimental to, impair, enable... to cope with) & Khoa học giấc ngủ.",
+        vocabPreview: "cognitive, anxiety, depression, therapy, resilience, deprivation, insomnia, fatigue, impair..."
+    },
+    {
+        id: "25",
+        stage: 5,
+        stageLabel: "CHẶNG 5 • MILESTONE",
+        title: "Unit 25: Human Behavior, Social Norms, Conformity, Altruism & Cooperation",
+        file: "unit_25_interactive_practice.html",
+        desc: "Câu chẻ nhấn mạnh (What binds a community together is...) & Đảo ngữ C1 (Not only do..., but they also...) & Tổng duyệt Chặng 5 về Hành vi con người & Lòng vị tha.",
+        vocabPreview: "norm, conform, peer, altruism, empathy, egoism, compassion, incentive, innate, cohesion..."
     }
 ];
 
