@@ -234,23 +234,6 @@
 
         // --- 4. ACCESS GUARD FOR UNITS ---
         hasAccessToUnit: function (unitNum) {
-            const uStr = String(unitNum || '').toUpperCase();
-            
-            // Band 5.0 - 6.0 unit handling
-            if (uStr.startsWith('B5')) {
-                // Unit B5-01 is free trial for evaluation!
-                if (uStr === 'B5-01' || uStr === 'B5-1') {
-                    return { allowed: true, isFreeTrial: true };
-                }
-                const student = this.getStudent();
-                if (!student) return { allowed: false, reason: 'NOT_LOGGED_IN' };
-                if (student.isDeviceMismatch) return { allowed: false, reason: 'DEVICE_MISMATCH', student: student };
-                if (student.tier === 'B5' || student.tier === 'VIP') {
-                    return { allowed: true, isFreeTrial: false, student: student };
-                }
-                return { allowed: false, reason: 'WRONG_TIER', student: student };
-            }
-
             const num = parseInt(unitNum, 10);
             // Units 1 and 2 are 100% FREE TRIAL for all visitors!
             if (num === 1 || num === 2) {
