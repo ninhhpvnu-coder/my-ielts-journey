@@ -480,7 +480,8 @@
             } else if (access.isFreeTrial) {
                 badge.innerHTML = `<span>✨ <b>Học Thử Miễn Phí (Unit 01-02)</b></span> <a href="index.html#activate" style="color: #38bdf8; text-decoration: underline; margin-left: 6px;">Kích hoạt trọn bộ 30 Unit</a>`;
             } else if (access.student) {
-                badge.innerHTML = `<span>🎓 Học viên: <b style="color: #38bdf8;">${access.student.name}</b></span> <button onclick="IELTSAuth.openPassportModal()" style="background: linear-gradient(135deg, #38bdf8, #0284c7); border: none; color: #0b1120; border-radius: 6px; padding: 2px 8px; font-size: 0.7rem; font-weight: 800; cursor: pointer; margin-left: 4px;">🎓 Hồ Sơ & Sổ Tay</button>`;
+                badge.innerHTML = `<span>🎓 Học viên: <b style="color: #38bdf8;">${access.student.name}</b></span> <button onclick="IELTSAuth.toggleTheme()" class="theme-switch-pill" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(197, 133, 93, 0.15); border: 1.5px solid rgba(197, 133, 93, 0.45); color: var(--accent, #c5855d); padding: 6px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; cursor: pointer;">☀️ <span class="theme-text">Giấy Ngà</span></button>
+                            <button onclick="IELTSAuth.openPassportModal()" style="background: linear-gradient(135deg, #14324d, #1d4367); color: #fff; border: none; color: #0b1120; border-radius: 6px; padding: 2px 8px; font-size: 0.7rem; font-weight: 800; cursor: pointer; margin-left: 4px;">🎓 Hồ Sơ & Sổ Tay</button>`;
             }
             bar.appendChild(badge);
         },
@@ -1352,7 +1353,7 @@
             const student = this.getStudent();
             if (student && !student.isDeviceMismatch) {
                 container.innerHTML = `
-                    <div style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(16, 185, 129, 0.4); border-radius: 14px; padding: 12px 18px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); flex-wrap: wrap; gap: 10px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; background: var(--surface-color, #ffffff); border: 1.5px solid var(--border, #eadccb); box-shadow: var(--card-shadow, 0 4px 18px rgba(20, 50, 77, 0.06)); color: var(--text-main, #14324d); border-radius: 14px; padding: 12px 18px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); flex-wrap: wrap; gap: 10px;">
                         <div style="display: flex; align-items: center; gap: 10px; cursor: pointer;" onclick="IELTSAuth.openPassportModal()">
                             <span style="font-size: 1.5rem;">🎓</span>
                             <div>
@@ -1367,7 +1368,8 @@
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <button onclick="IELTSAuth.openPassportModal()" style="background: linear-gradient(135deg, #38bdf8, #0284c7); color: #0b1120; font-size: 0.8rem; font-weight: 800; padding: 7px 14px; border-radius: 10px; border: none; cursor: pointer; box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);">
+                            <button onclick="IELTSAuth.toggleTheme()" class="theme-switch-pill" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(197, 133, 93, 0.15); border: 1.5px solid rgba(197, 133, 93, 0.45); color: var(--accent, #c5855d); padding: 6px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; cursor: pointer;">☀️ <span class="theme-text">Giấy Ngà</span></button>
+                            <button onclick="IELTSAuth.openPassportModal()" style="background: linear-gradient(135deg, #14324d, #1d4367); color: #fff; color: #0b1120; font-size: 0.8rem; font-weight: 800; padding: 7px 14px; border-radius: 10px; border: none; cursor: pointer; box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);">
                                 🎓 Bảng Năng Lực & Sổ Tay
                             </button>
                             <button onclick="IELTSAuth.openPaywallModal()" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-size: 0.78rem; font-weight: 700; padding: 6px 12px; border-radius: 8px; cursor: pointer;">
@@ -1381,7 +1383,7 @@
                 `;
             } else {
                 container.innerHTML = `
-                    <div style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(197, 139, 98, 0.4); border-radius: 14px; padding: 12px 18px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); flex-wrap: wrap; gap: 10px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; background: var(--surface-color, #ffffff); border: 1.5px solid var(--border, #eadccb); box-shadow: var(--card-shadow, 0 4px 18px rgba(20, 50, 77, 0.06)); color: var(--text-main, #14324d); border-radius: 14px; padding: 12px 18px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); flex-wrap: wrap; gap: 10px;">
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <span style="font-size: 1.4rem;">✨</span>
                             <div>
