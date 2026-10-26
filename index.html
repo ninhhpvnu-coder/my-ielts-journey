@@ -12,6 +12,7 @@
     <link rel="manifest" href="manifest.json">
     <title>IELTS Journey with Ms Ninh — Academic Mastery Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <script src="ielts_auth.js"></script>
     <style>
         :root {
             --bg-color: #0b1120;
@@ -468,6 +469,9 @@
         </div>
     </header>
 
+    <!-- Member License & Security Gateway Bar -->
+    <div id="member_status_bar"></div>
+
     <!-- KPI Overview Row (4 Training Program Tiers) -->
     <div class="kpi-grid">
         <div class="kpi-card">
@@ -847,11 +851,32 @@ function renderUnitCards(unitsProgress) {
             }
         }
 
+        const isFree = (u.id === "01" || u.id === "02");
+        const access = (typeof IELTSAuth !== 'undefined') ? IELTSAuth.hasAccessToUnit(u.id) : { allowed: isFree };
+        const isLocked = !access.allowed;
+
+        let actionBtn = "";
+        let lockBadge = "";
+
+        if (isFree) {
+            lockBadge = `<span style="font-size: 0.72rem; font-weight: 800; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); padding: 3px 8px; border-radius: 999px;">✨ HỌC THỬ FREE</span>`;
+            actionBtn = `<a href="${u.file}" class="btn-launch" style="background: linear-gradient(135deg, #38bdf8, #0284c7);">✨ Vào Học Thử Unit ${u.id} (Miễn Phí) →</a>`;
+        } else if (isLocked) {
+            lockBadge = `<span style="font-size: 0.72rem; font-weight: 800; background: rgba(197, 139, 98, 0.15); color: #c58b62; border: 1px solid rgba(197, 139, 98, 0.4); padding: 3px 8px; border-radius: 999px;">🔒 BẢN QUYỀN KHÓA HỌC</span>`;
+            actionBtn = `<button onclick="IELTSAuth.openPaywallModal()" class="btn-launch" style="background: linear-gradient(135deg, rgba(197, 139, 98, 0.25), rgba(15, 23, 42, 0.8)); border: 1.5px solid rgba(197, 139, 98, 0.5); color: #f8fafc; cursor: pointer; box-shadow: none;">🔒 Mở Khóa Bản Quyền Unit ${u.id}</button>`;
+        } else {
+            lockBadge = `<span style="font-size: 0.72rem; font-weight: 800; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); padding: 3px 8px; border-radius: 999px;">🔓 ĐÃ MỞ KHÓA</span>`;
+            actionBtn = `<a href="${u.file}" class="btn-launch" style="background: linear-gradient(135deg, #10b981, #059669);">🚀 Bắt Đầu Học Unit ${u.id} →</a>`;
+        }
+
         return `
             <div class="unit-card">
                 <div>
                     <div class="unit-top">
-                        <span class="unit-num-pill">${u.stageLabel || ('FOUNDATION • UNIT ' + u.id)}</span>
+                        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                            <span class="unit-num-pill">${u.stageLabel || ('FOUNDATION • UNIT ' + u.id)}</span>
+                            ${lockBadge}
+                        </div>
                         <span class="unit-status-pill" style="${statusStyle}">${statusText}</span>
                     </div>
                     <div class="unit-title">${u.title}</div>
@@ -869,7 +894,7 @@ function renderUnitCards(unitsProgress) {
                         <div class="score-mini"><span>✍️ Write</span><b>Band ${wBand}</b></div>
                         <div class="score-mini"><span>🗣️ Speak</span><b>Band ${sBand}</b></div>
                     </div>
-                    <a href="${u.file}" class="btn-launch">🚀 Vào Học & Thực Hành Unit ${u.id}</a>
+                    ${actionBtn}
                 </div>
             </div>
         `;
@@ -881,6 +906,9 @@ function renderUnitCards(unitsProgress) {
 }
 
 window.addEventListener("load", () => {
+    if (typeof IELTSAuth !== 'undefined') {
+        IELTSAuth.renderMemberStatusBar("member_status_bar");
+    }
     loadMasterProgress();
 });
 </script>
