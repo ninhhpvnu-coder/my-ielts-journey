@@ -1,2132 +1,1085 @@
-<!DOCTYPE html>
-
-<html lang="vi">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Quản Trị Bản Quyền & Mã Học Viên — IELTS Journey with Ms Ninh</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-
-    <style>
-
-        :root {
-
-            --bg-color: #0b1120;
-
-            --surface-color: #1e293b;
-
-            --card-color: #334155;
-
-            --primary: #38bdf8;
-
-            --accent: #c58b62;
-
-            --success: #10b981;
-
-            --warning: #f59e0b;
-
-            --danger: #f43f5e;
-
-            --text-main: #f8fafc;
-
-            --text-muted: #94a3b8;
-
-            --border: #334155;
-
-        }
-
-
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-
-            font-family: 'Plus Jakarta Sans', sans-serif;
-
-            background-color: var(--bg-color);
-
-            color: var(--text-main);
-
-            padding: 24px 16px;
-
-            min-height: 100vh;
-
-        }
-
-
-
-        .container {
-
-            max-width: 1100px;
-
-            margin: 0 auto;
-
-        }
-
-
-
-        /* Login Screen */
-
-        #login_screen {
-
-            max-width: 440px;
-
-            margin: 80px auto;
-
-            background: var(--surface-color);
-
-            border: 1.5px solid rgba(197, 139, 98, 0.4);
-
-            border-radius: 24px;
-
-            padding: 36px 28px;
-
-            text-align: center;
-
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 30px rgba(197, 139, 98, 0.2);
-
-        }
-
-
-
-        /* Admin Dashboard */
-
-        #admin_dashboard { display: none; }
-
-
-
-        header.admin-header {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98));
-
-            border: 1.5px solid rgba(197, 139, 98, 0.4);
-
-            border-radius: 20px;
-
-            padding: 20px 24px;
-
-            margin-bottom: 24px;
-
-            flex-wrap: wrap;
-
-            gap: 16px;
-
-        }
-
-
-
-        .header-title-box {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 16px;
-
-        }
-
-
-
-        .header-logo {
-
-            width: 52px;
-
-            height: 52px;
-
-            border-radius: 14px;
-
-            border: 1.5px solid var(--accent);
-
-            object-fit: cover;
-
-        }
-
-
-
-        .stats-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-            gap: 16px;
-
-            margin-bottom: 24px;
-
-        }
-
-
-
-        .stat-card {
-
-            background: var(--surface-color);
-
-            border: 1px solid var(--border);
-
-            border-radius: 16px;
-
-            padding: 18px;
-
-        }
-
-
-
-        .stat-label {
-
-            font-size: 0.8rem;
-
-            color: var(--text-muted);
-
-            text-transform: uppercase;
-
-            font-weight: 700;
-
-            margin-bottom: 6px;
-
-        }
-
-
-
-        .stat-value {
-
-            font-family: 'Space Grotesk', sans-serif;
-
-            font-size: 1.8rem;
-
-            font-weight: 700;
-
-            color: var(--primary);
-
-        }
-
-
-
-        .generator-card {
-
-            background: var(--surface-color);
-
-            border: 1.5px solid rgba(197, 139, 98, 0.35);
-
-            border-radius: 20px;
-
-            padding: 24px;
-
-            margin-bottom: 28px;
-
-        }
-
-
-
-        .form-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
-            gap: 16px;
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        label {
-
-            display: block;
-
-            font-size: 0.82rem;
-
-            font-weight: 700;
-
-            color: #cbd5e1;
-
-            margin-bottom: 6px;
-
-        }
-
-
-
-        input, select {
-
-            width: 100%;
-
-            background: #0b1120;
-
-            border: 1px solid var(--border);
-
-            color: #fff;
-
-            padding: 12px 14px;
-
-            border-radius: 10px;
-
-            font-size: 0.92rem;
-
-            font-family: inherit;
-
-        }
-
-
-
-        input:focus, select:focus {
-
-            outline: none;
-
-            border-color: var(--primary);
-
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
-
-        }
-
-
-
-        .btn {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 8px;
-
-            padding: 12px 22px;
-
-            border-radius: 12px;
-
-            font-weight: 700;
-
-            font-size: 0.92rem;
-
-            cursor: pointer;
-
-            border: none;
-
-            transition: all 0.2s;
-
-        }
-
-
-
-        .btn-primary {
-
-            background: linear-gradient(135deg, #38bdf8, #0284c7);
-
-            color: #0b1120;
-
-        }
-
-        .btn-primary:hover { filter: brightness(1.1); box-shadow: 0 0 18px rgba(56, 189, 248, 0.4); }
-
-
-
-        .btn-secondary {
-
-            background: #334155;
-
-            color: #e2e8f0;
-
-            border: 1px solid #475569;
-
-        }
-
-
-
-        .btn-danger {
-
-            background: rgba(244, 63, 94, 0.15);
-
-            border: 1px solid rgba(244, 63, 94, 0.4);
-
-            color: #fb7185;
-
-            font-size: 0.78rem;
-
-            padding: 6px 12px;
-
-        }
-
-
-
-        .btn-action {
-
-            background: rgba(56, 189, 248, 0.15);
-
-            border: 1px solid rgba(56, 189, 248, 0.4);
-
-            color: #38bdf8;
-
-            font-size: 0.78rem;
-
-            padding: 6px 12px;
-
-        }
-
-
-
-        .result-box {
-
-            background: #0f172a;
-
-            border: 1.5px solid rgba(16, 185, 129, 0.4);
-
-            border-radius: 16px;
-
-            padding: 20px;
-
-            margin-top: 20px;
-
-            display: none;
-
-        }
-
-
-
-        .key-display {
-
-            font-family: 'Space Grotesk', monospace;
-
-            font-size: 1.6rem;
-
-            font-weight: 800;
-
-            color: #34d399;
-
-            letter-spacing: 2px;
-
-            background: rgba(16, 185, 129, 0.12);
-
-            padding: 10px 18px;
-
-            border-radius: 10px;
-
-            display: inline-block;
-
-            margin: 8px 0;
-
-            user-select: all;
-
-        }
-
-
-
-        .message-preview {
-
-            background: #0b1120;
-
-            border: 1px solid var(--border);
-
-            border-radius: 10px;
-
-            padding: 14px;
-
-            font-size: 0.85rem;
-
-            color: #cbd5e1;
-
-            white-space: pre-wrap;
-
-            line-height: 1.5;
-
-            margin-top: 12px;
-
-        }
-
-
-
-        /* Table styles */
-
-        .table-card {
-
-            background: var(--surface-color);
-
-            border: 1px solid var(--border);
-
-            border-radius: 20px;
-
-            padding: 24px;
-
-            overflow-x: auto;
-
-        }
-
-
-
-        table {
-
-            width: 100%;
-
-            border-collapse: collapse;
-
-            font-size: 0.88rem;
-
-            text-align: left;
-
-        }
-
-
-
-        th {
-
-            background: rgba(11, 17, 32, 0.6);
-
-            color: var(--primary);
-
-            padding: 12px 14px;
-
-            border-bottom: 2px solid var(--border);
-
-            font-weight: 700;
-
-        }
-
-
-
-        td {
-
-            padding: 12px 14px;
-
-            border-bottom: 1px solid var(--border);
-
-            vertical-align: middle;
-
-        }
-
-
-
-        tr:hover td {
-
-            background: rgba(56, 189, 248, 0.03);
-
-        }
-
-
-
-        .tier-badge {
-
-            display: inline-block;
-
-            padding: 3px 8px;
-
-            border-radius: 6px;
-
-            font-size: 0.75rem;
-
-            font-weight: 700;
-
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-
-
-<div class="container">
-
-    <!-- 1. LOGIN SCREEN -->
-
-    <div id="login_screen">
-
-        <div style="font-size: 44px; margin-bottom: 12px;">🪷</div>
-
-        <div style="font-size: 0.82rem; font-weight: 800; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">IELTS Journey with Ms Ninh</div>
-
-        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: #fff; margin-bottom: 20px;">Cổng Quản Trị Khóa Học & Bản Quyền</h2>
-
-        <div style="text-align: left; margin-bottom: 16px;">
-
-            <label>Mật Khẩu Quản Trị Viên (Admin Passkey)</label>
-
-            <input type="password" id="admin_password_input" placeholder="Nhập mật khẩu quản trị..." onkeyup="if(event.key==='Enter') verifyAdminLogin();">
-
-        </div>
-
-        <button onclick="verifyAdminLogin()" class="btn btn-primary" style="width: 100%;">
-
-            🔓 Đăng Nhập Hệ Thống
-
-        </button>
-
-        <div id="login_err_msg" style="display: none; color: #fb7185; font-size: 0.85rem; margin-top: 14px;"></div>
-
-    </div>
-
-
-
-    <!-- 2. ADMIN DASHBOARD -->
-
-    <div id="admin_dashboard">
-
-        <header class="admin-header">
-
-            <div class="header-title-box">
-
-                <img src="brand_logo.jpg" alt="Logo" class="header-logo" onerror="this.style.display='none'">
-
-                <div>
-
-                    <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent); text-transform: uppercase;">IELTS Journey with Ms Ninh</div>
-
-                    <h1 style="font-size: 1.3rem; font-family: 'Space Grotesk', sans-serif;">Trung Tâm Quản Lý Mã Bản Quyền & Học Viên</h1>
-
-                </div>
-
-            </div>
-
-            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-
-                <a href="index.html" class="btn btn-primary" style="text-decoration: none;">
-
-                    🌐 Mở Trang Chủ (Toàn Quyền Admin)
-
-                </a>
-
-                <button onclick="localStorage.removeItem('ielts_admin_authenticated'); sessionStorage.removeItem('ielts_admin_authenticated'); window.location.href='index.html';" class="btn btn-secondary" title="Xem trang chủ dưới tư cách khách chưa đăng ký">
-
-                    👁️ Xem Dưới Tư Cách Khách
-
-                </button>
-
-                <button onclick="adminLogout()" class="btn btn-danger">
-
-                    Đăng Xuất
-
-                </button>
-
-            </div>
-
-        </header>
-
-
-
-        <!-- KPI Stats -->
-
-        <div class="stats-grid">
-
-            <div class="stat-card">
-
-                <div class="stat-label">Tổng Số Mã Đã Cấp</div>
-
-                <div class="stat-value" id="kpi_total_keys">0</div>
-
-            </div>
-
-            <div class="stat-card">
-
-                <div class="stat-label">Học Viên Đang Hoạt Động</div>
-
-                <div class="stat-value" id="kpi_active_students" style="color: var(--success);">0</div>
-
-            </div>
-
-            <div class="stat-card">
-
-                <div class="stat-label">Khóa Học Foundation (30 Units)</div>
-
-                <div class="stat-value" id="kpi_fd_keys" style="color: var(--accent);">0</div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Tool: Key Generator -->
-
-        <div class="generator-card">
-
-            <h2 style="font-size: 1.2rem; font-family: 'Space Grotesk', sans-serif; margin-bottom: 16px; color: #fff;">
-
-                ⚡ Tạo Mã Kích Hoạt Nhanh Cho Học Viên
-
-            </h2>
-
-            <div class="form-grid">
-
-                <div>
-
-                    <label>Họ và Tên Học Viên *</label>
-
-                    <input type="text" id="gen_student_name" placeholder="Ví dụ: Hoàng Minh Đức">
-
-                </div>
-
-                <div>
-
-                    <label>Số Điện Thoại / Zalo / Email *</label>
-
-                    <input type="text" id="gen_student_contact" placeholder="0988xxxxxx hoặc email...">
-
-                </div>
-
-                <div>
-
-                    <label>Gói Học Cần Kích Hoạt *</label>
-
-                    <select id="gen_tier_select">
-
-                        <option value="FD" selected>📚 Giáo Trình Foundation (30 Units)</option>
-
-                        <option value="B5">🌱 Giáo Trình Band 5.0 — 6.0</option>
-
-                        <option value="B6">⚡ Giáo Trình Band 6.0 — 7.5</option>
-
-                        <option value="CAM">🏆 Luyện Đề Cambridge 8.0+</option>
-
-                        <option value="VIP">👑 VIP Toàn Diện (Tất Cả 4 Khóa Học)</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-            <button onclick="handleGenerateKey()" class="btn btn-primary" style="font-size: 1rem;">
-
-                ⚡ Tạo Mã & Chuẩn Bị Tin Nhắn Cho Học Viên
-
-            </button>
-
-
-
-            <!-- Generated Result Box -->
-
-            <div id="gen_result_box" class="result-box">
-
-                <div style="font-size: 0.85rem; color: #34d399; font-weight: 700;">✓ TẠO MÃ BẢN QUYỀN THÀNH CÔNG!</div>
-
-                <div class="key-display" id="gen_key_text">NINH-FD-0000-0000</div>
-
-                <div style="display: flex; gap: 10px; margin-top: 8px;">
-
-                    <button onclick="copyGeneratedKey()" class="btn btn-action">📋 Sao Chép Mã</button>
-
-                    <button onclick="copyStudentMessage()" class="btn btn-action" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">
-
-                        ✉️ Sao Chép Toàn Bộ Tin Nhắn Zalo
-
-                    </button>
-
-                </div>
-
-                <div class="message-preview" id="gen_message_preview"></div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Settings: Payment & VietQR Gateway -->
-
-        <div class="generator-card" style="border-color: rgba(56, 189, 248, 0.4); margin-bottom: 28px;">
-
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-
-                <div>
-
-                    <h2 style="font-size: 1.2rem; font-family: 'Space Grotesk', sans-serif; color: #fff;">
-
-                        ⚙️ Cấu Hình Thanh Toán & VietQR Tự Động
-
-                    </h2>
-
-                    <div style="font-size: 0.8rem; color: var(--text-muted);">
-
-                        Thông tin tài khoản nhận học phí và số hotline Zalo hỗ trợ học viên.
-
-                    </div>
-
-                </div>
-
-                <span style="font-size: 0.78rem; font-weight: 800; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); padding: 4px 10px; border-radius: 999px;">
-
-                    ✓ VietQR Techcombank Active
-
-                </span>
-
-            </div>
-
-
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-
-                <!-- Left Form -->
-
-                <div>
-
-                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 14px;">
-
-                        <div>
-
-                            <label>Ngân Hàng Nhận Học Phí</label>
-
-                            <select id="cfg_bank_select" onchange="previewAdminVietQR()">
-
-                                <option value="TCB" selected>Techcombank (TCB)</option>
-
-                                <option value="MB">MB Bank (Quân Đội)</option>
-
-                                <option value="VCB">Vietcombank</option>
-
-                                <option value="VPB">VPBank</option>
-
-                                <option value="ACB">ACB</option>
-
-                                <option value="BIDV">BIDV</option>
-
-                                <option value="CTG">Vietinbank</option>
-
-                                <option value="TPB">TPBank</option>
-
-                            </select>
-
-                        </div>
-
-                        <div>
-
-                            <label>Số Tài Khoản *</label>
-
-                            <input type="text" id="cfg_account_no" value="366566999999" oninput="previewAdminVietQR()">
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 14px;">
-
-                        <div>
-
-                            <label>Tên Chủ Tài Khoản (In Hoa Không Dấu) *</label>
-
-                            <input type="text" id="cfg_account_name" value="NGO THI NINH" oninput="previewAdminVietQR()">
-
-                        </div>
-
-                        <div>
-
-                            <label>Mức Học Phí Foundation (VNĐ) *</label>
-
-                            <input type="number" id="cfg_amount" value="150000" oninput="previewAdminVietQR()">
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div style="margin-bottom: 18px;">
-
-                        <label>Số Điện Thoại Zalo / Hotline Tư Vấn *</label>
-
-                        <input type="text" id="cfg_zalo_hotline" value="0869669659" placeholder="0869669659">
-
-                    </div>
-
-
-
-                    <div style="display: flex; gap: 10px;">
-
-                        <button onclick="saveAdminPaymentSettings()" class="btn btn-primary">
-
-                            💾 Lưu Cấu Hình Thanh Toán
-
-                        </button>
-
-                        <button onclick="resetDefaultPaymentSettings()" class="btn btn-secondary">
-
-                            Khôi Phục Mặc Định
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Right Live Preview -->
-
-                <div style="background: #0f172a; border: 1px solid var(--border); border-radius: 16px; padding: 18px; text-align: center;">
-
-                    <div style="font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; margin-bottom: 10px;">
-
-                        Xem Trước Mã VietQR Thực Tế
-
-                    </div>
-
-                    <img id="admin_vietqr_preview" src="https://img.vietqr.io/image/TCB-366566999999-compact2.png?amount=150000&addInfo=IELTS%20FD%20DEMO&accountName=NGO%20THI%20NINH" alt="Preview QR" style="width: 190px; height: auto; border-radius: 12px; background: #fff; padding: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); margin: 0 auto 10px; display: block;">
-
-                    <div style="font-size: 0.78rem; color: #94a3b8;">
-
-                        Học viên quét mã này sẽ tự động chuyển đúng số tiền và cú pháp chứa SĐT của họ.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Cloud Sync & Multi-Device Management -->
-
-        <div class="generator-card" style="border-color: rgba(16, 185, 129, 0.4); margin-bottom: 28px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));">
-
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
-
-                <div style="display: flex; align-items: center; gap: 12px;">
-
-                    <div style="font-size: 1.8rem; background: rgba(16, 185, 129, 0.15); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.3);">☁️</div>
-
-                    <div>
-
-                        <h2 style="font-size: 1.15rem; font-family: 'Space Grotesk', sans-serif; color: #fff;">
-
-                            Đồng Bộ Đám Mây Đa Thiết Bị 24/7 (Cross-Device Cloud Sync)
-
-                        </h2>
-
-                        <div style="font-size: 0.8rem; color: #94a3b8;">
-
-                            Đồng bộ tức thì danh sách mã học viên giữa mọi trình duyệt (Chrome, Safari, Edge) và Điện thoại di động.
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div id="cloud_status_badge" style="padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);">
-
-                    🔄 Đang kết nối Đám Mây...
-
-                </div>
-
-            </div>
-
-
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: end;">
-
-                <div>
-
-                    <label style="display: flex; justify-content: space-between;">
-
-                        <span>Khóa Truy Cập Đám Mây (GitHub Cloud Sync Token)</span>
-
-                        <span style="color: #38bdf8; font-weight: 600; cursor: pointer; user-select: none;" onclick="toggleTokenVisibility()">👁️ Ẩn/Hiện Token</span>
-
-                    </label>
-
-                    <input type="password" id="cloud_token_input" placeholder="Dán mã Token (gho_...) để kích hoạt đồng bộ 2 chiều">
-
-                    <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 5px;">
-
-                        💡 <i>Token được lưu cục bộ an toàn trên trình duyệt này, bảo mật tuyệt đối và không lưu vào Git.</i>
-
-                    </div>
-
-                </div>
-
-                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-
-                    <button onclick="saveCloudToken()" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.85rem;">
-
-                        💾 Lưu Token
-
-                    </button>
-
-                    <button onclick="syncCloudVault(false)" id="btn_sync_now" class="btn btn-action" style="padding: 10px 18px; font-size: 0.85rem; font-weight: 700;">
-
-                        🔄 Đồng Bộ Ngay
-
-                    </button>
-
-                    <button onclick="triggerJSONImport()" class="btn btn-secondary" style="padding: 10px 16px; font-size: 0.85rem;" title="Nhập danh sách học viên từ file sao lưu JSON">
-
-                        📂 Nhập File JSON
-
-                    </button>
-
-                    <button onclick="clearCloudToken()" class="btn btn-danger" style="padding: 10px 12px; font-size: 0.85rem;" title="Xóa Token khỏi trình duyệt này">
-
-                        🗑️
-
-                    </button>
-
-                    <input type="file" id="json_file_input" accept=".json" style="display: none;" onchange="handleJSONFileImport(event)">
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Table: Student List -->
-
-        <div class="table-card">
-
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 12px;">
-
-                <div>
-
-                    <h2 style="font-size: 1.2rem; font-family: 'Space Grotesk', sans-serif; color: #fff;">
-
-                        📋 Danh Sách Mã & Học Viên Đã Cấp Bản Quyền
-
-                    </h2>
-
-                    <div style="font-size: 0.8rem; color: var(--text-muted);">Quản lý thiết bị đã khóa (Single-Device Lock) và quyền truy cập.</div>
-
-                </div>
-
-                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-
-                    <button onclick="syncCloudVault(false)" class="btn btn-action" style="font-size: 0.8rem; padding: 8px 14px; font-weight: 700;">
-
-                        🔄 Đồng Bộ Đám Mây
-
-                    </button>
-
-                    <button onclick="triggerJSONImport()" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 14px;">
-
-                        📂 Nhập JSON
-
-                    </button>
-
-                    <button onclick="exportToCSV()" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 14px;">
-
-                        📥 Xuất Excel (CSV)
-
-                    </button>
-
-                    <button onclick="exportToJSON()" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 14px;">
-
-                        💾 Sao Lưu JSON
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>STT</th>
-
-                        <th>Học Viên</th>
-
-                        <th>Liên Hệ</th>
-
-                        <th>Gói Học</th>
-
-                        <th>Mã Kích Hoạt</th>
-
-                        <th>Thiết Bị Khóa</th>
-
-                        <th>Thời Gian Cấp</th>
-
-                        <th>Thao Tác</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="student_table_body">
-
-                    <tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 24px;">Chưa có học viên nào được cấp mã.</td></tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<script src="ielts_auth.js"></script>
-
-<script>
-
-const ADMIN_MASTER_PASS = "NINH2026ADMIN";
-
-const STORAGE_ADMIN_AUTH = "ielts_admin_authenticated";
-
-let generatedMessageCache = "";
-
-
-
-const GIST_ID = "7ba34f7b0edf74cc1855ba425a432cce";
-
-const GIST_API_URL = "https://api.github.com/gists/" + GIST_ID;
-
-const STORAGE_CLOUD_TOKEN = "ielts_cloud_token";
-
-
-
-function getCloudToken() {
-
-    return (localStorage.getItem(STORAGE_CLOUD_TOKEN) || "").trim();
-
-}
-
-
-
-function saveCloudToken() {
-
-    const input = document.getElementById("cloud_token_input");
-
-    const val = (input ? input.value : "").trim();
-
-    if (!val) {
-
-        alert("Vui lòng nhập hoặc dán mã GitHub Cloud Token!");
-
-        return;
-
-    }
-
-    localStorage.setItem(STORAGE_CLOUD_TOKEN, val);
-
-    alert("✓ Đã lưu Cloud Token vào trình duyệt thành công! Bắt đầu đồng bộ đám mây...");
-
-    syncCloudVault(false);
-
-}
-
-
-
-function clearCloudToken() {
-
-    if (confirm("Bạn có chắc muốn xóa Cloud Token khỏi trình duyệt này?")) {
-
-        localStorage.removeItem(STORAGE_CLOUD_TOKEN);
-
-        const input = document.getElementById("cloud_token_input");
-
-        if (input) input.value = "";
-
-        updateCloudStatusBadge("offline");
-
-        alert("✓ Đã xóa Cloud Token khỏi trình duyệt này.");
-
-    }
-
-}
-
-
-
-function toggleTokenVisibility() {
-
-    const input = document.getElementById("cloud_token_input");
-
-    if (input) {
-
-        input.type = input.type === "password" ? "text" : "password";
-
-    }
-
-}
-
-
-
-function updateCloudStatusBadge(state, count) {
-
-    const badge = document.getElementById("cloud_status_badge");
-
-    if (!badge) return;
-
-    if (state === "syncing") {
-
-        badge.style.background = "rgba(245, 158, 11, 0.15)";
-
-        badge.style.color = "#fbbf24";
-
-        badge.style.borderColor = "rgba(245, 158, 11, 0.4)";
-
-        badge.innerHTML = "⏳ Đang đồng bộ đám mây...";
-
-    } else if (state === "synced") {
-
-        badge.style.background = "rgba(16, 185, 129, 0.15)";
-
-        badge.style.color = "#34d399";
-
-        badge.style.borderColor = "rgba(16, 185, 129, 0.4)";
-
-        badge.innerHTML = `🟢 Đã Đồng Bộ (${count || 0} học viên)`;
-
-    } else if (state === "readonly") {
-
-        badge.style.background = "rgba(56, 189, 248, 0.15)";
-
-        badge.style.color = "#38bdf8";
-
-        badge.style.borderColor = "rgba(56, 189, 248, 0.4)";
-
-        badge.innerHTML = `🟡 Đám Mây: Đã Kết Nối (${count || 0} học viên)`;
-
-    } else {
-
-        badge.style.background = "rgba(148, 163, 184, 0.15)";
-
-        badge.style.color = "#94a3b8";
-
-        badge.style.borderColor = "rgba(148, 163, 184, 0.3)";
-
-        badge.innerHTML = "⚪ Ngoại Tuyến (Chưa kết nối Cloud)";
-
-    }
-
-}
-
-
-
-function initCloudSyncUI() {
-
-    const token = getCloudToken();
-
-    const input = document.getElementById("cloud_token_input");
-
-    if (input && token) {
-
-        input.value = token;
-
-    }
-
-    updateCloudStatusBadge(token ? "synced" : "readonly", getStoredVault().length);
-
-}
-
-
-
-async function fetchCloudVault() {
-
-    try {
-
-        const resp = await fetch(`${GIST_API_URL}?t=${Date.now()}`, {
-
-            cache: "no-store",
-
-            headers: { "Accept": "application/vnd.github.v3+json" }
-
-        });
-
-        if (!resp.ok) throw new Error("HTTP " + resp.status);
-
-        const data = await resp.json();
-
-        const fileObj = data.files && (data.files["ielts_vault.json"] || data.files["temp_vault.json"]);
-
-        if (fileObj && fileObj.content) {
-
-            return JSON.parse(fileObj.content);
-
-        }
-
-        return [];
-
-    } catch (err) {
-
-        console.warn("fetchCloudVault error:", err);
-
-        return null;
-
-    }
-
-}
-
-
-
-async function pushCloudVault(vault) {
-
-    const token = getCloudToken();
-
-    if (!token) return { success: false, reason: "no_token" };
-
-    try {
-
-        const payload = {
-
-            files: {
-
-                "ielts_vault.json": {
-
-                    content: JSON.stringify(vault, null, 2)
-
-                }
-
-            }
-
-        };
-
-        const resp = await fetch(GIST_API_URL, {
-
-            method: "PATCH",
-
-            headers: {
-
-                "Authorization": "token " + token,
-
-                "Accept": "application/vnd.github.v3+json",
-
-                "Content-Type": "application/json"
-
-            },
-
-            body: JSON.stringify(payload)
-
-        });
-
-        if (!resp.ok) {
-
-            const errBody = await resp.text();
-
-            throw new Error(`HTTP ${resp.status}: ${errBody}`);
-
-        }
-
-        return { success: true };
-
-    } catch (err) {
-
-        console.error("pushCloudVault error:", err);
-
-        return { success: false, error: err.message };
-
-    }
-
-}
-
-
-
-function mergeVaults(local, remote) {
-
-    const map = new Map();
-
-    // 1. Add remote records
-
-    if (Array.isArray(remote)) {
-
-        remote.forEach(r => {
-
-            if (r && r.key) map.set(r.key, r);
-
-        });
-
-    }
-
-    // 2. Merge local records
-
-    if (Array.isArray(local)) {
-
-        local.forEach(l => {
-
-            if (!l || !l.key) return;
-
-            if (map.has(l.key)) {
-
-                const existing = map.get(l.key);
-
-                const deviceId = l.deviceId || existing.deviceId || null;
-
-                const status = l.status || existing.status || "active";
-
-                map.set(l.key, { ...existing, ...l, deviceId, status });
-
-            } else {
-
-                map.set(l.key, l);
-
-            }
-
-        });
-
-    }
-
-    const merged = Array.from(map.values());
-
-    merged.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
-
-    return merged;
-
-}
-
-
-
-async function syncCloudVault(silent) {
-
-    updateCloudStatusBadge("syncing");
-
-    const localVault = getStoredVault();
-
-    const remoteVault = await fetchCloudVault();
-
-
-
-    if (remoteVault === null) {
-
-        updateCloudStatusBadge("offline", localVault.length);
-
-        if (!silent) alert("⚠️ Không thể kết nối tới Đám Mây GitHub. Vui lòng kiểm tra lại kết nối mạng!");
-
-        return;
-
-    }
-
-
-
-    const merged = mergeVaults(localVault, remoteVault);
-
-    localStorage.setItem("ielts_admin_issued_keys", JSON.stringify(merged));
-
-    refreshAdminData();
-
-
-
-    const token = getCloudToken();
-
-    if (token) {
-
-        const pushRes = await pushCloudVault(merged);
-
-        if (pushRes.success) {
-
-            updateCloudStatusBadge("synced", merged.length);
-
-            if (!silent) alert(`✓ ĐỒNG BỘ ĐÁM MÂY THÀNH CÔNG!
-
-Đã cập nhật dữ liệu 2 chiều. Hiện có ${merged.length} học viên trong toàn hệ thống.`);
-
-        } else {
-
-            updateCloudStatusBadge("readonly", merged.length);
-
-            if (!silent) alert(`⚠️ Tải dữ liệu thành công (${merged.length} học viên), nhưng chưa thể đẩy lên Đám mây: ${pushRes.error || pushRes.reason}. Vui lòng kiểm tra lại Token.`);
-
-        }
-
-    } else {
-
-        updateCloudStatusBadge("readonly", merged.length);
-
-        if (!silent) alert(`✓ Đã tải ${merged.length} học viên từ Đám Mây về máy này!
-
-(Để đẩy mã mới từ trình duyệt này lên Đám mây, vui lòng dán Cloud Token và bấm 'Lưu Token').`);
-
-    }
-
-}
-
-
-
-function triggerJSONImport() {
-
-    const input = document.getElementById("json_file_input");
-
-    if (input) input.click();
-
-}
-
-
-
-function handleJSONFileImport(event) {
-
-    const file = event.target.files && event.target.files[0];
-
-    if (!file) return;
-
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-
-        try {
-
-            const imported = JSON.parse(e.target.result);
-
-            if (!Array.isArray(imported)) {
-
-                alert("File JSON không hợp lệ! Cần chứa danh sách mảng học viên.");
-
-                return;
-
-            }
-
-            const current = getStoredVault();
-
-            const merged = mergeVaults(current, imported);
-
-            saveStoredVault(merged);
-
-            syncCloudVault(true);
-
-            alert(`✓ Đã nhập thành công ${imported.length} học viên từ file JSON!
-
-Tổng danh sách hiện tại: ${merged.length} học viên.`);
-
-        } catch (err) {
-
-            alert("Lỗi khi đọc file JSON: " + err.message);
-
-        }
-
-    };
-
-    reader.readAsText(file, "utf-8");
-
-    event.target.value = "";
-
-}
-
-
-
-function verifyAdminLogin() {
-
-    const input = document.getElementById("admin_password_input")?.value || "";
-
-    const msg = document.getElementById("login_err_msg");
-
-    if (input === ADMIN_MASTER_PASS) {
-
-        sessionStorage.setItem(STORAGE_ADMIN_AUTH, "true");
-
-        localStorage.setItem(STORAGE_ADMIN_AUTH, "true"); // PERMANENT DEVICE RECOGNITION
-
-        document.getElementById("login_screen").style.display = "none";
-
-        document.getElementById("admin_dashboard").style.display = "block";
-
-        initCloudSyncUI();
-
-        refreshAdminData();
-
-        syncCloudVault(true);
-
-    } else {
-
-        if (msg) {
-
-            msg.style.display = "block";
-
-            msg.textContent = "Mật khẩu quản trị viên không chính xác!";
-
-        }
-
-    }
-
-}
-
-
-
-function adminLogout() {
-
-    sessionStorage.removeItem(STORAGE_ADMIN_AUTH);
-
-    localStorage.removeItem(STORAGE_ADMIN_AUTH);
-
-    window.location.reload();
-
-}
-
-
-
-function getStoredVault() {
-
-    try {
-
-        return JSON.parse(localStorage.getItem("ielts_admin_issued_keys") || "[]");
-
-    } catch (e) {
-
-        return [];
-
-    }
-
-}
-
-
-
-function saveStoredVault(vault) {
-
-    localStorage.setItem("ielts_admin_issued_keys", JSON.stringify(vault));
-
-    refreshAdminData();
-
-}
-
-
-
-function handleGenerateKey() {
-
-    const name = (document.getElementById("gen_student_name")?.value || "").trim();
-
-    const contact = (document.getElementById("gen_student_contact")?.value || "").trim();
-
-    const tier = document.getElementById("gen_tier_select")?.value || "FD";
-
-
-
-    if (!name || name.length < 2) {
-
-        alert("Vui lòng nhập Họ và Tên của học viên!");
-
-        return;
-
-    }
-
-    if (!contact || contact.length < 5) {
-
-        alert("Vui lòng nhập Số điện thoại hoặc Email của học viên!");
-
-        return;
-
-    }
-
-
-
-    const key = IELTSAuth.generateKey(tier);
-
-    const tierNames = {
-
-        'FD': 'Giáo Trình Foundation (30 Units)',
-
-        'B5': 'Giáo Trình Band 5.0 — 6.0',
-
-        'B6': 'Giáo Trình Band 6.0 — 7.5',
-
-        'CAM': 'Luyện Đề Cambridge 8.0+',
-
-        'VIP': 'VIP Toàn Diện (Tất Cả 4 Khóa Học)'
-
-    };
-
-    const tierName = tierNames[tier] || tier;
-
-
-
-    const record = {
-
-        name: name,
-
-        contact: contact,
-
-        tier: tier,
-
-        tierName: tierName,
-
-        key: key,
-
-        deviceId: null,
-
-        createdAt: new Date().toISOString(),
-
-        status: 'active'
-
-    };
-
-
-
-    const vault = getStoredVault();
-
-    vault.unshift(record);
-
-    saveStoredVault(vault);
-
-    syncCloudVault(true);
-
-
-
-    // Render result
-
-    const resultBox = document.getElementById("gen_result_box");
-
-    const keyText = document.getElementById("gen_key_text");
-
-    const preview = document.getElementById("gen_message_preview");
-
-
-
-    keyText.textContent = key;
-
-    generatedMessageCache = `Chào bạn ${name},
-
-Cô Ninh gửi bạn mã kích hoạt bản quyền khóa học: ${tierName}
-
-🔑 Mã kích hoạt của bạn: ${key}
-
-🌐 Link lớp học trực tuyến: https://ninhhpvnu-coder.github.io/my-ielts-journey/
-
-
-
-📌 Hướng dẫn kích hoạt bản quyền:
-
-1. Bạn truy cập link trên và bấm nút "🔑 Nhập Mã Kích Hoạt / Đăng Ký"
-
-2. Nhập họ tên "${name}", SĐT "${contact}" và dán đúng mã kích hoạt ở trên
-
-3. Toàn bộ 30 Units tương tác và 1.021 audio sẽ tự động mở khóa ngay lập tức trên máy của bạn!
-
-
-
-Lưu ý: Để đảm bảo bảo mật bản quyền tác giả, mã sẽ tự động khóa theo thiết bị đầu tiên bạn đăng nhập.
-
-Chúc bạn luyện tập thật tốt và sớm bứt phá Band điểm mục tiêu cùng Cô Ninh nhé! ❤️`;
-
-
-
-    preview.textContent = generatedMessageCache;
-
-    resultBox.style.display = "block";
-
-
-
-    // Reset input fields
-
-    document.getElementById("gen_student_name").value = "";
-
-    document.getElementById("gen_student_contact").value = "";
-
-}
-
-
-
-function copyGeneratedKey() {
-
-    const key = document.getElementById("gen_key_text")?.textContent || "";
-
-    navigator.clipboard.writeText(key).then(() => {
-
-        alert("✓ Đã sao chép mã kích hoạt: " + key);
-
-    });
-
-}
-
-
-
-function copyStudentMessage() {
-
-    if (!generatedMessageCache) return;
-
-    navigator.clipboard.writeText(generatedMessageCache).then(() => {
-
-        alert("✓ Đã sao chép trọn bộ tin nhắn hướng dẫn! Bạn có thể dán (Paste) gửi ngay qua Zalo/Facebook cho học viên.");
-
-    });
-
-}
-
-
-
-function resetStudentDevice(idx) {
-
-    const vault = getStoredVault();
-
-    if (vault[idx]) {
-
-        if (confirm(`Bạn có chắc muốn Reset thiết bị cho học viên ${vault[idx].name}? Học viên sẽ có thể đăng nhập trên thiết bị mới.`)) {
-
-            vault[idx].deviceId = null;
-
-            saveStoredVault(vault);
-
-            syncCloudVault(true);
-
-            alert("✓ Đã reset thiết bị và đồng bộ Đám mây thành công!");
-
-        }
-
-    }
-
-}
-
-
-
-function deleteStudentRecord(idx) {
-
-    const vault = getStoredVault();
-
-    if (vault[idx]) {
-
-        if (confirm(`Xác nhận xóa mã của học viên ${vault[idx].name}?`)) {
-
-            vault.splice(idx, 1);
-
-            saveStoredVault(vault);
-
-            syncCloudVault(true);
-
-        }
-
-    }
-
-}
-
-
-
-function refreshAdminData() {
-
-    loadAdminPaymentSettings();
-
-    const vault = getStoredVault();
-
-    document.getElementById("kpi_total_keys").textContent = vault.length;
-
-    document.getElementById("kpi_active_students").textContent = vault.filter(v => v.deviceId).length;
-
-    document.getElementById("kpi_fd_keys").textContent = vault.filter(v => v.tier === 'FD' || v.tier === 'VIP').length;
-
-
-
-    const tbody = document.getElementById("student_table_body");
-
-    if (!tbody) return;
-
-
-
-    if (vault.length === 0) {
-
-        tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 24px;">Chưa có học viên nào được cấp mã. Hãy tạo mã đầu tiên ở khung trên!</td></tr>`;
-
-        return;
-
-    }
-
-
-
-    const tierColors = {
-
-        'FD': 'background: rgba(56, 189, 248, 0.15); color: #38bdf8;',
-
-        'B5': 'background: rgba(16, 185, 129, 0.15); color: #34d399;',
-
-        'B6': 'background: rgba(245, 158, 11, 0.15); color: #fbbf24;',
-
-        'CAM': 'background: rgba(168, 85, 247, 0.15); color: #c084fc;',
-
-        'VIP': 'background: rgba(244, 63, 94, 0.15); color: #fb7185;'
-
-    };
-
-
-
-    tbody.innerHTML = vault.map((v, idx) => {
-
-        const dStr = v.createdAt ? new Date(v.createdAt).toLocaleDateString('vi-VN') : '—';
-
-        const devStatus = v.deviceId 
-
-            ? `<span style="color: #34d399; font-family: monospace;">🟢 ${v.deviceId}</span>` 
-
-            : `<span style="color: #94a3b8;">Chưa kích hoạt máy</span>`;
-
-
-
-        return `
-
-            <tr>
-
-                <td>${idx + 1}</td>
-
-                <td><b>${v.name}</b></td>
-
-                <td>${v.contact}</td>
-
-                <td><span class="tier-badge" style="${tierColors[v.tier] || ''}">${v.tier}</span></td>
-
-                <td><code style="color: #38bdf8; font-weight: 700;">${v.key}</code></td>
-
-                <td>${devStatus}</td>
-
-                <td>${dStr}</td>
-
-                <td>
-
-                    <button onclick="resetStudentDevice(${idx})" class="btn btn-action" title="Cho phép học viên đăng nhập trên máy mới">🔄 Reset Máy</button>
-
-                    <button onclick="deleteStudentRecord(${idx})" class="btn btn-danger" style="margin-left: 4px;" title="Xóa mã này">🗑️</button>
-
-                </td>
-
-            </tr>
-
-        `;
-
-    }).join("");
-
-}
-
-
-
-function exportToCSV() {
-
-    const vault = getStoredVault();
-
-    if (vault.length === 0) {
-
-        alert("Chưa có dữ liệu để xuất file!");
-
-        return;
-
-    }
-
-    let csv = "STT,Ho Ten,Lien He,Goi Hoc,Ma Kich Hoat,Thiet Bi Khoa,Ngay Cap\n";
-
-    vault.forEach((v, idx) => {
-
-        csv += `"${idx+1}","${v.name}","${v.contact}","${v.tier}","${v.key}","${v.deviceId || ''}","${v.createdAt || ''}"\n`;
-
-    });
-
-    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-
-    const a = document.createElement("a");
-
-    a.href = URL.createObjectURL(blob);
-
-    a.download = `Danh_Sach_Hoc_Vien_IELTS_Ms_Ninh_${new Date().toISOString().slice(0,10)}.csv`;
-
-    a.click();
-
-}
-
-
-
-function exportToJSON() {
-
-    const vault = getStoredVault();
-
-    const blob = new Blob([JSON.stringify(vault, null, 2)], { type: "application/json;charset=utf-8;" });
-
-    const a = document.createElement("a");
-
-    a.href = URL.createObjectURL(blob);
-
-    a.download = `Backup_IELTS_Vault_${new Date().toISOString().slice(0,10)}.json`;
-
-    a.click();
-
-}
-
-
-
-// Payment Settings handlers
-
-function loadAdminPaymentSettings() {
-
-    const cfg = IELTSAuth.getPaymentConfig();
-
-    const bSel = document.getElementById("cfg_bank_select");
-
-    const aNo = document.getElementById("cfg_account_no");
-
-    const aName = document.getElementById("cfg_account_name");
-
-    const amt = document.getElementById("cfg_amount");
-
-    const zalo = document.getElementById("cfg_zalo_hotline");
-
-
-
-    if (bSel) bSel.value = cfg.bankId || "TCB";
-
-    if (aNo) aNo.value = cfg.accountNumber || "366566999999";
-
-    if (aName) aName.value = cfg.accountName || "NGO THI NINH";
-
-    if (amt) amt.value = cfg.amount || 150000;
-
-    if (zalo) zalo.value = cfg.hotlineZalo || "0869669659";
-
-
-
-    previewAdminVietQR();
-
-}
-
-
-
-function previewAdminVietQR() {
-
-    const bankId = document.getElementById("cfg_bank_select")?.value || "TCB";
-
-    const accountNo = (document.getElementById("cfg_account_no")?.value || "366566999999").trim();
-
-    const accountName = (document.getElementById("cfg_account_name")?.value || "NGO THI NINH").trim();
-
-    const amount = document.getElementById("cfg_amount")?.value || 150000;
-
-    const img = document.getElementById("admin_vietqr_preview");
-
-
-
-    if (img) {
-
-        const url = `https://img.vietqr.io/image/${bankId}-${accountNo}-compact2.png?amount=${amount}&addInfo=IELTS%20FD%20DEMO&accountName=${encodeURIComponent(accountName)}`;
-
-        img.src = url;
-
-    }
-
-}
-
-
-
-function saveAdminPaymentSettings() {
-
-    const bankId = document.getElementById("cfg_bank_select")?.value || "TCB";
-
-    const accountNo = (document.getElementById("cfg_account_no")?.value || "").trim();
-
-    const accountName = (document.getElementById("cfg_account_name")?.value || "").trim().toUpperCase();
-
-    const amount = parseInt(document.getElementById("cfg_amount")?.value || "150000", 10);
-
-    const hotlineZalo = (document.getElementById("cfg_zalo_hotline")?.value || "").trim();
-
-
-
-    if (!accountNo || accountNo.length < 5) {
-
-        alert("Vui lòng nhập Số tài khoản hợp lệ!");
-
-        return;
-
-    }
-
-    if (!accountName || accountName.length < 3) {
-
-        alert("Vui lòng nhập Tên chủ tài khoản!");
-
-        return;
-
-    }
-
-
-
-    const bankNames = {
-
-        'TCB': 'Techcombank',
-
-        'MB': 'MB Bank',
-
-        'VCB': 'Vietcombank',
-
-        'VPB': 'VPBank',
-
-        'ACB': 'ACB',
-
-        'BIDV': 'BIDV',
-
-        'CTG': 'Vietinbank',
-
-        'TPB': 'TPBank'
-
-    };
-
-
-
-    const cfg = {
-
-        bankId: bankId,
-
-        bankName: bankNames[bankId] || bankId,
-
-        accountNumber: accountNo,
-
-        accountName: accountName,
-
-        amount: amount,
-
-        amountFormatted: Number(amount).toLocaleString('vi-VN') + ' VNĐ',
-
-        hotlineZalo: hotlineZalo,
-
-        zaloLink: `https://zalo.me/${hotlineZalo}`
-
-    };
-
-
-
-    IELTSAuth.savePaymentConfig(cfg);
-
-    alert("✓ Đã lưu cấu hình Thanh Toán & VietQR thành công! Hệ thống học viên sẽ lập tức áp dụng số tài khoản này.");
-
-}
-
-
-
-function resetDefaultPaymentSettings() {
-
-    if (confirm("Khôi phục thông tin Techcombank mặc định?")) {
-
-        localStorage.removeItem("ielts_payment_config");
-
-        loadAdminPaymentSettings();
-
-        alert("✓ Đã khôi phục cài đặt mặc định!");
-
-    }
-
-}
-
-
-
-// Auto check login session
-
-window.addEventListener("load", function () {
-
-    if (sessionStorage.getItem(STORAGE_ADMIN_AUTH) === "true") {
-
-        document.getElementById("login_screen").style.display = "none";
-
-        document.getElementById("admin_dashboard").style.display = "block";
-
-        initCloudSyncUI();
-
-        refreshAdminData();
-
-        syncCloudVault(true);
-
-    }
-
-});
-
-</script>
-
-</body>
-
-</html>
-
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Trị Bản Quyền & Mã Học Viên — IELTS Journey with Ms Ninh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b1120;
+            --surface-color: #1e293b;
+            --card-color: #334155;
+            --primary: #38bdf8;
+            --accent: #c58b62;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #f43f5e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 24px 16px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Login Screen */
+        #login_screen {
+            max-width: 440px;
+            margin: 80px auto;
+            background: var(--surface-color);
+            border: 1.5px solid rgba(197, 139, 98, 0.4);
+            border-radius: 24px;
+            padding: 36px 28px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 30px rgba(197, 139, 98, 0.2);
+        }
+
+        /* Admin Dashboard */
+        #admin_dashboard { display: none; }
+
+        header.admin-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98));
+            border: 1.5px solid rgba(197, 139, 98, 0.4);
+            border-radius: 20px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .header-title-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            border: 1.5px solid var(--accent);
+            object-fit: cover;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .generator-card {
+            background: var(--surface-color);
+            border: 1.5px solid rgba(197, 139, 98, 0.35);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+        }
+
+        input, select {
+            width: 100%;
+            background: #0b1120;
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            color: #0b1120;
+        }
+        .btn-primary:hover { filter: brightness(1.1); box-shadow: 0 0 18px rgba(56, 189, 248, 0.4); }
+
+        .btn-secondary {
+            background: #334155;
+            color: #e2e8f0;
+            border: 1px solid #475569;
+        }
+
+        .btn-danger {
+            background: rgba(244, 63, 94, 0.15);
+            border: 1px solid rgba(244, 63, 94, 0.4);
+            color: #fb7185;
+            font-size: 0.78rem;
+            padding: 6px 12px;
+        }
+
+        .btn-action {
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            font-size: 0.78rem;
+            padding: 6px 12px;
+        }
+
+        .result-box {
+            background: #0f172a;
+            border: 1.5px solid rgba(16, 185, 129, 0.4);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .key-display {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #34d399;
+            letter-spacing: 2px;
+            background: rgba(16, 185, 129, 0.12);
+            padding: 10px 18px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 8px 0;
+            user-select: all;
+        }
+
+        .message-preview {
+            background: #0b1120;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            margin-top: 12px;
+        }
+
+        /* Table styles */
+        .table-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(11, 17, 32, 0.6);
+            color: var(--primary);
+            padding: 12px 14px;
+            border-bottom: 2px solid var(--border);
+            font-weight: 700;
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        tr:hover td {
+            background: rgba(56, 189, 248, 0.03);
+        }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. LOGIN SCREEN -->
+    <div id="login_screen">
+        <div style="font-size: 44px; margin-bottom: 12px;">🪷</div>
+        <div style="font-size: 0.82rem; font-weight: 800; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">IELTS Journey with Ms Ninh</div>
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: #fff; margin-bottom: 20px;">Cổng Quản Trị Khóa Học & Bản Quyền</h2>
+        <div style="text-align: left; margin-bottom: 16px;">
+            <label>Mật Khẩu Quản Trị Viên (Admin Passkey)</label>
+            <input type="password" id="admin_password_input" placeholder="Nhập mật khẩu quản trị..." onkeyup="if(event.key==='Enter') verifyAdminLogin();">
+        </div>
+        <button onclick="verifyAdminLogin()" class="btn btn-primary" style="width: 100%;">
+            🔓 Đăng Nhập Hệ Thống
+        </button>
+        <div id="login_err_msg" style="display: none; color: #fb7185; font-size: 0.85rem; margin-top: 14px;"></div>
+    </div>
+
+    <!-- 2. ADMIN DASHBOARD -->
+    <div id="admin_dashboard">
+        <header class="admin-header">
+            <div class="header-title-box">
+                <img src="brand_logo.jpg" alt="Logo" class="header-logo" onerror="this.style.display='none'">
+                <div>
+                    <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent); text-transform: uppercase;">IELTS Journey with Ms Ninh</div>
+                    <h1 style="font-size: 1.3rem; font-family: 'Space Grotesk', sans-serif;">Trung Tâm Quản Lý Mã Bản Quyền & Học Viên</h1>
+                </div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <a href="index.html" class="btn btn-primary" style="text-decoration: none;">
+                    🌐 Mở Trang Chủ (Toàn Quyền Admin)
+                </a>
+                <button onclick="localStorage.removeItem('ielts_admin_authenticated'); sessionStorage.removeItem('ielts_admin_authenticated'); window.location.href='index.html';" class="btn btn-secondary" title="Xem trang chủ dưới tư cách khách chưa đăng ký">
+                    👁️ Xem Dưới Tư Cách Khách
+                </button>
+                <button onclick="adminLogout()" class="btn btn-danger">
+                    Đăng Xuất
+                </button>
+            </div>
+        </header>
+
+        <!-- KPI Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Tổng Số Mã Đã Cấp</div>
+                <div class="stat-value" id="kpi_total_keys">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Học Viên Đang Hoạt Động</div>
+                <div class="stat-value" id="kpi_active_students" style="color: var(--success);">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Khóa Học Foundation (30 Units)</div>
+                <div class="stat-value" id="kpi_fd_keys" style="color: var(--accent);">0</div>
+            </div>
+        </div>
+
+        <!-- Tool: Key Generator -->
+        <div class="generator-card">
+            <h2 style="font-size: 1.2rem; font-family: 'Space Grotesk', sans-serif; margin-bottom: 16px; color: #fff;">
+                ⚡ Tạo Mã Kích Hoạt Nhanh Cho Học Viên
+            </h2>
+            <div class="form-grid">
+                <div>
+                    <label>Họ và Tên Học Viên *</label>
+                    <input type="text" id="gen_student_name" placeholder="Ví dụ: Hoàng Minh Đức">
+                </div>
+                <div>
+                    <label>Số Điện Thoại / Zalo / Email *</label>
+                    <input type="text" id="gen_student_contact" placeholder="0988xxxxxx hoặc email...">
+                </div>
+                <div>
+                    <label>Gói Học Cần Kích Hoạt *</label>
+                    <select id="gen_tier_select">
+                        <option value="FD" selected>📚 Giáo Trình Foundation (30 Units)</option>
+                        <option value="B5">🌱 Giáo Trình Band 5.0 — 6.0</option>
+                        <option value="B6">⚡ Giáo Trình Band 6.0 — 7.5</option>
+                        <option value="CAM">🏆 Luyện Đề Cambridge 8.0+</option>
+                        <option value="VIP">👑 VIP Toàn Diện (Tất Cả 4 Khóa Học)</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="handleGenerateKey()" class="btn btn-primary" style="font-size: 1rem;">
+                ⚡ Tạo Mã & Chuẩn Bị Tin Nhắn Cho Học Viên
+            </button>
+
+            <!-- Generated Result Box -->
+            <div id="gen_result_box" class="result-box">
+                <div style="font-size: 0.85rem; color: #34d399; font-weight: 700;">✓ TẠO MÃ BẢN QUYỀN THÀNH CÔNG!</div>
+                <div class="key-display" id="gen_key_text">NINH-FD-0000-0000</div>
+                <div style="display: flex; gap: 10px; margin-top: 8px;">
+                    <button onclick="copyGeneratedKey()" class="btn btn-action">📋 Sao Chép Mã</button>
+                    <button onclick="copyStudentMessage()" class="btn btn-action" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">
+                        ✉️ Sao Chép Toàn Bộ Tin Nhắn Zalo
+                    </button>
+                </div>
+                <div class="message-preview" id="gen_message_preview"></div>
+            </div>
+        </div>
+
+        <!-- Settings: Payment & VietQR Gateway -->
+        <div class="generator-card" style="border-color: rgba(56, 189, 248, 0.4); margin-bottom: 28px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                <div>
+                    <h2 style="font-size: 1.2rem; font-family: 'Space Grotesk', sans-serif; color: #fff;">
+                        ⚙️ Cấu Hình Thanh Toán & VietQR Tự Động
+                    </h2>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">
+                        Thông tin tài khoản nhận học phí và số hotline Zalo hỗ trợ học viên.
+                    </div>
+                </div>
+                <span style="font-size: 0.78rem; font-weight: 800; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); padding: 4px 10px; border-radius: 999px;">
+                    ✓ VietQR Techcombank Active
+                </span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <!-- Left Form -->
+                <div>
+                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 14px;">
+                        <div>
+                            <label>Ngân Hàng Nhận Học Phí</label>
+                            <select id="cfg_bank_select" onchange="previewAdminVietQR()">
+                                <option value="TCB" selected>Techcombank (TCB)</option>
+                                <option value="MB">MB Bank (Quân Đội)</option>
+                                <option value="VCB">Vietcombank</option>
+                                <option value="VPB">VPBank</option>
+                                <option value="ACB">ACB</option>
+                                <option value="BIDV">BIDV</option>
+                                <option value="CTG">Vietinbank</option>
+                                <option value="TPB">TPBank</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Số Tài Khoản *</label>
+                            <input type="text" id="cfg_account_no" value="366566999999" oninput="previewAdminVietQR()">
+                        </div>
+                    </div>
+
+                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 14px;">
+                        <div>
+                            <label>Tên Chủ Tài Khoản (In Hoa Không Dấu) *</label>
+                            <input type="text" id="cfg_account_name" value="NGO THI NINH" oninput="previewAdminVietQR()">
+                        </div>
+                        <div>
+                            <label>Mức Học Phí Foundation (VNĐ) *</label>
+                            <input type="number" id="cfg_amount" value="150000" oninput="previewAdminVietQR()">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 18px;">
+                        <label>Số Điện Thoại Zalo / Hotline Tư Vấn *</label>
+                        <input type="text" id="cfg_zalo_hotline" value="0869669659" placeholder="0869669659">
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="saveAdminPaymentSettings()" class="btn btn-primary">
+                            💾 Lưu Cấu Hình Thanh Toán
+                        </button>
+                        <button onclick="resetDefaultPaymentSettings()" class="btn btn-secondary">
+                            Khôi Phục Mặc Định
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Live Preview -->
+                <div style="background: #0f172a; border: 1px solid var(--border); border-radius: 16px; padding: 18px; text-align: center;">
+                    <div style="font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; margin-bottom: 10px;">
+                        Xem Trước Mã VietQR Thực Tế
+                    </div>
+                    <img id="admin_vietqr_preview" src="https://img.vietqr.io/image/TCB-366566999999-compact2.png?amount=150000&addInfo=IELTS%20FD%20DEMO&accountName=NGO%20THI%20NINH" alt="Preview QR" style="width: 190px; height: auto; border-radius: 12px; background: #fff; padding: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); margin: 0 auto 10px; display: block;">
+                    <div style="font-size: 0.78rem; color: #94a3b8;">
+                        Học viên quét mã này sẽ tự động chuyển đúng số tiền và cú pháp chứa SĐT của họ.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cloud Sync & Multi-Device Management -->
+        <div class="generator-card" style="border-color: rgba(16, 185, 129, 0.4); margin-bottom: 28px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="font-size: 1.8rem; background: rgba(16, 185, 129, 0.15); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.3);">☁️</div>
+                    <div>
+                        <h2 style="font-size: 1.15rem; font-family: 'Space Grotesk', sans-serif; color: #fff;">
+                            Đồng Bộ Đám Mây Đa Thiết Bị 24/7 (Cross-Device Cloud Sync)
+                        </h2>
+                        <div style="font-size: 0.8rem; color: #94a3b8;">
+                            Đồng bộ tức thì danh sách mã học viên giữa mọi trình duyệt (Chrome, Safari, Edge) và Điện thoại di động.
+                        </div>
+                    </div>
+                </div>
+                <div id="cloud_status_badge" style="padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);">
+                    🔄 Đang kết nối Đám Mây...
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: end;">
+                <div>
+                    <label style="display: flex; justify-content: space-between;">
+                        <span>Khóa Truy Cập Đám Mây (GitHub Cloud Sync Token)</span>
+                        <span style="color: #38bdf8; font-weight: 600; cursor: pointer; user-select: none;" onclick="toggleTokenVisibility()">👁️ Ẩn/Hiện Token</span>
+                    </label>
+                    <input type="password" id="cloud_token_input" placeholder="Dán mã Token (gho_...) để kích hoạt đồng bộ 2 chiều">
+                    <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 5px;">
+                        💡 <i>Token được lưu cục bộ an toàn trên trình duyệt này, bảo mật tuyệt đối và không lưu vào Git.</i>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <button onclick="saveCloudToken()" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.85rem;">
+                        💾 Lưu Token
+                    </button>
+                    <button onclick="syncCloudVault(false)" id="btn_sync_now" class="btn btn-action" style="padding: 10px 18px; font-size: 0.85rem; font-weight: 700;">
+                        🔄 Đồng Bộ Ngay
+                    </button>
+                    <button onclick="triggerJSONImport()" class="btn btn-secondary" style="padding: 10px 16px; font-size: 0.85rem;" title="Nhập danh sách học viên từ file sao lưu JSON">
+                        📂 Nhập File JSON
+                    </button>
+                    <button onclick="clearCloudToken()" class="btn btn-danger" style="padding: 10px 12px; font-size: 0.85rem;" title="Xóa Token khỏi trình duyệt này">
+                        🗑️
+                    </button>
+                    <input type="file" id="json_file_input" accept=".json" style="display: none;" onchange="handleJSONFileImport(event)">
+                </div>
+            </div>
+        </div>
+
+        <!-- Table: Student List -->
+        <div class="table-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 12px;">
+                <div>
+                    <h2 style="font-size: 1.2rem; font-family: 'Space Grotesk', sans-serif; color: #fff;">
+                        📋 Danh Sách Mã & Học Viên Đã Cấp Bản Quyền
+                    </h2>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Quản lý thiết bị đã khóa (Single-Device Lock) và quyền truy cập.</div>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <button onclick="syncCloudVault(false)" class="btn btn-action" style="font-size: 0.8rem; padding: 8px 14px; font-weight: 700;">
+                        🔄 Đồng Bộ Đám Mây
+                    </button>
+                    <button onclick="triggerJSONImport()" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 14px;">
+                        📂 Nhập JSON
+                    </button>
+                    <button onclick="exportToCSV()" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 14px;">
+                        📥 Xuất Excel (CSV)
+                    </button>
+                    <button onclick="exportToJSON()" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 14px;">
+                        💾 Sao Lưu JSON
+                    </button>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Học Viên</th>
+                        <th>Liên Hệ</th>
+                        <th>Gói Học</th>
+                        <th>Mã Kích Hoạt</th>
+                        <th>Thiết Bị Khóa</th>
+                        <th>Thời Gian Cấp</th>
+                        <th>Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody id="student_table_body">
+                    <tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 24px;">Chưa có học viên nào được cấp mã.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="ielts_auth.js"></script>
+<script>
+const ADMIN_MASTER_PASS = "NINH2026ADMIN";
+const STORAGE_ADMIN_AUTH = "ielts_admin_authenticated";
+let generatedMessageCache = "";
+
+const GIST_ID = "7ba34f7b0edf74cc1855ba425a432cce";
+const GIST_API_URL = "https://api.github.com/gists/" + GIST_ID;
+const RAW_GIST_URL = "https://gist.githubusercontent.com/ninhhpvnu-coder/7ba34f7b0edf74cc1855ba425a432cce/raw/ielts_vault.json";
+const STORAGE_CLOUD_TOKEN = "ielts_cloud_token";
+
+function getCloudToken() {
+    return (localStorage.getItem(STORAGE_CLOUD_TOKEN) || "").trim();
+}
+
+function saveCloudToken() {
+    const input = document.getElementById("cloud_token_input");
+    const val = (input ? input.value : "").trim();
+    if (!val) {
+        alert("Vui lòng nhập hoặc dán mã GitHub Cloud Token!");
+        return;
+    }
+    localStorage.setItem(STORAGE_CLOUD_TOKEN, val);
+    alert("✓ Đã lưu Cloud Token vào trình duyệt thành công! Bắt đầu đồng bộ đám mây...");
+    syncCloudVault(false);
+}
+
+function clearCloudToken() {
+    if (confirm("Bạn có chắc muốn xóa Cloud Token khỏi trình duyệt này?")) {
+        localStorage.removeItem(STORAGE_CLOUD_TOKEN);
+        const input = document.getElementById("cloud_token_input");
+        if (input) input.value = "";
+        updateCloudStatusBadge("offline");
+        alert("✓ Đã xóa Cloud Token khỏi trình duyệt này.");
+    }
+}
+
+function toggleTokenVisibility() {
+    const input = document.getElementById("cloud_token_input");
+    if (input) {
+        input.type = input.type === "password" ? "text" : "password";
+    }
+}
+
+function updateCloudStatusBadge(state, count) {
+    const badge = document.getElementById("cloud_status_badge");
+    if (!badge) return;
+    if (state === "syncing") {
+        badge.style.background = "rgba(245, 158, 11, 0.15)";
+        badge.style.color = "#fbbf24";
+        badge.style.borderColor = "rgba(245, 158, 11, 0.4)";
+        badge.innerHTML = "⏳ Đang đồng bộ đám mây...";
+    } else if (state === "synced") {
+        badge.style.background = "rgba(16, 185, 129, 0.15)";
+        badge.style.color = "#34d399";
+        badge.style.borderColor = "rgba(16, 185, 129, 0.4)";
+        badge.innerHTML = `🟢 Đã Đồng Bộ (${count || 0} học viên)`;
+    } else if (state === "readonly") {
+        badge.style.background = "rgba(56, 189, 248, 0.15)";
+        badge.style.color = "#38bdf8";
+        badge.style.borderColor = "rgba(56, 189, 248, 0.4)";
+        badge.innerHTML = `🟡 Đám Mây: Đã Kết Nối (${count || 0} học viên)`;
+    } else {
+        badge.style.background = "rgba(148, 163, 184, 0.15)";
+        badge.style.color = "#94a3b8";
+        badge.style.borderColor = "rgba(148, 163, 184, 0.3)";
+        badge.innerHTML = "⚪ Ngoại Tuyến (Chưa kết nối Cloud)";
+    }
+}
+
+function initCloudSyncUI() {
+    const token = getCloudToken();
+    const input = document.getElementById("cloud_token_input");
+    if (input && token) {
+        input.value = token;
+    }
+    updateCloudStatusBadge(token ? "synced" : "readonly", getStoredVault().length);
+}
+
+async function fetchCloudVault() {
+    const token = getCloudToken();
+    // 1. If token is present, fetch via API with auth (5,000 req/hr)
+    if (token) {
+        try {
+            const resp = await fetch(`${GIST_API_URL}?t=${Date.now()}`, {
+                cache: "no-store",
+                headers: {
+                    "Authorization": "token " + token,
+                    "Accept": "application/vnd.github.v3+json"
+                }
+            });
+            if (resp.ok) {
+                const data = await resp.json();
+                const fileObj = data.files && (data.files["ielts_vault.json"] || data.files["temp_vault.json"]);
+                if (fileObj && fileObj.content) {
+                    return JSON.parse(fileObj.content);
+                }
+            }
+        } catch (e) {
+            console.warn("API fetch error, falling back to raw CDN:", e);
+        }
+    }
+    // 2. Fallback: Fetch directly from raw CDN (unlimited requests, no rate limit)
+    try {
+        const resp = await fetch(`${RAW_GIST_URL}?t=${Date.now()}`, {
+            cache: "no-store"
+        });
+        if (resp.ok) {
+            return await resp.json();
+        }
+    } catch (err) {
+        console.warn("Raw CDN fetch error:", err);
+    }
+    return null;
+}
+
+async function pushCloudVault(vault) {
+    const token = getCloudToken();
+    if (!token) return { success: false, reason: "no_token" };
+    try {
+        const payload = {
+            files: {
+                "ielts_vault.json": {
+                    content: JSON.stringify(vault, null, 2)
+                }
+            }
+        };
+        const resp = await fetch(GIST_API_URL, {
+            method: "PATCH",
+            headers: {
+                "Authorization": "token " + token,
+                "Accept": "application/vnd.github.v3+json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+        if (!resp.ok) {
+            const errBody = await resp.text();
+            throw new Error(`HTTP ${resp.status}: ${errBody}`);
+        }
+        return { success: true };
+    } catch (err) {
+        console.error("pushCloudVault error:", err);
+        return { success: false, error: err.message };
+    }
+}
+
+function mergeVaults(local, remote) {
+    const map = new Map();
+    // 1. Add remote records
+    if (Array.isArray(remote)) {
+        remote.forEach(r => {
+            if (r && r.key) map.set(r.key, r);
+        });
+    }
+    // 2. Merge local records
+    if (Array.isArray(local)) {
+        local.forEach(l => {
+            if (!l || !l.key) return;
+            if (map.has(l.key)) {
+                const existing = map.get(l.key);
+                const deviceId = l.deviceId || existing.deviceId || null;
+                const status = l.status || existing.status || "active";
+                map.set(l.key, { ...existing, ...l, deviceId, status });
+            } else {
+                map.set(l.key, l);
+            }
+        });
+    }
+    const merged = Array.from(map.values());
+    merged.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+    return merged;
+}
+
+async function syncCloudVault(silent) {
+    updateCloudStatusBadge("syncing");
+    const localVault = getStoredVault();
+    const remoteVault = await fetchCloudVault();
+
+    if (remoteVault === null) {
+        updateCloudStatusBadge("offline", localVault.length);
+        if (!silent) alert("⚠️ Không thể kết nối tới Đám Mây GitHub. Vui lòng kiểm tra lại kết nối mạng!");
+        return;
+    }
+
+    const merged = mergeVaults(localVault, remoteVault);
+    localStorage.setItem("ielts_admin_issued_keys", JSON.stringify(merged));
+    refreshAdminData();
+
+    const token = getCloudToken();
+    if (token) {
+        const pushRes = await pushCloudVault(merged);
+        if (pushRes.success) {
+            updateCloudStatusBadge("synced", merged.length);
+            if (!silent) alert(`✓ ĐỒNG BỘ ĐÁM MÂY THÀNH CÔNG!
+Đã cập nhật dữ liệu 2 chiều. Hiện có ${merged.length} học viên trong toàn hệ thống.`);
+        } else {
+            updateCloudStatusBadge("readonly", merged.length);
+            if (!silent) alert(`⚠️ Tải dữ liệu thành công (${merged.length} học viên), nhưng chưa thể đẩy lên Đám mây: ${pushRes.error || pushRes.reason}. Vui lòng kiểm tra lại Token.`);
+        }
+    } else {
+        updateCloudStatusBadge("readonly", merged.length);
+        if (!silent) alert(`✓ Đã tải ${merged.length} học viên từ Đám Mây về máy này!
+(Để đẩy mã mới từ trình duyệt này lên Đám mây, vui lòng dán Cloud Token và bấm 'Lưu Token').`);
+    }
+}
+
+function triggerJSONImport() {
+    const input = document.getElementById("json_file_input");
+    if (input) input.click();
+}
+
+function handleJSONFileImport(event) {
+    const file = event.target.files && event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const imported = JSON.parse(e.target.result);
+            if (!Array.isArray(imported)) {
+                alert("File JSON không hợp lệ! Cần chứa danh sách mảng học viên.");
+                return;
+            }
+            const current = getStoredVault();
+            const merged = mergeVaults(current, imported);
+            saveStoredVault(merged);
+            syncCloudVault(true);
+            alert(`✓ Đã nhập thành công ${imported.length} học viên từ file JSON!
+Tổng danh sách hiện tại: ${merged.length} học viên.`);
+        } catch (err) {
+            alert("Lỗi khi đọc file JSON: " + err.message);
+        }
+    };
+    reader.readAsText(file, "utf-8");
+    event.target.value = "";
+}
+
+function verifyAdminLogin() {
+    const input = document.getElementById("admin_password_input")?.value || "";
+    const msg = document.getElementById("login_err_msg");
+    if (input === ADMIN_MASTER_PASS) {
+        sessionStorage.setItem(STORAGE_ADMIN_AUTH, "true");
+        localStorage.setItem(STORAGE_ADMIN_AUTH, "true"); // PERMANENT DEVICE RECOGNITION
+        document.getElementById("login_screen").style.display = "none";
+        document.getElementById("admin_dashboard").style.display = "block";
+        initCloudSyncUI();
+        refreshAdminData();
+        syncCloudVault(true);
+    } else {
+        if (msg) {
+            msg.style.display = "block";
+            msg.textContent = "Mật khẩu quản trị viên không chính xác!";
+        }
+    }
+}
+
+function adminLogout() {
+    sessionStorage.removeItem(STORAGE_ADMIN_AUTH);
+    localStorage.removeItem(STORAGE_ADMIN_AUTH);
+    window.location.reload();
+}
+
+function getStoredVault() {
+    try {
+        return JSON.parse(localStorage.getItem("ielts_admin_issued_keys") || "[]");
+    } catch (e) {
+        return [];
+    }
+}
+
+function saveStoredVault(vault) {
+    localStorage.setItem("ielts_admin_issued_keys", JSON.stringify(vault));
+    refreshAdminData();
+}
+
+function handleGenerateKey() {
+    const name = (document.getElementById("gen_student_name")?.value || "").trim();
+    const contact = (document.getElementById("gen_student_contact")?.value || "").trim();
+    const tier = document.getElementById("gen_tier_select")?.value || "FD";
+
+    if (!name || name.length < 2) {
+        alert("Vui lòng nhập Họ và Tên của học viên!");
+        return;
+    }
+    if (!contact || contact.length < 5) {
+        alert("Vui lòng nhập Số điện thoại hoặc Email của học viên!");
+        return;
+    }
+
+    const key = IELTSAuth.generateKey(tier);
+    const tierNames = {
+        'FD': 'Giáo Trình Foundation (30 Units)',
+        'B5': 'Giáo Trình Band 5.0 — 6.0',
+        'B6': 'Giáo Trình Band 6.0 — 7.5',
+        'CAM': 'Luyện Đề Cambridge 8.0+',
+        'VIP': 'VIP Toàn Diện (Tất Cả 4 Khóa Học)'
+    };
+    const tierName = tierNames[tier] || tier;
+
+    const record = {
+        name: name,
+        contact: contact,
+        tier: tier,
+        tierName: tierName,
+        key: key,
+        deviceId: null,
+        createdAt: new Date().toISOString(),
+        status: 'active'
+    };
+
+    const vault = getStoredVault();
+    vault.unshift(record);
+    saveStoredVault(vault);
+    syncCloudVault(true);
+
+    // Render result
+    const resultBox = document.getElementById("gen_result_box");
+    const keyText = document.getElementById("gen_key_text");
+    const preview = document.getElementById("gen_message_preview");
+
+    keyText.textContent = key;
+    generatedMessageCache = `Chào bạn ${name},
+Cô Ninh gửi bạn mã kích hoạt bản quyền khóa học: ${tierName}
+🔑 Mã kích hoạt của bạn: ${key}
+🌐 Link lớp học trực tuyến: https://ninhhpvnu-coder.github.io/my-ielts-journey/
+
+📌 Hướng dẫn kích hoạt bản quyền:
+1. Bạn truy cập link trên và bấm nút "🔑 Nhập Mã Kích Hoạt / Đăng Ký"
+2. Nhập họ tên "${name}", SĐT "${contact}" và dán đúng mã kích hoạt ở trên
+3. Toàn bộ 30 Units tương tác và 1.021 audio sẽ tự động mở khóa ngay lập tức trên máy của bạn!
+
+Lưu ý: Để đảm bảo bảo mật bản quyền tác giả, mã sẽ tự động khóa theo thiết bị đầu tiên bạn đăng nhập.
+Chúc bạn luyện tập thật tốt và sớm bứt phá Band điểm mục tiêu cùng Cô Ninh nhé! ❤️`;
+
+    preview.textContent = generatedMessageCache;
+    resultBox.style.display = "block";
+
+    // Reset input fields
+    document.getElementById("gen_student_name").value = "";
+    document.getElementById("gen_student_contact").value = "";
+}
+
+function copyGeneratedKey() {
+    const key = document.getElementById("gen_key_text")?.textContent || "";
+    navigator.clipboard.writeText(key).then(() => {
+        alert("✓ Đã sao chép mã kích hoạt: " + key);
+    });
+}
+
+function copyStudentMessage() {
+    if (!generatedMessageCache) return;
+    navigator.clipboard.writeText(generatedMessageCache).then(() => {
+        alert("✓ Đã sao chép trọn bộ tin nhắn hướng dẫn! Bạn có thể dán (Paste) gửi ngay qua Zalo/Facebook cho học viên.");
+    });
+}
+
+function resetStudentDevice(idx) {
+    const vault = getStoredVault();
+    if (vault[idx]) {
+        if (confirm(`Bạn có chắc muốn Reset thiết bị cho học viên ${vault[idx].name}? Học viên sẽ có thể đăng nhập trên thiết bị mới.`)) {
+            vault[idx].deviceId = null;
+            saveStoredVault(vault);
+            syncCloudVault(true);
+            alert("✓ Đã reset thiết bị và đồng bộ Đám mây thành công!");
+        }
+    }
+}
+
+function deleteStudentRecord(idx) {
+    const vault = getStoredVault();
+    if (vault[idx]) {
+        if (confirm(`Xác nhận xóa mã của học viên ${vault[idx].name}?`)) {
+            vault.splice(idx, 1);
+            saveStoredVault(vault);
+            syncCloudVault(true);
+        }
+    }
+}
+
+function refreshAdminData() {
+    loadAdminPaymentSettings();
+    const vault = getStoredVault();
+    document.getElementById("kpi_total_keys").textContent = vault.length;
+    document.getElementById("kpi_active_students").textContent = vault.filter(v => v.deviceId).length;
+    document.getElementById("kpi_fd_keys").textContent = vault.filter(v => v.tier === 'FD' || v.tier === 'VIP').length;
+
+    const tbody = document.getElementById("student_table_body");
+    if (!tbody) return;
+
+    if (vault.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 24px;">Chưa có học viên nào được cấp mã. Hãy tạo mã đầu tiên ở khung trên!</td></tr>`;
+        return;
+    }
+
+    const tierColors = {
+        'FD': 'background: rgba(56, 189, 248, 0.15); color: #38bdf8;',
+        'B5': 'background: rgba(16, 185, 129, 0.15); color: #34d399;',
+        'B6': 'background: rgba(245, 158, 11, 0.15); color: #fbbf24;',
+        'CAM': 'background: rgba(168, 85, 247, 0.15); color: #c084fc;',
+        'VIP': 'background: rgba(244, 63, 94, 0.15); color: #fb7185;'
+    };
+
+    tbody.innerHTML = vault.map((v, idx) => {
+        const dStr = v.createdAt ? new Date(v.createdAt).toLocaleDateString('vi-VN') : '—';
+        const devStatus = v.deviceId 
+            ? `<span style="color: #34d399; font-family: monospace;">🟢 ${v.deviceId}</span>` 
+            : `<span style="color: #94a3b8;">Chưa kích hoạt máy</span>`;
+
+        return `
+            <tr>
+                <td>${idx + 1}</td>
+                <td><b>${v.name}</b></td>
+                <td>${v.contact}</td>
+                <td><span class="tier-badge" style="${tierColors[v.tier] || ''}">${v.tier}</span></td>
+                <td><code style="color: #38bdf8; font-weight: 700;">${v.key}</code></td>
+                <td>${devStatus}</td>
+                <td>${dStr}</td>
+                <td>
+                    <button onclick="resetStudentDevice(${idx})" class="btn btn-action" title="Cho phép học viên đăng nhập trên máy mới">🔄 Reset Máy</button>
+                    <button onclick="deleteStudentRecord(${idx})" class="btn btn-danger" style="margin-left: 4px;" title="Xóa mã này">🗑️</button>
+                </td>
+            </tr>
+        `;
+    }).join("");
+}
+
+function exportToCSV() {
+    const vault = getStoredVault();
+    if (vault.length === 0) {
+        alert("Chưa có dữ liệu để xuất file!");
+        return;
+    }
+    let csv = "STT,Ho Ten,Lien He,Goi Hoc,Ma Kich Hoat,Thiet Bi Khoa,Ngay Cap\n";
+    vault.forEach((v, idx) => {
+        csv += `"${idx+1}","${v.name}","${v.contact}","${v.tier}","${v.key}","${v.deviceId || ''}","${v.createdAt || ''}"\n`;
+    });
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `Danh_Sach_Hoc_Vien_IELTS_Ms_Ninh_${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+}
+
+function exportToJSON() {
+    const vault = getStoredVault();
+    const blob = new Blob([JSON.stringify(vault, null, 2)], { type: "application/json;charset=utf-8;" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `Backup_IELTS_Vault_${new Date().toISOString().slice(0,10)}.json`;
+    a.click();
+}
+
+// Payment Settings handlers
+function loadAdminPaymentSettings() {
+    const cfg = IELTSAuth.getPaymentConfig();
+    const bSel = document.getElementById("cfg_bank_select");
+    const aNo = document.getElementById("cfg_account_no");
+    const aName = document.getElementById("cfg_account_name");
+    const amt = document.getElementById("cfg_amount");
+    const zalo = document.getElementById("cfg_zalo_hotline");
+
+    if (bSel) bSel.value = cfg.bankId || "TCB";
+    if (aNo) aNo.value = cfg.accountNumber || "366566999999";
+    if (aName) aName.value = cfg.accountName || "NGO THI NINH";
+    if (amt) amt.value = cfg.amount || 150000;
+    if (zalo) zalo.value = cfg.hotlineZalo || "0869669659";
+
+    previewAdminVietQR();
+}
+
+function previewAdminVietQR() {
+    const bankId = document.getElementById("cfg_bank_select")?.value || "TCB";
+    const accountNo = (document.getElementById("cfg_account_no")?.value || "366566999999").trim();
+    const accountName = (document.getElementById("cfg_account_name")?.value || "NGO THI NINH").trim();
+    const amount = document.getElementById("cfg_amount")?.value || 150000;
+    const img = document.getElementById("admin_vietqr_preview");
+
+    if (img) {
+        const url = `https://img.vietqr.io/image/${bankId}-${accountNo}-compact2.png?amount=${amount}&addInfo=IELTS%20FD%20DEMO&accountName=${encodeURIComponent(accountName)}`;
+        img.src = url;
+    }
+}
+
+function saveAdminPaymentSettings() {
+    const bankId = document.getElementById("cfg_bank_select")?.value || "TCB";
+    const accountNo = (document.getElementById("cfg_account_no")?.value || "").trim();
+    const accountName = (document.getElementById("cfg_account_name")?.value || "").trim().toUpperCase();
+    const amount = parseInt(document.getElementById("cfg_amount")?.value || "150000", 10);
+    const hotlineZalo = (document.getElementById("cfg_zalo_hotline")?.value || "").trim();
+
+    if (!accountNo || accountNo.length < 5) {
+        alert("Vui lòng nhập Số tài khoản hợp lệ!");
+        return;
+    }
+    if (!accountName || accountName.length < 3) {
+        alert("Vui lòng nhập Tên chủ tài khoản!");
+        return;
+    }
+
+    const bankNames = {
+        'TCB': 'Techcombank',
+        'MB': 'MB Bank',
+        'VCB': 'Vietcombank',
+        'VPB': 'VPBank',
+        'ACB': 'ACB',
+        'BIDV': 'BIDV',
+        'CTG': 'Vietinbank',
+        'TPB': 'TPBank'
+    };
+
+    const cfg = {
+        bankId: bankId,
+        bankName: bankNames[bankId] || bankId,
+        accountNumber: accountNo,
+        accountName: accountName,
+        amount: amount,
+        amountFormatted: Number(amount).toLocaleString('vi-VN') + ' VNĐ',
+        hotlineZalo: hotlineZalo,
+        zaloLink: `https://zalo.me/${hotlineZalo}`
+    };
+
+    IELTSAuth.savePaymentConfig(cfg);
+    alert("✓ Đã lưu cấu hình Thanh Toán & VietQR thành công! Hệ thống học viên sẽ lập tức áp dụng số tài khoản này.");
+}
+
+function resetDefaultPaymentSettings() {
+    if (confirm("Khôi phục thông tin Techcombank mặc định?")) {
+        localStorage.removeItem("ielts_payment_config");
+        loadAdminPaymentSettings();
+        alert("✓ Đã khôi phục cài đặt mặc định!");
+    }
+}
+
+// Auto check login session
+window.addEventListener("load", function () {
+    if (sessionStorage.getItem(STORAGE_ADMIN_AUTH) === "true") {
+        document.getElementById("login_screen").style.display = "none";
+        document.getElementById("admin_dashboard").style.display = "block";
+        initCloudSyncUI();
+        refreshAdminData();
+        syncCloudVault(true);
+    }
+});
+</script>
+</body>
+</html>
