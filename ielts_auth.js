@@ -20,6 +20,10 @@
     const STORAGE_KEY_KEYS_VAULT = "ielts_admin_issued_keys";
     const STORAGE_KEY_ADMIN = "ielts_admin_authenticated";
     const STORAGE_KEY_PAYMENT = "ielts_payment_config";
+    const STORAGE_KEY_TARGET = "ielts_student_target";
+    const STORAGE_KEY_STREAK = "ielts_streak_data";
+    const STORAGE_KEY_MISTAKES = "ielts_mistakes_notebook";
+    const STORAGE_KEY_MASTER_PROGRESS = "ielts_master_progress_v1";
 
     const DEFAULT_PAYMENT_CONFIG = {
         bankId: "TCB",
@@ -439,7 +443,7 @@
             } else if (access.isFreeTrial) {
                 badge.innerHTML = `<span>✨ <b>Học Thử Miễn Phí (Unit 01-02)</b></span> <a href="index.html#activate" style="color: #38bdf8; text-decoration: underline; margin-left: 6px;">Kích hoạt trọn bộ 30 Unit</a>`;
             } else if (access.student) {
-                badge.innerHTML = `<span>🎓 Học viên: <b style="color: #38bdf8;">${access.student.name}</b></span> <span style="color: #34d399;">• Đã kích hoạt (${access.student.tier})</span>`;
+                badge.innerHTML = `<span>🎓 Học viên: <b style="color: #38bdf8;">${access.student.name}</b></span> <button onclick="IELTSAuth.openPassportModal()" style="background: linear-gradient(135deg, #38bdf8, #0284c7); border: none; color: #0b1120; border-radius: 6px; padding: 2px 8px; font-size: 0.7rem; font-weight: 800; cursor: pointer; margin-left: 4px;">🎓 Hồ Sơ & Sổ Tay</button>`;
             }
             bar.appendChild(badge);
         },
@@ -720,6 +724,560 @@
             }, 1200);
         },
 
+        // --- 8.5 IELTS PASSPORT & LEARNING HUB (4-IN-1 DASHBOARD) ---
+        getStreakData: function () {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY_STREAK);
+                if (raw) return JSON.parse(raw);
+            } catch (e) {}
+            return { currentStreak: 1, lastDate: "", totalActiveDays: 1 };
+        },
+
+        updateStreak: function () {
+            try {
+                const streak = this.getStreakData();
+                const today = new Date().toISOString().slice(0, 10);
+                if (!streak.lastDate) {
+                    streak.currentStreak = 1;
+                    streak.lastDate = today;
+                    streak.totalActiveDays = 1;
+                } else if (streak.lastDate === today) {
+                    // Already logged today
+                } else {
+                    const lastD = new Date(streak.lastDate);
+                    const nowD = new Date(today);
+                    const diffDays = Math.round((nowD - lastD) / (1000 * 60 * 60 * 24));
+                    if (diffDays === 1) {
+                        streak.currentStreak = (streak.currentStreak || 0) + 1;
+                    } else if (diffDays > 1) {
+                        streak.currentStreak = 1;
+                    }
+                    streak.lastDate = today;
+                    streak.totalActiveDays = (streak.totalActiveDays || 0) + 1;
+                }
+                localStorage.setItem(STORAGE_KEY_STREAK, JSON.stringify(streak));
+                return streak;
+            } catch (e) {
+                return { currentStreak: 1, lastDate: "", totalActiveDays: 1 };
+            }
+        },
+
+        getTargetGoal: function () {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY_TARGET);
+                if (raw) return JSON.parse(raw);
+            } catch (e) {}
+            return { targetBand: "7.0", targetDate: "2026-12", motto: "Consistency beats talent when talent doesn't work hard." };
+        },
+
+        saveTargetGoal: function (band, dateStr) {
+            try {
+                const cur = this.getTargetGoal();
+                if (band) cur.targetBand = band;
+                if (dateStr) cur.targetDate = dateStr;
+                localStorage.setItem(STORAGE_KEY_TARGET, JSON.stringify(cur));
+                this.showSecurityToast(`✓ Đã cập nhật mục tiêu: Band ${cur.targetBand} (${cur.targetDate})`);
+                this.refreshPassportUI();
+            } catch (e) {}
+        },
+
+        getMasterProgressSummary: function () {
+            let unitsData = {};
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY_MASTER_PROGRESS);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    unitsData = parsed.units || {};
+                }
+            } catch (e) {}
+
+            let completedCount = 0;
+            let totalVocab = 0;
+            let totalGrammar = 0;
+            let listeningScores = [], readingScores = [];
+            let writingCount = 0, speakingCount = 0;
+
+            for (let u = 1; u <= 30; u++) {
+                const k = (u < 10 ? "0" : "") + u;
+                const d = unitsData[k];
+                if (d) {
+                    let hasActivity = false;
+                    if (typeof d.vocab_score === 'number' && d.vocab_score > 0) {
+                        totalVocab += d.vocab_score;
+                        hasActivity = true;
+                    }
+                    if (typeof d.grammar_score === 'number' && d.grammar_score > 0) {
+                        totalGrammar += d.grammar_score;
+                        hasActivity = true;
+                    }
+                    if (typeof d.listening_score === 'number' && typeof d.listening_total === 'number' && d.listening_total > 0) {
+                        listeningScores.push(d.listening_score / d.listening_total);
+                        hasActivity = true;
+                    }
+                    if (typeof d.reading_score === 'number' && typeof d.reading_total === 'number' && d.reading_total > 0) {
+                        readingScores.push(d.reading_score / d.reading_total);
+                        hasActivity = true;
+                    }
+                    if (d.writing_completed) writingCount++;
+                    if (d.speaking_completed) speakingCount++;
+                    if (hasActivity) completedCount++;
+                }
+            }
+
+            const listeningPct = listeningScores.length ? (listeningScores.reduce((a, b) => a + b, 0) / listeningScores.length) : 0;
+            const readingPct = readingScores.length ? (readingScores.reduce((a, b) => a + b, 0) / readingScores.length) : 0;
+
+            // Estimated Band calculation (Cambridge 4-skill formula)
+            const lBand = listeningPct > 0 ? (4.0 + listeningPct * 4.0) : 4.5;
+            const rBand = readingPct > 0 ? (4.0 + readingPct * 4.0) : 4.5;
+            const wBand = writingCount >= 10 ? 6.5 : (writingCount >= 3 ? 5.5 : 5.0);
+            const sBand = speakingCount >= 10 ? 6.5 : (speakingCount >= 3 ? 5.5 : 5.0);
+            
+            const rawAvg = (lBand + rBand + wBand + sBand) / 4.0;
+            const estimatedBand = (Math.round(rawAvg * 2) / 2).toFixed(1);
+
+            return {
+                completedUnits: completedCount,
+                percent: Math.round((completedCount / 30) * 100),
+                totalVocabMastered: totalVocab,
+                totalGrammarMastered: totalGrammar,
+                listeningPct: Math.round(listeningPct * 100),
+                readingPct: Math.round(readingPct * 100),
+                writingCount: writingCount,
+                speakingCount: speakingCount,
+                estimatedBand: estimatedBand,
+                lBand: lBand.toFixed(1),
+                rBand: rBand.toFixed(1),
+                wBand: wBand.toFixed(1),
+                sBand: sBand.toFixed(1)
+            };
+        },
+
+        // --- MISTAKE NOTEBOOK (SỔ TAY SỬA SAI) ---
+        getMistakes: function () {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY_MISTAKES);
+                if (raw) return JSON.parse(raw);
+            } catch (e) {}
+            return [];
+        },
+
+        saveMistakes: function (list) {
+            try {
+                localStorage.setItem(STORAGE_KEY_MISTAKES, JSON.stringify(list));
+            } catch (e) {}
+        },
+
+        scanAndRecordMistakesFromDOM: function () {
+            try {
+                const unitId = window.CURRENT_UNIT_ID || (location.pathname.match(/unit_(\d+)/) ? location.pathname.match(/unit_(\d+)/)[1] : "FD");
+                const wrongEls = document.querySelectorAll(".explanation.show.wrong");
+                const correctEls = document.querySelectorAll(".explanation.show.correct");
+                let mistakes = this.getMistakes();
+
+                // 1. Remove mistakes that are now answered correctly
+                correctEls.forEach(el => {
+                    const item = el.closest(".question-item");
+                    if (!item) return;
+                    const qTitle = (item.querySelector(".question-title")?.innerText || "").trim();
+                    if (qTitle) {
+                        mistakes = mistakes.filter(m => !(m.unit === unitId && m.question === qTitle));
+                    }
+                });
+
+                // 2. Add newly discovered mistakes
+                wrongEls.forEach(el => {
+                    const item = el.closest(".question-item");
+                    if (!item) return;
+                    const qTitle = (item.querySelector(".question-title")?.innerText || "").trim();
+                    if (!qTitle) return;
+
+                    const checkedRadio = item.querySelector("input[type='radio']:checked");
+                    const userOptionText = checkedRadio ? (checkedRadio.closest(".option-label")?.innerText || "").trim() : "Chưa trả lời";
+
+                    const options = [];
+                    item.querySelectorAll(".option-label").forEach(lbl => {
+                        options.push(lbl.innerText.trim());
+                    });
+
+                    const expText = el.innerText.replace(/^[✗✓xX]\s*(Sai rồi!|Chính xác!)\s*/i, "").trim();
+                    const isVocab = (item.querySelector("input[name^='vocab']") !== null);
+                    const type = isVocab ? "Từ vựng" : "Ngữ pháp";
+                    const id = "MISTAKE_" + unitId + "_" + (isVocab ? "V" : "G") + "_" + Math.abs(this.hashCode(qTitle));
+
+                    // Avoid duplicate
+                    const idx = mistakes.findIndex(m => m.id === id);
+                    const mistakeRecord = {
+                        id: id,
+                        unit: unitId,
+                        type: type,
+                        question: qTitle,
+                        options: options,
+                        userAns: userOptionText,
+                        explanation: expText,
+                        recordedAt: new Date().toISOString()
+                    };
+
+                    if (idx >= 0) {
+                        mistakes[idx] = mistakeRecord;
+                    } else {
+                        mistakes.unshift(mistakeRecord);
+                    }
+                });
+
+                this.saveMistakes(mistakes);
+            } catch (e) {}
+        },
+
+        hashCode: function (str) {
+            let h = 0;
+            for (let i = 0; i < str.length; i++) {
+                h = Math.imul(31, h) + str.charCodeAt(i) | 0;
+            }
+            return h;
+        },
+
+        removeMistake: function (id) {
+            let mistakes = this.getMistakes();
+            mistakes = mistakes.filter(m => m.id !== id);
+            this.saveMistakes(mistakes);
+            this.showSecurityToast("✓ Đã xóa câu hỏi khỏi Sổ tay sửa sai!");
+            this.renderMistakesTabContent();
+        },
+
+        clearAllMistakes: function () {
+            if (confirm("Bạn có chắc muốn làm sạch toàn bộ Sổ tay sửa sai?")) {
+                this.saveMistakes([]);
+                this.showSecurityToast("✓ Đã làm sạch Sổ tay sửa sai!");
+                this.renderMistakesTabContent();
+            }
+        },
+
+        // --- PASSPORT MODAL (UI/UX) ---
+        openPassportModal: function (initialTab) {
+            this.updateStreak();
+            let modal = document.getElementById("ielts_passport_modal");
+            if (!modal) {
+                modal = document.createElement("div");
+                modal.id = "ielts_passport_modal";
+                modal.style.cssText = `
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(11, 17, 32, 0.88);
+                    backdrop-filter: blur(14px);
+                    z-index: 10000001;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 14px;
+                    overflow-y: auto;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                `;
+                document.body.appendChild(modal);
+            }
+
+            modal.innerHTML = this.buildPassportModalHtml();
+            modal.style.display = "flex";
+            this.switchPassportTab(initialTab || "passport");
+        },
+
+        closePassportModal: function () {
+            const modal = document.getElementById("ielts_passport_modal");
+            if (modal) modal.style.display = "none";
+        },
+
+        switchPassportTab: function (tab) {
+            const tabs = ["passport", "radar", "mistakes"];
+            tabs.forEach(t => {
+                const sec = document.getElementById("passport_tab_content_" + t);
+                const btn = document.getElementById("passport_btn_" + t);
+                if (sec) sec.style.display = (t === tab) ? "block" : "none";
+                if (btn) {
+                    if (t === tab) {
+                        btn.style.borderBottomColor = "#38bdf8";
+                        btn.style.color = "#38bdf8";
+                        btn.style.background = "rgba(56, 189, 248, 0.08)";
+                    } else {
+                        btn.style.borderBottomColor = "transparent";
+                        btn.style.color = "#94a3b8";
+                        btn.style.background = "none";
+                    }
+                }
+            });
+
+            if (tab === "mistakes") {
+                this.renderMistakesTabContent();
+            }
+        },
+
+        refreshPassportUI: function () {
+            const modal = document.getElementById("ielts_passport_modal");
+            if (modal && modal.style.display === "flex") {
+                modal.innerHTML = this.buildPassportModalHtml();
+                this.switchPassportTab("passport");
+            }
+        },
+
+        buildPassportModalHtml: function () {
+            const isOwner = this.isAdminOwner();
+            const student = this.getStudent();
+            const streak = this.getStreakData();
+            const target = this.getTargetGoal();
+            const progress = this.getMasterProgressSummary();
+
+            let displayName = "Học Viên Trải Nghiệm (Guest)";
+            let displayKey = "NINH-TRIAL-DEMO";
+            let displayTier = "Bản Học Thử Miễn Phí (Unit 01-02)";
+            let badgeTitle = "🌱 Foundation Explorer";
+
+            if (isOwner) {
+                displayName = "Cô Ninh (Chủ Sở Hữu Website)";
+                displayKey = "NINH-VIP-8888-25A9";
+                displayTier = "VIP Toàn Quyền Quản Trị Hệ Thống";
+                badgeTitle = "👑 Master Admin & Head Coach";
+            } else if (student) {
+                displayName = student.name;
+                displayKey = student.key;
+                displayTier = student.tierName;
+                badgeTitle = (student.tier === 'VIP') ? "👑 IELTS VIP Scholar" : "🎯 IELTS Foundation Candidate";
+            }
+
+            const targetDiff = (parseFloat(target.targetBand) - parseFloat(progress.estimatedBand)).toFixed(1);
+            const targetDiffText = targetDiff > 0 ? `(Cách mục tiêu: +${targetDiff} Band)` : `(Đạt hoặc vượt mục tiêu!)`;
+
+            return `
+                <div style="background: #1e293b; border: 1.5px solid rgba(197, 139, 98, 0.45); border-radius: 24px; max-width: 680px; width: 100%; box-shadow: 0 25px 60px rgba(0,0,0,0.85), 0 0 35px rgba(197, 139, 98, 0.25); overflow: hidden; animation: popIn 0.22s ease-out; color: #f8fafc; max-height: 92vh; display: flex; flex-direction: column;">
+                    
+                    <!-- Header -->
+                    <div style="padding: 16px 22px; background: linear-gradient(135deg, rgba(30, 41, 59, 1), rgba(15, 23, 42, 1)); border-bottom: 1px solid rgba(197, 139, 98, 0.3); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 42px; height: 42px; border-radius: 12px; background: radial-gradient(circle, rgba(197, 139, 98, 0.3) 0%, rgba(15, 23, 42, 0.9) 100%); border: 1.5px solid #c58b62; display: flex; align-items: center; justify-content: center; font-size: 22px;">🪷</div>
+                            <div>
+                                <div style="font-size: 0.75rem; color: #c58b62; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">IELTS Journey with Ms Ninh</div>
+                                <div style="font-size: 1.15rem; color: #fff; font-weight: 800; font-family: 'Space Grotesk', sans-serif;">Hồ Sơ Năng Lực & IELTS Passport</div>
+                            </div>
+                        </div>
+                        <button onclick="IELTSAuth.closePassportModal()" style="background: none; border: none; color: #94a3b8; font-size: 26px; cursor: pointer; padding: 4px 8px; line-height: 1;">&times;</button>
+                    </div>
+
+                    <!-- Navigation Tabs -->
+                    <div style="display: flex; border-bottom: 1px solid #334155; background: #0f172a; flex-shrink: 0;">
+                        <button id="passport_btn_passport" onclick="IELTSAuth.switchPassportTab('passport')" style="flex: 1; padding: 13px 8px; background: none; border: none; border-bottom: 2px solid #38bdf8; color: #38bdf8; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;">
+                            👤 Thẻ Học Viên VIP
+                        </button>
+                        <button id="passport_btn_radar" onclick="IELTSAuth.switchPassportTab('radar')" style="flex: 1; padding: 13px 8px; background: none; border: none; border-bottom: 2px solid transparent; color: #94a3b8; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;">
+                            📊 Radar 4 Kỹ Năng
+                        </button>
+                        <button id="passport_btn_mistakes" onclick="IELTSAuth.switchPassportTab('mistakes')" style="flex: 1; padding: 13px 8px; background: none; border: none; border-bottom: 2px solid transparent; color: #94a3b8; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;">
+                            📕 Sổ Tay Sửa Sai
+                        </button>
+                    </div>
+
+                    <!-- Body Content (Scrollable) -->
+                    <div style="padding: 20px 22px; overflow-y: auto; flex: 1;">
+
+                        <!-- TAB 1: THẺ HỌC VIÊN & MỤC TIÊU -->
+                        <div id="passport_tab_content_passport">
+                            <!-- Digital Passport Card (Hologram Look) -->
+                            <div style="background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0.98) 85%); border: 1.5px solid rgba(197, 139, 98, 0.55); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 0 20px rgba(197, 139, 98, 0.15); position: relative; overflow: hidden;">
+                                <div style="position: absolute; right: -25px; bottom: -25px; font-size: 110px; opacity: 0.05; pointer-events: none; user-select: none;">🪷</div>
+
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                                    <div>
+                                        <div style="font-size: 0.72rem; font-weight: 800; color: #c58b62; text-transform: uppercase; letter-spacing: 1.2px;">ACADEMIC PASSPORT • OFFICIAL MEMBER</div>
+                                        <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-top: 3px;">${displayName}</div>
+                                        <div style="font-size: 0.78rem; color: #94a3b8; font-family: monospace; margin-top: 2px;">ID: <span style="color: #38bdf8;">${displayKey}</span></div>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <span style="display: inline-block; background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.75rem; padding: 4px 10px; border-radius: 999px; font-weight: 800;">
+                                            ${badgeTitle}
+                                        </span>
+                                        <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">Khóa: <b>${displayTier}</b></div>
+                                    </div>
+                                </div>
+
+                                <!-- Streak & Goal Grid -->
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-top: 14px;">
+                                    <div style="background: rgba(11, 17, 32, 0.75); border: 1px solid #334155; border-radius: 12px; padding: 12px; text-align: center;">
+                                        <div style="font-size: 1.5rem; margin-bottom: 2px;">🔥</div>
+                                        <div style="font-size: 1.25rem; font-weight: 800; color: #fbbf24;">${streak.currentStreak} Ngày</div>
+                                        <div style="font-size: 0.7rem; color: #94a3b8; text-transform: uppercase;">Chuỗi học liên tục</div>
+                                    </div>
+                                    <div style="background: rgba(11, 17, 32, 0.75); border: 1px solid #334155; border-radius: 12px; padding: 12px; text-align: center;">
+                                        <div style="font-size: 1.5rem; margin-bottom: 2px;">🎯</div>
+                                        <div style="font-size: 1.25rem; font-weight: 800; color: #38bdf8;">Band ${target.targetBand}</div>
+                                        <div style="font-size: 0.7rem; color: #94a3b8; text-transform: uppercase;">Mục tiêu cá nhân</div>
+                                    </div>
+                                    <div style="background: rgba(11, 17, 32, 0.75); border: 1px solid #334155; border-radius: 12px; padding: 12px; text-align: center;">
+                                        <div style="font-size: 1.5rem; margin-bottom: 2px;">⏳</div>
+                                        <div style="font-size: 1.25rem; font-weight: 800; color: #c58b62;">${target.targetDate}</div>
+                                        <div style="font-size: 0.7rem; color: #94a3b8; text-transform: uppercase;">Hạn định thi</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Goal Setting Form -->
+                            <div style="background: #0f172a; border: 1px solid #334155; border-radius: 16px; padding: 16px; margin-bottom: 20px;">
+                                <div style="font-size: 0.85rem; font-weight: 800; color: #38bdf8; margin-bottom: 12px;">
+                                    🎯 Cài Đặt Mục Tiêu Của Bạn
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                    <div>
+                                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 5px;">Mục Tiêu Target Band</label>
+                                        <select id="cfg_target_band" onchange="IELTSAuth.saveTargetGoal(this.value, null)" style="width: 100%; box-sizing: border-box; background: #0b1120; border: 1px solid #334155; border-radius: 8px; padding: 9px 12px; color: #fff; font-size: 0.88rem;">
+                                            <option value="6.0" ${target.targetBand === '6.0' ? 'selected' : ''}>Band 6.0 (Foundation Mastery)</option>
+                                            <option value="6.5" ${target.targetBand === '6.5' ? 'selected' : ''}>Band 6.5 (Competent Academic)</option>
+                                            <option value="7.0" ${target.targetBand === '7.0' ? 'selected' : ''}>Band 7.0 (Good User)</option>
+                                            <option value="7.5" ${target.targetBand === '7.5' ? 'selected' : ''}>Band 7.5 (Advanced)</option>
+                                            <option value="8.0" ${target.targetBand === '8.0' ? 'selected' : ''}>Band 8.0+ (Superior Mastery)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 5px;">Thời Gian Dự Thi</label>
+                                        <input type="text" id="cfg_target_date" value="${target.targetDate}" placeholder="Ví dụ: Tháng 12/2026" onchange="IELTSAuth.saveTargetGoal(null, this.value)" style="width: 100%; box-sizing: border-box; background: #0b1120; border: 1px solid #334155; border-radius: 8px; padding: 9px 12px; color: #fff; font-size: 0.88rem;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ms Ninh's Coaching Motto -->
+                            <div style="background: rgba(197, 139, 98, 0.12); border-left: 4px solid #c58b62; border-radius: 0 12px 12px 0; padding: 14px 16px; font-size: 0.84rem; line-height: 1.6; color: #e2e8f0;">
+                                <div style="font-weight: 800; color: #c58b62; margin-bottom: 4px;">💌 Lời Nhắn Từ Cô Ninh:</div>
+                                <i>"Mỗi ngày một chút đều đặn chính là bí quyết giúp học viên của cô chinh phục Band 8.0+. Hãy duy trì ngọn lửa 🔥 Streak và làm chủ từng Unit nhé!"</i>
+                            </div>
+                        </div>
+
+                        <!-- TAB 2: RADAR 4 KỸ NĂNG & TIẾN ĐỘ 30 UNITS -->
+                        <div id="passport_tab_content_radar" style="display: none;">
+                            <!-- Estimated Band Card -->
+                            <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(56, 189, 248, 0.5); border-radius: 20px; padding: 18px 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+                                <div>
+                                    <div style="font-size: 0.72rem; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 1px;">DỰ PHÓNG BAND ĐIỂM CAMBRIDGE</div>
+                                    <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 4px;">
+                                        <span style="font-size: 2.2rem; font-weight: 800; color: #34d399; font-family: 'Space Grotesk', sans-serif;">Band ${progress.estimatedBand}</span>
+                                        <span style="font-size: 0.85rem; color: #94a3b8;">${targetDiffText}</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: #cbd5e1; margin-top: 2px;">Dựa trên phân tích kết quả bài tập & test của các Unit đã học.</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <button onclick="IELTSAuth.openPaywallModal()" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; padding: 8px 14px; border-radius: 10px; font-weight: 700; font-size: 0.8rem; cursor: pointer;">
+                                        Mở Khóa Toàn Bộ 30 Unit ➔
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 30 Units Progress Bar -->
+                            <div style="background: #0f172a; border: 1px solid #334155; border-radius: 16px; padding: 16px; margin-bottom: 20px;">
+                                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">
+                                    <span>Tiến Độ Chinh Phục 30 Units Foundation</span>
+                                    <span style="color: #38bdf8;">${progress.completedUnits}/30 Units (${progress.percent}%)</span>
+                                </div>
+                                <div style="background: #1e293b; height: 10px; border-radius: 999px; overflow: hidden;">
+                                    <div style="width: ${progress.percent}%; height: 100%; background: linear-gradient(90deg, #38bdf8, #10b981); border-radius: 999px; transition: width 0.4s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; margin-top: 8px;">
+                                    <span>Vốn từ học thuật đã nạp: <b style="color: #34d399;">${progress.totalVocabMastered} / 450 từ</b></span>
+                                    <span>Điểm ngữ pháp vững vàng: <b style="color: #fbbf24;">${progress.totalGrammarMastered} điểm</b></span>
+                                </div>
+                            </div>
+
+                            <!-- 4 Skills Breakdown Grid -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 12px;">
+                                <div style="background: #0f172a; border: 1px solid #334155; border-radius: 14px; padding: 14px;">
+                                    <div style="font-size: 1.2rem; margin-bottom: 4px;">🎧</div>
+                                    <div style="font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase;">Listening Lab</div>
+                                    <div style="font-size: 1.3rem; font-weight: 800; color: #fff; margin: 4px 0;">Band ${progress.lBand}</div>
+                                    <div style="font-size: 0.72rem; color: #94a3b8;">Độ chính xác: ${progress.listeningPct}%</div>
+                                </div>
+                                <div style="background: #0f172a; border: 1px solid #334155; border-radius: 14px; padding: 14px;">
+                                    <div style="font-size: 1.2rem; margin-bottom: 4px;">📖</div>
+                                    <div style="font-size: 0.78rem; font-weight: 700; color: #10b981; text-transform: uppercase;">Reading Lab</div>
+                                    <div style="font-size: 1.3rem; font-weight: 800; color: #fff; margin: 4px 0;">Band ${progress.rBand}</div>
+                                    <div style="font-size: 0.72rem; color: #94a3b8;">Độ chính xác: ${progress.readingPct}%</div>
+                                </div>
+                                <div style="background: #0f172a; border: 1px solid #334155; border-radius: 14px; padding: 14px;">
+                                    <div style="font-size: 1.2rem; margin-bottom: 4px;">✍️</div>
+                                    <div style="font-size: 0.78rem; font-weight: 700; color: #f59e0b; text-transform: uppercase;">Writing Lab</div>
+                                    <div style="font-size: 1.3rem; font-weight: 800; color: #fff; margin: 4px 0;">Band ${progress.wBand}</div>
+                                    <div style="font-size: 0.72rem; color: #94a3b8;">Đã nộp: ${progress.writingCount} bài luận</div>
+                                </div>
+                                <div style="background: #0f172a; border: 1px solid #334155; border-radius: 14px; padding: 14px;">
+                                    <div style="font-size: 1.2rem; margin-bottom: 4px;">🗣️</div>
+                                    <div style="font-size: 0.78rem; font-weight: 700; color: #a855f7; text-transform: uppercase;">Speaking Lab</div>
+                                    <div style="font-size: 1.3rem; font-weight: 800; color: #fff; margin: 4px 0;">Band ${progress.sBand}</div>
+                                    <div style="font-size: 0.72rem; color: #94a3b8;">Thu âm: ${progress.speakingCount} lượt</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 3: SỔ TAY SỬA SAI (MISTAKE NOTEBOOK) -->
+                        <div id="passport_tab_content_mistakes" style="display: none;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                                <div>
+                                    <div style="font-size: 0.95rem; font-weight: 800; color: #fff;">Sổ Tay Lỗi Sai Tự Động (Spaced Repetition)</div>
+                                    <div style="font-size: 0.75rem; color: #94a3b8;">Tự động gom lại các câu bạn chọn sai trong các bài Test Từ Vựng & Ngữ Pháp.</div>
+                                </div>
+                                <button onclick="IELTSAuth.clearAllMistakes()" style="background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.4); color: #fb7185; padding: 6px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; cursor: pointer;">
+                                    Làm Sạch Sổ Tay 🗑️
+                                </button>
+                            </div>
+                            <div id="mistakes_container_list">
+                                <!-- Dynamic Rendered via renderMistakesTabContent() -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            `;
+        },
+
+        renderMistakesTabContent: function () {
+            const container = document.getElementById("mistakes_container_list");
+            if (!container) return;
+            const mistakes = this.getMistakes();
+
+            if (mistakes.length === 0) {
+                container.innerHTML = `
+                    <div style="background: #0f172a; border: 1.5px dashed #334155; border-radius: 16px; padding: 36px 20px; text-align: center; color: #94a3b8;">
+                        <div style="font-size: 38px; margin-bottom: 8px;">🎉</div>
+                        <div style="font-size: 0.95rem; font-weight: 800; color: #34d399; margin-bottom: 4px;">Hiện Tại Bạn Chưa Có Câu Sai Nào!</div>
+                        <div style="font-size: 0.78rem; max-width: 400px; margin: 0 auto; line-height: 1.5;">
+                            Khi bạn làm bài Test Từ Vựng (20 câu) hoặc Test Ngữ Pháp (10 câu) trong bất kỳ Unit nào, hệ thống sẽ tự động lưu các câu làm sai vào đây để bạn ôn luyện lại riêng biệt.
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = `
+                <div style="font-size: 0.78rem; color: #fbbf24; font-weight: 700; margin-bottom: 12px; background: rgba(245, 158, 11, 0.12); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.3);">
+                    ⚠️ Bạn đang có ${mistakes.length} câu cần củng cố lại. Hãy bấm 'Luyện Lại' hoặc 'Hỏi Cô Ninh' để ghi nhớ bản chất nhé!
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    ${mistakes.map((m, idx) => `
+                        <div style="background: #0f172a; border: 1px solid rgba(244, 63, 94, 0.35); border-radius: 14px; padding: 14px 16px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; font-weight: 800;">Unit ${m.unit}</span>
+                                    <span style="background: rgba(197, 139, 98, 0.2); color: #c58b62; font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; font-weight: 800;">${m.type}</span>
+                                </div>
+                                <button onclick="IELTSAuth.removeMistake('${m.id}')" style="background: none; border: none; color: #64748b; font-size: 0.75rem; cursor: pointer;" title="Đã thuộc bài, xóa câu này">✕ Đã Thuộc</button>
+                            </div>
+                            <div style="font-size: 0.88rem; font-weight: 700; color: #fff; margin-bottom: 8px;">${m.question}</div>
+                            <div style="background: #0b1120; border-radius: 8px; padding: 8px 10px; font-size: 0.78rem; line-height: 1.6; margin-bottom: 10px;">
+                                <div style="color: #fb7185;">✗ Bạn đã chọn: <b>${m.userAns}</b></div>
+                                <div style="color: #34d399; margin-top: 2px;">💡 Giải thích: <i>${m.explanation}</i></div>
+                            </div>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <a href="https://zalo.me/0869669659?text=${encodeURIComponent('Chào Cô Ninh, em đang ôn lại câu hỏi này trong Unit ' + m.unit + ' nhưng chưa hiểu rõ: "' + m.question + '". Nhờ cô giải thích thêm giúp em với ạ!')}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; padding: 6px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+                                    💬 Nhờ Cô Ninh Giải Thích Qua Zalo
+                                </a>
+                            </div>
+                        </div>
+                    `).join("")}
+                </div>
+            `;
+        },
+
         // --- 9. RENDER MEMBER STATUS BAR (ON INDEX) ---
         renderMemberStatusBar: function (containerId) {
             const container = document.getElementById(containerId);
@@ -758,19 +1316,23 @@
             if (student && !student.isDeviceMismatch) {
                 container.innerHTML = `
                     <div style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(16, 185, 129, 0.4); border-radius: 14px; padding: 12px 18px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); flex-wrap: wrap; gap: 10px;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 1.4rem;">🎓</span>
+                        <div style="display: flex; align-items: center; gap: 10px; cursor: pointer;" onclick="IELTSAuth.openPassportModal()">
+                            <span style="font-size: 1.5rem;">🎓</span>
                             <div>
                                 <div style="font-size: 0.88rem; color: #fff; font-weight: 700;">
                                     Học viên: <span style="color: #38bdf8;">${student.name}</span>
                                     <span style="display: inline-block; background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; margin-left: 6px; font-weight: 800;">✓ ĐÃ KÍCH HOẠT</span>
+                                    <span style="display: inline-block; background: rgba(245, 158, 11, 0.2); color: #fbbf24; font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; margin-left: 4px; font-weight: 800;">🔥 ${this.getStreakData().currentStreak} Ngày</span>
                                 </div>
                                 <div style="font-size: 0.75rem; color: #94a3b8;">
-                                    Gói học: <b style="color: #cbd5e1;">${student.tierName}</b> • Thiết bị đã khóa: <code style="color: #38bdf8;">${student.deviceId}</code>
+                                    Gói học: <b style="color: #cbd5e1;">${student.tierName}</b> • Mục tiêu: <b style="color: #38bdf8;">Band ${this.getTargetGoal().targetBand}</b> • <i>Bấm để xem Bảng Năng Lực & Sổ Tay ➔</i>
                                 </div>
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 8px;">
+                            <button onclick="IELTSAuth.openPassportModal()" style="background: linear-gradient(135deg, #38bdf8, #0284c7); color: #0b1120; font-size: 0.8rem; font-weight: 800; padding: 7px 14px; border-radius: 10px; border: none; cursor: pointer; box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);">
+                                🎓 Bảng Năng Lực & Sổ Tay
+                            </button>
                             <button onclick="IELTSAuth.openPaywallModal()" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-size: 0.78rem; font-weight: 700; padding: 6px 12px; border-radius: 8px; cursor: pointer;">
                                 🔑 Nhập Mã Khác
                             </button>
@@ -833,5 +1395,24 @@
     } else {
         IELTSAuth.initAntiTheft();
     }
+
+
+    // Auto-update daily streak on script load
+    try { IELTSAuth.updateStreak(); } catch (e) {}
+
+    // Auto-scan mistakes when students grade quizzes in any unit
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('button');
+        if (btn) {
+            const oc = btn.getAttribute('onclick') || '';
+            if (oc.includes('gradeVocabTest') || oc.includes('gradeGrammarTest') || oc.includes('gradeQuiz')) {
+                setTimeout(function() {
+                    if (window.IELTSAuth && window.IELTSAuth.scanAndRecordMistakesFromDOM) {
+                        window.IELTSAuth.scanAndRecordMistakesFromDOM();
+                    }
+                }, 200);
+            }
+        }
+    });
 
 })(window);
