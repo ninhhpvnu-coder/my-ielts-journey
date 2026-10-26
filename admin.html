@@ -6,9 +6,31 @@
     <title>Quản Trị Bản Quyền & Mã Học Viên — IELTS Journey with Ms Ninh</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
+        /* --- Academic Paper Cream Theme (Default ☀️) --- */
+        :root, [data-theme="paper"] {
+            --bg-color: #fbf4ea;
+            --surface-color: #ffffff;
+            --surface-hover: #fffdf9;
+            --card-color: #f7ede0;
+            --primary: #14324d;
+            --primary-hover: #1d4367;
+            --accent: #c5855d;
+            --accent-hover: #b0724b;
+            --success: #1b8755;
+            --warning: #b45309;
+            --danger: #c0392b;
+            --text-main: #14324d;
+            --text-muted: #5a6b7c;
+            --border: #eadccb;
+            --card-shadow: 0 4px 18px rgba(20, 50, 77, 0.06);
+            --header-bg: linear-gradient(135deg, #ffffff 0%, #fbf4ea 100%);
+        }
+
+        /* --- Midnight Navy Dark Theme (Optional 🌙) --- */
+        [data-theme="dark"] {
             --bg-color: #0b1120;
             --surface-color: #1e293b;
+            --surface-hover: #243247;
             --card-color: #334155;
             --primary: #38bdf8;
             --accent: #c58b62;
@@ -18,6 +40,8 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: #334155;
+            --card-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+            --header-bg: linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98));
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }

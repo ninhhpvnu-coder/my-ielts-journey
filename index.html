@@ -14,19 +14,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <script src="ielts_auth.js"></script>
     <style>
-        :root {
+        /* --- Academic Paper Cream Theme (Default ☀️) --- */
+        :root, [data-theme="paper"] {
+            --bg-color: #fbf4ea;
+            --surface-color: #ffffff;
+            --surface-hover: #fffdf9;
+            --card-color: #f7ede0;
+            --primary: #14324d;
+            --primary-hover: #1d4367;
+            --accent: #c5855d;
+            --accent-hover: #b0724b;
+            --success: #1b8755;
+            --warning: #b45309;
+            --danger: #c0392b;
+            --purple: #6d28d9;
+            --text-main: #14324d;
+            --text-muted: #5a6b7c;
+            --border: #eadccb;
+            --card-shadow: 0 4px 20px rgba(20, 50, 77, 0.06);
+            --header-bg: linear-gradient(135deg, #ffffff 0%, #fbf4ea 100%);
+            --hero-border: rgba(197, 133, 93, 0.45);
+        }
+
+        /* --- Midnight Navy Dark Theme (Optional 🌙) --- */
+        [data-theme="dark"] {
             --bg-color: #0b1120;
             --surface-color: #1e293b;
+            --surface-hover: #243247;
             --card-color: #334155;
             --primary: #38bdf8;
             --primary-hover: #0ea5e9;
-            --accent: #f43f5e;
+            --accent: #c5855d;
+            --accent-hover: #dca07b;
             --success: #10b981;
             --warning: #f59e0b;
+            --danger: #f43f5e;
             --purple: #a78bfa;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: #334155;
+            --card-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+            --header-bg: radial-gradient(circle at 12% 25%, rgba(197, 139, 98, 0.12) 0%, transparent 60%), linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98));
+            --hero-border: rgba(197, 139, 98, 0.38);
         }
 
         * {
@@ -62,12 +91,13 @@
             gap: 24px;
             padding: 24px 22px;
             text-align: left;
-            background: radial-gradient(circle at 12% 25%, rgba(197, 139, 98, 0.12) 0%, transparent 60%), linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98));
+            background: var(--header-bg);
             border-radius: 20px;
-            border: 1.5px solid rgba(197, 139, 98, 0.38);
-            box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.65), 0 0 24px rgba(197, 139, 98, 0.12);
+            border: 1.5px solid var(--hero-border);
+            box-shadow: var(--card-shadow);
             margin-bottom: 24px;
             position: relative;
+            transition: all 0.3s ease;
         }
 
         .hero-brand-card {
@@ -172,11 +202,19 @@
 
         @media (max-width: 640px) {
             header.hero-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 16px;
-                padding: 20px 16px;
-            }
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 24px 22px;
+            text-align: left;
+            background: var(--header-bg);
+            border-radius: 20px;
+            border: 1.5px solid var(--hero-border);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
             .hero-badge-row {
                 justify-content: center;
             }
@@ -454,7 +492,8 @@
             <img src="brand_logo.jpg" alt="IELTS Journey with Ms Ninh" class="brand-avatar-img">
         </div>
         <div class="hero-content">
-            <div class="hero-badge-row">
+            <div class="hero-badge-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                 <span class="brand-badge">🪷 IELTS Journey with Ms Ninh</span>
                 <span class="badge-sub">Cambridge Standard (2026 — 2028)</span>
             </div>
@@ -499,7 +538,7 @@
     <!-- SECTION: ACTIVE FOUNDATION UNITS (ALL 30 UNITS) -->
     <div style="margin-top: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-            <h2 style="font-size: 1.35rem; color: #fff; font-family: 'Space Grotesk', sans-serif;">🏛️ Giáo Trình 30 Bài Học Tương Tác Foundation</h2>
+            <h2 style="font-size: 1.35rem; color: var(--primary); font-family: 'Space Grotesk', sans-serif;">🏛️ Giáo Trình 30 Bài Học Tương Tác Foundation</h2>
             <span style="font-size: 0.8rem; color: #34d399; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); padding: 5px 14px; border-radius: 999px; font-weight: 700;">✓ 30 / 30 Units Đã Kích Hoạt</span>
         </div>
         <div class="units-grid" id="units_cards_container"></div>

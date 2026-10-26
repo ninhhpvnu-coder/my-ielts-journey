@@ -45,6 +45,43 @@
     };
 
     const IELTSAuth = {
+        // --- 000. ACADEMIC PAPER & MIDNIGHT THEME ENGINE ---
+        getTheme: function () {
+            return localStorage.getItem('ielts_theme') || 'paper';
+        },
+
+        initTheme: function () {
+            const theme = this.getTheme();
+            document.documentElement.setAttribute('data-theme', theme);
+            this.updateThemePillUI(theme);
+        },
+
+        toggleTheme: function () {
+            const current = this.getTheme();
+            const next = (current === 'paper') ? 'dark' : 'paper';
+            localStorage.setItem('ielts_theme', next);
+            document.documentElement.setAttribute('data-theme', next);
+            this.updateThemePillUI(next);
+            this.showSecurityToast(next === 'paper' ? '☀️ Đã bật Chế độ Giấy Ngà Học Thuật (Chống mỏi mắt)' : '🌙 Đã bật Chế độ Ban Đêm (Midnight Navy)');
+            // Update passport modal if open
+            const passportModal = document.getElementById('ielts_passport_modal');
+            if (passportModal && passportModal.style.display === 'flex') {
+                this.refreshPassportUI();
+            }
+        },
+
+        updateThemePillUI: function (theme) {
+            document.querySelectorAll('.theme-switch-pill, .theme-toggle-btn').forEach(btn => {
+                if (theme === 'paper') {
+                    btn.innerHTML = `☀️ <span class="theme-text">Giấy Ngà Học Thuật</span>`;
+                    btn.title = "Đang ở Chế độ Giấy Ngà. Bấm để chuyển sang Chế độ Ban Đêm";
+                } else {
+                    btn.innerHTML = `🌙 <span class="theme-text">Ban Đêm (Midnight)</span>`;
+                    btn.title = "Đang ở Chế độ Ban Đêm. Bấm để chuyển sang Chế độ Giấy Ngà Học Thuật";
+                }
+            });
+        },
+
         // --- 00. MASTER ADMIN & OWNER DETECTION ---
         isAdminOwner: function () {
             return (sessionStorage.getItem(STORAGE_KEY_ADMIN) === 'true' || localStorage.getItem(STORAGE_KEY_ADMIN) === 'true');
@@ -1393,6 +1430,7 @@
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => IELTSAuth.initAntiTheft());
     } else {
+        IELTSAuth.initTheme();
         IELTSAuth.initAntiTheft();
     }
 
