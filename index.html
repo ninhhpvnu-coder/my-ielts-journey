@@ -492,275 +492,13 @@
         </div>
     </div>
 
-    <!-- Main Section Switcher -->
-    <div class="hub-tabs">
-        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Giáo Trình Foundation (30/30 Units Đã Mở)</button>
-        <button class="hub-tab-btn" onclick="switchHubTab('roadmap30', this)">🗺️ Bản Đồ Quy Hoạch 30 Units & Hệ Thống Ngữ Pháp</button>
-        <button class="hub-tab-btn" onclick="switchHubTab('vocab_c1', this)">🧠 Nâng Cấp Từ Vựng C1-C2 & Anki</button>
-        <button class="hub-tab-btn" onclick="switchHubTab('cambridge', this)">📊 Khảo Thí & Chẩn Đoán Đề Cambridge (1-20)</button>
-    </div>
-
-    <!-- SECTION 1: ACTIVE FOUNDATION UNITS (ALL 6 STAGES: UNITS 01 - 30) -->
-    <div id="foundation" class="hub-section active">
-        <div class="topic-pills" style="margin-bottom: 18px;">
-            <button class="topic-pill active" onclick="filterUnitsByStage('all', this)">🌟 Tất Cả Đang Mở (Units 01 — 30)</button>
-            <button class="topic-pill" onclick="filterUnitsByStage(1, this)">🌱 Chặng 1: Units 01 — 05 (Band 3.5 ➔ 4.0)</button>
-            <button class="topic-pill" onclick="filterUnitsByStage(2, this)">🏙️ Chặng 2: Units 06 — 10 (Band 4.0 ➔ 4.5 • Map & Xã Hội)</button>
-            <button class="topic-pill" onclick="filterUnitsByStage(3, this)">💼 Chặng 3: Units 11 — 15 (Band 4.5 ➔ 5.0 • Line Graph & Bar Chart)</button>
-            <button class="topic-pill" onclick="filterUnitsByStage(4, this)">🔬 Chặng 4: Units 16 — 20 (Band 5.0 • Process & Table)</button>
-            <button class="topic-pill" onclick="filterUnitsByStage(5, this)">🌍 Chặng 5: Units 21 — 25 (Band 5.0 ➔ 5.5 • Pie Chart & Tâm Lý)</button>
-            <button class="topic-pill" onclick="filterUnitsByStage(6, this)">🚀 Chặng 6: Units 26 — 30 (Band 5.5+ • Mixed Charts & Ngữ Pháp C1)</button>
+    <!-- SECTION: ACTIVE FOUNDATION UNITS (ALL 30 UNITS) -->
+    <div style="margin-top: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+            <h2 style="font-size: 1.35rem; color: #fff; font-family: 'Space Grotesk', sans-serif;">🏛️ Giáo Trình 30 Bài Học Tương Tác Foundation</h2>
+            <span style="font-size: 0.8rem; color: #34d399; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); padding: 5px 14px; border-radius: 999px; font-weight: 700;">✓ 30 / 30 Units Đã Kích Hoạt</span>
         </div>
         <div class="units-grid" id="units_cards_container"></div>
-    </div>
-
-    <!-- SECTION 1B: 30-UNIT MASTER ROADMAP & COMPLETE GRAMMAR AUDIT -->
-    <div id="roadmap30" class="hub-section">
-        <div class="panel-box">
-            <h2 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 8px;">🗺️ Bản Quy Hoạch Tổng Thể 30 Units Foundation (6 Chặng • 450 Họ Từ Học Thuật)</h2>
-            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
-                Lộ trình bậc thang 3 tầng độ khó (Band 3.5 ➔ 6.5+) bao phủ 98% chủ đề IELTS, tích hợp trọn vẹn <b>7 chuyên đề biểu đồ Writing Task 1</b> và <b>100% hệ thống ngữ pháp Cơ bản & Nâng cao C1-C2</b>:
-            </p>
-            <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 12px;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Chặng Học Tập</th>
-                            <th>Danh Sách 5 Units Trong Chặng</th>
-                            <th>Trọng Tâm Khảo Thí & Writing Task 1/2</th>
-                            <th>Trạng Thái</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><b style="color:#34d399;">🌱 Chặng 1 (Units 01–05)</b><br><small>Band 3.5 ➔ 4.0</small></td>
-                            <td>U1: Community • U2: Education • U3: Environment • U4: Health & Sports • U5: Technology & AI</td>
-                            <td>Câu đơn/câu ghép chuẩn xác, các thì cơ bản, câu điều kiện loại 1, đoạn văn học thuật PEEL</td>
-                            <td><span style="color:#34d399; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#38bdf8;">🏙️ Chặng 2 (Units 06–10)</b><br><small>Band 4.0 ➔ 4.5</small></td>
-                            <td>U6: Family & Generations • <b>U7: Housing & Map</b> • U8: Transport • U9: Ecotourism & Heritage • U10: History & Archaeology</td>
-                            <td>So sánh nâng cao, Hiện tại hoàn thành, <b>Chuyên đề Task 1: MAP COMPARISON</b>, Nguyên nhân - Giải pháp</td>
-                            <td><span style="color:#38bdf8; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#fbbf24;">💼 Chặng 3 (Units 11–15)</b><br><small>Band 4.5 ➔ 5.0</small></td>
-                            <td>U11: Work & Careers • <b>U12: Finance & Line Graph</b> • U13: Advertising • <b>U14: E-Commerce & Bar Chart</b> • U15: Crime & Law</td>
-                            <td>Mệnh đề quan hệ, Câu điều kiện loại 2, <b>Chuyên đề Task 1: LINE GRAPH & BAR CHART</b></td>
-                            <td><span style="color:#fbbf24; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#f472b6;">🔬 Chặng 4 (Units 16–20)</b><br><small>Band 5.0</small></td>
-                            <td>U16: Healthcare • <b>U17: Clean Energy & Process</b> • U18: Food & Agriculture • U19: Wildlife & Marine • <b>U20: Water & Table</b></td>
-                            <td>Thể bị động học thuật, V-ing/To-V, <b>Chuyên đề Task 1: PROCESS DIAGRAM & TABLE</b></td>
-                            <td><span style="color:#f472b6; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#a78bfa;">🌍 Chặng 5 (Units 21–25)</b><br><small>Band 5.0 ➔ 5.5</small></td>
-                            <td><b>U21: Demographics & Pie Chart</b> • U22: Art & Literature • U23: Media & Journalism • U24: Psychology • U25: Human Behavior</td>
-                            <td>Cấu trúc nhượng bộ (Despite/Although), <b>Chuyên đề Task 1: PIE CHART</b>, Câu chẻ & Đảo ngữ C1</td>
-                            <td><span style="color:#a78bfa; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#fb7185;">🚀 Chặng 6 (Units 26–30)</b><br><small>Band 5.5+ (Cầu nối 6.5+)</small></td>
-                            <td>U26: Space Exploration • U27: Globalization • U28: Public Policy • U29: Bioethics • <b>U30: AI Future & Mixed Charts</b></td>
-                            <td>Tương lai hoàn thành, Mệnh đề phân từ rút gọn, ĐK loại 3/hỗn hợp, Danh hóa C1 & <b>Task 1: MIXED CHARTS</b></td>
-                            <td><span style="color:#fb7185; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="panel-box">
-            <h2 style="color: #34d399; font-size: 1.3rem; margin-bottom: 8px;">📐 Ma Trận Kiểm Toán Toàn Bộ Hệ Thống Ngữ Pháp Cơ Bản & Nâng Cao (Units 01 — 30)</h2>
-            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
-                Hệ thống được thiết kế khép kín đảm bảo học viên sau khi hoàn thành 30 Units sẽ làm chủ <b>100% chủ điểm ngữ pháp tiếng Anh học thuật</b> (từ nền tảng B1 đến cấu trúc ăn điểm GRA Band 8.0+):
-            </p>
-            <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 12px;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Phân Tầng Ngữ Pháp</th>
-                            <th>Chủ Điểm Ngữ Pháp Trọng Tâm</th>
-                            <th>Đơn Vị Bài Học (Units)</th>
-                            <th>Ứng Dụng Trực Tiếp Trong Khảo Thí IELTS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><b style="color:#34d399;">1. Hệ Thống 12 Thì & Phối Thì Học Thuật</b></td>
-                            <td>
-                                • Hiện tại đơn, Hiện tại tiếp diễn & Động từ trạng thái (Stative Verbs)<br>
-                                • Quá khứ đơn, Quá khứ tiếp diễn & Cấu trúc thói quen <code>used to + V</code><br>
-                                • Hiện tại hoàn thành vs. Hiện tại hoàn thành tiếp diễn<br>
-                                • Tương lai đơn (<code>will</code>), Tương lai gần (<code>be going to</code>) & Cấu trúc dự báo (<code>is projected/forecast to</code>)<br>
-                                • <b>Nâng cao:</b> Tương lai hoàn thành (<code>will have V3</code>) & Tương lai tiếp diễn (<code>will be V-ing</code>)
-                            </td>
-                            <td>U1, U2, U4, U5, U10, U18, U21, <b>U26</b></td>
-                            <td>Kiểm soát tuyệt đối trục thời gian trong Speaking Part 1/2/3 và mô tả số liệu quá khứ - hiện tại - tương lai trong Writing Task 1.</td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#38bdf8;">2. Danh Từ, Mạo Từ, Lượng Từ & Hòa Hợp Chủ - Vị (SVA)</b></td>
-                            <td>
-                                • Danh từ đếm được / Không đếm được học thuật (<i>information, legislation, infrastructure, debris, coverage</i>)<br>
-                                • Mạo từ <code>a / an / the / zero article</code> & Lượng từ (<code>much, many, a great deal of, a large number of</code>)<br>
-                                • Danh từ tập hợp số nhiều (<code>the elderly, the affluent, livestock, paparazzi</code>)<br>
-                                • <b>Nâng cao:</b> Bẫy SVA với <code>The number of</code> vs. <code>A number of</code>, cấu trúc <code>along with / as well as</code>
-                            </td>
-                            <td>U2, U3, U4, U21, <b>U30</b></td>
-                            <td>Loại bỏ triệt để lỗi cơ bản làm rớt điểm GRA xuống dưới Band 6.0 (thiếu mạo từ, chia sai động từ số ít/nhiều).</td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#fbbf24;">3. Hệ Thống Câu Điều Kiện Đầy Đủ & Đảo Ngữ Điều Kiện</b></td>
-                            <td>
-                                • Câu điều kiện loại 1 (<code>If / Unless / Provided that</code>) — Cảnh báo & Chính sách thực tế<br>
-                                • Câu điều kiện loại 2 (<code>If + V-ed/were, would + V</code>) — Giả định chính sách vĩ mô<br>
-                                • <b>Nâng cao:</b> Câu điều kiện loại 3 (<code>If + had V3, would have V3</code>) & Điều kiện Hỗn hợp (<code>If + had V3 [quá khứ], would V [hiện tại]</code>)<br>
-                                • <b>Đỉnh cao C1:</b> Đảo ngữ câu điều kiện không dùng <i>If</i> (<code>Should + S + V</code>, <code>Were + S + to V</code>, <code>Had + S + V3</code>)
-                            </td>
-                            <td>U5, U13, U19, <b>U28</b></td>
-                            <td>Vũ khí lập luận phản biện (counter-argument), phân tích hệ quả lịch sử và đề xuất giải pháp trong Writing Task 2 & Speaking Part 3.</td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#f472b6;">4. Thể Bị Động Học Thuật & Giả Định Cách (Subjunctive)</b></td>
-                            <td>
-                                • Bị động Hiện tại hoàn thành (Map), Hiện tại đơn (Process) & Bị động đa thì<br>
-                                • Bị động với Động từ khuyết thiếu (<code>must be enforced, should be regulated</code>)<br>
-                                • Bị động khách quan & Tường thuật C1 (<code>It is widely recognized/reported that...</code>)<br>
-                                • <b>Nâng cao:</b> Suy luận quá khứ (<code>must/might/could have V3</code>) & Giả định cách (<code>It is imperative/vital that + S + V-bare / be V3</code>)
-                            </td>
-                            <td>U7, U9, U15, U16, U17, U19, U23, <b>U26</b></td>
-                            <td>Tạo giọng văn khách quan (impersonal academic tone) chuẩn Cambridge cho cả Task 1 (Map/Process) và Task 2.</td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#a78bfa;">5. Mệnh Đề Quan Hệ, Rút Gọn Mệnh Đề & Cụm Phân Từ</b></td>
-                            <td>
-                                • Mệnh đề quan hệ xác định & không xác định (<code>who, which, where, whose</code>)<br>
-                                • Mệnh đề quan hệ nối tiếp chỉ hệ quả cả câu (<code>, which leads to / thereby + V-ing</code>)<br>
-                                • <b>Nâng cao:</b> Rút gọn mệnh đề quan hệ dùng <code>V-ing</code> (chủ động), <code>V3/ed</code> (bị động), <code>to-V</code> (sau số thứ tự/so sánh nhất)<br>
-                                • <b>Đỉnh cao C1:</b> Cụm phân từ đứng đầu câu làm trạng ngữ (<code>Driven by..., S + V</code> / <code>Fearing..., S + V</code>)
-                            </td>
-                            <td>U11, U15, <b>U27</b></td>
-                            <td>Nén câu phức dài thành cấu trúc súc tích, đa dạng hóa kiểu câu (sentence variety) để bứt phá tiêu chí GRA Band 7.5 - 8.5.</td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#fb7185;">6. Liên Từ Học Thuật, Cấp So Sánh, Câu Chẻ, Đảo Ngữ & Danh Hóa C1</b></td>
-                            <td>
-                                • Câu ghép FANBOYS, Liên từ nhân quả (<code>Because/Since</code> vs. <code>Due to/Owing to</code>) & Nhượng bộ (<code>Although</code> vs. <code>Despite/In spite of</code>)<br>
-                                • Cấp so sánh nâng cao (<code>far/considerably more</code>) & So sánh kép Nhân - Quả (<code>The more..., the more...</code>)<br>
-                                • <b>Đỉnh cao C1-C2:</b> Câu chẻ nhấn mạnh (<code>What... is...</code> / <code>It is... that...</code>), Đảo ngữ trạng từ phủ định (<code>Not only... but also</code> / <code>Only by + V-ing + can/will...</code>) & <b>Danh hóa học thuật (Nominalisation)</b>
-                            </td>
-                            <td>U1, U6, U8, U18, U22, U24, U25, <b>U29</b></td>
-                            <td>Biến câu văn giao tiếp thông thường thành văn phong học thuật C1-C2 sang trọng, sắc bén như bài viết của giám khảo bản xứ.</td>
-                        </tr>
-                        <tr>
-                            <td><b style="color:#38bdf8;">7. Ngữ Pháp Chuyên Biệt Cho 7 Dạng Biểu Đồ Writing Task 1</b></td>
-                            <td>
-                                • <b>Map (U7):</b> Giới từ định vị & Bị động biến đổi không gian<br>
-                                • <b>Line Graph (U12):</b> 2 công thức xu hướng (<code>Verb + Adv</code> & <code>Adj + Noun</code>) + Giới từ số liệu<br>
-                                • <b>Bar Chart (U14) & Table (U20):</b> So sánh tỷ trọng (<code>surpass, outnumber, account for</code>), ngoại lệ & <code>respectively</code><br>
-                                • <b>Process (U17) & Pie Chart (U21):</b> Liên từ giai đoạn, Phân số tỷ lệ & Dự báo tương lai<br>
-                                • <b>Mixed Charts (U30):</b> Cấu trúc chuyển đoạn & Đối chiếu tương quan đa biểu đồ (<code>while the accompanying bar chart...</code>)
-                            </td>
-                            <td>U7, U12, U14, U17, U20, U21, <b>U30</b></td>
-                            <td>Giải quyết trọn vẹn 100% các dạng đề thi IELTS Academic Writing Task 1 thực tế của Cambridge.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 2: C1-C2 VOCAB UPGRADE MATRIX & ANKI -->
-    <div id="vocab_c1" class="hub-section">
-        <div class="panel-box">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;">
-                <div>
-                    <h2 style="color: var(--primary); font-size: 1.3rem;">🧠 Ma Trận Chuyển Hóa Từ Vựng B1-B2 ➔ C1-C2 (Band 8.0+ Upgrade)</h2>
-                    <p style="color: var(--text-muted); font-size: 0.86rem;">Chọn chuyên đề bên dưới để học cách thay thế từ vựng cơ bản bằng Academic Collocations & Nominalisation chuẩn giám khảo Cambridge:</p>
-                </div>
-                <a href="anki_decks/personal_vocab_vault_anki.tsv" download class="mode-btn" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; padding: 8px 14px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.84rem;">📥 Tải Trọn Bộ Thẻ Anki (.TSV)</a>
-            </div>
-
-            <div class="topic-pills" id="c1_topic_pills"></div>
-
-            <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 12px;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Diễn Đạt Cơ Bản (Band 5.5 - 6.0)</th>
-                            <th>Nâng Cấp Học Thuật C1-C2 (Band 8.0+)</th>
-                            <th>Câu Ứng Dụng Mẫu Trong Writing Task 2</th>
-                        </tr>
-                    </thead>
-                    <tbody id="c1_matrix_tbody"></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 3: CAMBRIDGE 1-20 DIAGNOSTIC & BAND CALCULATOR -->
-    <div id="cambridge" class="hub-section">
-        <div class="panel-box">
-            <h2 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 6px;">📊 Công Cụ Quy Đổi Điểm & Lưu Hồ Sơ Đề Thi Cambridge (Cam 1 — 20)</h2>
-            <p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 18px;">
-                Sau khi làm đề trong thư mục <code>materials/cambridge/Cambridge_01..20</code>, nhập số câu đúng (/40) bên dưới để quy đổi ra Band Score chuẩn Academic và lưu thẳng vào sổ điểm AI (<code>score_history.md</code>):
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 18px;">
-                <div>
-                    <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Bộ Đề Cambridge:</label>
-                    <select id="cam_book" class="input-box">
-                        <option value="Cambridge 20">Cambridge IELTS 20</option>
-                        <option value="Cambridge 19">Cambridge IELTS 19</option>
-                        <option value="Cambridge 18">Cambridge IELTS 18</option>
-                        <option value="Cambridge 17">Cambridge IELTS 17</option>
-                        <option value="Cambridge 16">Cambridge IELTS 16</option>
-                        <option value="Cambridge 15">Cambridge IELTS 15</option>
-                    </select>
-                </div>
-                <div>
-                    <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Bài Test:</label>
-                    <select id="cam_test" class="input-box">
-                        <option value="Test 1">Test 1</option>
-                        <option value="Test 2">Test 2</option>
-                        <option value="Test 3">Test 3</option>
-                        <option value="Test 4">Test 4</option>
-                    </select>
-                </div>
-                <div>
-                    <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">🎧 Số Câu Đúng Listening (0-40):</label>
-                    <input type="number" id="cam_l_raw" class="input-box" min="0" max="40" value="35" oninput="updateCamCalculation()">
-                </div>
-                <div>
-                    <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">📖 Số Câu Đúng Reading (0-40):</label>
-                    <input type="number" id="cam_r_raw" class="input-box" min="0" max="40" value="35" oninput="updateCamCalculation()">
-                </div>
-            </div>
-
-            <div style="margin-bottom: 18px;">
-                <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">🔍 Nguyên Nhân Sai / Bẫy Đề Thi Gặp Phải (Trap Taxonomy):</label>
-                <input type="text" id="cam_trap_note" class="input-box" placeholder="Ví dụ: Bẫy Paraphrase Section 3, nhầm False vs Not Given ở Passage 2...">
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; background: rgba(11, 17, 32, 0.8); padding: 16px 20px; border-radius: 14px; border: 1px solid rgba(56, 189, 248, 0.3);">
-                <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-                    <div>
-                        <span style="font-size: 0.8rem; color: var(--text-muted);">🎧 Listening Band:</span>
-                        <div id="cam_l_band_out" style="font-size: 1.4rem; font-weight: 800; color: var(--primary);">8.0</div>
-                    </div>
-                    <div>
-                        <span style="font-size: 0.8rem; color: var(--text-muted);">📖 Academic Reading Band:</span>
-                        <div id="cam_r_band_out" style="font-size: 1.4rem; font-weight: 800; color: var(--success);">8.0</div>
-                    </div>
-                </div>
-                <button onclick="saveCambridgeScore()" class="btn-launch" style="width: auto; padding: 12px 24px;">
-                    💾 Lưu Điểm Đề Thi Vào Sổ Tay AI
-                </button>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -1038,65 +776,6 @@ const UNITS_META = [
     }
 ];
 
-const C1_TOPICS = [
-    {
-        id: "tech",
-        name: "🤖 1. Technology & AI",
-        anki: "anki_decks/topic_01_technology_ai_anki.tsv",
-        rows: [
-            ["new technology / modern tech", "cutting-edge technological innovations", "The adoption of cutting-edge technological innovations has revolutionized medical diagnostics."],
-            ["computers make people lose jobs", "automate routine tasks and precipitate workforce displacement", "Generative AI algorithms threaten to automate routine clerical tasks, precipitating workforce displacement."],
-            ["people use phones too much", "pervasive screen dependency / obsessive digital fixation", "Pervasive screen dependency exerts severe consequences on childhood cognitive development."],
-            ["bridge the technology gap", "bridge the pervasive digital divide", "Targeted public subsidies are imperative to bridge the pervasive digital divide in rural territories."]
-        ]
-    },
-    {
-        id: "env",
-        name: "🌿 2. Environment & Climate",
-        anki: "/anki_decks/topic_02_environment_climate_anki.tsv",
-        rows: [
-            ["harm the environment badly", "inflict irreversible ecological degradation", "Unregulated industrial expansion continues to inflict irreversible ecological degradation."],
-            ["reduce carbon gas", "curb anthropogenic greenhouse gas emissions", "Governments must enact stringent policies to curb anthropogenic greenhouse gas emissions."],
-            ["animals losing their homes", "habitat fragmentation and biodiversity loss", "Rampant deforestation accelerates habitat fragmentation and catastrophic biodiversity loss."]
-        ]
-    },
-    {
-        id: "edu",
-        name: "🎓 3. Education & Learning",
-        anki: "/anki_decks/topic_03_education_learning_anki.tsv",
-        rows: [
-            ["learn by heart without thinking", "rote memorisation and passive knowledge absorption", "Traditional pedagogy often prioritizes rote memorisation over critical inquiry."],
-            ["develop full ability", "cultivate holistic intellectual potential", "Higher education institutions should cultivate students' holistic intellectual potential."],
-            ["equal chance to study", "equitable access to quality tertiary education", "State scholarships ensure equitable access to quality tertiary education for disadvantaged youth."]
-        ]
-    },
-    {
-        id: "work",
-        name: "💼 4. Work & Globalisation",
-        anki: "/anki_decks/topic_04_work_economy_globalisation_anki.tsv",
-        rows: [
-            ["balance work and family", "reconcile professional obligations with domestic responsibilities", "Flexible teleworking enables parents to reconcile professional obligations with domestic life."],
-            ["fierce job competition", "intensifying labour market competitiveness", "University graduates face intensifying labour market competitiveness in the globalised economy."]
-        ]
-    },
-    {
-        id: "health",
-        name: "🏃 5. Health & Lifestyle",
-        anki: "/anki_decks/topic_05_health_lifestyle_anki.tsv",
-        rows: [
-            ["sit too much and don't move", "lead an increasingly sedentary lifestyle", "Urban white-collar employees predominantly lead an increasingly sedentary lifestyle."],
-            ["prevent sickness before it happens", "prioritise preventative healthcare interventions", "Allocating public funds to preventative healthcare interventions alleviates hospital overcrowding."]
-        ]
-    }
-];
-
-function switchHubTab(secId, btn) {
-    document.querySelectorAll(".hub-section").forEach(s => s.classList.remove("active"));
-    document.querySelectorAll(".hub-tab-btn").forEach(b => b.classList.remove("active"));
-    document.getElementById(secId).classList.add("active");
-    if (btn) btn.classList.add("active");
-}
-
 function loadMasterProgress() {
     let localUnits = {};
     try {
@@ -1120,21 +799,12 @@ function loadMasterProgress() {
         .catch(() => renderUnitCards(localUnits));
 }
 
-let CURRENT_STAGE_FILTER = 'all';
 let CACHED_UNITS_PROGRESS = {};
-
-function filterUnitsByStage(stage, btn) {
-    CURRENT_STAGE_FILTER = stage;
-    if (btn && btn.parentElement) {
-        btn.parentElement.querySelectorAll(".topic-pill").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-    }
-    renderUnitCards(CACHED_UNITS_PROGRESS);
-}
 
 function renderUnitCards(unitsProgress) {
     CACHED_UNITS_PROGRESS = unitsProgress || {};
     const container = document.getElementById("units_cards_container");
+    if (!container) return;
     let completedCount = 0;
     let totalQuizEarned = 0;
     let totalQuizPossible = 0;
@@ -1154,11 +824,7 @@ function renderUnitCards(unitsProgress) {
         }
     });
 
-    const filteredUnits = CURRENT_STAGE_FILTER === 'all'
-        ? UNITS_META
-        : UNITS_META.filter(u => u.stage === CURRENT_STAGE_FILTER);
-
-    const cardsHtml = filteredUnits.map(u => {
+    const cardsHtml = UNITS_META.map(u => {
         const p = CACHED_UNITS_PROGRESS[u.id] || null;
         let statusText = "Chưa làm bài";
         let statusStyle = "background: rgba(148,163,184,0.15); color: #94a3b8;";
@@ -1212,121 +878,10 @@ function renderUnitCards(unitsProgress) {
     container.innerHTML = cardsHtml.join("");
     const kpiUnits = document.getElementById("kpi_units_done");
     if (kpiUnits) kpiUnits.innerText = `${completedCount} / ${UNITS_META.length} Units`;
-    if (totalQuizPossible > 0) {
-        const pct = Math.round((totalQuizEarned / totalQuizPossible) * 100);
-        const kpiQuiz = document.getElementById("kpi_avg_quiz");
-        if (kpiQuiz) kpiQuiz.innerText = `${pct}%`;
-    }
-}
-
-function initC1Matrix() {
-    const pillsContainer = document.getElementById("c1_topic_pills");
-    pillsContainer.innerHTML = C1_TOPICS.map((t, i) =>
-        `<button class="topic-pill ${i === 0 ? 'active' : ''}" onclick="renderC1Topic('${t.id}', this)">${t.name}</button>`
-    ).join("");
-    renderC1Topic(C1_TOPICS[0].id, null);
-}
-
-function renderC1Topic(topicId, btn) {
-    if (btn) {
-        document.querySelectorAll(".topic-pill").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-    }
-    const topic = C1_TOPICS.find(t => t.id === topicId) || C1_TOPICS[0];
-    const tbody = document.getElementById("c1_matrix_tbody");
-    tbody.innerHTML = topic.rows.map(r => `
-        <tr>
-            <td style="color: var(--text-muted);"><i>${r[0]}</i></td>
-            <td style="color: #34d399; font-weight: 700;">${r[1]}</td>
-            <td style="color: #f1f5f9;">"${r[2]}"</td>
-        </tr>
-    `).join("");
-}
-
-function rawToBandListening(raw) {
-    if (raw >= 39) return 9.0;
-    if (raw >= 37) return 8.5;
-    if (raw >= 35) return 8.0;
-    if (raw >= 32) return 7.5;
-    if (raw >= 30) return 7.0;
-    if (raw >= 26) return 6.5;
-    if (raw >= 23) return 6.0;
-    if (raw >= 18) return 5.5;
-    if (raw >= 16) return 5.0;
-    if (raw >= 13) return 4.5;
-    return 4.0;
-}
-
-function rawToBandReading(raw) {
-    if (raw >= 39) return 9.0;
-    if (raw >= 37) return 8.5;
-    if (raw >= 35) return 8.0;
-    if (raw >= 33) return 7.5;
-    if (raw >= 30) return 7.0;
-    if (raw >= 27) return 6.5;
-    if (raw >= 23) return 6.0;
-    if (raw >= 19) return 5.5;
-    if (raw >= 15) return 5.0;
-    if (raw >= 13) return 4.5;
-    return 4.0;
-}
-
-function updateCamCalculation() {
-    const lRaw = parseInt(document.getElementById("cam_l_raw").value) || 0;
-    const rRaw = parseInt(document.getElementById("cam_r_raw").value) || 0;
-    document.getElementById("cam_l_band_out").innerText = rawToBandListening(lRaw).toFixed(1);
-    document.getElementById("cam_r_band_out").innerText = rawToBandReading(rRaw).toFixed(1);
-}
-
-function saveCambridgeScore() {
-    const book = document.getElementById("cam_book").value;
-    const test = document.getElementById("cam_test").value;
-    const lRaw = parseInt(document.getElementById("cam_l_raw").value) || 0;
-    const rRaw = parseInt(document.getElementById("cam_r_raw").value) || 0;
-    const lBand = rawToBandListening(lRaw);
-    const rBand = rawToBandReading(rRaw);
-    const trap = document.getElementById("cam_trap_note").value;
-
-    try {
-        const rawLogs = localStorage.getItem("ielts_cambridge_logs_v1");
-        const logs = rawLogs ? JSON.parse(rawLogs) : [];
-        logs.unshift({
-            date: new Date().toLocaleDateString("vi-VN"),
-            book, test, lRaw, rRaw, lBand, rBand, trap
-        });
-        localStorage.setItem("ielts_cambridge_logs_v1", JSON.stringify(logs));
-    } catch (e) {}
-
-    fetch("/api/cambridge_sync", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            book: book,
-            test: test,
-            listening_raw: lRaw,
-            reading_raw: rRaw,
-            listening_band: lBand,
-            reading_band: rBand,
-            trap_note: trap
-        })
-    })
-    .then(r => r.json())
-    .then(res => {
-        if (res && res.ok) {
-            alert(`✅ Đã lưu kết quả ${book} - ${test} (Listening: ${lBand.toFixed(1)}, Reading: ${rBand.toFixed(1)}) vào bộ nhớ trình duyệt & sổ điểm AI!`);
-        } else {
-            throw new Error("Cloud static mode");
-        }
-    })
-    .catch(() => {
-        alert(`✅ Đã lưu kết quả ${book} - ${test} (Listening: Band ${lBand.toFixed(1)}, Reading: Band ${rBand.toFixed(1)}) vào bộ nhớ thiết bị của bạn!`);
-    });
 }
 
 window.addEventListener("load", () => {
     loadMasterProgress();
-    initC1Matrix();
-    updateCamCalculation();
 });
 </script>
 </body>
