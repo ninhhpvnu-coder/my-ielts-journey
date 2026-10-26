@@ -39,7 +39,7 @@
                 
                 let h = 0x811c9dc5;
                 for (let i = 0; i < raw.length; i++) {
-                    h = ((h ^ raw.charCodeAt(i)) * 0x01000193) >>> 0;
+                    h = Math.imul(h ^ raw.charCodeAt(i), 0x01000193) >>> 0;
                 }
                 devId = 'DEV-' + ('00000000' + h.toString(16).toUpperCase()).slice(-8);
                 localStorage.setItem(STORAGE_KEY_DEVICE, devId);
@@ -52,7 +52,7 @@
             const raw = `${IELTS_SALT}_${tier.toUpperCase()}_${code.toUpperCase()}`;
             let h = 0x811c9dc5;
             for (let i = 0; i < raw.length; i++) {
-                h = ((h ^ raw.charCodeAt(i)) * 0x01000193) >>> 0;
+                h = Math.imul(h ^ raw.charCodeAt(i), 0x01000193) >>> 0;
             }
             return ('00000000' + h.toString(16).toUpperCase()).slice(-8).substring(0, 4);
         },
