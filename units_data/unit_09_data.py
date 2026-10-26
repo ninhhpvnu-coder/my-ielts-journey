@@ -421,37 +421,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Maximum number of daily visitors allowed on the island:",
-        "placeholder": "Số khách tối đa mỗi ngày (50)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["50", "fifty", "50 people"]
     },
     {
         "id": "l2",
         "label": "2. Transport used to explore the sea caves in the morning:",
-        "placeholder": "Phương tiện chèo khám phá hang (kayak)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["kayak", "by kayak"]
     },
     {
         "id": "l3",
         "label": "3. Type of authentic lunch prepared by a local family:",
-        "placeholder": "Món ăn trưa bản địa (seafood)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["seafood", "seafood lunch"]
     },
     {
         "id": "l4",
         "label": "4. Historic 18th-century landmark visited in the afternoon: the stone",
-        "placeholder": "Công trình cổ buổi chiều (lighthouse)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["lighthouse", "stone lighthouse"]
     },
     {
         "id": "l5",
         "label": "5. Item visitors must not use to protect the coral: chemical",
-        "placeholder": "Vật phẩm bị cấm (sunscreen)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["sunscreen", "chemical sunscreen"]
     },
     {
         "id": "l6",
         "label": "6. Traveller's surname: Ms.",
-        "placeholder": "Họ của du khách (Morrison)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["morrison"]
     }
 ]
@@ -478,37 +478,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How uncontrolled mass tourism damages fragile sites and local traditions: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Economic benefits of tourism and popular visitor activities: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. Government regulations and eco-tourism solutions: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. What sector gains jobs and income when a region becomes a popular destination? The local ________ sector. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn A (hospitality)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["hospitality"]
     },
     {
         "id": "r5",
         "label": "5. Whose sacred ceremonies are sometimes turned into mere photo opportunities? ________ communities. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn B (indigenous)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["indigenous"]
     },
     {
         "id": "r6",
         "label": "6. Who should be trained as eco-guides to help protect heritage? Local ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn C (residents)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["residents"]
     }
 ]

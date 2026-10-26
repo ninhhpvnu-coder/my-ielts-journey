@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Express train journey time to Central Plaza (minutes):",
-        "placeholder": "Nhập số phút (22)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["22", "22 minutes", "twenty-two"]
     },
     {
         "id": "l2",
         "label": "2. Free secure bike parking for cyclists is next to:",
-        "placeholder": "Vị trí bãi đỗ xe đạp (Platform 1)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["platform 1", "platform one"]
     },
     {
         "id": "l3",
         "label": "3. Subsidized monthly price of the Smart Commuter Card (£):",
-        "placeholder": "Giá thẻ sau trợ giá (65)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["65", "65 pounds"]
     },
     {
         "id": "l4",
         "label": "4. Name of the weekend airport bus network: the ________ Express",
-        "placeholder": "Tên tuyến xe buýt (Green)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["green", "green express"]
     },
     {
         "id": "l5",
         "label": "5. Commuter's surname: Mr.",
-        "placeholder": "Họ hành khách (Henderson)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["henderson"]
     },
     {
         "id": "l6",
         "label": "6. Document provided with the electricity bill: his ________",
-        "placeholder": "Giấy tờ tùy thân (driving licence)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["driving licence", "driving license", "licence", "license"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How underground metro and railway networks move passengers without roadblocks: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Government ticket subsidies and dedicated lanes for cyclists: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. The problems caused by too many private cars and toxic exhaust fumes: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. What do petrol engines release that damages public health? Toxic ________. (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn A (exhaust fumes)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["exhaust fumes", "exhaust"]
     },
     {
         "id": "r5",
         "label": "5. Why do commuters willingly leave their cars at home? Because electric trains are punctual, safe, and ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn B (convenient)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["convenient"]
     },
     {
         "id": "r6",
         "label": "6. Who should governments build dedicated lanes for besides electric buses? (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn C (cyclists)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["cyclists"]
     }
 ]

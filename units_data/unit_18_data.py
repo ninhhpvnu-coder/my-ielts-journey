@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Participant's surname: Hannah",
-        "placeholder": "Điền họ đánh vần (Dawson)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["dawson"]
     },
     {
         "id": "l2",
         "label": "2. Saturday morning session topic: ________ Restoration (using natural compost)",
-        "placeholder": "Chủ đề phục hồi đất (Soil)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["soil"]
     },
     {
         "id": "l3",
         "label": "3. Saturday afternoon practical demo: installing a drip ________ system",
-        "placeholder": "Hệ thống tưới tiêu (irrigation)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["irrigation"]
     },
     {
         "id": "l4",
         "label": "4. Percentage of water saved by the drip system: ________%",
-        "placeholder": "Điền con số phần trăm (60)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["60", "sixty"]
     },
     {
         "id": "l5",
         "label": "5. Total registration fee for the two-day workshop: £________",
-        "placeholder": "Học phí trọn gói (115)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["115", "one hundred and fifteen"]
     },
     {
         "id": "l6",
         "label": "6. Location of the training farm: on ________ Lane",
-        "placeholder": "Tên đường (Meadow)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["meadow", "meadow lane"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Why relying solely on organic farming could lead to lower yields and food shortages: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How chemical fertilizers, pesticides and livestock farming have damaged the environment: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. How genetically modified seeds help farmers survive droughts and reduce pesticide use: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. What crisis did the Green Revolution successfully prevent over the past half-century? Widespread ________. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 từ trong đoạn A (famine)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["famine"]
     },
     {
         "id": "r5",
         "label": "5. On average, organic farms produce 25% lower ________ per hectare than conventional farms. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 từ trong đoạn B (yields)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["yields", "yield"]
     },
     {
         "id": "r6",
         "label": "6. What type of newly developed seeds allow farmers in arid regions to secure a reliable harvest? ________-tolerant seeds. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 từ trong đoạn C (drought)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["drought"]
     }
 ]

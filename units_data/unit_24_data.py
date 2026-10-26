@@ -420,37 +420,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Student's surname: Chloe",
-        "placeholder": "Điền họ đánh vần (Lambert)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["lambert"]
     },
     {
         "id": "l2",
         "label": "2. Main night-time sleep problem Chloe suffers from: ________",
-        "placeholder": "Chứng mất ngủ (insomnia)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["insomnia"]
     },
     {
         "id": "l3",
         "label": "3. Average hours of sleep Chloe gets per night this month: ________ hours",
-        "placeholder": "Số giờ ngủ hiện tại (4.5)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["4.5", "four and a half"]
     },
     {
         "id": "l4",
         "label": "4. Recommended evening course to relieve anxiety: ________",
-        "placeholder": "Tên khóa học tĩnh tâm (Mindfulness)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["mindfulness"]
     },
     {
         "id": "l5",
         "label": "5. Cost of therapy sessions for enrolled university students: ________",
-        "placeholder": "Chi phí cho sinh viên (free)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["free", "free of charge", "0"]
     },
     {
         "id": "l6",
         "label": "6. Location of the Wellbeing Clinic: second floor of the ________ Building",
-        "placeholder": "Tên tòa nhà (Cedar)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["cedar", "cedar building"]
     }
 ]
@@ -477,37 +477,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How lack of deep sleep impairs memory, cognitive function and triggers anxiety: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How digital curfews, mindfulness and therapy help people cope with stress: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. How late-night screen blue light suppresses melatonin and causes insomnia: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. Blue light emitted by smartphone screens suppresses melatonin, triggering ________. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 danh từ chỉ bệnh mất ngủ trong đoạn A (insomnia)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["insomnia"]
     },
     {
         "id": "r5",
         "label": "5. Chronic sleep loss severely ________ cognitive functions such as attention and decision-making. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 động từ trong đoạn B (impairs)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["impairs", "impair"]
     },
     {
         "id": "r6",
         "label": "6. Schools and corporations must provide accessible psychological ________ and reasonable workloads. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 danh từ trong đoạn C (therapy)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["therapy"]
     }
 ]

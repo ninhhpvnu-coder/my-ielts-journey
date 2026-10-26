@@ -421,37 +421,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Scholarship applicant's surname: Marcus",
-        "placeholder": "Điền họ đánh vần (Gallagher)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["gallagher"]
     },
     {
         "id": "l2",
         "label": "2. Maximum annual family income to qualify: £________",
-        "placeholder": "Mức trần thu nhập (24000 / 24,000)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["24000", "24,000"]
     },
     {
         "id": "l3",
         "label": "3. Annual living allowance for accommodation and books: £________ per year",
-        "placeholder": "Trợ cấp sinh hoạt phí (6500 / 6,500)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["6500", "6,500"]
     },
     {
         "id": "l4",
         "label": "4. Priority degree subject this year (besides Medicine): ________ Engineering",
-        "placeholder": "Ngành kỹ thuật ưu tiên (Renewable)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["renewable", "renewable engineering"]
     },
     {
         "id": "l5",
         "label": "5. Official document required to verify family income: ________ Return certificate",
-        "placeholder": "Giấy tờ thuế (Tax)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["tax", "tax return"]
     },
     {
         "id": "l6",
         "label": "6. Closing date for online applications: ________ of March",
-        "placeholder": "Ngày hạn chót (31st / 31)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["31st", "31", "thirty-first"]
     }
 ]
@@ -478,37 +478,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. The debate over progressive tax rates and how corporate tax evasion causes budget deficits: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How redistributing tax revenue into infrastructure and scholarships drives upward social mobility: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. How widening wealth inequality between the affluent and impoverished threatens social cohesion: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. Extreme inequality turns quality healthcare and education into an exclusive ________ rather than an equitable right. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 danh từ trong đoạn A (privilege)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["privilege"]
     },
     {
         "id": "r5",
         "label": "5. National budget deficits often stem from loopholes that allow firms to engage in tax ________. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 danh từ chỉ hành vi trốn thuế trong đoạn B (evasion)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["evasion"]
     },
     {
         "id": "r6",
         "label": "6. Investing in public education and healthcare creates a powerful engine of upward social ________. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 danh từ trong đoạn C (mobility)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["mobility"]
     }
 ]

@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Resident's address: 42 ________ Avenue",
-        "placeholder": "Tên đại lộ (Oakwood)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["oakwood"]
     },
     {
         "id": "l2",
         "label": "2. Maintenance work was carried out yesterday on the Hilltop ________",
-        "placeholder": "Hồ chứa nước (Reservoir)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["reservoir", "hilltop reservoir"]
     },
     {
         "id": "l3",
         "label": "3. City average for daily household water consumption: ________ litres per day",
-        "placeholder": "Mức trung bình toàn thành phố (280)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["280", "two hundred and eighty"]
     },
     {
         "id": "l4",
         "label": "4. Council rebate refund for installing a garden rainwater tank: £________",
-        "placeholder": "Số tiền hoàn trả (150)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["150", "one hundred and fifty"]
     },
     {
         "id": "l5",
         "label": "5. Free Eco-Showerhead reduces hot water use by: ________%",
-        "placeholder": "Phần trăm tiết kiệm nước (35)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["35", "thirty-five", "thirty five"]
     },
     {
         "id": "l6",
         "label": "6. Customer service appointment reference code: ________",
-        "placeholder": "Mã đặt lịch (WP-904)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["wp-904", "wp904", "wp 904"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Why Germany is a notable exception compared to agricultural water users like India and Egypt: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How wastewater purification and seawater desalination help arid nations secure drinking water: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. How global warming causes both prolonged droughts and catastrophic floods: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. Over two billion people live in countries experiencing acute water ________. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 từ trong đoạn A (scarcity)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["scarcity"]
     },
     {
         "id": "r5",
         "label": "5. In Germany, which economic sector consumes 52% of the national water supply? The ________ sector. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 từ trong đoạn B (industrial)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["industrial"]
     },
     {
         "id": "r6",
         "label": "6. What coastal technology turns seawater into drinking water in Paragraph C? ________ plants. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn C (desalination)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["desalination"]
     }
 ]

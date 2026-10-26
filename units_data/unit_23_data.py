@@ -421,37 +421,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. New student reporter's surname: Daniel",
-        "placeholder": "Điền họ đánh vần (Kowalski)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["kowalski"]
     },
     {
         "id": "l2",
         "label": "2. Newspaper section Daniel wants to write for now: ________ and Technology",
-        "placeholder": "Chuyên mục báo (Science)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["science"]
     },
     {
         "id": "l3",
         "label": "3. Mandatory training workshop topic: Fact ________",
-        "placeholder": "Kiểm chứng sự thật (Verification)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["verification", "fact verification"]
     },
     {
         "id": "l4",
         "label": "4. Weekly editorial meeting day: every ________ at 5:30 PM",
-        "placeholder": "Thứ mấy trong tuần (Tuesday)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["tuesday"]
     },
     {
         "id": "l5",
         "label": "5. Required length for the first trial report: ________ words",
-        "placeholder": "Số từ bài viết thử (450)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["450", "four hundred and fifty"]
     },
     {
         "id": "l6",
         "label": "6. Location of Podcast Studio B: in the ________ Centre",
-        "placeholder": "Tên tòa nhà trung tâm (Media)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["media", "media centre", "media center"]
     }
 ]
@@ -478,37 +478,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How social media algorithms promote sensational headlines, bias and disinformation: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How transparent editorial standards, fact verification and media literacy can restore trust: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. How smartphones transformed news from traditional broadcasts to instant public coverage: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. Social media recommendation ________ prioritize posts that provoke anger rather than objective analysis. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 danh từ số nhiều trong đoạn B (algorithms)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["algorithms", "algorithm"]
     },
     {
         "id": "r5",
         "label": "5. Media outlets must employ independent fact-checkers to ________ every source before publishing. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 động từ trong đoạn C (verify)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["verify"]
     },
     {
         "id": "r6",
         "label": "6. What subject should schools teach so students can distinguish credible journalism from falsehoods? Media ________. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 từ trong đoạn C (literacy)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["literacy"]
     }
 ]

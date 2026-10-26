@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Science journalist's surname: Nadia",
-        "placeholder": "Điền họ đánh vần (Lindqvist)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["lindqvist"]
     },
     {
         "id": "l2",
         "label": "2. Tuesday morning keynote: using gene therapy to eradicate hereditary ________",
-        "placeholder": "Căn bệnh di truyền (blindness)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["blindness"]
     },
     {
         "id": "l3",
         "label": "3. Tuesday afternoon panel: growing artificial ________ for transplant surgery",
-        "placeholder": "Cơ quan nội tạng (organs)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["organs", "organ"]
     },
     {
         "id": "l4",
         "label": "4. Wednesday debate: banning the selection of non-medical physical ________",
-        "placeholder": "Đặc điểm hình thể (traits)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["traits", "trait"]
     },
     {
         "id": "l5",
         "label": "5. Number of researchers attending the symposium this year: ________",
-        "placeholder": "Số nhà nghiên cứu năm nay (650)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["650", "six hundred and fifty"]
     },
     {
         "id": "l6",
         "label": "6. Venue to collect the press badge: the ________ Auditorium",
-        "placeholder": "Tên hội trường (Darwin)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["darwin", "darwin auditorium"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Why editing human embryos to select desirable traits is controversial in bioethics: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How repairing genetic mutations and growing artificial organs can save lives: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. The social implications of genetic inequality and the need for strict legal safeguards: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. Using CRISPR, scientists can target and repair harmful genetic ________ inside living cells. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 danh từ số nhiều trong đoạn A (mutations)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["mutations", "mutation"]
     },
     {
         "id": "r5",
         "label": "5. Germline editing permanently alters the DNA passed down to future generations, who cannot give their informed ________. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 danh từ trong đoạn B (consent)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["consent"]
     },
     {
         "id": "r6",
         "label": "6. Only by enforcing strict legal ________ can humanity prevent the commercial abuse of biotechnology. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 danh từ số nhiều trong đoạn C (safeguards)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["safeguards", "safeguard"]
     }
 ]

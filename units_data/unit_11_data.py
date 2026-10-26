@@ -424,37 +424,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Candidate's surname: Mr.",
-        "placeholder": "Điền họ đánh vần (Chambers)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["chambers"]
     },
     {
         "id": "l2",
         "label": "2. Master's qualification in: Business ________",
-        "placeholder": "Điền từ còn thiếu (Administration)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["administration", "business administration"]
     },
     {
         "id": "l3",
         "label": "3. Current work status: working as a ________ consultant",
-        "placeholder": "Loại hình công việc (freelance)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["freelance"]
     },
     {
         "id": "l4",
         "label": "4. Hybrid schedule: working from home ________ days per week",
-        "placeholder": "Số ngày làm ở nhà (2 / two)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["2", "two"]
     },
     {
         "id": "l5",
         "label": "5. Starting annual remuneration: £ ________",
-        "placeholder": "Mức lương năm (42000 / 42,000)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["42000", "42,000", "forty-two thousand"]
     },
     {
         "id": "l6",
         "label": "6. Day of the first interview round: next ________",
-        "placeholder": "Thứ trong tuần (Thursday)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["thursday"]
     }
 ]
@@ -481,37 +481,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. The psychological danger of checking work emails late at night and overworking: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r2",
         "label": "2. How cloud technology has enabled working from home and boosted output: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r3",
         "label": "3. A shift in what young professionals value besides high salary and promotion: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. Besides high remuneration, what do many young workers prioritize today? Job ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn A (satisfaction)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["satisfaction"]
     },
     {
         "id": "r5",
         "label": "5. Who do remote workers sometimes miss daily social interaction with? Supportive ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn B (colleagues)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["colleagues"]
     },
     {
         "id": "r6",
         "label": "6. What condition does continuous work pressure without adequate rest lead to? Mental ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn C (burnout)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["burnout"]
     }
 ]

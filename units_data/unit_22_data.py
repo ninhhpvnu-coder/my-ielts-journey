@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Art teacher's surname: Thomas",
-        "placeholder": "Điền họ đánh vần (Sterling)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["sterling"]
     },
     {
         "id": "l2",
         "label": "2. Main hall sculptures are made from scrap metal and recycled ocean ________",
-        "placeholder": "Chất liệu rác thải biển (plastic)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["plastic", "ocean plastic"]
     },
     {
         "id": "l3",
         "label": "3. Duration of the clay modelling workshop: ________ minutes",
-        "placeholder": "Số phút (90)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["90", "ninety"]
     },
     {
         "id": "l4",
         "label": "4. Workshop material fee per student: £________",
-        "placeholder": "Chi phí nguyên liệu (4.50)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["4.50", "4.5"]
     },
     {
         "id": "l5",
         "label": "5. Theme of this year's student art competition: ________ Nature",
-        "placeholder": "Chủ đề cuộc thi (Urban)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["urban", "urban nature"]
     },
     {
         "id": "l6",
         "label": "6. Submission deadline for student artwork: ________ of October",
-        "placeholder": "Ngày hạn chót (18th / 18)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["18th", "18", "eighteenth"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How museums and music festivals boost tourism and create jobs: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r2",
         "label": "2. Why critics believe tax money should only fund hospitals, schools and roads: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. How literature and art enrich spiritual life and preserve cultural identity: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r4",
         "label": "4. Critics argue that public money should fund services that bring immediate, ________ benefits. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 tính từ trong đoạn A (tangible)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["tangible"]
     },
     {
         "id": "r5",
         "label": "5. Artistic masterpieces vividly portray a nation's history, preserving its unique cultural ________. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 danh từ trong đoạn B (identity)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["identity"]
     },
     {
         "id": "r6",
         "label": "6. Governments should support the arts without attempting to strictly ________ artistic expression. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 động từ trong đoạn C (censor)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["censor"]
     }
 ]

@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. What happened to North Hall recently? It has been completely",
-        "placeholder": "Điền động từ (renovated)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["renovated"]
     },
     {
         "id": "l2",
         "label": "2. North Hall is located adjacent to the:",
-        "placeholder": "Địa điểm liền kề (Botanical Garden)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["botanical garden", "garden"]
     },
     {
         "id": "l3",
         "label": "3. The road in front of the dormitory is now a ________ walkway:",
-        "placeholder": "Loại đường đi bộ (pedestrian)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["pedestrian", "pedestrian walkway"]
     },
     {
         "id": "l4",
         "label": "4. New sports facility constructed east of the library: an indoor",
-        "placeholder": "Tiện ích thể thao mới (swimming pool)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["swimming pool", "pool"]
     },
     {
         "id": "l5",
         "label": "5. Current monthly rent including utilities (£):",
-        "placeholder": "Nhập số tiền hiện tại (520)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["520", "520 pounds"]
     },
     {
         "id": "l6",
         "label": "6. Resident manager's surname: Mr.",
-        "placeholder": "Họ quản lý (Crawford)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["crawford"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. The renovation of historic buildings and the creation of a pedestrian zone: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How the southern riverbank changed from industrial factories to housing: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. Eastward expansion into the suburbs and new student housing: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. What were the abandoned factories on the southern riverbank demolished to make way for? Spacious parks and ________ apartment blocks. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn A (affordable)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["affordable"]
     },
     {
         "id": "r5",
         "label": "5. What was the old corn exchange converted into? An indoor ________. (TWO WORDS)",
-        "placeholder": "Điền 2 từ trong đoạn B (food market)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["food market", "market"]
     },
     {
         "id": "r6",
         "label": "6. What connects the new university accommodation in the suburbs to the town centre? An ________. (THREE WORDS)",
-        "placeholder": "Điền 3 từ trong đoạn C (electric tram line)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["electric tram line", "tram line"]
     }
 ]

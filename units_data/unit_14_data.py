@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Customer's surname: Ms.",
-        "placeholder": "Điền họ đánh vần (Whitaker)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["whitaker"]
     },
     {
         "id": "l2",
         "label": "2. Transaction reference code: TM - ________",
-        "placeholder": "Mã số giao dịch (4829)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["4829", "tm-4829", "tm4829"]
     },
     {
         "id": "l3",
         "label": "3. Location of the physical storefront for collection: ________ Street",
-        "placeholder": "Tên đường (King)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["king", "king street"]
     },
     {
         "id": "l4",
         "label": "4. Delivery fee refunded to her credit card: £ ________",
-        "placeholder": "Số tiền hoàn lại (15)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["15", "fifteen"]
     },
     {
         "id": "l5",
         "label": "5. Reason she needs the laptop by Friday: for a business ________",
-        "placeholder": "Mục đích sử dụng (presentation)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["presentation", "business presentation"]
     },
     {
         "id": "l6",
         "label": "6. Total length of the upgraded free warranty: ________ years",
-        "placeholder": "Số năm bảo hành (3 / three)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["3", "three"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How modern retailers combine physical showrooms with mobile delivery apps: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r2",
         "label": "2. Why 75% of young adults aged 18–29 prefer online shopping platforms: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. Statistical comparison between the 30–49 age bracket and consumers aged 60+: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r4",
         "label": "4. By what ratio do digital buyers outnumber in-store shoppers in the 18–29 group? ________ to one. (ONE WORD/NUMBER)",
-        "placeholder": "Điền tỷ lệ trong đoạn A (three / 3)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["three", "3"]
     },
     {
         "id": "r5",
         "label": "5. What percentage of retail spending in the 60+ group takes place in a physical storefront? (NUMBER + %)",
-        "placeholder": "Điền số liệu trong đoạn B (68%)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["68%", "68", "68 percent"]
     },
     {
         "id": "r6",
         "label": "6. What are senior citizens cautious about when shopping online? The security of digital ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn B (transactions)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["transactions"]
     }
 ]

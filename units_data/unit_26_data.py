@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Physics teacher's surname: Victoria",
-        "placeholder": "Điền họ đánh vần (Thorne)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["thorne"]
     },
     {
         "id": "l2",
         "label": "2. Planet whose rings the students want to observe: ________",
-        "placeholder": "Tên hành tinh (Saturn)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["saturn"]
     },
     {
         "id": "l3",
         "label": "3. Topic of the new exhibition before entering the dome: Space ________",
-        "placeholder": "Rác thải vũ trụ (Debris)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["debris", "space debris"]
     },
     {
         "id": "l4",
         "label": "4. Special guest speaker who spent 6 months in orbit: a retired ________",
-        "placeholder": "Phi hành gia (astronaut)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["astronaut"]
     },
     {
         "id": "l5",
         "label": "5. Start time of the evening stargazing programme: ________ PM",
-        "placeholder": "Giờ bắt đầu buổi tối (7:45)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["7:45", "7.45", "seven forty-five"]
     },
     {
         "id": "l6",
         "label": "6. Educational group ticket price per student: £________",
-        "placeholder": "Giá vé học sinh (9.50)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["9.50", "9.5"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How satellites and zero-gravity experiments benefit healthcare and climate monitoring on Earth: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Why critics believe space spending is unjustifiable while poverty and orbital debris exist: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. How reusable rocket propulsion makes future lunar bases and asteroid mining feasible: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. Rocket launches leave clouds of dangerous ________ in low Earth orbit. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 danh từ chỉ rác vũ trụ trong đoạn A (debris)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["debris"]
     },
     {
         "id": "r5",
         "label": "5. Medical experiments conducted in zero ________ help researchers develop treatments for bone loss. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 danh từ trong đoạn B (gravity)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["gravity"]
     },
     {
         "id": "r6",
         "label": "6. Advancements in reusable rocket ________ have made space missions far more economically feasible. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 danh từ trong đoạn C (propulsion)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["propulsion"]
     }
 ]

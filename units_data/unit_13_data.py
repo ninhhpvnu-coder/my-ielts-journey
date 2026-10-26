@@ -421,37 +421,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Shopper's surname: Mr.",
-        "placeholder": "Điền họ đánh vần (Thornton)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["thornton"]
     },
     {
         "id": "l2",
         "label": "2. Main factor that influences his buying decisions: independent customer ________",
-        "placeholder": "Yếu tố ảnh hưởng nhất (reviews)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["reviews", "customer reviews"]
     },
     {
         "id": "l3",
         "label": "3. Item bought on impulse last month: a smart ________",
-        "placeholder": "Món đồ mua ngẫu hứng (coffee maker)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["coffee maker", "coffee machine"]
     },
     {
         "id": "l4",
         "label": "4. Actual price he paid after the discount: £ ________",
-        "placeholder": "Số tiền thực trả (85)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["85", "eighty-five"]
     },
     {
         "id": "l5",
         "label": "5. Key factor that builds his brand loyalty: ________ production and affordable prices",
-        "placeholder": "Yếu tố đạo đức (ethical)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["ethical", "ethical production"]
     },
     {
         "id": "l6",
         "label": "6. Reason he would boycott a cosmetics brand: testing products on ________",
-        "placeholder": "Đối tượng bị thử nghiệm (animals)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["animals"]
     }
 ]
@@ -478,37 +478,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How digital algorithms and countdown timers trigger unplanned purchases: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How educated shoppers hold companies accountable through boycotts: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. The shift from informative adverts to emotional celebrity endorsements: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. Who do companies hire to endorse luxury perfumes or sports cars? A famous ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn A (celebrity)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["celebrity"]
     },
     {
         "id": "r5",
         "label": "5. What kind of buying do countdown timers and 'limited stock' warnings trigger? ________ buying. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn B (impulse)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["impulse"]
     },
     {
         "id": "r6",
         "label": "6. What can consumers organize online if a company damages the environment? An online ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn C (boycott)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["boycott"]
     }
 ]

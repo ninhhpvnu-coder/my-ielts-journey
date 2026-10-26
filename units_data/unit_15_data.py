@@ -423,37 +423,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Coordinator's surname: Mr.",
-        "placeholder": "Điền họ đánh vần (Davidson)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["davidson"]
     },
     {
         "id": "l2",
         "label": "2. Actual number of students registered for the workshop:",
-        "placeholder": "Số sinh viên đăng ký thực tế (165)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["165"]
     },
     {
         "id": "l3",
         "label": "3. Most common offense affecting students this year: online banking ________",
-        "placeholder": "Loại tội phạm phổ biến nhất năm nay (fraud)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["fraud", "online banking fraud", "scams"]
     },
     {
         "id": "l4",
         "label": "4. Fake emails sent by criminals pretend to offer a university ________",
-        "placeholder": "Mồi nhử trong email giả (scholarship)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["scholarship"]
     },
     {
         "id": "l5",
         "label": "5. New security equipment installed along pathways: 24 new ________ cameras",
-        "placeholder": "Thiết bị an ninh (surveillance)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["surveillance", "surveillance cameras"]
     },
     {
         "id": "l6",
         "label": "6. Location of the Campus Security Desk: the ________ Building",
-        "placeholder": "Tên tòa nhà (Student Union)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["student union", "union"]
     }
 ]
@@ -480,37 +480,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Why vocational training and addressing poverty are necessary to stop repeat crime: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How strict penalties and surveillance cameras act as a deterrent: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. The modern challenge of digital fraud and identity theft: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. What do strict legislation and severe penalties act as? A powerful ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn A (deterrent)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["deterrent"]
     },
     {
         "id": "r5",
         "label": "5. Besides unemployment and lack of education, what is named as a root cause of crime? (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn B (poverty)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["poverty"]
     },
     {
         "id": "r6",
         "label": "6. What type of training helps rehabilitate prisoners in Paragraph B? ________ training. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn B (vocational)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["vocational"]
     }
 ]

@@ -424,37 +424,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Student's surname: Ms.",
-        "placeholder": "Điền họ đánh vần (Morrison)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["morrison"]
     },
     {
         "id": "l2",
         "label": "2. Total monthly income (scholarship + library job): £",
-        "placeholder": "Tổng thu nhập tháng (950)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["950", "nine hundred and fifty"]
     },
     {
         "id": "l3",
         "label": "3. Largest proportion of her monthly expenditure: ________ and electricity",
-        "placeholder": "Khoản chi lớn nhất (rent)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["rent", "housing"]
     },
     {
         "id": "l4",
         "label": "4. Category that has surged due to buying ready-made meals: supermarket ________",
-        "placeholder": "Chi phí tăng vọt (groceries / food)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["groceries", "food"]
     },
     {
         "id": "l5",
         "label": "5. Recommended free budgeting app: ________",
-        "placeholder": "Tên ứng dụng (SmartPocket)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["smartpocket", "smart pocket"]
     },
     {
         "id": "l6",
         "label": "6. Suggested monthly savings investment: £ ________",
-        "placeholder": "Số tiền tiết kiệm mỗi tháng (80)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["80", "eighty"]
     }
 ]
@@ -481,37 +481,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Contrasting trends between falling print media costs and surging digital subscriptions: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Advice on managing a monthly budget and future predictions for digital finance: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. The upward trend in housing and healthcare expenditure from 2010 to 2025: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. What economic factor, alongside property shortages, caused housing costs to peak at 36%? Rising ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn A (inflation)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["inflation"]
     },
     {
         "id": "r5",
         "label": "5. At what percentage did transport expenditure stabilize after fluctuating? (NUMBER + %)",
-        "placeholder": "Điền số liệu trong đoạn B (13%)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["13%", "13", "13 percent"]
     },
     {
         "id": "r6",
         "label": "6. What should young adults follow to cope with economic uncertainty? A strict monthly ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn C (budget)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["budget"]
     }
 ]

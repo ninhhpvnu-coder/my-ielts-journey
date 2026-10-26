@@ -424,37 +424,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Applicant Name: David",
-        "placeholder": "Gõ họ (Harrison)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["harrison"]
     },
     {
         "id": "l2",
         "label": "2. Date of Birth:",
-        "placeholder": "Ví dụ: 14 August",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["14 august", "14th august", "august 14"]
     },
     {
         "id": "l3",
         "label": "3. Contact Number:",
-        "placeholder": "Số điện thoại (07829 451 903)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["07829451903", "07829 451 903"]
     },
     {
         "id": "l4",
         "label": "4. Address: 24",
-        "placeholder": "Tên đường (Green Street)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["green street", "green"]
     },
     {
         "id": "l5",
         "label": "5. Preferred Activity:",
-        "placeholder": "Hoạt động yêu thích (tree planting)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["tree planting", "planting trees"]
     },
     {
         "id": "l6",
         "label": "6. Available Time (hours/week):",
-        "placeholder": "Số giờ (3 / three)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["3", "three", "3 hours"]
     }
 ]
@@ -481,37 +481,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Number of young people creating positive changes globally: (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền số lượng trong đoạn A (1.2 billion)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["1.2 billion"]
     },
     {
         "id": "r2",
         "label": "2. Name of Linh's neighborhood volunteer group: (NO MORE THAN TWO WORDS)",
-        "placeholder": "Tên nhóm trong đoạn B (Green Cleaners)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["green cleaners"]
     },
     {
         "id": "r3",
         "label": "3. Which day of the week do students clean the beach? (ONE WORD)",
-        "placeholder": "Thứ trong tuần ở đoạn B (Saturday)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["saturday"]
     },
     {
         "id": "r4",
         "label": "4. Total weight of recyclable items gathered in six months: (NO MORE THAN TWO WORDS)",
-        "placeholder": "Khối lượng trong đoạn B (800 kilograms)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["800 kilograms", "800 kg", "800kg"]
     },
     {
         "id": "r5",
         "label": "5. What activity does the group do on Sunday afternoons? (NO MORE THAN THREE WORDS)",
-        "placeholder": "Hoạt động chiều Chủ nhật ở đoạn C (teaches basic English)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["teaches basic english", "teach basic english", "basic english"]
     },
     {
         "id": "r6",
         "label": "6. What is Linh's ultimate dream career? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Nghề nghiệp mơ ước ở đoạn C (environmental diplomat)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["environmental diplomat", "diplomat"]
     }
 ]

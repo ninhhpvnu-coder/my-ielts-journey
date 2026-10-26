@@ -424,37 +424,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Researcher's surname: Lucas",
-        "placeholder": "Điền họ đánh vần (Vance)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["vance"]
     },
     {
         "id": "l2",
         "label": "2. Proportion of district residents aged over 65: ________% (a quarter)",
-        "placeholder": "Điền con số phần trăm (25)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["25", "twenty-five", "twenty five"]
     },
     {
         "id": "l3",
         "label": "3. Most popular daytime programme at the centre: ________ Skills class",
-        "placeholder": "Lớp kỹ năng số (Digital)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["digital", "digital skills"]
     },
     {
         "id": "l4",
         "label": "4. Part-time mentorship work hours for retirees: ________ hours per week",
-        "placeholder": "Số giờ mỗi tuần (12)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["12", "twelve"]
     },
     {
         "id": "l5",
         "label": "5. Annual membership fee for state pensioners: £________ per year",
-        "placeholder": "Phí hội viên năm (30)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["30", "thirty"]
     },
     {
         "id": "l6",
         "label": "6. Location of SilverOak Centre: opposite the ________",
-        "placeholder": "Địa điểm đối diện (Central Library)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["central library", "library"]
     }
 ]
@@ -481,37 +481,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Statistical comparison of age segments between 2025 and 2050: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Why pension costs rise and how migration or raising the retirement age can help: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. The two root causes of population ageing (higher life expectancy & lower fertility): (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. Thanks to breakthroughs in medical care, average life ________ has climbed above 80 years. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 từ trong đoạn A (expectancy)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["expectancy"]
     },
     {
         "id": "r5",
         "label": "5. By 2050, the elderly proportion (65+) is projected to double to just over a ________ (26%). (ONE WORD from Para B)",
-        "placeholder": "Điền 1 từ phân số trong đoạn B (quarter)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["quarter"]
     },
     {
         "id": "r6",
         "label": "6. Encouraging skilled international ________ helps replenish the shrinking workforce in Paragraph C. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn C (migration)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["migration"]
     }
 ]

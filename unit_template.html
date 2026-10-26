@@ -1637,7 +1637,7 @@ function initDialogueUI() {
             <div id="line_${idx}" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(${idx})">
                 <div>
                     <b style="color: ${idx % 2 === 0 ? '#38bdf8' : '#34d399'};">${line.speaker}:</b> ${line.text}
-                    ${line.hint ? `<span style="font-size: 0.78rem; color: #f59e0b; display: block; margin-top: 2px;">${line.hint}</span>` : ''}
+                    ${line.hint ? `<span class="listening-answer-hint" style="font-size: 0.78rem; color: #f59e0b; display: none; margin-top: 2px;">${line.hint}</span>` : ''}
                 </div>
                 <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
             </div>
@@ -1795,20 +1795,41 @@ function toggleTranscriptView() {
 
 const listeningAnswers = {{LISTENING_ANSWERS_JSON}};
 
+function normalizeExamAnswer(s) {
+    return String(s || '')
+        .toLowerCase()
+        .replace(/[£$€%,.?!"]/g, '')
+        .replace(/^(the|a|an)\s+/i, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function isAnswerMatch(userVal, acceptedList) {
+    const u = normalizeExamAnswer(userVal);
+    if (!u) return false;
+    return (acceptedList || []).some(a => {
+        const target = normalizeExamAnswer(a);
+        return u === target;
+    });
+}
+
 function gradeListening() {
     let sc = 0;
     for (let k in listeningAnswers) {
         const inputEl = document.getElementById(k);
         const feedbackEl = document.getElementById('f' + k);
         if (!inputEl || !feedbackEl) continue;
-        const val = inputEl.value.trim().toLowerCase();
-        if (listeningAnswers[k].some(a => val.includes(a))) {
-            feedbackEl.innerHTML = ' <span style="color:#10b981; font-weight:700;">✓</span>';
+        const val = inputEl.value.trim();
+        if (isAnswerMatch(val, listeningAnswers[k])) {
+            feedbackEl.innerHTML = ' <span style="color:#10b981; font-weight:700;">✓ Chính xác</span>';
             sc++;
         } else {
-            feedbackEl.innerHTML = ` <span style="color:#f43f5e; font-weight:600;">✗ (${listeningAnswers[k][0]})</span>`;
+            feedbackEl.innerHTML = ` <span style="color:#f43f5e; font-weight:600;">✗ (Đáp án: ${listeningAnswers[k][0]})</span>`;
         }
     }
+    document.querySelectorAll('.listening-answer-hint').forEach(el => {
+        el.style.display = 'block';
+    });
     const scoreBox = document.getElementById('listening_score');
     if (scoreBox) scoreBox.innerText = `Điểm: ${sc}/${Object.keys(listeningAnswers).length}`;
     window._listeningGraded = true; saveUnitProgress();
@@ -1821,6 +1842,9 @@ function resetListening() {
         if (inputEl) inputEl.value = '';
         if (feedbackEl) feedbackEl.innerHTML = '';
     }
+    document.querySelectorAll('.listening-answer-hint').forEach(el => {
+        el.style.display = 'none';
+    });
     const scoreBox = document.getElementById('listening_score');
     if (scoreBox) scoreBox.innerText = `Điểm: 0/${Object.keys(listeningAnswers).length}`;
 }
@@ -1834,12 +1858,12 @@ function gradeReading() {
         const inputEl = document.getElementById(k);
         const feedbackEl = document.getElementById('f' + k);
         if (!inputEl || !feedbackEl) continue;
-        const val = inputEl.value.trim().toLowerCase();
-        if (readingAnswers[k].some(a => val.includes(a))) {
-            feedbackEl.innerHTML = ' <span style="color:#10b981; font-weight:700;">✓</span>';
+        const val = inputEl.value.trim();
+        if (isAnswerMatch(val, readingAnswers[k])) {
+            feedbackEl.innerHTML = ' <span style="color:#10b981; font-weight:700;">✓ Chính xác</span>';
             sc++;
         } else {
-            feedbackEl.innerHTML = ` <span style="color:#f43f5e; font-weight:600;">✗ (${readingAnswers[k][0]})</span>`;
+            feedbackEl.innerHTML = ` <span style="color:#f43f5e; font-weight:600;">✗ (Đáp án: ${readingAnswers[k][0]})</span>`;
         }
     }
     const scoreBox = document.getElementById('reading_score');

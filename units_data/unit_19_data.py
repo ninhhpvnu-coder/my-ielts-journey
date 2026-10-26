@@ -423,37 +423,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Volunteer applicant's surname: Liam",
-        "placeholder": "Điền họ đánh vần (OConnor / O'Connor)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["oconnor", "o'connor", "o connor"]
     },
     {
         "id": "l2",
         "label": "2. Night beach patrols protect nesting sea turtles from illegal ________",
-        "placeholder": "Kẻ săn trộm (poachers)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["poachers", "poaching"]
     },
     {
         "id": "l3",
         "label": "3. Morning underwater task: planting healthy ________ fragments on damaged reefs",
-        "placeholder": "Loài sinh vật tạo rạn (coral)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["coral"]
     },
     {
         "id": "l4",
         "label": "4. Weekly volunteer contribution for lodging, meals and gear: £________ per week",
-        "placeholder": "Chi phí mỗi tuần (240)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["240", "two hundred and forty"]
     },
     {
         "id": "l5",
         "label": "5. Mandatory skill certificate required: a basic ________ Diving licence",
-        "placeholder": "Chứng chỉ lặn bình khí (Scuba)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["scuba", "scuba diving"]
     },
     {
         "id": "l6",
         "label": "6. Sanctuary ferry departure point: from ________ Pier at 10:00 AM",
-        "placeholder": "Tên bến tàu (Dolphin)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["dolphin", "dolphin pier"]
     }
 ]
@@ -480,37 +480,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Howcoral bleaching and removing apex predators disrupt the marine ecological balance: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Why wildlife sanctuaries and reintroduction are better than keeping animals in small zoo cages: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. How deforestation and illegal poaching push terrestrial mammals toward extinction: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. What illegal activity targets critically endangered elephants, rhinos and tigers in Paragraph A? Criminals continue to ________ them. (ONE WORD)",
-        "placeholder": "Điền 1 động từ trong đoạn A (poach)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["poach"]
     },
     {
         "id": "r5",
         "label": "5. When apex predators like sharks are removed from the ocean, populations of smaller ________ explode uncontrollably. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 từ trong đoạn B (prey)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["prey"]
     },
     {
         "id": "r6",
         "label": "6. In modern sanctuaries, once endangered animals are bred in spacious reserves, they are gradually ________ into the wild. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 từ trong đoạn C (reintroduced)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["reintroduced"]
     }
 ]

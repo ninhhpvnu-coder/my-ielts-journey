@@ -420,37 +420,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Second part of the HR Manager's surname: Eleanor Vance-",
-        "placeholder": "Điền họ đánh vần (Houghton)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["houghton"]
     },
     {
         "id": "l2",
         "label": "2. New technology being introduced next year: autonomous warehouse ________",
-        "placeholder": "Robot kho vận (robots)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["robots", "robot"]
     },
     {
         "id": "l3",
         "label": "3. Number of employees enrolled in the first training cohort: ________",
-        "placeholder": "Số nhân viên đợt 1 (85)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["85", "eighty-five", "eighty five"]
     },
     {
         "id": "l4",
         "label": "4. Duration of the reskilling curriculum: ________ weeks",
-        "placeholder": "Số tuần đào tạo (12)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["12", "twelve"]
     },
     {
         "id": "l5",
         "label": "5. Percentage of tuition cost subsidized by the government: ________%",
-        "placeholder": "Phần trăm trợ giá (70)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["70", "seventy"]
     },
     {
         "id": "l6",
         "label": "6. Qualification awarded upon graduation: Diploma in ________ Logistics",
-        "placeholder": "Tên văn bằng (Digital)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["digital", "digital logistics"]
     }
 ]
@@ -477,37 +477,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Statistical comparison between rising AI investment and converse sectoral job changes: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Why workforce reskilling and ethical AI governance are imperative for the future: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. The debate over whether autonomous AI displaces workers or augments human productivity: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. Automation has rendered many routine clerical and assembly-line skills ________. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 tính từ chỉ sự lỗi thời trong đoạn A (obsolete)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["obsolete"]
     },
     {
         "id": "r5",
         "label": "5. Employment data reveals a striking ________ between AI adoption and sectoral job changes. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 danh từ chỉ mối tương quan trong đoạn B (correlation)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["correlation"]
     },
     {
         "id": "r6",
         "label": "6. Authorities must establish a transparent ________ framework that holds tech corporations accountable. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 danh từ chỉ sự quản trị trong đoạn C (governance)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["governance"]
     }
 ]

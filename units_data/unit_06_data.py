@@ -423,37 +423,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Participant's surname: Ms.",
-        "placeholder": "Điền họ đánh vần (Bennett)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["bennett"]
     },
     {
         "id": "l2",
         "label": "2. Current type of household she lives in: a ________ family",
-        "placeholder": "Loại gia đình hiện tại (nuclear)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["nuclear", "nuclear family"]
     },
     {
         "id": "l3",
         "label": "3. Total number of siblings she has:",
-        "placeholder": "Tổng số anh chị em ruột (3 / three)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["3", "three"]
     },
     {
         "id": "l4",
         "label": "4. Daily habit that maintains family harmony: eating ________ together",
-        "placeholder": "Thói quen buổi tối (dinner)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["dinner", "evening dinner"]
     },
     {
         "id": "l5",
         "label": "5. Common cause of conflict in adolescence: screen time and ________",
-        "placeholder": "Nguyên nhân mâu thuẫn (career choices)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["career choices", "careers", "career"]
     },
     {
         "id": "l6",
         "label": "6. Most influential family member in her education: her",
-        "placeholder": "Người có ảnh hưởng lớn nhất (grandmother)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["grandmother", "grandma"]
     }
 ]
@@ -480,37 +480,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. The contrast between traditional three-generation homes and modern city families: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r2",
         "label": "2. Practical ways to maintain domestic harmony and strong connections: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. The childcare pressure on working parents and teenager issues: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r4",
         "label": "4. Why do young couples move to cities and form nuclear families? To become financially ________. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn A (independent)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["independent"]
     },
     {
         "id": "r5",
         "label": "5. What may teenagers experience a weaker emotional ________ with if they spend too much time alone online? (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn B (bond)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["bond"]
     },
     {
         "id": "r6",
         "label": "6. What is the key to domestic harmony in both large and small families? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền cụm từ trong đoạn C (mutual respect)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["mutual respect", "respect"]
     }
 ]

@@ -421,37 +421,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Name of the gallery on the Second Floor: the ________ Gallery",
-        "placeholder": "Tên phòng trưng bày (Silk Road)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["silk road", "silk road gallery"]
     },
     {
         "id": "l2",
         "label": "2. Most famous 3,000-year-old artifact on display: a ________",
-        "placeholder": "Cổ vật nổi tiếng nhất (golden mask)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["golden mask", "mask"]
     },
     {
         "id": "l3",
         "label": "3. Starting time of the available guided tour:",
-        "placeholder": "Giờ bắt đầu tour (11:15)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["11:15", "11:15 am"]
     },
     {
         "id": "l4",
         "label": "4. Surname of the historian leading the tour: Professor",
-        "placeholder": "Họ của giáo sư (Chambers)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["chambers"]
     },
     {
         "id": "l5",
         "label": "5. Equipment used in the Discovery Hall to explore ancient ruins:",
-        "placeholder": "Thiết bị thực tế ảo (3D glasses)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["3d glasses", "glasses"]
     },
     {
         "id": "l6",
         "label": "6. Student ticket price for the special exhibition (£):",
-        "placeholder": "Giá vé sinh viên (8)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["8", "8 pounds", "eight"]
     }
 ]
@@ -478,37 +478,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How satellite lasers and DNA/chemical analysis help trace human ancestors: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. The role of modern museums and interactive 3D exhibitions: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. The accidental discovery of the clay warriors by farmers in 1974: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. During which dynasty was the underground army of clay warriors built? The ________ dynasty. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn A (Qin)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["qin"]
     },
     {
         "id": "r5",
         "label": "5. What do scientists use to map stone ruins hidden beneath jungle canopies? ________. (TWO WORDS)",
-        "placeholder": "Điền 2 từ trong đoạn B (satellite lasers)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["satellite lasers", "lasers"]
     },
     {
         "id": "r6",
         "label": "6. What do modern museums display alongside real historical treasures? ________. (TWO WORDS)",
-        "placeholder": "Điền 2 từ trong đoạn C (3D holograms)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["3d holograms", "holograms"]
     }
 ]

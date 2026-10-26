@@ -423,37 +423,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Student's main goal: relieve stress and build physical",
-        "placeholder": "Mục tiêu thể lực (stamina)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["stamina", "physical stamina"]
     },
     {
         "id": "l2",
         "label": "2. Recommended beginner class on Mon & Wed: Cardio",
-        "placeholder": "Môn thể thao (Swimming)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["swimming", "cardio swimming"]
     },
     {
         "id": "l3",
         "label": "3. Duration of each workout session:",
-        "placeholder": "Thời lượng buổi tập (45 minutes)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["45 minutes", "45 mins", "45"]
     },
     {
         "id": "l4",
         "label": "4. Day of the weekly nutrition workshop:",
-        "placeholder": "Thứ trong tuần (Friday)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["friday"]
     },
     {
         "id": "l5",
         "label": "5. Ingredient the student should reduce in daily diet: refined",
-        "placeholder": "Chất cần giảm (sugar)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["sugar", "refined sugar"]
     },
     {
         "id": "l6",
         "label": "6. Monthly student membership fee (in pounds):",
-        "placeholder": "Học phí/tháng (25 / 25 pounds)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["25", "25 pounds", "twenty-five"]
     }
 ]
@@ -480,37 +480,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How 30 minutes of daily exercise strengthens the heart and builds stamina: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Why sitting in front of screens and eating fast food leads to obesity: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. The benefits of team sports and hiking for relieving stress: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. How many hours a day do many workers spend sitting at screens? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Số giờ trong đoạn A (eight hours / 8 hours)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["eight hours", "8 hours", "over eight", "eight"]
     },
     {
         "id": "r5",
         "label": "5. What does a 30-minute daily workout help build besides strengthening the heart? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn B (physical stamina)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["physical stamina", "stamina"]
     },
     {
         "id": "r6",
         "label": "6. What kind of health do outdoor recreation and active leisure protect? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn C (mental health)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["mental health"]
     }
 ]

@@ -423,37 +423,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Patient's surname: Mr.",
-        "placeholder": "Điền họ đánh vần (Fitzgerald)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["fitzgerald"]
     },
     {
         "id": "l2",
         "label": "2. Chronic condition he has been suffering from: chronic ________",
-        "placeholder": "Tình trạng đau mãn tính (back pain)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["back pain", "backache"]
     },
     {
         "id": "l3",
         "label": "3. Specialist service the doctor can refer him to: ________ therapy clinic",
-        "placeholder": "Loại hình trị liệu (physical)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["physical", "physical therapy"]
     },
     {
         "id": "l4",
         "label": "4. Cost of the seasonal flu vaccine with his university health card:",
-        "placeholder": "Chi phí tiêm (free / £0)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["free", "free of charge", "0"]
     },
     {
         "id": "l5",
         "label": "5. Name of the doctor for his Wednesday 9:15 a.m. appointment: Doctor ________",
-        "placeholder": "Tên bác sĩ (Patel)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["patel", "dr patel"]
     },
     {
         "id": "l6",
         "label": "6. Item he must bring a list of: current pharmaceutical ________",
-        "placeholder": "Danh sách thuốc đang dùng (medications)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["medications", "medicines", "drugs"]
     }
 ]
@@ -480,37 +480,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Why treating illnesses only after severe symptoms appear is financially unsustainable: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How funding sports centres and nutrition education strengthens public health: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. The paradox of increased longevity alongside overcrowded modern hospitals: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. What kind of lifestyle diseases are causing modern hospitals to become overcrowded? ________ lifestyle diseases. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn A (chronic)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["chronic"]
     },
     {
         "id": "r5",
         "label": "5. How many times more does treating advanced heart disease cost compared to keeping a person healthy? ________ times more. (ONE WORD/NUMBER)",
-        "placeholder": "Điền số lần trong đoạn B (ten / 10)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["ten", "10"]
     },
     {
         "id": "r6",
         "label": "6. What natural bodily system is strengthened by nutrition education and community sports? The ________ system. (ONE WORD)",
-        "placeholder": "Điền 1 từ trong đoạn C (immune)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["immune"]
     }
 ]

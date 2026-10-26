@@ -420,37 +420,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Exhibitor's surname: Kenji",
-        "placeholder": "Điền họ đánh vần (Takahashi)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["takahashi"]
     },
     {
         "id": "l2",
         "label": "2. Exhibition venue for traditional textiles and crafts: the ________ Hall",
-        "placeholder": "Tên sảnh trưng bày (Heritage)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["heritage", "heritage hall"]
     },
     {
         "id": "l3",
         "label": "3. Discounted booth rental fee for fair-trade cooperatives: £________",
-        "placeholder": "Giá thuê gian hàng ưu đãi (380)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["380", "three hundred and eighty"]
     },
     {
         "id": "l4",
         "label": "4. Friday morning workshop topic: exporting goods without paying heavy customs ________",
-        "placeholder": "Thuế quan xuất nhập khẩu (tariffs)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["tariffs", "tariff"]
     },
     {
         "id": "l5",
         "label": "5. Number of registered international retail buyers: over ________",
-        "placeholder": "Số lượng nhà mua hàng (1200)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["1200", "1,200"]
     },
     {
         "id": "l6",
         "label": "6. Deadline to upload cooperative documents: ________ of November",
-        "placeholder": "Ngày hạn chót (12th / 12)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["12th", "12", "twelfth"]
     }
 ]
@@ -477,37 +477,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How standardized global brands and entertainment risk homogenizing and eroding local traditions: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How digital trade and tourism can help local artisans preserve cultural diversity: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. How abolishing tariffs and outsourcing manufacturing generated economic prosperity: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. Driven by lower production costs, multinational corporations have ________ manufacturing to developing nations. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 động từ V3/ed trong đoạn A (outsourced)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["outsourced", "outsource"]
     },
     {
         "id": "r5",
         "label": "5. Cultural historians argue that unchecked globalization gradually ________ national identity. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 động từ trong đoạn B (erodes)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["erodes", "erode"]
     },
     {
         "id": "r6",
         "label": "6. Artisans weaving ________ textiles can now export their crafts directly to ethical consumers abroad. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 tính từ chỉ tính bản địa trong đoạn C (indigenous)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["indigenous"]
     }
 ]

@@ -431,37 +431,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Main learning difficulty: hard to concentrate in the student",
-        "placeholder": "Địa điểm ồn ào (hall)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["hall", "student hall"]
     },
     {
         "id": "l2",
         "label": "2. Recommended study location: the central",
-        "placeholder": "Tên cơ sở vật chất (library)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["library", "central library"]
     },
     {
         "id": "l3",
         "label": "3. Recommended revision strategy:",
-        "placeholder": "Hành động làm việc nhóm (collaborate)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["collaborate", "collaborate with classmates", "collaboration"]
     },
     {
         "id": "l4",
         "label": "4. Tutor open consultation days: Tuesday and",
-        "placeholder": "Thứ trong tuần (Thursday)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["thursday"]
     },
     {
         "id": "l5",
         "label": "5. Final written examination takes place in:",
-        "placeholder": "Tháng thi (December)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["december"]
     },
     {
         "id": "l6",
         "label": "6. Student's primary objective: qualify for an exchange",
-        "placeholder": "Phần thưởng học bổng (scholarship)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["scholarship", "exchange scholarship"]
     }
 ]
@@ -488,37 +488,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Modern learning methods where students work together in teams: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r2",
         "label": "2. The importance of daily revision routines and quiet study spaces: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r3",
         "label": "3. How academic institutions assess student growth at the end of term: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. Where were traditional university lectures commonly held? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn A (large halls)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["large halls", "halls"]
     },
     {
         "id": "r5",
         "label": "5. Who can students approach when they have questions about lessons? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn B (course tutor)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["course tutor", "tutor"]
     },
     {
         "id": "r6",
         "label": "6. What can dedicated learners unlock by practicing self-discipline? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn C (full potential)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["full potential", "potential"]
     }
 ]

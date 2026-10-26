@@ -348,7 +348,7 @@ DIALOGUE_LINES = [
     },
     {
         "speaker": "Volunteer Applicant",
-        "text": "Hello Mr. Hayes! My name isElena Rostova. I moved to this city two months ago, and I would love to join your neighbourhood volunteering programme.",
+        "text": "Hello Mr. Hayes! My name is Elena Rostova. I moved to this city two months ago, and I would love to join your neighbourhood volunteering programme.",
         "hint": ""
     },
     {
@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Volunteer applicant's surname: Elena",
-        "placeholder": "Điền họ đánh vần (Rostova)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["rostova"]
     },
     {
         "id": "l2",
         "label": "2. Main programme pairs young volunteers with ________ residents to combat loneliness",
-        "placeholder": "Nhóm cư dân cao tuổi (elderly)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["elderly", "senior"]
     },
     {
         "id": "l3",
         "label": "3. Wednesday evening event: Shared Community ________",
-        "placeholder": "Bữa tối cộng đồng (Dinner)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["dinner", "community dinner"]
     },
     {
         "id": "l4",
         "label": "4. Saturday mentoring helps teenagers resist negative ________ pressure",
-        "placeholder": "Áp lực đồng trang lứa (peer)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["peer", "peer pressure"]
     },
     {
         "id": "l5",
         "label": "5. Minimum volunteer commitment required: ________ hours per month",
-        "placeholder": "Tổng số giờ mỗi tháng (16)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["16", "sixteen"]
     },
     {
         "id": "l6",
         "label": "6. Venue for Saturday orientation: ________ Hall",
-        "placeholder": "Tên hội trường (Harmony)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["harmony", "harmony hall"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. Psychological evidence showing that toddlers and citizens possess innate empathy and altruism: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. How urbanization and digital lifestyles can breed egoism and social isolation: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. How schools and positive peer norms can encourage ethical volunteering: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. Critics claim that hyper-individualism breeds ________ and weakens social cohesion. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 danh từ chỉ tính vị kỷ trong đoạn A (egoism)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["egoism"]
     },
     {
         "id": "r5",
         "label": "5. Behavioral experiments show that toddlers display an ________ impulse to comfort a crying stranger. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 tính từ trong đoạn B (innate)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["innate"]
     },
     {
         "id": "r6",
         "label": "6. Individuals have a psychological desire to ________ to group expectations and social norms. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 động từ trong đoạn C (conform)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["conform"]
     }
 ]

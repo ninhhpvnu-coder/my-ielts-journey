@@ -423,37 +423,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Building directly opposite the Reception: the Solar",
-        "placeholder": "Địa điểm đối diện (Cafe)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["cafe", "solar cafe"]
     },
     {
         "id": "l2",
         "label": "2. Area north of the wooden bridge: the",
-        "placeholder": "Khu vực phía bắc cầu gỗ (Wetland Habitat)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["wetland habitat", "wetland"]
     },
     {
         "id": "l3",
         "label": "3. Rare animals living in the wetland: over 40 species of",
-        "placeholder": "Loài động vật (water birds)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["water birds", "birds"]
     },
     {
         "id": "l4",
         "label": "4. Tree-planting zone is adjacent to: the Organic",
-        "placeholder": "Khu vực kế bên (Nursery)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["nursery", "organic nursery"]
     },
     {
         "id": "l5",
         "label": "5. Start time of the zero-waste workshop:",
-        "placeholder": "Giờ bắt đầu (11:00 AM / 11 AM)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["11:00 am", "11 am", "11:00", "11"]
     },
     {
         "id": "l6",
         "label": "6. Student ticket price for the eco-pass (in pounds):",
-        "placeholder": "Giá vé sinh viên (12 / 12 pounds)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["12", "12 pounds", "twelve"]
     }
 ]
@@ -480,37 +480,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How European cities connect parks to protect birds and insects: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Negative impacts of factory waste and traffic on air and rivers: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. The role of citizens in using solar power and sorting household waste: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. What do heavy traffic and vehicles release into city air? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn A (carbon emissions)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["carbon emissions", "emissions"]
     },
     {
         "id": "r5",
         "label": "5. What have European capitals created to connect parks and canals? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn B (green corridors)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["green corridors", "corridors"]
     },
     {
         "id": "r6",
         "label": "6. What kind of trees do cities plant to protect local biodiversity? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn B (native trees)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["native trees", "trees"]
     }
 ]

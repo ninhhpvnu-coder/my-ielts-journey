@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. New workshop location (after room change): the",
-        "placeholder": "Tên phòng mới (Virtual Lab)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["virtual lab", "lab"]
     },
     {
         "id": "l2",
         "label": "2. Morning skill: using AI tools to automate",
-        "placeholder": "Kỹ năng buổi sáng (note-taking)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["note-taking", "note taking", "notes"]
     },
     {
         "id": "l3",
         "label": "3. Afternoon topic: data privacy and",
-        "placeholder": "Chủ đề buổi chiều (cybersecurity)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["cybersecurity", "cyber security", "security"]
     },
     {
         "id": "l4",
         "label": "4. Digital device participants must bring: a portable",
-        "placeholder": "Thiết bị cần mang theo (laptop)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["laptop", "portable laptop"]
     },
     {
         "id": "l5",
         "label": "5. Guest speaker's surname: Dr.",
-        "placeholder": "Họ của diễn giả (Reynolds)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["reynolds"]
     },
     {
         "id": "l6",
         "label": "6. Deadline day to register for a free student ticket:",
-        "placeholder": "Thứ hạn chót đăng ký miễn phí (Wednesday)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["wednesday"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How AI helps companies automate tasks and boost worker efficiency: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Warnings about data privacy, cybersecurity, and smartphone addiction: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r3",
         "label": "3. How mobile devices and e-learning platforms help rural students: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r4",
         "label": "4. What do Doctors use AI programs to analyze with high accuracy? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn B (medical scans)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["medical scans", "scans"]
     },
     {
         "id": "r5",
         "label": "5. What must banks strengthen to protect personal data privacy? (ONE WORD)",
-        "placeholder": "Điền từ trong đoạn C (cybersecurity)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["cybersecurity"]
     },
     {
         "id": "r6",
         "label": "6. What can spending too many hours on smartphones cause? (NO MORE THAN TWO WORDS)",
-        "placeholder": "Điền từ trong đoạn C (digital addiction)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["digital addiction", "addiction"]
     }
 ]

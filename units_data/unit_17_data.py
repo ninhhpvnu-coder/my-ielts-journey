@@ -422,37 +422,37 @@ LISTENING_QUESTIONS = [
     {
         "id": "l1",
         "label": "1. Booking organizer's surname: Marcus",
-        "placeholder": "Điền họ đánh vần (Reid)",
+        "placeholder": "Nhập tên riêng được đánh vần...",
         "answers": ["reid"]
     },
     {
         "id": "l2",
         "label": "2. Total number of visitors in the university group:",
-        "placeholder": "Tổng số người thực tế (26)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["26", "twenty-six", "twenty six"]
     },
     {
         "id": "l3",
         "label": "3. Depth from which geothermal heat is extracted: ________ km underground",
-        "placeholder": "Điền con số độ sâu (4.5)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["4.5", "four and a half"]
     },
     {
         "id": "l4",
         "label": "4. Main hall machinery: high-pressure steam spins a giant ________",
-        "placeholder": "Tên cỗ máy quay phát điện (turbine)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["turbine", "steam turbine"]
     },
     {
         "id": "l5",
         "label": "5. Discounted ticket price for university students: £________ per person",
-        "placeholder": "Giá vé sinh viên (8.50)",
+        "placeholder": "Nhập con số / mốc thời gian nghe được...",
         "answers": ["8.50", "8.5"]
     },
     {
         "id": "l6",
         "label": "6. Coach drop-off entrance: through the ________ (next to Solar Car Park)",
-        "placeholder": "Tên cổng vào (East Gate)",
+        "placeholder": "Nhập từ/cụm từ nghe được (1-2 từ)...",
         "answers": ["east gate", "east"]
     }
 ]
@@ -479,37 +479,37 @@ READING_QUESTIONS = [
     {
         "id": "r1",
         "label": "1. How cold water is filtered, pumped 4.5 km underground and heated by rocks: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["b", "paragraph b"]
     },
     {
         "id": "r2",
         "label": "2. Why geothermal energy is more reliable than solar and wind power: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["a", "paragraph a"]
     },
     {
         "id": "r3",
         "label": "3. How steam spins the turbine, converts energy and transmits power to the grid: (Paragraph A, B or C)",
-        "placeholder": "Nhập A, B hoặc C",
+        "placeholder": "Nhập chữ cái A, B hoặc C...",
         "answers": ["c", "paragraph c"]
     },
     {
         "id": "r4",
         "label": "4. Unlike solar power, geothermal energy offers a reliable and ________ supply of clean power. (ONE WORD from Para A)",
-        "placeholder": "Điền 1 từ trong đoạn A (continuous)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn A...",
         "answers": ["continuous"]
     },
     {
         "id": "r5",
         "label": "5. Before being pumped underground, water passes through a screen to ________ out solid sediments. (ONE WORD from Para B)",
-        "placeholder": "Điền 1 từ trong đoạn B (filter)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn B...",
         "answers": ["filter"]
     },
     {
         "id": "r6",
         "label": "6. What machine converts mechanical motion from the spinning turbine into electrical current? An electrical ________. (ONE WORD from Para C)",
-        "placeholder": "Điền 1 từ trong đoạn C (generator)",
+        "placeholder": "Nhập từ/cụm từ trích từ đoạn C...",
         "answers": ["generator"]
     }
 ]
