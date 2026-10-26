@@ -465,7 +465,7 @@
         </div>
     </header>
 
-    <!-- KPI Overview Row -->
+    <!-- KPI Overview Row (4 Training Program Tiers) -->
     <div class="kpi-grid">
         <div class="kpi-card">
             <div class="kpi-label">📚 Giáo Trình Foundation (30 Units)</div>
@@ -473,19 +473,19 @@
             <div class="kpi-sub">450 / 450 Từ Vựng Cốt Lõi • Đã hoàn tất trọn bộ 6 Chặng (30/30)</div>
         </div>
         <div class="kpi-card">
-            <div class="kpi-label">🎯 Độ Chính Xác Quiz</div>
-            <div class="kpi-value" id="kpi_avg_quiz" style="color: var(--success);">--%</div>
-            <div class="kpi-sub">Trung bình Từ vựng & Ngữ pháp</div>
+            <div class="kpi-label">🌱 Giáo Trình Band 5.0 — 6.0</div>
+            <div class="kpi-value" style="color: var(--success);">Band 5.0 — 6.0</div>
+            <div class="kpi-sub">Bứt phá 4 kỹ năng • Làm chủ Task 1, 2 & Phản xạ Speaking</div>
         </div>
         <div class="kpi-card">
-            <div class="kpi-label">🧠 Kho Từ Vựng C1-C2</div>
-            <div class="kpi-value" style="color: var(--warning);">7 Chuyên Đề</div>
-            <div class="kpi-sub">76+ Thẻ Anki & Nominalisation</div>
+            <div class="kpi-label">⚡ Giáo Trình Band 6.0 — 7.5</div>
+            <div class="kpi-value" style="color: var(--warning);">Band 6.0 — 7.5</div>
+            <div class="kpi-sub">Tư duy C1-C2 • Học thuật chuyên sâu, Đảo ngữ & Danh hóa</div>
         </div>
         <div class="kpi-card">
-            <div class="kpi-label">🏆 Đích Đến Mục Tiêu</div>
-            <div class="kpi-value" id="kpi_cam_latest" style="color: var(--purple);">Band 8.0+</div>
-            <div class="kpi-sub">L:8.5 • R:8.5 • W:7.5 • S:7.5</div>
+            <div class="kpi-label">🏆 Luyện Đề Tổng Hợp (Cambridge)</div>
+            <div class="kpi-value" style="color: var(--purple);">Mục Tiêu 8.0+</div>
+            <div class="kpi-sub">Bộ đề Cam 1 — 20 • Khảo thí toàn diện L:8.5 • R:8.5 • W:7.5 • S:7.5</div>
         </div>
     </div>
 
@@ -1207,10 +1207,12 @@ function renderUnitCards(unitsProgress) {
     });
 
     container.innerHTML = cardsHtml.join("");
-    document.getElementById("kpi_units_done").innerText = `${completedCount} / ${UNITS_META.length} Units`;
+    const kpiUnits = document.getElementById("kpi_units_done");
+    if (kpiUnits) kpiUnits.innerText = `${completedCount} / ${UNITS_META.length} Units`;
     if (totalQuizPossible > 0) {
         const pct = Math.round((totalQuizEarned / totalQuizPossible) * 100);
-        document.getElementById("kpi_avg_quiz").innerText = `${pct}%`;
+        const kpiQuiz = document.getElementById("kpi_avg_quiz");
+        if (kpiQuiz) kpiQuiz.innerText = `${pct}%`;
     }
 }
 
