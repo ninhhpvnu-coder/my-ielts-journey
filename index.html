@@ -369,8 +369,8 @@
     <div class="kpi-grid">
         <div class="kpi-card">
             <div class="kpi-label">📚 Giáo Trình Foundation (30 Units)</div>
-            <div class="kpi-value" id="kpi_units_done">0 / 25 Units</div>
-            <div class="kpi-sub">375 / 450 Từ Vựng Cốt Lõi • Đã mở Chặng 1, 2, 3, 4 & 5</div>
+            <div class="kpi-value" id="kpi_units_done">0 / 30 Units</div>
+            <div class="kpi-sub">450 / 450 Từ Vựng Cốt Lõi • Đã hoàn tất trọn bộ 6 Chặng (30/30)</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">🎯 Độ Chính Xác Quiz</div>
@@ -391,31 +391,32 @@
 
     <!-- Main Section Switcher -->
     <div class="hub-tabs">
-        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Giáo Trình Foundation (25/30 Units Đã Mở)</button>
-        <button class="hub-tab-btn" onclick="switchHubTab('roadmap30', this)">🗺️ Bản Đồ Quy Hoạch 30 Units (6 Chặng)</button>
+        <button class="hub-tab-btn active" onclick="switchHubTab('foundation', this)">🏛️ Giáo Trình Foundation (30/30 Units Đã Mở)</button>
+        <button class="hub-tab-btn" onclick="switchHubTab('roadmap30', this)">🗺️ Bản Đồ Quy Hoạch 30 Units & Hệ Thống Ngữ Pháp</button>
         <button class="hub-tab-btn" onclick="switchHubTab('vocab_c1', this)">🧠 Nâng Cấp Từ Vựng C1-C2 & Anki</button>
         <button class="hub-tab-btn" onclick="switchHubTab('cambridge', this)">📊 Khảo Thí & Chẩn Đoán Đề Cambridge (1-20)</button>
     </div>
 
-    <!-- SECTION 1: ACTIVE FOUNDATION UNITS (STAGE 1, STAGE 2, STAGE 3, STAGE 4 & STAGE 5) -->
+    <!-- SECTION 1: ACTIVE FOUNDATION UNITS (ALL 6 STAGES: UNITS 01 - 30) -->
     <div id="foundation" class="hub-section active">
         <div class="topic-pills" style="margin-bottom: 18px;">
-            <button class="topic-pill active" onclick="filterUnitsByStage('all', this)">🌟 Tất Cả Đang Mở (Units 01 — 25)</button>
+            <button class="topic-pill active" onclick="filterUnitsByStage('all', this)">🌟 Tất Cả Đang Mở (Units 01 — 30)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(1, this)">🌱 Chặng 1: Units 01 — 05 (Band 3.5 ➔ 4.0)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(2, this)">🏙️ Chặng 2: Units 06 — 10 (Band 4.0 ➔ 4.5 • Map & Xã Hội)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(3, this)">💼 Chặng 3: Units 11 — 15 (Band 4.5 ➔ 5.0 • Line Graph & Bar Chart)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(4, this)">🔬 Chặng 4: Units 16 — 20 (Band 5.0 • Process & Table)</button>
             <button class="topic-pill" onclick="filterUnitsByStage(5, this)">🌍 Chặng 5: Units 21 — 25 (Band 5.0 ➔ 5.5 • Pie Chart & Tâm Lý)</button>
+            <button class="topic-pill" onclick="filterUnitsByStage(6, this)">🚀 Chặng 6: Units 26 — 30 (Band 5.5+ • Mixed Charts & Ngữ Pháp C1)</button>
         </div>
         <div class="units-grid" id="units_cards_container"></div>
     </div>
 
-    <!-- SECTION 1B: 30-UNIT MASTER ROADMAP -->
+    <!-- SECTION 1B: 30-UNIT MASTER ROADMAP & COMPLETE GRAMMAR AUDIT -->
     <div id="roadmap30" class="hub-section">
         <div class="panel-box">
             <h2 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 8px;">🗺️ Bản Quy Hoạch Tổng Thể 30 Units Foundation (6 Chặng • 450 Họ Từ Học Thuật)</h2>
             <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
-                Lộ trình bậc thang 3 tầng độ khó (Band 3.5 ➔ 5.5+) bao phủ 98% chủ đề IELTS, tích hợp trọn vẹn <b>6 dạng biểu đồ Writing Task 1</b> và <b>mọi dạng bài luận Writing Task 2</b>:
+                Lộ trình bậc thang 3 tầng độ khó (Band 3.5 ➔ 6.5+) bao phủ 98% chủ đề IELTS, tích hợp trọn vẹn <b>7 chuyên đề biểu đồ Writing Task 1</b> và <b>100% hệ thống ngữ pháp Cơ bản & Nâng cao C1-C2</b>:
             </p>
             <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 12px;">
                 <table>
@@ -461,8 +462,107 @@
                         <tr>
                             <td><b style="color:#fb7185;">🚀 Chặng 6 (Units 26–30)</b><br><small>Band 5.5+ (Cầu nối 6.5+)</small></td>
                             <td>U26: Space Exploration • U27: Globalization • U28: Public Policy • U29: Bioethics • <b>U30: AI Future & Mixed Charts</b></td>
-                            <td>Danh hóa (Nominalisation), Cụm phân từ rút gọn, <b>Chuyên đề Task 1: MIXED CHARTS</b> & Tổng duyệt</td>
-                            <td><span style="color:#94a3b8;">⏳ Chuẩn bị sản xuất</span></td>
+                            <td>Tương lai hoàn thành, Mệnh đề phân từ rút gọn, ĐK loại 3/hỗn hợp, Danh hóa C1 & <b>Task 1: MIXED CHARTS</b></td>
+                            <td><span style="color:#fb7185; font-weight:700;">✓ Đã kích hoạt (5/5)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel-box">
+            <h2 style="color: #34d399; font-size: 1.3rem; margin-bottom: 8px;">📐 Ma Trận Kiểm Toán Toàn Bộ Hệ Thống Ngữ Pháp Cơ Bản & Nâng Cao (Units 01 — 30)</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
+                Hệ thống được thiết kế khép kín đảm bảo học viên sau khi hoàn thành 30 Units sẽ làm chủ <b>100% chủ điểm ngữ pháp tiếng Anh học thuật</b> (từ nền tảng B1 đến cấu trúc ăn điểm GRA Band 8.0+):
+            </p>
+            <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 12px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phân Tầng Ngữ Pháp</th>
+                            <th>Chủ Điểm Ngữ Pháp Trọng Tâm</th>
+                            <th>Đơn Vị Bài Học (Units)</th>
+                            <th>Ứng Dụng Trực Tiếp Trong Khảo Thí IELTS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b style="color:#34d399;">1. Hệ Thống 12 Thì & Phối Thì Học Thuật</b></td>
+                            <td>
+                                • Hiện tại đơn, Hiện tại tiếp diễn & Động từ trạng thái (Stative Verbs)<br>
+                                • Quá khứ đơn, Quá khứ tiếp diễn & Cấu trúc thói quen <code>used to + V</code><br>
+                                • Hiện tại hoàn thành vs. Hiện tại hoàn thành tiếp diễn<br>
+                                • Tương lai đơn (<code>will</code>), Tương lai gần (<code>be going to</code>) & Cấu trúc dự báo (<code>is projected/forecast to</code>)<br>
+                                • <b>Nâng cao:</b> Tương lai hoàn thành (<code>will have V3</code>) & Tương lai tiếp diễn (<code>will be V-ing</code>)
+                            </td>
+                            <td>U1, U2, U4, U5, U10, U18, U21, <b>U26</b></td>
+                            <td>Kiểm soát tuyệt đối trục thời gian trong Speaking Part 1/2/3 và mô tả số liệu quá khứ - hiện tại - tương lai trong Writing Task 1.</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#38bdf8;">2. Danh Từ, Mạo Từ, Lượng Từ & Hòa Hợp Chủ - Vị (SVA)</b></td>
+                            <td>
+                                • Danh từ đếm được / Không đếm được học thuật (<i>information, legislation, infrastructure, debris, coverage</i>)<br>
+                                • Mạo từ <code>a / an / the / zero article</code> & Lượng từ (<code>much, many, a great deal of, a large number of</code>)<br>
+                                • Danh từ tập hợp số nhiều (<code>the elderly, the affluent, livestock, paparazzi</code>)<br>
+                                • <b>Nâng cao:</b> Bẫy SVA với <code>The number of</code> vs. <code>A number of</code>, cấu trúc <code>along with / as well as</code>
+                            </td>
+                            <td>U2, U3, U4, U21, <b>U30</b></td>
+                            <td>Loại bỏ triệt để lỗi cơ bản làm rớt điểm GRA xuống dưới Band 6.0 (thiếu mạo từ, chia sai động từ số ít/nhiều).</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#fbbf24;">3. Hệ Thống Câu Điều Kiện Đầy Đủ & Đảo Ngữ Điều Kiện</b></td>
+                            <td>
+                                • Câu điều kiện loại 1 (<code>If / Unless / Provided that</code>) — Cảnh báo & Chính sách thực tế<br>
+                                • Câu điều kiện loại 2 (<code>If + V-ed/were, would + V</code>) — Giả định chính sách vĩ mô<br>
+                                • <b>Nâng cao:</b> Câu điều kiện loại 3 (<code>If + had V3, would have V3</code>) & Điều kiện Hỗn hợp (<code>If + had V3 [quá khứ], would V [hiện tại]</code>)<br>
+                                • <b>Đỉnh cao C1:</b> Đảo ngữ câu điều kiện không dùng <i>If</i> (<code>Should + S + V</code>, <code>Were + S + to V</code>, <code>Had + S + V3</code>)
+                            </td>
+                            <td>U5, U13, U19, <b>U28</b></td>
+                            <td>Vũ khí lập luận phản biện (counter-argument), phân tích hệ quả lịch sử và đề xuất giải pháp trong Writing Task 2 & Speaking Part 3.</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#f472b6;">4. Thể Bị Động Học Thuật & Giả Định Cách (Subjunctive)</b></td>
+                            <td>
+                                • Bị động Hiện tại hoàn thành (Map), Hiện tại đơn (Process) & Bị động đa thì<br>
+                                • Bị động với Động từ khuyết thiếu (<code>must be enforced, should be regulated</code>)<br>
+                                • Bị động khách quan & Tường thuật C1 (<code>It is widely recognized/reported that...</code>)<br>
+                                • <b>Nâng cao:</b> Suy luận quá khứ (<code>must/might/could have V3</code>) & Giả định cách (<code>It is imperative/vital that + S + V-bare / be V3</code>)
+                            </td>
+                            <td>U7, U9, U15, U16, U17, U19, U23, <b>U26</b></td>
+                            <td>Tạo giọng văn khách quan (impersonal academic tone) chuẩn Cambridge cho cả Task 1 (Map/Process) và Task 2.</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#a78bfa;">5. Mệnh Đề Quan Hệ, Rút Gọn Mệnh Đề & Cụm Phân Từ</b></td>
+                            <td>
+                                • Mệnh đề quan hệ xác định & không xác định (<code>who, which, where, whose</code>)<br>
+                                • Mệnh đề quan hệ nối tiếp chỉ hệ quả cả câu (<code>, which leads to / thereby + V-ing</code>)<br>
+                                • <b>Nâng cao:</b> Rút gọn mệnh đề quan hệ dùng <code>V-ing</code> (chủ động), <code>V3/ed</code> (bị động), <code>to-V</code> (sau số thứ tự/so sánh nhất)<br>
+                                • <b>Đỉnh cao C1:</b> Cụm phân từ đứng đầu câu làm trạng ngữ (<code>Driven by..., S + V</code> / <code>Fearing..., S + V</code>)
+                            </td>
+                            <td>U11, U15, <b>U27</b></td>
+                            <td>Nén câu phức dài thành cấu trúc súc tích, đa dạng hóa kiểu câu (sentence variety) để bứt phá tiêu chí GRA Band 7.5 - 8.5.</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#fb7185;">6. Liên Từ Học Thuật, Cấp So Sánh, Câu Chẻ, Đảo Ngữ & Danh Hóa C1</b></td>
+                            <td>
+                                • Câu ghép FANBOYS, Liên từ nhân quả (<code>Because/Since</code> vs. <code>Due to/Owing to</code>) & Nhượng bộ (<code>Although</code> vs. <code>Despite/In spite of</code>)<br>
+                                • Cấp so sánh nâng cao (<code>far/considerably more</code>) & So sánh kép Nhân - Quả (<code>The more..., the more...</code>)<br>
+                                • <b>Đỉnh cao C1-C2:</b> Câu chẻ nhấn mạnh (<code>What... is...</code> / <code>It is... that...</code>), Đảo ngữ trạng từ phủ định (<code>Not only... but also</code> / <code>Only by + V-ing + can/will...</code>) & <b>Danh hóa học thuật (Nominalisation)</b>
+                            </td>
+                            <td>U1, U6, U8, U18, U22, U24, U25, <b>U29</b></td>
+                            <td>Biến câu văn giao tiếp thông thường thành văn phong học thuật C1-C2 sang trọng, sắc bén như bài viết của giám khảo bản xứ.</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color:#38bdf8;">7. Ngữ Pháp Chuyên Biệt Cho 7 Dạng Biểu Đồ Writing Task 1</b></td>
+                            <td>
+                                • <b>Map (U7):</b> Giới từ định vị & Bị động biến đổi không gian<br>
+                                • <b>Line Graph (U12):</b> 2 công thức xu hướng (<code>Verb + Adv</code> & <code>Adj + Noun</code>) + Giới từ số liệu<br>
+                                • <b>Bar Chart (U14) & Table (U20):</b> So sánh tỷ trọng (<code>surpass, outnumber, account for</code>), ngoại lệ & <code>respectively</code><br>
+                                • <b>Process (U17) & Pie Chart (U21):</b> Liên từ giai đoạn, Phân số tỷ lệ & Dự báo tương lai<br>
+                                • <b>Mixed Charts (U30):</b> Cấu trúc chuyển đoạn & Đối chiếu tương quan đa biểu đồ (<code>while the accompanying bar chart...</code>)
+                            </td>
+                            <td>U7, U12, U14, U17, U20, U21, <b>U30</b></td>
+                            <td>Giải quyết trọn vẹn 100% các dạng đề thi IELTS Academic Writing Task 1 thực tế của Cambridge.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -787,6 +887,51 @@ const UNITS_META = [
         file: "unit_25_interactive_practice.html",
         desc: "Câu chẻ nhấn mạnh (What binds a community together is...) & Đảo ngữ C1 (Not only do..., but they also...) & Tổng duyệt Chặng 5 về Hành vi con người & Lòng vị tha.",
         vocabPreview: "norm, conform, peer, altruism, empathy, egoism, compassion, incentive, innate, cohesion..."
+    },
+    {
+        id: "26",
+        stage: 6,
+        stageLabel: "CHẶNG 6 • BAND 5.5+",
+        title: "Unit 26: Space Exploration, Scientific Discovery, Astronomy & Future Forecasting",
+        file: "unit_26_interactive_practice.html",
+        desc: "Tương lai hoàn thành (will have + V3) vs Tương lai tiếp diễn (will be + V-ing), Suy luận quá khứ (must/might have + V3) & Giả định cách (It is imperative that + S + V-bare).",
+        vocabPreview: "cosmos, orbit, satellite, astronomy, colonization, extraterrestrial, propulsion, debris..."
+    },
+    {
+        id: "27",
+        stage: 6,
+        stageLabel: "CHẶNG 6 • BAND 5.5+",
+        title: "Unit 27: Globalization, Cultural Homogenization, Multinational Corporations & Participle Clauses",
+        file: "unit_27_interactive_practice.html",
+        desc: "Rút gọn mệnh đề quan hệ dùng V-ing (chủ động), V3/ed (bị động), to-V (sau số thứ tự/so sánh nhất) & Cụm phân từ đầu câu (Driven by..., S + V) về Toàn cầu hóa.",
+        vocabPreview: "globalization, multinational, outsourcing, homogenization, tariff, subsidy, assimilate, indigenous..."
+    },
+    {
+        id: "28",
+        stage: 6,
+        stageLabel: "CHẶNG 6 • BAND 5.5+",
+        title: "Unit 28: Public Policy, Taxation, Social Welfare, Inequality & Third/Mixed Conditionals",
+        file: "unit_28_interactive_practice.html",
+        desc: "Câu điều kiện loại 3 (If + had V3, would have V3), Điều kiện Hỗn hợp (If + had V3, would V now) & Đảo ngữ điều kiện C1 (Should / Were / Had) về Chính sách công.",
+        vocabPreview: "welfare, taxation, redistribution, disparity, affluent, impoverished, subsidy, egalitarian..."
+    },
+    {
+        id: "29",
+        stage: 6,
+        stageLabel: "CHẶNG 6 • BAND 5.5+",
+        title: "Unit 29: Bioethics, Genetic Screening, Cloning, Artificial Longevity & Nominalisation",
+        file: "unit_29_interactive_practice.html",
+        desc: "Danh hóa học thuật C1-C2 (Academic Nominalisation: biến mệnh đề V/Adj thành cụm danh từ), Đảo ngữ 'Only by + V-ing + can/will...' & Đạo đức sinh học.",
+        vocabPreview: "bioethics, genome, hereditary, embryo, eradication, modification, cloning, consent, eugenics..."
+    },
+    {
+        id: "30",
+        stage: 6,
+        stageLabel: "CHẶNG 6 • GRAND CAPSTONE",
+        title: "Unit 30: The AI Future, Automation & Task 1 Mixed Charts + 30-Unit Grand Synthesis",
+        file: "unit_30_interactive_practice.html",
+        desc: "Chuyên đề IELTS Writing Task 1 MIXED CHARTS (Line + Bar Correlation), Hòa hợp Chủ - Vị nâng cao (The number of vs A number of, along with) & Tổng duyệt 30 Units.",
+        vocabPreview: "autonomous, algorithm, displacement, cognitive, paradigm, synergy, obsolete, correlation..."
     }
 ];
 
