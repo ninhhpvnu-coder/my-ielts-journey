@@ -19,21 +19,37 @@
             --bg-color: #fbf4ea;
             --surface-color: #ffffff;
             --surface-hover: #fffdf9;
-            --card-color: #f7ede0;
+            --card-color: #fdfaf5;
             --primary: #14324d;
             --primary-hover: #1d4367;
-            --accent: #c5855d;
-            --accent-hover: #b0724b;
+            --accent: #a35d2b;
+            --accent-hover: #8c471c;
             --success: #1b8755;
             --warning: #b45309;
             --danger: #c0392b;
             --purple: #6d28d9;
             --text-main: #14324d;
-            --text-muted: #5a6b7c;
+            --text-muted: #4a607a;
             --border: #eadccb;
             --card-shadow: 0 4px 20px rgba(20, 50, 77, 0.06);
             --header-bg: linear-gradient(135deg, #ffffff 0%, #fbf4ea 100%);
-            --hero-border: rgba(197, 133, 93, 0.45);
+            --hero-border: #eadccb;
+            --hero-title-color: #14324d;
+            --hero-slogan-color: #4a607a;
+            --hero-highlight-color: #a35d2b;
+            --brand-badge-bg: rgba(163, 93, 43, 0.1);
+            --brand-badge-border: rgba(163, 93, 43, 0.35);
+            --brand-badge-color: #8c471c;
+            --badge-sub-bg: rgba(20, 50, 77, 0.07);
+            --badge-sub-border: rgba(20, 50, 77, 0.2);
+            --badge-sub-color: #14324d;
+            --unit-title-color: #14324d;
+            --unit-scores-bg: rgba(20, 50, 77, 0.04);
+            --score-mini-color: #14324d;
+            --tab-active-color: #ffffff;
+            --tab-active-bg: #14324d;
+            --btn-launch-bg: linear-gradient(135deg, #14324d, #1d4367);
+            --btn-launch-color: #ffffff;
         }
 
         /* --- Midnight Navy Dark Theme (Optional 🌙) --- */
@@ -56,6 +72,22 @@
             --card-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
             --header-bg: radial-gradient(circle at 12% 25%, rgba(197, 139, 98, 0.12) 0%, transparent 60%), linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98));
             --hero-border: rgba(197, 139, 98, 0.38);
+            --hero-title-color: #ffffff;
+            --hero-slogan-color: #e2e8f0;
+            --hero-highlight-color: #38bdf8;
+            --brand-badge-bg: linear-gradient(135deg, rgba(197, 139, 98, 0.25), rgba(56, 189, 248, 0.15));
+            --brand-badge-border: rgba(197, 139, 98, 0.48);
+            --brand-badge-color: #f5d0b5;
+            --badge-sub-bg: rgba(56, 189, 248, 0.12);
+            --badge-sub-border: rgba(56, 189, 248, 0.25);
+            --badge-sub-color: #38bdf8;
+            --unit-title-color: #ffffff;
+            --unit-scores-bg: rgba(11, 17, 32, 0.65);
+            --score-mini-color: #ffffff;
+            --tab-active-color: #0b1120;
+            --tab-active-bg: var(--primary);
+            --btn-launch-bg: linear-gradient(135deg, #38bdf8, #0284c7);
+            --btn-launch-color: #0b1120;
         }
 
         * {
@@ -139,9 +171,9 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: linear-gradient(135deg, rgba(197, 139, 98, 0.25), rgba(56, 189, 248, 0.15));
-            border: 1px solid rgba(197, 139, 98, 0.48);
-            color: #f5d0b5;
+            background: var(--brand-badge-bg);
+            border: 1px solid var(--brand-badge-border);
+            color: var(--brand-badge-color);
             padding: 5px 14px;
             border-radius: 9999px;
             font-weight: 800;
@@ -153,9 +185,9 @@
         .badge-sub {
             font-size: 0.74rem;
             font-weight: 700;
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.12);
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: var(--badge-sub-color);
+            background: var(--badge-sub-bg);
+            border: 1px solid var(--badge-sub-border);
             padding: 4px 10px;
             border-radius: 9999px;
             text-transform: uppercase;
@@ -165,10 +197,11 @@
         .hero-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.65rem;
-            color: #ffffff;
+            color: var(--hero-title-color);
             margin-bottom: 6px;
             line-height: 1.25;
             letter-spacing: -0.01em;
+            font-weight: 800;
         }
 
         @media (min-width: 768px) {
@@ -178,20 +211,20 @@
         }
 
         .hero-slogan-en {
-            color: #e2e8f0;
+            color: var(--hero-slogan-color);
             font-size: 0.94rem;
             line-height: 1.55;
             margin-bottom: 6px;
         }
 
         .hero-slogan-highlight {
-            color: #38bdf8;
+            color: var(--hero-highlight-color);
             font-weight: 700;
         }
 
         .hero-motto {
             font-size: 0.86rem;
-            color: #c58b62;
+            color: var(--accent);
             font-style: italic;
             letter-spacing: 0.04em;
             font-weight: 600;
@@ -291,9 +324,13 @@
         }
 
         .hub-tab-btn.active, .hub-tab-btn:hover {
-            background: var(--primary);
-            color: #0b1120;
-            border-color: var(--primary);
+            background: var(--tab-active-bg);
+            color: var(--tab-active-color);
+            border-color: var(--tab-active-bg);
+            box-shadow: 0 4px 14px rgba(20, 50, 77, 0.15);
+        }
+
+        [data-theme="dark"] .hub-tab-btn.active, [data-theme="dark"] .hub-tab-btn:hover {
             box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
         }
 
@@ -369,8 +406,9 @@
         .unit-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.25rem;
-            color: #fff;
+            color: var(--unit-title-color);
             margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .unit-desc {
@@ -383,7 +421,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 8px;
-            background: rgba(11, 17, 32, 0.65);
+            background: var(--unit-scores-bg);
             padding: 10px;
             border-radius: 12px;
             border: 1px solid var(--border);
@@ -397,8 +435,9 @@
 
         .score-mini b {
             display: block;
-            color: #fff;
+            color: var(--score-mini-color);
             font-size: 0.9rem;
+            font-weight: 700;
         }
 
         .btn-launch {
@@ -407,8 +446,8 @@
             justify-content: center;
             gap: 8px;
             width: 100%;
-            background: linear-gradient(135deg, #38bdf8, #0284c7);
-            color: #0b1120;
+            background: var(--btn-launch-bg);
+            color: var(--btn-launch-color);
             font-weight: 800;
             font-size: 0.95rem;
             padding: 12px 18px;
@@ -420,6 +459,11 @@
         }
 
         .btn-launch:hover {
+            filter: brightness(1.08);
+            box-shadow: 0 4px 14px rgba(20, 50, 77, 0.2);
+        }
+
+        [data-theme="dark"] .btn-launch:hover {
             filter: brightness(1.1);
             box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
         }
@@ -441,14 +485,19 @@
         }
 
         .topic-pill {
-            background: rgba(11, 17, 32, 0.8);
+            background: var(--surface-color);
             border: 1px solid var(--border);
-            color: var(--text-muted);
+            color: var(--text-main);
             padding: 8px 14px;
             border-radius: 10px;
             font-size: 0.84rem;
             font-weight: 600;
             cursor: pointer;
+        }
+
+        [data-theme="dark"] .topic-pill {
+            background: rgba(11, 17, 32, 0.8);
+            color: var(--text-muted);
         }
 
         .topic-pill.active {

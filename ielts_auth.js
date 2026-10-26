@@ -417,13 +417,14 @@
             if (document.getElementById('ielts_watermark_layer')) return;
             const container = document.createElement('div');
             container.id = 'ielts_watermark_layer';
+            const isPaper = (this.getTheme() === 'paper');
             container.style.cssText = `
                 position: fixed;
                 inset: 0;
                 pointer-events: none;
                 z-index: 9999;
                 overflow: hidden;
-                opacity: 0.07;
+                opacity: ${isPaper ? '0.045' : '0.07'};
                 display: flex;
                 flex-wrap: wrap;
                 align-content: space-around;
@@ -443,11 +444,10 @@
                     transform: rotate(-22deg);
                     font-size: 13px;
                     font-weight: 700;
-                    color: #fff;
+                    color: var(--text-main, #14324d);
                     white-space: nowrap;
                     padding: 30px 40px;
                     letter-spacing: 1px;
-                    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
                 `;
                 container.appendChild(mark);
             }
@@ -464,12 +464,13 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 8px;
-                background: rgba(15, 23, 42, 0.75);
-                border: 1px solid rgba(197, 139, 98, 0.35);
+                background: var(--surface-color, #ffffff);
+                border: 1.5px solid var(--border, #eadccb);
                 padding: 4px 12px;
                 border-radius: 999px;
                 font-size: 0.75rem;
-                color: #e2e8f0;
+                color: var(--text-main, #14324d);
+                box-shadow: var(--card-shadow, 0 4px 12px rgba(20,50,77,0.05));
                 margin-left: auto;
             `;
 
@@ -480,8 +481,8 @@
             } else if (access.isFreeTrial) {
                 badge.innerHTML = `<span>✨ <b>Học Thử Miễn Phí (Unit 01-02)</b></span> <a href="index.html#activate" style="color: #38bdf8; text-decoration: underline; margin-left: 6px;">Kích hoạt trọn bộ 30 Unit</a>`;
             } else if (access.student) {
-                badge.innerHTML = `<span>🎓 Học viên: <b style="color: #38bdf8;">${access.student.name}</b></span> <button onclick="IELTSAuth.toggleTheme()" class="theme-switch-pill" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(197, 133, 93, 0.15); border: 1.5px solid rgba(197, 133, 93, 0.45); color: var(--accent, #c5855d); padding: 6px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; cursor: pointer;">☀️ <span class="theme-text">Giấy Ngà</span></button>
-                            <button onclick="IELTSAuth.openPassportModal()" style="background: linear-gradient(135deg, #14324d, #1d4367); color: #fff; border: none; color: #0b1120; border-radius: 6px; padding: 2px 8px; font-size: 0.7rem; font-weight: 800; cursor: pointer; margin-left: 4px;">🎓 Hồ Sơ & Sổ Tay</button>`;
+                badge.innerHTML = `<span>🎓 Học viên: <b style="color: var(--primary, #14324d);">${access.student.name}</b></span> <button onclick="IELTSAuth.toggleTheme()" class="theme-switch-pill" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(197, 133, 93, 0.15); border: 1.5px solid rgba(197, 133, 93, 0.45); color: var(--accent, #c5855d); padding: 5px 10px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; cursor: pointer;">☀️ <span class="theme-text">Giấy Ngà</span></button>
+                            <button onclick="IELTSAuth.openPassportModal()" style="background: linear-gradient(135deg, #14324d, #1d4367); color: #ffffff; border: none; border-radius: 6px; padding: 4px 10px; font-size: 0.72rem; font-weight: 800; cursor: pointer; margin-left: 4px;">🎓 Hồ Sơ & Sổ Tay</button>`;
             }
             bar.appendChild(badge);
         },

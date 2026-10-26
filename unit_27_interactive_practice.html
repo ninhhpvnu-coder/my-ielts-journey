@@ -16,21 +16,32 @@
             --bg-color: #fbf4ea;
             --surface-color: #ffffff;
             --surface-hover: #fffdf9;
-            --card-color: #f7ede0;
+            --card-color: #ffffff;
+            --panel-bg: #fdfaf5;
+            --bar-bg: #ffffff;
             --primary: #14324d;
             --primary-hover: #1d4367;
-            --accent: #c5855d;
-            --accent-hover: #b0724b;
+            --accent: #a35d2b;
+            --accent-hover: #8c471c;
             --success: #1b8755;
             --warning: #b45309;
             --danger: #c0392b;
             --text-main: #14324d;
-            --text-muted: #5a6b7c;
+            --text-muted: #4a607a;
             --border: #eadccb;
-            --card-shadow: 0 4px 18px rgba(20, 50, 77, 0.06);
+            --card-shadow: 0 4px 18px rgba(20, 50, 77, 0.05);
             --header-bg: linear-gradient(135deg, #ffffff 0%, #fbf4ea 100%);
             --option-bg: #ffffff;
             --input-bg: #fdfbf7;
+            --tab-active-bg: #14324d;
+            --tab-active-color: #ffffff;
+            --vocab-ipa-color: #a35d2b;
+            --vocab-colloc-color: #8c471c;
+            --vocab-colloc-bg: rgba(163, 93, 43, 0.1);
+            --vocab-colloc-border: rgba(163, 93, 43, 0.25);
+            --vocab-btn-bg: rgba(20, 50, 77, 0.07);
+            --vocab-btn-border: rgba(20, 50, 77, 0.2);
+            --eval-box-bg: #ffffff;
         }
 
         /* --- Midnight Navy Dark Theme (Optional 🌙) --- */
@@ -38,7 +49,9 @@
             --bg-color: #0b1120;
             --surface-color: #1e293b;
             --surface-hover: #243247;
-            --card-color: #334155;
+            --card-color: #1e293b;
+            --panel-bg: rgba(15, 23, 42, 0.75);
+            --bar-bg: rgba(15, 23, 42, 0.9);
             --primary: #38bdf8;
             --primary-hover: #0ea5e9;
             --accent: #c5855d;
@@ -53,6 +66,15 @@
             --header-bg: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
             --option-bg: rgba(30, 41, 59, 0.8);
             --input-bg: #0b1120;
+            --tab-active-bg: var(--primary);
+            --tab-active-color: #0b1120;
+            --vocab-ipa-color: #38bdf8;
+            --vocab-colloc-color: #f59e0b;
+            --vocab-colloc-bg: rgba(245, 158, 11, 0.08);
+            --vocab-colloc-border: rgba(245, 158, 11, 0.2);
+            --vocab-btn-bg: rgba(56, 189, 248, 0.15);
+            --vocab-btn-border: rgba(56, 189, 248, 0.3);
+            --eval-box-bg: rgba(15, 23, 42, 0.9);
         }
 
         * {
@@ -190,9 +212,13 @@
         }
 
         .tab-btn.active, .tab-btn:hover {
-            background: var(--primary);
-            color: #0b1120;
-            border-color: var(--primary);
+            background: var(--tab-active-bg);
+            color: var(--tab-active-color);
+            border-color: var(--tab-active-bg);
+            box-shadow: 0 4px 14px rgba(20, 50, 77, 0.15);
+        }
+
+        [data-theme="dark"] .tab-btn.active, [data-theme="dark"] .tab-btn:hover {
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
         }
 
@@ -242,17 +268,19 @@
         }
 
         .practice-card {
-            background: rgba(11, 17, 32, 0.6);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 14px;
+            background: var(--surface-color);
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
             margin-bottom: 16px;
+            box-shadow: var(--card-shadow);
+            color: var(--text-main);
         }
 
         @media (min-width: 768px) {
             .practice-card {
-                padding: 20px;
-                border-radius: 14px;
+                padding: 22px;
+                border-radius: 16px;
                 margin-bottom: 18px;
             }
         }
@@ -280,18 +308,24 @@
         }
 
         .vocab-card {
-            background: rgba(11, 17, 32, 0.7);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 14px;
+            background: var(--surface-color);
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
             transition: all 0.25s ease;
             position: relative;
+            box-shadow: var(--card-shadow);
         }
 
         .vocab-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
+            border-color: var(--primary);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 8px 24px rgba(20, 50, 77, 0.08);
+        }
+
+        [data-theme="dark"] .vocab-card:hover {
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
         }
 
         .vocab-header {
@@ -303,13 +337,13 @@
 
         .vocab-word {
             font-size: 1.15rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--primary);
         }
 
         .vocab-audio-btn {
-            background: rgba(56, 189, 248, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: var(--vocab-btn-bg);
+            border: 1.5px solid var(--vocab-btn-border);
             color: var(--primary);
             width: 38px;
             height: 38px;
@@ -325,19 +359,20 @@
 
         .vocab-audio-btn:hover, .vocab-audio-btn:active {
             background: var(--primary);
-            color: #0b1120;
+            color: var(--tab-active-color);
             transform: scale(1.08);
         }
 
         .vocab-ipa {
             font-size: 0.88rem;
-            color: #38bdf8;
+            color: var(--vocab-ipa-color);
             font-family: monospace;
+            font-weight: 600;
             margin-bottom: 6px;
         }
 
         .vocab-meaning {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-main);
             font-size: 0.95rem;
             margin-bottom: 8px;
@@ -345,20 +380,22 @@
 
         .vocab-colloc {
             font-size: 0.82rem;
-            color: #f59e0b;
-            background: rgba(245, 158, 11, 0.08);
+            color: var(--vocab-colloc-color);
+            background: var(--vocab-colloc-bg);
+            border: 1px solid var(--vocab-colloc-border);
             padding: 4px 8px;
             border-radius: 6px;
             margin-bottom: 6px;
             line-height: 1.35;
+            font-weight: 600;
         }
 
         .vocab-example {
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             color: var(--text-muted);
             font-style: italic;
-            line-height: 1.4;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.45;
+            border-top: 1px solid var(--border);
             padding-top: 6px;
             margin-top: 6px;
         }
@@ -537,16 +574,19 @@
         .eval-box {
             display: none;
             margin-top: 18px;
-            background: rgba(15, 23, 42, 0.9);
-            border: 1px solid var(--primary);
-            border-radius: 12px;
+            background: var(--eval-box-bg);
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
             padding: 16px;
+            box-shadow: var(--card-shadow);
+            color: var(--text-main);
         }
 
         @media (min-width: 768px) {
             .eval-box {
-                padding: 20px;
+                padding: 22px;
                 margin-top: 20px;
+                border-radius: 16px;
             }
         }
 
@@ -555,7 +595,7 @@
             flex-direction: column;
             gap: 10px;
             margin-bottom: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--border);
             padding-bottom: 10px;
         }
 
@@ -569,12 +609,13 @@
 
         /* Speaking Mic Section */
         .mic-box {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(15, 23, 42, 0.8));
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            border-radius: 14px;
+            background: var(--surface-color);
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
             padding: 16px;
             margin-bottom: 18px;
             text-align: center;
+            box-shadow: var(--card-shadow);
         }
 
         @media (min-width: 768px) {
@@ -823,9 +864,9 @@
 
 <div class="container">
     <!-- Top Portal Hub & Unit Switcher Bar -->
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; padding: 10px 14px; background: rgba(15, 23, 42, 0.9); border-radius: 12px; border: 1px solid rgba(56, 189, 248, 0.3);">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; padding: 10px 14px; background: var(--bar-bg); border-radius: 12px; border: 1.5px solid var(--border); box-shadow: var(--card-shadow);">
         <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-            <a href="index.html" class="mode-btn" style="text-decoration: none; background: rgba(56, 189, 248, 0.18); color: var(--primary); border-color: rgba(56, 189, 248, 0.45); font-weight: 700;">🏠 Trang Chủ (Hub)</a>
+            <a href="index.html" class="mode-btn" style="text-decoration: none; background: rgba(20, 50, 77, 0.08); color: var(--primary); border-color: var(--border); font-weight: 700;">🏠 Trang Chủ (Hub)</a>
             <a href="unit_01_interactive_practice.html" class="mode-btn unit-nav-pill" data-unit="01" style="text-decoration: none;">Unit 1</a>
             <a href="unit_02_interactive_practice.html" class="mode-btn unit-nav-pill" data-unit="02" style="text-decoration: none;">Unit 2</a>
             <a href="unit_03_interactive_practice.html" class="mode-btn unit-nav-pill" data-unit="03" style="text-decoration: none;">Unit 3</a>
@@ -877,7 +918,7 @@
     </div>
 
     <!-- View Mode Switcher (Tabs vs Full Page Scroll) -->
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; padding: 10px 14px; background: rgba(15, 23, 42, 0.7); border-radius: 12px; border: 1px solid var(--border);">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; padding: 10px 14px; background: var(--bar-bg); border-radius: 12px; border: 1.5px solid var(--border); box-shadow: var(--card-shadow);">
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
             <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">Chế độ xem:</span>
             <button id="mode_tab_btn" class="mode-btn active" onclick="setViewMode('tabs')">📑 Từng Tab Riêng</button>
@@ -910,7 +951,7 @@
         </div>
 
         <!-- Vocab Audio Playlist Controls -->
-        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; background: rgba(15, 23, 42, 0.6); padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border);">
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; background: var(--panel-bg); padding: 12px 16px; border-radius: 12px; border: 1.5px solid var(--border);">
             <button id="btn_play_all_vocab" class="btn-primary" onclick="togglePlayAllVocab()" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; padding: 10px 18px; border-radius: 10px; background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(16, 185, 129, 0.25)); border: 1.5px solid var(--primary); color: #fff; cursor: pointer; min-height: 44px; transition: all 0.2s;">
                 <span id="play_all_icon">▶️</span>
                 <span id="play_all_text">Phát Âm Tự Động Toàn Bộ 15 Từ (Play All)</span>
@@ -921,7 +962,7 @@
         <div class="vocab-grid">
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">1. globalization <small style="font-size:0.75rem; color:#38bdf8;">(n)</small></span>
+                    <span class="vocab-word">1. globalization <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(n)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('globalization', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ˌɡləʊbəlaɪˈzeɪʃn/</div>
@@ -931,7 +972,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">2. multinational <small style="font-size:0.75rem; color:#38bdf8;">(adj/n)</small></span>
+                    <span class="vocab-word">2. multinational <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(adj/n)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('multinational', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ˌmʌltiˈnæʃnəl/</div>
@@ -941,7 +982,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">3. outsource <small style="font-size:0.75rem; color:#38bdf8;">(v)</small></span>
+                    <span class="vocab-word">3. outsource <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(v)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('outsource', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ˈaʊtsɔːs/</div>
@@ -951,7 +992,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">4. tariff <small style="font-size:0.75rem; color:#38bdf8;">(n)</small></span>
+                    <span class="vocab-word">4. tariff <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(n)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('tariff', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ˈtærɪf/</div>
@@ -961,7 +1002,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">5. export <small style="font-size:0.75rem; color:#38bdf8;">(v/n)</small></span>
+                    <span class="vocab-word">5. export <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(v/n)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('export', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ɪkˈspɔːt/</div>
@@ -971,7 +1012,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">6. import <small style="font-size:0.75rem; color:#38bdf8;">(v/n)</small></span>
+                    <span class="vocab-word">6. import <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(v/n)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('import', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ɪmˈpɔːt/</div>
@@ -981,7 +1022,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">7. homogenize <small style="font-size:0.75rem; color:#38bdf8;">(v)</small></span>
+                    <span class="vocab-word">7. homogenize <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(v)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('homogenize', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/həˈmɒdʒənaɪz/</div>
@@ -991,7 +1032,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">8. assimilate <small style="font-size:0.75rem; color:#38bdf8;">(v)</small></span>
+                    <span class="vocab-word">8. assimilate <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(v)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('assimilate', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/əˈsɪmɪleɪt/</div>
@@ -1001,7 +1042,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">9. diversity <small style="font-size:0.75rem; color:#38bdf8;">(n)</small></span>
+                    <span class="vocab-word">9. diversity <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(n)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('diversity', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/daɪˈvɜːsəti/</div>
@@ -1011,7 +1052,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">10. erode <small style="font-size:0.75rem; color:#38bdf8;">(v)</small></span>
+                    <span class="vocab-word">10. erode <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(v)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('erode', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ɪˈrəʊd/</div>
@@ -1021,7 +1062,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">11. prosperity <small style="font-size:0.75rem; color:#38bdf8;">(n)</small></span>
+                    <span class="vocab-word">11. prosperity <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(n)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('prosperity', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/prɒˈsperəti/</div>
@@ -1031,7 +1072,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">12. sweatshop <small style="font-size:0.75rem; color:#38bdf8;">(n)</small></span>
+                    <span class="vocab-word">12. sweatshop <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(n)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('sweatshop', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ˈswetʃɒp/</div>
@@ -1041,7 +1082,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">13. interdependent <small style="font-size:0.75rem; color:#38bdf8;">(adj)</small></span>
+                    <span class="vocab-word">13. interdependent <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(adj)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('interdependent', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ˌɪntədɪˈpendənt/</div>
@@ -1051,7 +1092,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">14. standardize <small style="font-size:0.75rem; color:#38bdf8;">(v)</small></span>
+                    <span class="vocab-word">14. standardize <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(v)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('standardize', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ˈstændədaɪz/</div>
@@ -1061,7 +1102,7 @@
             </div>
             <div class="vocab-card">
                 <div class="vocab-header">
-                    <span class="vocab-word">15. indigenous <small style="font-size:0.75rem; color:#38bdf8;">(adj)</small></span>
+                    <span class="vocab-word">15. indigenous <small class="vocab-pos" style="font-size:0.75rem; color:var(--vocab-ipa-color, #a35d2b); font-weight:600;">(adj)</small></span>
                     <button class="vocab-audio-btn" title="Nghe phát âm từ này" onclick="playWordAudio('indigenous', this)">🔊</button>
                 </div>
                 <div class="vocab-ipa">/ɪnˈdɪdʒənəs/</div>
@@ -1771,15 +1812,15 @@
     <div id="listening" class="tab-content">
         <h2>🎧 IELTS Section 1: Form Completion</h2>
         <!-- Audio Player Controller -->
-        <div class="practice-card" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 16px; padding: 22px;">
+        <div class="practice-card" style="background: var(--surface-color); border: 1.5px solid var(--border); border-radius: 16px; padding: 22px; box-shadow: var(--card-shadow);">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
                 <div>
-                    <h3 style="color: #fff; font-size: 1.15rem; margin-bottom: 4px;">📻 Audio: Unit 27: Globalization, Cultural Homogenization, Multinational Corporations & Participle Clauses</h3>
+                    <h3 style="color: var(--primary); font-size: 1.15rem; margin-bottom: 4px;">📻 Audio: Unit 27: Globalization, Cultural Homogenization, Multinational Corporations & Participle Clauses</h3>
                     <p style="color: var(--text-muted); font-size: 0.88rem;">Luyện nghe chuẩn IELTS Section 1. Có thể tạm dừng (Pause), tua câu thoại hoặc điều chỉnh tốc độ đọc.</p>
                 </div>
                 <div style="display: flex; align-items: center; gap: 8px;">
                     <span style="font-size: 0.85rem; color: var(--text-muted);">Tốc độ đọc:</span>
-                    <select id="audio_speed" style="background: #0b1120; color: var(--primary); border: 1px solid var(--border); padding: 6px 10px; border-radius: 6px; font-weight: 600;" onchange="changeAudioSpeed()">
+                    <select id="audio_speed" style="background: var(--input-bg); color: var(--primary); border: 1px solid var(--border); padding: 6px 10px; border-radius: 6px; font-weight: 600;" onchange="changeAudioSpeed()">
                         <option value="0.8">0.8x (Chậm)</option>
                         <option value="0.95" selected>1.0x (Chuẩn IELTS)</option>
                         <option value="1.15">1.2x (Nhanh)</option>
@@ -1788,8 +1829,8 @@
             </div>
 
             <!-- Control Buttons Bar -->
-            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: rgba(11, 17, 32, 0.7); padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border);">
-                <button id="btn_audio_play" class="btn-primary" style="background: var(--primary); color: #0b1120; display: inline-flex; align-items: center; gap: 6px;" onclick="togglePlayPauseAudio()">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--panel-bg); padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border);">
+                <button id="btn_audio_play" class="btn-primary" style="background: var(--primary); color: var(--tab-active-color); display: inline-flex; align-items: center; gap: 6px;" onclick="togglePlayPauseAudio()">
                     <span id="play_icon">▶️</span> <span id="play_text">Phát Audio</span>
                 </button>
                 <button id="btn_audio_pause" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 6px;" onclick="pauseListeningAudio()" disabled>
@@ -1810,115 +1851,115 @@
             </div>
 
             <!-- Current Line Tracker -->
-            <div style="margin-top: 14px; padding: 10px 14px; background: rgba(15, 23, 42, 0.6); border-radius: 8px; border: 1px dashed var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+            <div style="margin-top: 14px; padding: 10px 14px; background: var(--panel-bg); border-radius: 8px; border: 1px dashed var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
                 <span id="audio_status_indicator" style="color: var(--text-muted);">Trạng thái: Sẵn sàng phát</span>
                 <span id="audio_line_counter" style="color: var(--primary); font-weight: 600;">Câu: 0 / 15</span>
             </div>
 
             <!-- Interactive Transcript (Collapsible) -->
-            <div id="dialogue_transcript_container" style="display: none; margin-top: 16px; max-height: 380px; overflow-y: auto; background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); border-radius: 10px; padding: 14px;">
+            <div id="dialogue_transcript_container" style="display: none; margin-top: 16px; max-height: 380px; overflow-y: auto; background: var(--input-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px;">
                 <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">💡 Bấm vào bất kỳ câu thoại nào để nghe riêng câu đó:</div>
         <div id="line_0" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(0)">
             <div>
-                <b style="color: #38bdf8;">👩 Trade Fair Director:</b> Good morning, Global Artisan and Cultural Trade Expo, Director Sophia Martinez speaking. How can I help you?
+                <b style="color: var(--primary);">👩 Trade Fair Director:</b> Good morning, Global Artisan and Cultural Trade Expo, Director Sophia Martinez speaking. How can I help you?
                 
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_1" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(1)">
             <div>
-                <b style="color: #34d399;">👨 Craft Cooperative Manager:</b> Hello Ms. Martinez! My name is Kenji Takahashi. I manage an indigenous silk-weaving cooperative, and I would like to rent an exhibition booth at next month's expo.
+                <b style="color: var(--success);">👨 Craft Cooperative Manager:</b> Hello Ms. Martinez! My name is Kenji Takahashi. I manage an indigenous silk-weaving cooperative, and I would like to rent an exhibition booth at next month's expo.
                 
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_2" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(2)">
             <div>
-                <b style="color: #38bdf8;">👩 Trade Fair Director:</b> We would be honoured to showcase your traditional crafts, Kenji! Could you spell your surname for our exhibitor contract?
+                <b style="color: var(--primary);">👩 Trade Fair Director:</b> We would be honoured to showcase your traditional crafts, Kenji! Could you spell your surname for our exhibitor contract?
                 
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_3" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(3)">
             <div>
-                <b style="color: #34d399;">👨 Craft Cooperative Manager:</b> Yes, it is Takahashi. T - A - K - A - H - A - S - H - I.
+                <b style="color: var(--success);">👨 Craft Cooperative Manager:</b> Yes, it is Takahashi. T - A - K - A - H - A - S - H - I.
                 <span class="listening-answer-hint" style="font-size: 0.78rem; color: #f59e0b; display: none; margin-top: 2px;">💡 Đáp án câu 1 (Họ người đăng ký): TAKAHASHI</span>
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_4" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(4)">
             <div>
-                <b style="color: #38bdf8;">👩 Trade Fair Director:</b> Thank you. Our expo connects local artisans directly with international buyers to protect cultural diversity and prevent sweatshop exploitation.
+                <b style="color: var(--primary);">👩 Trade Fair Director:</b> Thank you. Our expo connects local artisans directly with international buyers to protect cultural diversity and prevent sweatshop exploitation.
                 
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_5" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(5)">
             <div>
-                <b style="color: #34d399;">👨 Craft Cooperative Manager:</b> That aligns with our mission! Which hall should we book for handmade textiles and clothing?
+                <b style="color: var(--success);">👨 Craft Cooperative Manager:</b> That aligns with our mission! Which hall should we book for handmade textiles and clothing?
                 
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_6" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(6)">
             <div>
-                <b style="color: #38bdf8;">👩 Trade Fair Director:</b> Food exporters are in the West Pavilion, while all traditional textiles and indigenous crafts are displayed in the Heritage Hall.
+                <b style="color: var(--primary);">👩 Trade Fair Director:</b> Food exporters are in the West Pavilion, while all traditional textiles and indigenous crafts are displayed in the Heritage Hall.
                 <span class="listening-answer-hint" style="font-size: 0.78rem; color: #f59e0b; display: none; margin-top: 2px;">💡 Bẫy khu ẩm thực (West Pavilion) vs khu dệt may truyền thống câu 2: Heritage Hall</span>
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_7" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(7)">
             <div>
-                <b style="color: #34d399;">👨 Craft Cooperative Manager:</b> Heritage Hall sounds ideal. How large is a standard exhibition booth, and how much does it cost?
+                <b style="color: var(--success);">👨 Craft Cooperative Manager:</b> Heritage Hall sounds ideal. How large is a standard exhibition booth, and how much does it cost?
                 
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_8" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(8)">
             <div>
-                <b style="color: #38bdf8;">👩 Trade Fair Director:</b> A standard nine-square-metre booth normally costs 600 pounds, but certified fair-trade cooperatives receive a discounted rate of 380 pounds.
+                <b style="color: var(--primary);">👩 Trade Fair Director:</b> A standard nine-square-metre booth normally costs 600 pounds, but certified fair-trade cooperatives receive a discounted rate of 380 pounds.
                 <span class="listening-answer-hint" style="font-size: 0.78rem; color: #f59e0b; display: none; margin-top: 2px;">💡 Bẫy giá gốc (600) vs giá ưu đãi hợp tác xã câu 3: 380</span>
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_9" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(9)">
             <div>
-                <b style="color: #34d399;">👨 Craft Cooperative Manager:</b> Three hundred and eighty pounds for three days is very reasonable. Do you also offer seminars on international shipping and export rules?
+                <b style="color: var(--success);">👨 Craft Cooperative Manager:</b> Three hundred and eighty pounds for three days is very reasonable. Do you also offer seminars on international shipping and export rules?
                 
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_10" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(10)">
             <div>
-                <b style="color: #38bdf8;">👩 Trade Fair Director:</b> Yes! On Friday morning, trade lawyers host a workshop on how to export goods duty-free without paying heavy customs tariffs.
+                <b style="color: var(--primary);">👩 Trade Fair Director:</b> Yes! On Friday morning, trade lawyers host a workshop on how to export goods duty-free without paying heavy customs tariffs.
                 <span class="listening-answer-hint" style="font-size: 0.78rem; color: #f59e0b; display: none; margin-top: 2px;">💡 Đáp án câu 4 (Miễn thuế quan xuất nhập khẩu): tariffs</span>
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_11" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(11)">
             <div>
-                <b style="color: #34d399;">👨 Craft Cooperative Manager:</b> That will be extremely useful for our weavers. How many international buyers are expected to attend this year's expo?
+                <b style="color: var(--success);">👨 Craft Cooperative Manager:</b> That will be extremely useful for our weavers. How many international buyers are expected to attend this year's expo?
                 
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_12" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(12)">
             <div>
-                <b style="color: #38bdf8;">👩 Trade Fair Director:</b> Over 1,200 retail buyers from thirty-five countries have already registered.
+                <b style="color: var(--primary);">👩 Trade Fair Director:</b> Over 1,200 retail buyers from thirty-five countries have already registered.
                 <span class="listening-answer-hint" style="font-size: 0.78rem; color: #f59e0b; display: none; margin-top: 2px;">💡 Đáp án câu 5 (Số lượng nhà mua hàng quốc tế): 1200 / 1,200</span>
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_13" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(13)">
             <div>
-                <b style="color: #34d399;">👨 Craft Cooperative Manager:</b> Wonderful! What is the deadline to submit our cooperative certificate and product photos?
+                <b style="color: var(--success);">👨 Craft Cooperative Manager:</b> Wonderful! What is the deadline to submit our cooperative certificate and product photos?
                 
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
         </div>
         <div id="line_14" style="padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="playSingleLine(14)">
             <div>
-                <b style="color: #38bdf8;">👩 Trade Fair Director:</b> Please upload your documents to our portal by the 12th of November. We look forward to welcoming you!
+                <b style="color: var(--primary);">👩 Trade Fair Director:</b> Please upload your documents to our portal by the 12th of November. We look forward to welcoming you!
                 <span class="listening-answer-hint" style="font-size: 0.78rem; color: #f59e0b; display: none; margin-top: 2px;">💡 Đáp án câu 6 (Hạn chót nộp hồ sơ): 12th November / November 12</span>
             </div>
             <button style="background: transparent; border: none; cursor: pointer; font-size: 1rem; color: var(--text-muted); padding: 4px;" title="Nghe câu này">🔊</button>
@@ -1994,17 +2035,17 @@
         </div>
 
         <!-- Gemini API Key Setup Panel (Writing) -->
-        <div id="gemini_key_panel_writing" style="display: none; margin-top: 12px; background: rgba(15, 23, 42, 0.92); border: 1.5px solid rgba(168, 85, 247, 0.45); border-radius: 12px; padding: 14px 16px;">
+        <div id="gemini_key_panel_writing" style="display: none; margin-top: 12px; background: var(--surface-color); border: 1.5px solid var(--border); border-radius: 12px; padding: 14px 16px; box-shadow: var(--card-shadow);">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
-                <b style="color: #c084fc; font-size: 0.92rem;">🔑 Cấu Hình Google Gemini API Key (Dùng Chung Cho Cả 30 Units):</b>
-                <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" style="font-size: 0.8rem; color: #38bdf8; text-decoration: underline;">👉 Lấy API Key miễn phí tại Google AI Studio ↗</a>
+                <b style="color: var(--primary); font-size: 0.92rem;">🔑 Cấu Hình Google Gemini API Key (Dùng Chung Cho Cả 30 Units):</b>
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--accent); text-decoration: underline;">👉 Lấy API Key miễn phí tại Google AI Studio ↗</a>
             </div>
             <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 10px;">
                 Nhập mã Gemini API Key (bắt đầu bằng <code>AIza...</code>) để kích hoạt Giám khảo AI chấm chữa từng câu trực tiếp trên trình duyệt. Khóa chỉ lưu an toàn trên thiết bị của bạn (LocalStorage). Nếu không dùng khóa, bạn luôn có thể bấm <b>"📋 Copy Lệnh Chấm Cho AI Coach"</b>!
             </p>
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <input type="password" id="gemini_api_key_input_writing" placeholder="Dán Gemini API Key (AIzaSy...) vào đây" style="flex: 1; min-width: 220px; padding: 9px 12px; background: #0b1120; color: #fff; border: 1px solid var(--border); border-radius: 8px; font-family: monospace; font-size: 0.88rem;">
-                <button type="button" class="btn-primary" onclick="saveGeminiApiKey('writing')" style="background: #10b981; color: #0b1120; padding: 9px 16px; border-radius: 8px; font-weight: 700;">💾 Lưu Khóa</button>
+                <input type="password" id="gemini_api_key_input_writing" placeholder="Dán Gemini API Key (AIzaSy...) vào đây" style="flex: 1; min-width: 220px; padding: 9px 12px; background: var(--input-bg); color: var(--text-main); border: 1px solid var(--border); border-radius: 8px; font-family: monospace; font-size: 0.88rem;">
+                <button type="button" class="btn-primary" onclick="saveGeminiApiKey('writing')" style="background: var(--success); color: #fff; padding: 9px 16px; border-radius: 8px; font-weight: 700;">💾 Lưu Khóa</button>
                 <button type="button" class="btn-secondary" onclick="clearGeminiApiKey()" style="padding: 9px 12px;">Xóa Khóa</button>
             </div>
         </div>
@@ -2026,29 +2067,29 @@
         <div class="practice-card">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
                 <b>1. Chọn câu hỏi luyện phản xạ:</b>
-                <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; margin: 0;">Tiêu chuẩn IELTS Part 1</span>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--success); margin: 0;">Tiêu chuẩn IELTS Part 1</span>
             </div>
-            <select id="speaking_question_select" style="width:100%; padding:11px; background:#0b1120; color:#fff; border:1.5px solid var(--border); border-radius:10px; font-size:0.95rem; font-weight:600;" onchange="updateSpeakingPrompt()">
+            <select id="speaking_question_select" style="width:100%; padding:11px; background: var(--input-bg); color: var(--text-main); border:1.5px solid var(--border); border-radius:10px; font-size:0.95rem; font-weight:600;" onchange="updateSpeakingPrompt()">
                 <option value="q1">Q1: Do you often buy products imported from other countries, or do you prefer local Vietnamese brands?</option>
                 <option value="q2">Q2: How has globalization changed the economy and lifestyle of people in your country over the past twenty years?</option>
                 <option value="q3">Q3: Why do some people worry that globalization will erode indigenous cultures, and how can countries prevent cultural homogenization?</option>
             </select>
-            <div id="speaking_guide" style="margin-top:12px; font-size:0.92rem; color:var(--primary); background:rgba(56, 189, 248, 0.08); padding:10px 14px; border-radius:8px; border-left:3px solid var(--primary);">
+            <div id="speaking_guide" style="margin-top:12px; font-size:0.92rem; color:var(--primary); background:var(--panel-bg); padding:10px 14px; border-radius:8px; border-left:3px solid var(--primary);">
 💡 <b>Gợi ý công thức 1+2:</b> Nêu thói quen kết hợp cả hai: mua đồ điện tử imported từ các multinational corporations + Ưu tiên thực phẩm và quần áo nội địa để ủng hộ kinh tế trong nước.
             </div>
             <div style="margin-top: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                <button type="button" class="mode-btn" style="background: rgba(16, 185, 129, 0.18); color: #34d399; border-color: rgba(16, 185, 129, 0.45); font-weight: 700; padding: 7px 14px;" onclick="playCurrentSpeakingSample()">
+                <button type="button" class="mode-btn" style="background: rgba(16, 185, 129, 0.18); color: var(--success); border-color: rgba(16, 185, 129, 0.45); font-weight: 700; padding: 7px 14px;" onclick="playCurrentSpeakingSample()">
                     🔊 Nghe Câu Trả Lời Mẫu (Band 7.5+)
                 </button>
                 <button type="button" class="mode-btn" style="padding: 7px 14px;" onclick="toggleSpeakingSampleBox()">
                     👁️ Xem / Ẩn Văn Bản Câu Mẫu (Shadowing)
                 </button>
             </div>
-            <div id="speaking_sample_preview_box" style="display: none; margin-top: 10px; background: #0b1120; border: 1px solid rgba(16, 185, 129, 0.4); border-radius: 10px; padding: 12px 14px; font-size: 0.92rem; color: #e2e8f0; line-height: 1.7;"></div>
+            <div id="speaking_sample_preview_box" style="display: none; margin-top: 10px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 0.92rem; color: var(--text-main); line-height: 1.7;"></div>
         </div>
 
         <!-- Real-Time Voice Recording & Acoustic Analysis Studio -->
-        <div class="practice-card" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(56, 189, 248, 0.35); border-radius: 16px; padding: 24px;">
+        <div class="practice-card" style="background: var(--surface-color); border: 1.5px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--card-shadow);">
             <div style="text-align: center; margin-bottom: 16px;">
                 <div style="display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center;">
                     <button id="mic_toggle_btn" class="mic-btn" onclick="toggleSpeechRecordingSession()">
@@ -2064,25 +2105,25 @@
             </div>
 
             <!-- Live Audio Waveform Canvas Visualizer -->
-            <div style="background: #0b1120; border-radius: 12px; border: 1px solid var(--border); padding: 12px; margin-bottom: 16px; text-align: center;">
+            <div style="background: var(--panel-bg); border-radius: 12px; border: 1px solid var(--border); padding: 12px; margin-bottom: 16px; text-align: center;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; padding: 0 4px;">
                     <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">📊 Biểu Đồ Sóng Âm Thanh Thực Tế (Acoustic Waveform Visualizer):</span>
                     <span id="volume_indicator" style="font-size: 0.8rem; font-weight: 700; color: #34d399;">Cường độ: 0%</span>
                 </div>
-                <canvas id="waveform_canvas" width="800" height="90" style="width: 100%; height: 90px; background: #070d19; border-radius: 8px;"></canvas>
+                <canvas id="waveform_canvas" width="800" height="90" style="width: 100%; height: 90px; background: var(--input-bg); border-radius: 8px; border: 1px solid var(--border);"></canvas>
             </div>
 
             <!-- Real Acoustic Parameters Dashboard -->
             <div id="acoustic_metrics_bar" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 16px;">
-                <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); border-radius: 10px; padding: 12px; text-align: center;">
+                <div style="background: var(--panel-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 12px; text-align: center;">
                     <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">⏱️ Thời Gian Nói Thật:</div>
                     <div id="stat_speech_time" style="font-size: 1.25rem; font-weight: 700; color: var(--primary);">0.0s</div>
                 </div>
-                <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); border-radius: 10px; padding: 12px; text-align: center;">
+                <div style="background: var(--panel-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 12px; text-align: center;">
                     <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">⏸️ Số Khoảng Dừng (Pauses):</div>
                     <div id="stat_pause_count" style="font-size: 1.25rem; font-weight: 700; color: #f59e0b;">0 lần</div>
                 </div>
-                <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); border-radius: 10px; padding: 12px; text-align: center;">
+                <div style="background: var(--panel-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 12px; text-align: center;">
                     <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">📈 Tỷ Lệ Trôi Chảy (Fluency Ratio):</div>
                     <div id="stat_fluency_ratio" style="font-size: 1.25rem; font-weight: 700; color: #34d399;">0%</div>
                 </div>
@@ -2100,7 +2141,7 @@
             </div>
 
             <!-- Recorded Audio Playback -->
-            <div id="recorded_audio_playback_container" style="display: none; background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); border-radius: 10px; padding: 12px; margin-bottom: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <div id="recorded_audio_playback_container" style="display: none; background: var(--panel-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 12px; margin-bottom: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
                 <span style="font-size: 0.85rem; color: var(--text-muted);">🎧 Nghe lại giọng bạn vừa thu:</span>
                 <audio id="recorded_audio_playback" controls style="height: 38px; outline: none;"></audio>
             </div>
@@ -2113,7 +2154,7 @@
                 <button type="button" class="btn-primary" style="background: linear-gradient(135deg, #a855f7, #6366f1); color: #fff; font-size: 0.94rem; padding: 11px 20px; border-radius: 10px; font-weight: 700;" onclick="evaluateSpeakingWithGeminiAI()">
                     🤖 Chấm Sâu Bằng AI Giám Khảo (Gemini)
                 </button>
-                <button type="button" class="btn-secondary" style="border-color: rgba(56, 189, 248, 0.45); color: #7dd3fc; padding: 10px 16px;" onclick="copyExaminerPrompt('speaking')">
+                <button type="button" class="btn-secondary" style="border-color: rgba(56, 189, 248, 0.45); color: var(--primary); padding: 10px 16px;" onclick="copyExaminerPrompt('speaking')">
                     📋 Copy Lệnh Chấm Cho AI Coach
                 </button>
                 <button type="button" class="btn-secondary" style="font-size: 0.82rem; padding: 10px 12px;" onclick="toggleGeminiApiKeyPanel('speaking')">
@@ -2122,13 +2163,13 @@
             </div>
 
             <!-- Gemini API Key Setup Panel (Speaking) -->
-            <div id="gemini_key_panel_speaking" style="display: none; margin-top: 14px; background: rgba(11, 17, 32, 0.95); border: 1.5px solid rgba(168, 85, 247, 0.45); border-radius: 12px; padding: 14px 16px; text-align: left;">
+            <div id="gemini_key_panel_speaking" style="display: none; margin-top: 14px; background: var(--surface-color); border: 1.5px solid var(--border); border-radius: 12px; padding: 14px 16px; text-align: left; box-shadow: var(--card-shadow);">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
-                    <b style="color: #c084fc; font-size: 0.92rem;">🔑 Cấu Hình Google Gemini API Key (Dùng Chung Cho Cả 30 Units):</b>
-                    <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" style="font-size: 0.8rem; color: #38bdf8; text-decoration: underline;">👉 Lấy API Key miễn phí tại Google AI Studio ↗</a>
+                    <b style="color: var(--primary); font-size: 0.92rem;">🔑 Cấu Hình Google Gemini API Key (Dùng Chung Cho Cả 30 Units):</b>
+                    <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--accent); text-decoration: underline;">👉 Lấy API Key miễn phí tại Google AI Studio ↗</a>
                 </div>
                 <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                    <input type="password" id="gemini_api_key_input_speaking" placeholder="Dán Gemini API Key (AIzaSy...) vào đây" style="flex: 1; min-width: 220px; padding: 9px 12px; background: #070d19; color: #fff; border: 1px solid var(--border); border-radius: 8px; font-family: monospace; font-size: 0.88rem;">
+                    <input type="password" id="gemini_api_key_input_speaking" placeholder="Dán Gemini API Key (AIzaSy...) vào đây" style="flex: 1; min-width: 220px; padding: 9px 12px; background: var(--input-bg); color: var(--text-main); border: 1px solid var(--border); border-radius: 8px; font-family: monospace; font-size: 0.88rem;">
                     <button type="button" class="btn-primary" onclick="saveGeminiApiKey('speaking')" style="background: #10b981; color: #0b1120; padding: 9px 16px; border-radius: 8px; font-weight: 700;">💾 Lưu Khóa</button>
                     <button type="button" class="btn-secondary" onclick="clearGeminiApiKey()" style="padding: 9px 12px;">Xóa Khóa</button>
                 </div>
@@ -3532,46 +3573,46 @@ function evaluateWriting() {
     let diagnoseHtml = "";
     if (diag.foundErrors.length > 0 || diag.foundBasic.length > 0) {
         const errorCards = diag.foundErrors.map((e, idx) => `
-            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(244, 63, 94, 0.4); border-left: 4px solid #f43f5e; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px;">
-                <div style="font-weight: 700; color: #fb7185; margin-bottom: 4px;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); border-left: 4px solid #f43f5e; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; color: var(--text-main);">
+                <div style="font-weight: 700; color: #e11d48; margin-bottom: 4px;">
                     🔴 [Lỗi #${idx + 1} - ${e.category}] ${e.title}
                 </div>
                 <div style="font-size: 0.88rem; margin-bottom: 4px;">
-                    <b>1. Diagnose (Trích dẫn bài làm):</b> <code style="background:rgba(244,63,94,0.18); color:#fda4af; padding:2px 6px; border-radius:4px;">"${escapeHtmlSafe(e.matchedText)}"</code>
+                    <b>1. Diagnose (Trích dẫn bài làm):</b> <code style="background:rgba(244,63,94,0.15); color:#e11d48; padding:2px 6px; border-radius:4px; font-weight:600;">"${escapeHtmlSafe(e.matchedText)}"</code>
                 </div>
-                <div style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 4px;">
+                <div style="font-size: 0.88rem; color: var(--text-main); margin-bottom: 4px;">
                     <b>2. Explain (Giải thích khảo thí):</b> ${e.explain}
                 </div>
-                <div style="font-size: 0.88rem; color: #34d399;">
+                <div style="font-size: 0.88rem; color: var(--success); font-weight:600;">
                     <b>3. Upgrade (Nâng cấp chuẩn Cambridge):</b> ${e.upgrade}
                 </div>
             </div>
         `).join("");
 
         const lexicalCards = diag.foundBasic.map(b => `
-            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(245, 158, 11, 0.4); border-left: 4px solid #f59e0b; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px;">
-                <div style="font-weight: 700; color: #fbbf24; margin-bottom: 4px;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); border-left: 4px solid #f59e0b; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; color: var(--text-main);">
+                <div style="font-weight: 700; color: #b45309; margin-bottom: 4px;">
                     🟡 [Nâng cấp Từ vựng LR] Cụm từ sơ cấp A1/A2: "${b.basic}"
                 </div>
-                <div style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 4px;">
+                <div style="font-size: 0.88rem; color: var(--text-main); margin-bottom: 4px;">
                     <b>Giải thích:</b> ${b.note}
                 </div>
-                <div style="font-size: 0.88rem; color: #34d399;">
-                    <b>➔ Nâng cấp lên Band 7.5 - 8.5 (C1/C2):</b> <code style="background:rgba(16,185,129,0.15); color:#6ee7b7; padding:2px 6px; border-radius:4px;">${b.c1}</code>
+                <div style="font-size: 0.88rem; color: var(--success); font-weight:600;">
+                    <b>➔ Nâng cấp lên Band 7.5 - 8.5 (C1/C2):</b> <code style="background:rgba(16,185,129,0.15); color:var(--success); padding:2px 6px; border-radius:4px; font-weight:700;">${b.c1}</code>
                 </div>
             </div>
         `).join("");
 
         diagnoseHtml = `
             <div style="margin-bottom: 18px;">
-                <h4 style="color: #fb7185; font-size: 1.02rem; margin-bottom: 10px;">🛠️ Chữa Bài Chi Tiết Theo 3 Bước (Diagnose ➔ Explain ➔ Upgrade):</h4>
+                <h4 style="color: #e11d48; font-size: 1.02rem; margin-bottom: 10px;">🛠️ Chữa Bài Chi Tiết Theo 3 Bước (Diagnose ➔ Explain ➔ Upgrade):</h4>
                 ${errorCards}
                 ${lexicalCards}
             </div>
         `;
     } else {
         diagnoseHtml = `
-            <div style="margin-bottom: 18px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 10px; padding: 12px 16px; color: #6ee7b7;">
+            <div style="margin-bottom: 18px; background: rgba(16, 185, 129, 0.12); border: 1.5px solid rgba(16, 185, 129, 0.35); border-radius: 10px; padding: 12px 16px; color: var(--success);">
                 ✓ <b>Tốt lắm!</b> Bộ quét 48+ quy tắc ngữ pháp & Vietlish không phát hiện lỗi sai cấu trúc cơ bản trong đoạn văn của bạn. Bạn có thể bấm nút <b>"🤖 Chấm Sâu Bằng AI Giám Khảo (Gemini)"</b> để chấm sâu thêm về mặt logic lập luận và nâng cấp từng câu lên Band 8.5+!
             </div>
         `;
@@ -3585,44 +3626,44 @@ function evaluateWriting() {
 
         <!-- 4 CAMBRIDGE CRITERIA BREAKDOWN -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 10px; margin-bottom: 16px;">
-            <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">1. Task Response (TR)</div>
                 <div style="font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-top: 4px;">Band ${trScore.toFixed(1)}</div>
                 <div style="font-size: 0.74rem; color: var(--text-muted);">${count}/${target} từ • ${sentenceCount} câu</div>
             </div>
-            <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">2. Coherence (CC)</div>
-                <div style="font-size: 1.3rem; font-weight: 800; color: #34d399; margin-top: 4px;">Band ${ccScore.toFixed(1)}</div>
+                <div style="font-size: 1.3rem; font-weight: 800; color: var(--success); margin-top: 4px;">Band ${ccScore.toFixed(1)}</div>
                 <div style="font-size: 0.74rem; color: var(--text-muted);">${usedAdvConn.length} từ nối B2/C1</div>
             </div>
-            <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">3. Lexical Resource (LR)</div>
-                <div style="font-size: 1.3rem; font-weight: 800; color: #f59e0b; margin-top: 4px;">Band ${lrScore.toFixed(1)}</div>
+                <div style="font-size: 1.3rem; font-weight: 800; color: #b45309; margin-top: 4px;">Band ${lrScore.toFixed(1)}</div>
                 <div style="font-size: 0.74rem; color: var(--text-muted);">${foundVocab.length}/15 từ Unit • C1 ${academicPct}%</div>
             </div>
-            <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">4. Grammar (GRA)</div>
-                <div style="font-size: 1.3rem; font-weight: 800; color: #a78bfa; margin-top: 4px;">Band ${graScore.toFixed(1)}</div>
+                <div style="font-size: 1.3rem; font-weight: 800; color: var(--accent); margin-top: 4px;">Band ${graScore.toFixed(1)}</div>
                 <div style="font-size: 0.74rem; color: var(--text-muted);">${totalErrorCount} lỗi phát hiện</div>
             </div>
         </div>
 
         <!-- ANNOTATED STUDENT ESSAY HIGHLIGHT VIEW -->
-        <div style="background: #0b1120; border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px;">
-                <b style="color: #f8fafc; font-size: 0.94rem;">🖍️ Bài Viết Của Bạn (Đã Tô Màu Phân Tích Tự Động):</b>
+        <div style="background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+                <b style="color: var(--primary); font-size: 0.94rem;">🖍️ Bài Viết Của Bạn (Đã Tô Màu Phân Tích Tự Động):</b>
                 <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.75rem;">
-                    <span style="background:rgba(16,185,129,0.22); color:#6ee7b7; padding:2px 8px; border-radius:4px;">🟩 Từ vựng Unit</span>
-                    <span style="background:rgba(56,189,248,0.2); color:#7dd3fc; padding:2px 8px; border-radius:4px;">🟦 Từ nối học thuật</span>
-                    <span style="background:rgba(245,158,11,0.2); color:#fcd34d; padding:2px 8px; border-radius:4px;">🟨 Từ sơ cấp A1/A2</span>
-                    <span style="background:rgba(244,63,94,0.22); color:#fda4af; padding:2px 8px; border-radius:4px;">🟥 Lỗi ngữ pháp/Vietlish</span>
+                    <span style="background:rgba(16,185,129,0.18); color:var(--success); padding:2px 8px; border-radius:4px; font-weight:600;">🟩 Từ vựng Unit</span>
+                    <span style="background:rgba(20,50,77,0.12); color:var(--primary); padding:2px 8px; border-radius:4px; font-weight:600;">🟦 Từ nối học thuật</span>
+                    <span style="background:rgba(245,158,11,0.18); color:#b45309; padding:2px 8px; border-radius:4px; font-weight:600;">🟨 Từ sơ cấp A1/A2</span>
+                    <span style="background:rgba(244,63,94,0.18); color:#e11d48; padding:2px 8px; border-radius:4px; font-weight:600;">🟥 Lỗi ngữ pháp/Vietlish</span>
                 </div>
             </div>
-            <div style="font-size: 0.98rem; line-height: 1.9; color: #e2e8f0;">${annotatedHtml}</div>
+            <div style="font-size: 0.98rem; line-height: 1.9; color: var(--text-main);">${annotatedHtml}</div>
         </div>
 
         <!-- CRITERIA SUMMARY NOTES -->
-        <div style="margin-bottom: 16px; background: rgba(15, 23, 42, 0.75); padding: 14px 16px; border-radius: 10px; border-left: 3px solid var(--primary); font-size: 0.9rem; line-height: 1.7;">
+        <div style="margin-bottom: 16px; background: var(--panel-bg); padding: 14px 16px; border-radius: 10px; border-left: 3px solid var(--primary); font-size: 0.9rem; line-height: 1.7; color: var(--text-main); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
             <b style="color: var(--primary);">📋 Nhận Xét Nghiêm Ngặt Theo 4 Tiêu Chí Khảo Thí Cambridge:</b>
             <div style="margin-top: 6px;">
                 ${[...trNotes, ...ccNotes, ...lrNotes, ...graNotes].join('<br>')}
@@ -3633,32 +3674,32 @@ function evaluateWriting() {
         ${diagnoseHtml}
 
         <!-- BENCHMARK MODEL ESSAY CARD -->
-        <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(56, 189, 248, 0.35); border-radius: 14px; padding: 22px; margin-top: 18px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 10px;">
+        <div style="background: var(--surface-color); border: 1.5px solid var(--border); border-radius: 14px; padding: 22px; margin-top: 18px; box-shadow: var(--card-shadow); color: var(--text-main);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
                 <div>
-                    <h4 style="color: #38bdf8; font-size: 1.15rem; margin-bottom: 2px;">🏆 Bài Viết Mẫu Đạt Chuẩn (Benchmark Model Paragraph)</h4>
+                    <h4 style="color: var(--primary); font-size: 1.15rem; margin-bottom: 2px;">🏆 Bài Viết Mẫu Đạt Chuẩn (Benchmark Model Paragraph)</h4>
                     <span style="font-size: 0.82rem; color: var(--text-muted);">Độ dài: ${writingConfig.modelEssay.split(/\s+/).length} từ • Chuẩn Học Thuật Cambridge Band 8.0+</span>
                 </div>
-                <button class="btn-primary" style="background: var(--primary); color: #0b1120; font-size: 0.88rem; padding: 8px 16px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;" onclick="speakModelEssay()">
+                <button class="btn-primary" style="background: var(--primary); color: var(--tab-active-color); font-size: 0.88rem; padding: 8px 16px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;" onclick="speakModelEssay()">
                     🔊 Nghe Giọng Đọc Mẫu
                 </button>
             </div>
 
             <!-- Model Content -->
-            <div style="background: #0b1120; border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 14px; font-size: 1rem; line-height: 1.8; color: #f1f5f9;">
+            <div style="background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 14px; font-size: 1rem; line-height: 1.8; color: var(--text-main);">
                 "${writingConfig.modelEssay}"
             </div>
 
             <!-- Analysis -->
-            <div style="background: rgba(11, 17, 32, 0.7); border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.88rem; line-height: 1.6;">
-                <b style="color: #f59e0b;">🔍 Phân Tích Kỹ Thuật Đạt Điểm Cao:</b>
-                <ul style="margin-top: 6px; margin-left: 20px; color: #cbd5e1;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.88rem; line-height: 1.6; color: var(--text-main);">
+                <b style="color: var(--accent);">🔍 Phân Tích Kỹ Thuật Đạt Điểm Cao:</b>
+                <ul style="margin-top: 6px; margin-left: 20px; color: var(--text-main);">
                     ${writingConfig.modelAnalysis.map(a => `<li>${a}</li>`).join('')}
                 </ul>
             </div>
 
             <!-- Vietnamese Translation -->
-            <div style="font-size: 0.88rem; color: var(--text-muted); background: rgba(15, 23, 42, 0.5); padding: 12px 14px; border-radius: 8px; border-left: 3px solid var(--border);">
+            <div style="font-size: 0.88rem; color: var(--text-muted); background: var(--panel-bg); padding: 12px 14px; border-radius: 8px; border-left: 3px solid var(--border); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
                 <b>Dịch nghĩa tham khảo:</b> <i>"${writingConfig.modelTranslation}"</i>
             </div>
         </div>
@@ -3848,10 +3889,15 @@ function drawAcousticWaveform() {
     const dataArray = new Uint8Array(bufferLength);
 
     function renderWave() {
+        const isPaper = document.documentElement.getAttribute('data-theme') === 'paper';
+        const canvasBg = isPaper ? '#fdfbf7' : '#070d19';
+        const waveColor = isPaper ? '#14324d' : '#38bdf8';
+        const gridColor = isPaper ? 'rgba(20, 50, 77, 0.15)' : 'rgba(56, 189, 248, 0.3)';
+
         if (!isRecordingSession) {
-            ctx.fillStyle = '#070d19';
+            ctx.fillStyle = canvasBg;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.strokeStyle = 'rgba(56, 189, 248, 0.3)';
+            ctx.strokeStyle = gridColor;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(0, canvas.height / 2);
@@ -3895,12 +3941,12 @@ function drawAcousticWaveform() {
             ratioEl.innerText = `${ratio}%`;
         }
 
-        ctx.fillStyle = '#070d19';
+        ctx.fillStyle = canvasBg;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.lineWidth = 2.5;
-        ctx.strokeStyle = '#38bdf8';
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#38bdf8';
+        ctx.strokeStyle = waveColor;
+        ctx.shadowBlur = isPaper ? 2 : 10;
+        ctx.shadowColor = waveColor;
         ctx.beginPath();
 
         const sliceWidth = canvas.width / bufferLength;
@@ -4160,26 +4206,26 @@ function evaluateSpeakingComprehensive() {
             : `<span style="background:rgba(245,158,11,0.18); color:#fbbf24; padding:2px 8px; border-radius:999px; font-size:0.75rem;">Cần luyện thêm</span>`;
         return `
             <tr>
-                <td><b style="color:#fff;">${s.word}</b> ${statusPill}</td>
-                <td style="color:#38bdf8; font-family:monospace;">${s.sound}</td>
-                <td style="color:#cbd5e1; font-size:0.84rem;">${s.note}</td>
+                <td><b style="color:var(--text-main);">${s.word}</b> ${statusPill}</td>
+                <td style="color:var(--accent); font-family:monospace; font-weight:600;">${s.sound}</td>
+                <td style="color:var(--text-muted); font-size:0.84rem;">${s.note}</td>
                 <td><button type="button" class="mode-btn" style="padding:4px 10px;" onclick="playWordAudio('${s.word}', this)">🔊 Nghe</button></td>
             </tr>
         `;
     }).join("");
 
     const sampleAnswerHtml = currentQ.sample_answer ? `
-        <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(16, 185, 129, 0.4); border-radius: 14px; padding: 18px; margin-top: 16px;">
+        <div style="background: var(--surface-color); border: 1.5px solid var(--border); border-radius: 14px; padding: 18px; margin-top: 16px; box-shadow: var(--card-shadow); color: var(--text-main);">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
                 <div>
-                    <h4 style="color: #34d399; font-size: 1.05rem; margin-bottom: 2px;">🏆 Câu Trả Lời Mẫu Chuẩn IELTS (Band 7.5+ Benchmark)</h4>
+                    <h4 style="color: var(--success); font-size: 1.05rem; margin-bottom: 2px;">🏆 Câu Trả Lời Mẫu Chuẩn IELTS (Band 7.5+ Benchmark)</h4>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">${escapeHtmlSafe(currentQ.text || '')}</span>
                 </div>
-                <button type="button" class="btn-primary" style="background: #10b981; color: #0b1120; font-size: 0.85rem; padding: 8px 14px; border-radius: 8px;" onclick="playCurrentSpeakingSample()">
+                <button type="button" class="btn-primary" style="background: var(--success); color: #fff; font-size: 0.85rem; padding: 8px 14px; border-radius: 8px;" onclick="playCurrentSpeakingSample()">
                     🔊 Nghe Giọng Đọc Mẫu Anh-Anh
                 </button>
             </div>
-            <div style="background: #0b1120; border: 1px solid var(--border); border-radius: 10px; padding: 14px; font-size: 0.96rem; line-height: 1.8; color: #f1f5f9;">
+            <div style="background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 14px; font-size: 0.96rem; line-height: 1.8; color: var(--text-main);">
                 "${escapeHtmlSafe(currentQ.sample_answer)}"
             </div>
         </div>
@@ -4192,36 +4238,36 @@ function evaluateSpeakingComprehensive() {
         ${capBannerSpeakingHtml}
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 18px;">
-            <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <span style="font-size:0.76rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">1. Fluency (FC)</span>
                 <div style="font-size:1.25rem; font-weight:800; color:var(--primary); margin-top:4px;">Band ${fluencyScore.toFixed(1)}</div>
                 <div style="font-size:0.74rem; color:var(--text-muted);">${wordCount} từ • ${wpm} WPM</div>
             </div>
-            <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <span style="font-size:0.76rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">2. Pronunciation (PR)</span>
-                <div style="font-size:1.25rem; font-weight:800; color:#34d399; margin-top:4px;">Band ${pronunciationScore.toFixed(1)}</div>
+                <div style="font-size:1.25rem; font-weight:800; color:var(--success); margin-top:4px;">Band ${pronunciationScore.toFixed(1)}</div>
                 <div style="font-size:0.74rem; color:var(--text-muted);">${matchedSounds.length}/${sounds.length} từ trọng âm</div>
             </div>
-            <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <span style="font-size:0.76rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">3. Lexical (LR)</span>
-                <div style="font-size:1.25rem; font-weight:800; color:#f59e0b; margin-top:4px;">Band ${lexicalScore.toFixed(1)}</div>
+                <div style="font-size:1.25rem; font-weight:800; color:#b45309; margin-top:4px;">Band ${lexicalScore.toFixed(1)}</div>
                 <div style="font-size:0.74rem; color:var(--text-muted);">${foundLex.length}/15 từ vựng Unit</div>
             </div>
-            <div style="background: rgba(11, 17, 32, 0.8); border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
+            <div style="background: var(--panel-bg); border: 1.5px solid var(--border); padding: 12px; border-radius: 10px; text-align: center;">
                 <span style="font-size:0.76rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">4. Grammar (GRA)</span>
-                <div style="font-size:1.25rem; font-weight:800; color:#a78bfa; margin-top:4px;">Band ${grammarScore.toFixed(1)}</div>
+                <div style="font-size:1.25rem; font-weight:800; color:var(--accent); margin-top:4px;">Band ${grammarScore.toFixed(1)}</div>
                 <div style="font-size:0.74rem; color:var(--text-muted);">${totalErrorCount} lỗi ngữ pháp</div>
             </div>
         </div>
 
-        <div style="margin-bottom: 14px; background: rgba(11, 17, 32, 0.65); padding: 14px; border-radius: 10px; border-left: 3px solid var(--primary);">
+        <div style="margin-bottom: 14px; background: var(--panel-bg); padding: 14px; border-radius: 10px; border-left: 3px solid var(--primary); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); color: var(--text-main);">
             <b style="color:var(--primary);">🎙️ Phân Tích Nghiêm Ngặt Độ Lưu Loát, Từ Vựng & Ngữ Pháp Khi Nói:</b>
             <div style="margin-top:6px; line-height:1.7;">
                 ${[...fluencyFeedback, ...lexicalFeedback, ...grammarFeedback].join('<br>')}
             </div>
         </div>
 
-        <div style="margin-bottom: 14px; background: rgba(11, 17, 32, 0.65); padding: 14px; border-radius: 10px; border-left: 3px solid #34d399;">
+        <div style="margin-bottom: 14px; background: var(--panel-bg); padding: 14px; border-radius: 10px; border-left: 3px solid var(--success); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); color: var(--text-main);">
             <b style="color:#34d399;">🗣️ Bảng Chẩn Đoán Trọng Âm IPA & Luyện Phát Âm Trực Tiếp:</b>
             <div style="margin-top:6px; margin-bottom:10px;">${pronunciationFeedback.join('<br>')}</div>
             <div class="table-responsive">
