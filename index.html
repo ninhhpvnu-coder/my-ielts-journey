@@ -934,7 +934,7 @@ function renderUnitCards(unitsProgress) {
             actionBtn = `<a href="${u.file}" class="btn-launch" style="background: linear-gradient(135deg, #10b981, #059669);">🚀 Bắt Đầu Học Unit ${u.id} →</a>`;
         }
 
-        return `
+        const unitCardHtml = `
             <div class="unit-card">
                 <div>
                     <div class="unit-top">
@@ -962,6 +962,56 @@ function renderUnitCards(unitsProgress) {
                 </div>
             </div>
         `;
+
+        if (u.id === "05") {
+            let rData = null;
+            try {
+                const rawR = localStorage.getItem("ielts_review_test_01");
+                if (rawR) rData = JSON.parse(rawR);
+            } catch(e) {}
+
+            let rStatusText = "Chưa làm bài";
+            let rStatusStyle = "background: rgba(245,158,11,0.15); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3);";
+            let rScoreDisplay = "Chưa có điểm";
+            let rBtnText = "🏆 Bắt Đầu Review Test 1 (60 Phút) →";
+
+            if (rData && rData.total_score !== undefined) {
+                rStatusText = "✓ Đã hoàn thành";
+                rStatusStyle = "background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4);";
+                rScoreDisplay = `${rData.total_score}/100 Điểm (${rData.band || "Band 4.5"})`;
+                rBtnText = "🔄 Xem Lại Báo Cáo / Làm Lại Test 1 →";
+            }
+
+            const reviewCardHtml = `
+            <div class="unit-card" style="border: 2px solid var(--accent); background: linear-gradient(135deg, var(--surface-color), rgba(163, 93, 43, 0.05)); box-shadow: 0 6px 24px rgba(163, 93, 43, 0.12);">
+                <div>
+                    <div class="unit-top">
+                        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                            <span style="font-size: 0.72rem; font-weight: 800; background: rgba(217, 119, 6, 0.15); color: #d97706; border: 1px solid rgba(217, 119, 6, 0.4); padding: 3px 8px; border-radius: 999px;">🏆 MILESTONE ASSESSMENT 1</span>
+                        </div>
+                        <span class="unit-status-pill" style="${rStatusStyle}">${rStatusText}</span>
+                    </div>
+                    <div class="unit-title" style="color: var(--accent);">🎯 Review Test 1: Milestone Checkpoint (Units 1 - 5)</div>
+                    <p class="unit-desc">Bài khảo thí toàn diện 65 câu hỏi: 75 Từ vựng + 5 Chủ điểm Ngữ pháp + 4 Kỹ năng Nghe, Đọc, Viết, Nói sau khi hoàn tất 5 bài học đầu tiên.</p>
+                    <div style="font-size: 0.78rem; color: var(--accent); margin-bottom: 14px; background: rgba(163, 93, 43, 0.08); padding: 6px 10px; border-radius: 8px; border: 1px dashed rgba(163, 93, 43, 0.3);">
+                        <b>Phạm vi khảo thí:</b> <i>Đời sống học thuật, Môi trường, Sức khỏe thể chất & Công nghệ tương lai</i>
+                    </div>
+                </div>
+                <div>
+                    <div class="unit-scores-bar" style="grid-template-columns: 1fr; text-align: center; background: rgba(163, 93, 43, 0.06); padding: 8px 12px;">
+                        <div class="score-mini">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Kết Quả Khảo Thí Cột Mốc 1</span>
+                            <b style="font-size: 0.95rem; color: var(--accent);">${rScoreDisplay}</b>
+                        </div>
+                    </div>
+                    <a href="review_01_interactive_test.html" class="btn-launch" style="background: linear-gradient(135deg, #d97706, #b45309); font-weight: 800;">${rBtnText}</a>
+                </div>
+            </div>
+            `;
+            return unitCardHtml + reviewCardHtml;
+        }
+
+        return unitCardHtml;
     });
 
     container.innerHTML = cardsHtml.join("");
