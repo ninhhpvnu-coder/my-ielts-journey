@@ -158,44 +158,44 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Coral reefs form a delicate marine ________ that provides food and shelter for sea life.",
-        "opts": ["ecosystem", "emission", "deforestation", "pollution"],
-        "ans": 0,
+        "opts": ["emission", "ecosystem", "deforestation", "pollution"],
+        "ans": 1,
         "exp": "<b>ecosystem</b> (n): hệ sinh thái tự nhiên ('marine ecosystem' = hệ sinh thái biển)."
     },
     {
         "q": "2. Cutting down tropical forests causes many rare animals to lose their natural ________.",
-        "opts": ["climate", "habitat", "landscape", "emission"],
-        "ans": 1,
+        "opts": ["habitat", "climate", "landscape", "emission"],
+        "ans": 0,
         "exp": "<b>habitat</b> (n): môi trường cư trú tự nhiên của động thực vật ('natural habitat')."
     },
     {
         "q": "3. Wind, solar, and hydro power are examples of clean, ________ energy sources.",
-        "opts": ["urban", "contaminated", "renewable", "endangered"],
-        "ans": 2,
+        "opts": ["urban", "renewable", "contaminated", "endangered"],
+        "ans": 1,
         "exp": "<b>renewable</b> (adj): có thể tái tạo ('renewable energy' = năng lượng tái tạo)."
     },
     {
         "q": "4. Chemical waste from factories can seriously ________ the local drinking water supply.",
-        "opts": ["preserve", "recycle", "contaminate", "conserve"],
-        "ans": 2,
+        "opts": ["preserve", "contaminate", "recycle", "conserve"],
+        "ans": 1,
         "exp": "<b>contaminate</b> (v): làm nhiễm bẩn, nhiễm độc nguồn nước hoặc đất."
     },
     {
         "q": "5. Switching from private cars to electric trains helps cut greenhouse gas ________.",
-        "opts": ["emissions", "species", "habitats", "landscapes"],
-        "ans": 0,
+        "opts": ["species", "habitats", "landscapes", "emissions"],
+        "ans": 3,
         "exp": "<b>emissions</b> (n): lượng khí thải ('greenhouse gas / carbon emissions')."
     },
     {
         "q": "6. The Amazon rainforest is famous for its rich ________, with millions of plant and insect types.",
-        "opts": ["deforestation", "pollution", "biodiversity", "urbanisation"],
-        "ans": 2,
+        "opts": ["deforestation", "pollution", "urbanisation", "biodiversity"],
+        "ans": 3,
         "exp": "<b>biodiversity</b> (n): sự đa dạng sinh học."
     },
     {
         "q": "7. Local authorities launched a wildlife ________ program to protect sea turtles.",
-        "opts": ["conservation", "contamination", "emission", "pollution"],
-        "ans": 0,
+        "opts": ["contamination", "emission", "conservation", "pollution"],
+        "ans": 2,
         "exp": "<b>conservation</b> (n): công tác bảo tồn thiên nhiên hoang dã."
     },
     {
@@ -224,14 +224,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "12. Ha Long Bay attracts millions of tourists thanks to its stunning limestone ________.",
-        "opts": ["landscape", "emission", "pollution", "deforestation"],
-        "ans": 0,
+        "opts": ["emission", "pollution", "deforestation", "landscape"],
+        "ans": 3,
         "exp": "<b>landscape</b> (n): cảnh quan, phong cảnh thiên nhiên."
     },
     {
         "q": "13. Rising global temperatures are a clear warning sign of severe ________ change.",
-        "opts": ["habitat", "species", "climate", "urban"],
-        "ans": 2,
+        "opts": ["habitat", "species", "urban", "climate"],
+        "ans": 3,
         "exp": "<b>climate change</b>: biến đổi khí hậu toàn cầu."
     },
     {
@@ -242,20 +242,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "15. Heavy traffic congestion is the primary cause of severe air ________ in megacities.",
-        "opts": ["conservation", "pollution", "biodiversity", "landscape"],
-        "ans": 1,
+        "opts": ["conservation", "biodiversity", "landscape", "pollution"],
+        "ans": 3,
         "exp": "<b>air pollution</b>: sự ô nhiễm không khí."
     },
     {
         "q": "16. [Ôn tập Unit 1] Volunteering at the nature reserve gave students a valuable ________ to learn about botany.",
-        "opts": ["routine", "opportunity", "deadline", "lecture"],
-        "ans": 1,
+        "opts": ["routine", "deadline", "opportunity", "lecture"],
+        "ans": 2,
         "exp": "<b>opportunity</b> (n - Unit 1): cơ hội quý giá."
     },
     {
         "q": "17. [Ôn tập Unit 1] Using cloth bags instead of plastic is a simple ________ habit.",
-        "opts": ["sustainable", "academic", "urban", "endangered"],
-        "ans": 0,
+        "opts": ["academic", "urban", "sustainable", "endangered"],
+        "ans": 2,
         "exp": "<b>sustainable</b> (adj - Unit 1): bền vững, thân thiện với môi trường."
     },
     {
@@ -272,8 +272,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "20. [Ôn tập Unit 2] We must submit our environmental research ________ before Friday's deadline.",
-        "opts": ["assignment", "institution", "species", "citizen"],
-        "ans": 0,
+        "opts": ["institution", "species", "assignment", "citizen"],
+        "ans": 2,
         "exp": "<b>assignment</b> (n - Unit 2): bài tập lớn, nhiệm vụ học thuật."
     }
 ]
@@ -281,62 +281,62 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Solar energy is much ________ for the environment than burning coal or oil.",
-        "opts": ["clean", "cleaner", "cleanest", "more clean"],
-        "ans": 1,
+        "opts": ["clean", "cleanest", "cleaner", "more clean"],
+        "ans": 2,
         "exp": "Có 'than' và trạng từ nhấn mạnh 'much' -> Dùng so sánh hơn với tính từ ngắn: <b>cleaner</b>."
     },
     {
         "q": "2. The Amazon rainforest is ________ tropical ecosystem in the world.",
-        "opts": ["large", "larger", "the largest", "most large"],
-        "ans": 2,
+        "opts": ["the largest", "large", "larger", "most large"],
+        "ans": 0,
         "exp": "So sánh nhất trong phạm vi toàn thế giới ('in the world') -> <b>the largest</b>."
     },
     {
         "q": "3. Plastic waste is one of ________ threats to marine biodiversity today.",
-        "opts": ["serious", "more serious", "the most serious", "serioust"],
-        "ans": 2,
+        "opts": ["the most serious", "serious", "more serious", "serioust"],
+        "ans": 0,
         "exp": "Cấu trúc 'one of the + so sánh nhất + danh từ số nhiều' với tính từ dài 'serious' -> <b>the most serious</b>."
     },
     {
         "q": "4. Air quality in rural mountain villages is significantly ________ than in industrial urban centers.",
-        "opts": ["good", "better", "best", "more good"],
-        "ans": 1,
+        "opts": ["good", "best", "more good", "better"],
+        "ans": 3,
         "exp": "So sánh hơn bất quy tắc của 'good' là <b>better</b>."
     },
     {
         "q": "5. According to the park map, the Botanical Garden is located right ________ to the Visitor Center.",
-        "opts": ["opposite", "adjacent", "across", "between"],
-        "ans": 1,
+        "opts": ["adjacent", "opposite", "across", "between"],
+        "ans": 0,
         "exp": "Cụm giới từ chỉ vị trí: <b>adjacent to</b> = next to (nằm ngay sát bên cạnh)."
     },
     {
         "q": "6. Walk ________ the wooden bridge, and you will see the bird conservation area on your left.",
-        "opts": ["across", "between", "among", "opposite to"],
-        "ans": 0,
+        "opts": ["between", "across", "among", "opposite to"],
+        "ans": 1,
         "exp": "<b>walk across the bridge</b>: đi băng qua cây cầu."
     },
     {
         "q": "7. The more renewable energy we use, ________ carbon emissions we release into the atmosphere.",
-        "opts": ["the few", "the fewer", "the fewest", "less"],
-        "ans": 1,
+        "opts": ["the few", "the fewest", "less", "the fewer"],
+        "ans": 3,
         "exp": "Cấu trúc so sánh kép (Càng... càng...) với danh từ đếm được số nhiều 'emissions' -> <b>the fewer</b>."
     },
     {
         "q": "8. Protecting natural habitats is far ________ than trying to rebuild a destroyed ecosystem.",
-        "opts": ["effective", "more effective", "most effective", "the most effective"],
-        "ans": 1,
+        "opts": ["effective", "most effective", "more effective", "the most effective"],
+        "ans": 2,
         "exp": "Có 'far ... than' và tính từ dài 'effective' -> <b>more effective</b>."
     },
     {
         "q": "9. The recycling station is situated ________ the main entrance and the bicycle parking lot.",
-        "opts": ["between", "among", "next", "opposite"],
-        "ans": 0,
+        "opts": ["among", "between", "next", "opposite"],
+        "ans": 1,
         "exp": "Cấu trúc <b>between A and B</b>: nằm ở giữa hai địa điểm A và B."
     },
     {
         "q": "10. Last summer recorded ________ temperatures in our country's history due to climate change.",
-        "opts": ["hot", "hotter", "the hottest", "more hot"],
-        "ans": 2,
+        "opts": ["hot", "the hottest", "hotter", "more hot"],
+        "ans": 1,
         "exp": "So sánh nhất của tính từ ngắn 'hot' (gấp đôi phụ âm cuối) -> <b>the hottest</b>."
     }
 ]

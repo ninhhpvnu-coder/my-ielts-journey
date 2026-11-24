@@ -162,50 +162,50 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "2. Before flying to Japan, we planned a detailed seven-day travel ________.",
-        "opts": ["itinerary", "hospitality", "landmark", "exhaust"],
-        "ans": 0,
+        "opts": ["hospitality", "landmark", "itinerary", "exhaust"],
+        "ans": 2,
         "exp": "<b>travel itinerary</b>: lịch trình chuyến đi."
     },
     {
         "q": "3. Coral reefs are extremely ________ ecosystems that can easily be damaged by boat anchors.",
-        "opts": ["fragile", "punctual", "spacious", "nuclear"],
-        "ans": 0,
+        "opts": ["punctual", "spacious", "nuclear", "fragile"],
+        "ans": 3,
         "exp": "<b>fragile</b> (adj): mong manh, dễ bị tổn thương."
     },
     {
         "q": "4. Foreign travellers should learn about local ________ so they do not offend anyone.",
-        "opts": ["customs", "vehicles", "skyscrapers", "delays"],
-        "ans": 0,
+        "opts": ["vehicles", "customs", "skyscrapers", "delays"],
+        "ans": 1,
         "exp": "<b>local customs</b>: phong tục tập quán địa phương."
     },
     {
         "q": "5. From the top of the mountain, hikers enjoyed a ________ view of the emerald valley.",
-        "opts": ["spectacular", "sedentary", "adjacent", "automated"],
-        "ans": 0,
+        "opts": ["sedentary", "adjacent", "spectacular", "automated"],
+        "ans": 2,
         "exp": "<b>spectacular view/scenery</b>: khung cảnh hùng vĩ, ngoạn mục."
     },
     {
         "q": "6. Instead of eating at international fast-food chains, we tried ________ street food cooked by locals.",
-        "opts": ["authentic", "artificial", "virtual", "extended"],
-        "ans": 0,
+        "opts": ["artificial", "virtual", "extended", "authentic"],
+        "ans": 3,
         "exp": "<b>authentic</b> (adj): đích thực, chuẩn vị bản xứ."
     },
     {
         "q": "7. The villagers welcomed us into their homes with warm ________ and fresh herbal tea.",
-        "opts": ["hospitality", "congestion", "addiction", "conflict"],
-        "ans": 0,
+        "opts": ["congestion", "hospitality", "addiction", "conflict"],
+        "ans": 1,
         "exp": "<b>warm hospitality</b>: lòng hiếu khách nồng hậu."
     },
     {
         "q": "8. Authorities must ________ the number of cruise ships entering the bay each day.",
-        "opts": ["regulate", "demolish", "commute", "contaminate"],
-        "ans": 0,
+        "opts": ["demolish", "commute", "regulate", "contaminate"],
+        "ans": 2,
         "exp": "<b>regulate</b> (v): điều tiết, kiểm soát bằng quy định."
     },
     {
         "q": "9. We booked a half-day boat ________ to visit the floating fishing village.",
-        "opts": ["excursion", "infrastructure", "upbringing", "sibling"],
-        "ans": 0,
+        "opts": ["infrastructure", "upbringing", "sibling", "excursion"],
+        "ans": 3,
         "exp": "<b>boat excursion</b>: chuyến tham quan ngắn bằng thuyền."
     },
     {
@@ -216,8 +216,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "11. Empowering ________ people to work as eco-guides helps preserve their traditional forest knowledge.",
-        "opts": ["indigenous", "pedestrian", "artificial", "suburban"],
-        "ans": 0,
+        "opts": ["pedestrian", "indigenous", "artificial", "suburban"],
+        "ans": 1,
         "exp": "<b>indigenous people</b>: người dân bản địa."
     },
     {
@@ -228,32 +228,32 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "13. Big Ben and Tower Bridge are two of the most famous historic ________ in London.",
-        "opts": ["landmarks", "itineraries", "passengers", "cyclists"],
-        "ans": 0,
+        "opts": ["itineraries", "landmarks", "passengers", "cyclists"],
+        "ans": 1,
         "exp": "<b>historic landmarks</b>: các địa danh, công trình biểu tượng lịch sử."
     },
     {
         "q": "14. Kyoto is a wonderful cultural ________ for travellers who love ancient gardens and shrines.",
-        "opts": ["destination", "expedition", "congestion", "accommodation"],
-        "ans": 0,
+        "opts": ["expedition", "congestion", "destination", "accommodation"],
+        "ans": 2,
         "exp": "<b>tourist/cultural destination</b>: điểm đến du lịch văn hóa."
     },
     {
         "q": "15. A team of marine scientists joined a deep-sea ________ to map underwater volcanoes.",
-        "opts": ["expedition", "custom", "harmony", "household"],
-        "ans": 0,
+        "opts": ["custom", "harmony", "expedition", "household"],
+        "ans": 2,
         "exp": "<b>scientific expedition</b>: chuyến thám hiểm khoa học."
     },
     {
         "q": "16. [Ôn tập Unit 8] Improving the public bus ________ reduces traffic congestion in tourist cities.",
-        "opts": ["network", "souvenir", "sibling", "adolescence"],
-        "ans": 0,
+        "opts": ["souvenir", "sibling", "adolescence", "network"],
+        "ans": 3,
         "exp": "<b>bus network</b> (Unit 8): mạng lưới xe buýt."
     },
     {
         "q": "17. [Ôn tập Unit 7] Many historic castles have been ________ and opened to the public as museums.",
-        "opts": ["renovated", "subsidized", "automated", "commuted"],
-        "ans": 0,
+        "opts": ["subsidized", "automated", "commuted", "renovated"],
+        "ans": 3,
         "exp": "<b>renovated</b> (Unit 7): được trùng tu, cải tạo."
     },
     {
@@ -264,8 +264,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "19. [Ôn tập Unit 4] Walking twenty kilometres a day on a mountain trek requires good physical ________.",
-        "opts": ["stamina", "privacy", "cybersecurity", "conflict"],
-        "ans": 0,
+        "opts": ["privacy", "stamina", "cybersecurity", "conflict"],
+        "ans": 1,
         "exp": "<b>stamina</b> (Unit 4): sức bền thể lực."
     },
     {
@@ -285,8 +285,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "2. Visitors ________ climb on the ancient stone statues; it is strictly forbidden and carries a heavy fine.",
-        "opts": ["must not", "do not have to", "ought to", "should"],
-        "ans": 0,
+        "opts": ["do not have to", "ought to", "should", "must not"],
+        "ans": 3,
         "exp": "Chỉ sự cấm đoán tuyệt đối ('strictly forbidden') -> <b>must not</b>."
     },
     {
@@ -303,14 +303,14 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "5. Because the museum offers free audio guides, you ________ pay extra for a guidebook.",
-        "opts": ["must not", "do not have to", "must", "ought to"],
-        "ans": 1,
+        "opts": ["do not have to", "must not", "must", "ought to"],
+        "ans": 0,
         "exp": "Diễn tả sự việc không cần thiết ('free audio guides') -> <b>do not have to</b> (không cần phải)."
     },
     {
         "q": "6. Tourists should ________ respectful of indigenous customs when visiting remote mountain villages.",
-        "opts": ["be", "to be", "being", "been"],
-        "ans": 0,
+        "opts": ["to be", "being", "be", "been"],
+        "ans": 2,
         "exp": "Sau 'should' là động từ nguyên mẫu không 'to' -> <b>be</b> respectful."
     },
     {
@@ -321,14 +321,14 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "8. Before joining the jungle expedition, every participant ________ attend a thirty-minute safety briefing.",
-        "opts": ["has to", "have to", "ought", "should to"],
-        "ans": 0,
+        "opts": ["have to", "ought", "has to", "should to"],
+        "ans": 2,
         "exp": "Chủ ngữ số ít 'every participant' đi với <b>has to</b> + V-bare."
     },
     {
         "q": "9. Local crafts and authentic souvenirs ought to ________ in official cultural centres.",
-        "opts": ["promote", "be promoted", "promoting", "promoted"],
-        "ans": 1,
+        "opts": ["promote", "promoting", "promoted", "be promoted"],
+        "ans": 3,
         "exp": "Bị động với 'ought to': <code>ought to be + V3/ed</code> -> <b>be promoted</b>."
     },
     {

@@ -165,8 +165,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "2. Governments need to build more nursing homes and hospitals to care for the growing ________ population.",
-        "opts": ["elderly", "juvenile", "organic", "marine"],
-        "ans": 0,
+        "opts": ["juvenile", "organic", "elderly", "marine"],
+        "ans": 2,
         "exp": "<b>the elderly population</b>: nhóm dân số người cao tuổi."
     },
     {
@@ -183,26 +183,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "5. Many governments are raising the retirement age from 60 to 65 so that the state ________ fund does not run out of money.",
-        "opts": ["pension", "workforce", "segment", "quarter"],
-        "ans": 0,
+        "opts": ["workforce", "segment", "quarter", "pension"],
+        "ans": 3,
         "exp": "<b>state pension fund</b> (n): quỹ lương hưu nhà nước."
     },
     {
         "q": "6. A shrinking working-age ________ means factories and hospitals face severe labour shortages.",
-        "opts": ["workforce", "pension", "minority", "reservoir"],
-        "ans": 0,
+        "opts": ["pension", "minority", "workforce", "reservoir"],
+        "ans": 2,
         "exp": "<b>workforce</b> (n): lực lượng lao động."
     },
     {
         "q": "7. Rural-to-urban ________ has caused big cities to become overcrowded while countryside villages lose young workers.",
-        "opts": ["migration", "fertility", "expectancy", "desalination"],
-        "ans": 0,
+        "opts": ["fertility", "expectancy", "desalination", "migration"],
+        "ans": 3,
         "exp": "<b>rural-to-urban migration</b> (n): sự di cư từ nông thôn ra thành thị."
     },
     {
         "q": "8. At just 3%, renewable geothermal energy represented only a tiny ________ of total power consumption.",
-        "opts": ["fraction", "majority", "quarter", "burden"],
-        "ans": 0,
+        "opts": ["majority", "fraction", "quarter", "burden"],
+        "ans": 1,
         "exp": "<b>a tiny fraction of</b> (n): một phần rất nhỏ (2% - 5%)."
     },
     {
@@ -213,8 +213,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "10. Accounting for 78% of the total, the vast ________ of university students preferred hybrid learning.",
-        "opts": ["majority", "minority", "fraction", "quarter"],
-        "ans": 0,
+        "opts": ["minority", "majority", "fraction", "quarter"],
+        "ans": 1,
         "exp": "<b>the vast majority of</b>: đại đa số (75% - 85%)."
     },
     {
@@ -225,56 +225,56 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "12. At 25%, housing costs accounted for exactly a ________ of average household expenditure.",
-        "opts": ["quarter", "fraction", "majority", "segment"],
-        "ans": 0,
+        "opts": ["fraction", "quarter", "majority", "segment"],
+        "ans": 1,
         "exp": "<b>a quarter</b> (n): một phần tư (25%)."
     },
     {
         "q": "13. Demographers ________ that the global population will reach nearly ten billion by the year 2050.",
-        "opts": ["project", "shrink", "poach", "purify"],
-        "ans": 0,
+        "opts": ["shrink", "project", "poach", "purify"],
+        "ans": 1,
         "exp": "<b>project</b> (v): dự báo, ước tính trong tương lai."
     },
     {
         "q": "14. Due to low birth rates, the proportion of children under 15 is expected to ________ from 28% to 15%.",
-        "opts": ["shrink", "generate", "cultivate", "contaminate"],
-        "ans": 0,
+        "opts": ["generate", "cultivate", "shrink", "contaminate"],
+        "ans": 2,
         "exp": "<b>shrink</b> (v): thu hẹp lại, giảm xuống."
     },
     {
         "q": "15. Rising medical costs for chronic illnesses place a heavy financial ________ on young taxpayers.",
-        "opts": ["burden", "fraction", "quarter", "pension"],
-        "ans": 0,
+        "opts": ["fraction", "quarter", "pension", "burden"],
+        "ans": 3,
         "exp": "<b>place a heavy financial burden on</b>: đặt gánh nặng tài chính lớn lên..."
     },
     {
         "q": "16. [Ôn tập Unit 20] The table reveals a striking ________ in daily water consumption between Australia and India.",
-        "opts": ["disparity", "reservoir", "catastrophe", "pension"],
-        "ans": 0,
+        "opts": ["reservoir", "disparity", "catastrophe", "pension"],
+        "ans": 1,
         "exp": "<b>a striking disparity</b> (Unit 20): sự chênh lệch lớn."
     },
     {
         "q": "17. [Ôn tập Unit 19] Unless strict anti-poaching laws are enforced, many endangered species will face ________.",
-        "opts": ["extinction", "migration", "fertility", "irrigation"],
-        "ans": 0,
+        "opts": ["migration", "fertility", "irrigation", "extinction"],
+        "ans": 3,
         "exp": "<b>face extinction</b> (Unit 19): đối mặt với sự tuyệt chủng."
     },
     {
         "q": "18. [Ôn tập Unit 18] Biotechnologists modify crop genetics to boost agricultural ________ during severe droughts.",
-        "opts": ["yields", "turbines", "pensions", "verdicts"],
-        "ans": 0,
+        "opts": ["turbines", "pensions", "verdicts", "yields"],
+        "ans": 3,
         "exp": "<b>boost crop yields</b> (Unit 18): tăng năng suất cây trồng."
     },
     {
         "q": "19. [Ôn tập Unit 17] At the initial stage of the process, cold water is pumped underground and ________ intense heating.",
-        "opts": ["undergoes", "generates", "transmits", "shrinks"],
-        "ans": 0,
+        "opts": ["generates", "transmits", "undergoes", "shrinks"],
+        "ans": 2,
         "exp": "<b>undergo heating / treatment</b> (Unit 17): trải qua quá trình đun nóng."
     },
     {
         "q": "20. [Ôn tập Unit 16] Regular exercise and a healthy diet are the keys to disease prevention and ________.",
-        "opts": ["longevity", "captivity", "scarcity", "cybercrime"],
-        "ans": 0,
+        "opts": ["captivity", "scarcity", "longevity", "cybercrime"],
+        "ans": 2,
         "exp": "<b>longevity</b> (Unit 16): sự trường thọ, tuổi thọ cao."
     }
 ]
@@ -282,32 +282,32 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. By the year 2050, the proportion of elderly citizens ________ to rise from 14% to 26%.",
-        "opts": ["projects", "projected", "is projected", "has projected"],
-        "ans": 2,
+        "opts": ["projects", "projected", "has projected", "is projected"],
+        "ans": 3,
         "exp": "Cấu trúc dự báo tương lai (2050) trong Task 1: <code>is projected / forecast / expected to + V</code> -> <b>is projected</b>."
     },
     {
         "q": "2. At 25% of the total population, children under 14 accounted for exactly ________ of the pie chart in 2000.",
-        "opts": ["a third", "a quarter", "half", "three-quarters"],
-        "ans": 1,
+        "opts": ["a quarter", "a third", "half", "three-quarters"],
+        "ans": 0,
         "exp": "25% tương ứng với phân số <b>a quarter</b> (một phần tư)."
     },
     {
         "q": "3. Representing 66% of the population in 2025, working-age adults made up approximately ________ of the total.",
-        "opts": ["two-thirds", "one-third", "a quarter", "a tiny fraction"],
-        "ans": 0,
+        "opts": ["one-third", "a quarter", "two-thirds", "a tiny fraction"],
+        "ans": 2,
         "exp": "66% tương ứng với phân số <b>two-thirds</b> (hai phần ba)."
     },
     {
         "q": "4. Look at the verb tense for future year 2050: It is forecast that the youth segment ________ from 21% to 14% by 2050.",
-        "opts": ["shrank", "has shrunk", "will shrink", "is shrunk"],
-        "ans": 2,
+        "opts": ["will shrink", "shrank", "has shrunk", "is shrunk"],
+        "ans": 0,
         "exp": "Cấu trúc: <code>It is forecast that + S + will + V (nguyên mẫu)</code> -> <b>will shrink</b> (Lưu ý: shrink là nội động từ chủ động)."
     },
     {
         "q": "5. In 2025, people aged 15–64 and 65+ accounted for 66% and 13% of the total population ________.",
-        "opts": ["subsequently", "respectively", "notably", "initially"],
-        "ans": 1,
+        "opts": ["subsequently", "notably", "respectively", "initially"],
+        "ans": 2,
         "exp": "Trạng từ <b>respectively</b> (tương ứng lần lượt là) gán 2 con số cho 2 nhóm tuổi đứng trước."
     },
     {
@@ -318,14 +318,14 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "7. Only a tiny fraction of retirees (4%) lived in nursing homes, ________ the vast majority (96%) remained in their own homes.",
-        "opts": ["while", "despite", "moreover", "consequently"],
-        "ans": 0,
+        "opts": ["despite", "while", "moreover", "consequently"],
+        "ans": 1,
         "exp": "Liên từ <b>while</b> (= whereas: trong khi) nối 2 mệnh đề tương phản về tỷ lệ (4% vs 96%)."
     },
     {
         "q": "8. Note that 'the elderly' is plural: In many developed nations, the elderly ________ provided with free public healthcare.",
-        "opts": ["is", "are", "was", "has been"],
-        "ans": 1,
+        "opts": ["is", "was", "has been", "are"],
+        "ans": 3,
         "exp": "Cụm <code>the + Adjective</code> chỉ một nhóm người (<b>the elderly</b> = elderly people) luôn chia động từ số nhiều -> <b>are</b>."
     },
     {
@@ -336,8 +336,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "10. Working-age adults constituted the largest segment in 2025, ________ for nearly two-thirds (66%) of the population.",
-        "opts": ["account", "accounted", "accounting", "were accounting"],
-        "ans": 2,
+        "opts": ["account", "accounting", "accounted", "were accounting"],
+        "ans": 1,
         "exp": "Cụm phân từ hiện tại (<code>, accounting for + %</code>) bổ nghĩa cho mệnh đề trước để nêu số liệu mượt mà -> <b>accounting</b>."
     }
 ]

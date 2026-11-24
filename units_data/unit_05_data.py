@@ -163,14 +163,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "2. Modern car factories use smart robots to ________ repetitive manufacturing tasks.",
-        "opts": ["automate", "communicate", "addict", "prevent"],
-        "ans": 0,
+        "opts": ["communicate", "automate", "addict", "prevent"],
+        "ans": 1,
         "exp": "<b>automate</b> (v): tự động hóa các quy trình lặp đi lặp lại."
     },
     {
         "q": "3. High-speed internet has made university lectures easily ________ to students in remote villages.",
-        "opts": ["virtual", "accessible", "sedentary", "artificial"],
-        "ans": 1,
+        "opts": ["accessible", "virtual", "sedentary", "artificial"],
+        "ans": 0,
         "exp": "<b>accessible</b> (adj): dễ dàng tiếp cận, truy cập (đi với 'to')."
     },
     {
@@ -181,14 +181,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "5. Online banking requires strong ________ to protect customers from digital hackers.",
-        "opts": ["cybersecurity", "recreation", "biodiversity", "stamina"],
-        "ans": 0,
+        "opts": ["recreation", "cybersecurity", "biodiversity", "stamina"],
+        "ans": 1,
         "exp": "<b>cybersecurity</b> (n): an ninh mạng, bảo mật hệ thống số."
     },
     {
         "q": "6. Users should read terms carefully before sharing personal photos to protect their data ________.",
-        "opts": ["efficiency", "privacy", "platform", "device"],
-        "ans": 1,
+        "opts": ["efficiency", "platform", "device", "privacy"],
+        "ans": 3,
         "exp": "<b>privacy</b> (n): quyền riêng tư ('data privacy')."
     },
     {
@@ -205,20 +205,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "9. Turning off social media alerts helps workers stay focused and ________ throughout the morning.",
-        "opts": ["productive", "virtual", "artificial", "endangered"],
-        "ans": 0,
+        "opts": ["virtual", "artificial", "endangered", "productive"],
+        "ans": 3,
         "exp": "<b>productive</b> (adj): có năng suất cao, làm việc hiệu quả."
     },
     {
         "q": "10. During the pandemic, millions of students attended ________ classes from home via laptop.",
-        "opts": ["virtual", "balanced", "renewable", "urban"],
-        "ans": 0,
+        "opts": ["balanced", "renewable", "virtual", "urban"],
+        "ans": 2,
         "exp": "<b>virtual</b> (adj): ảo, trực tuyến qua mạng ('virtual classes/classroom')."
     },
     {
         "q": "11. Every student in our class uses a portable digital ________ such as a tablet or smartphone.",
-        "opts": ["device", "privacy", "breakthrough", "emission"],
-        "ans": 0,
+        "opts": ["privacy", "breakthrough", "device", "emission"],
+        "ans": 2,
         "exp": "<b>device</b> (n): thiết bị điện tử ('digital/mobile device')."
     },
     {
@@ -229,20 +229,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "13. Continuous technological ________ drives economic growth in the twenty-first century.",
-        "opts": ["innovation", "deforestation", "recreation", "stamina"],
-        "ans": 0,
+        "opts": ["deforestation", "recreation", "stamina", "innovation"],
+        "ans": 3,
         "exp": "<b>innovation</b> (n): sự đổi mới sáng tạo công nghệ."
     },
     {
         "q": "14. Coursera and edX are popular online learning ________ that offer university courses.",
-        "opts": ["platforms", "devices", "emissions", "species"],
-        "ans": 0,
+        "opts": ["devices", "emissions", "platforms", "species"],
+        "ans": 2,
         "exp": "<b>platforms</b> (n): các nền tảng trực tuyến ('online learning platforms')."
     },
     {
         "q": "15. In the coming decades, clean energy and smart software will ________ how we travel.",
-        "opts": ["transform", "contaminate", "consume", "recycle"],
-        "ans": 0,
+        "opts": ["contaminate", "consume", "recycle", "transform"],
+        "ans": 3,
         "exp": "<b>transform</b> (v): chuyển đổi, thay đổi toàn diện."
     },
     {
@@ -259,20 +259,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "18. [Ôn tập Unit 3] E-books and digital documents help save paper and halt ________.",
-        "opts": ["deforestation", "biodiversity", "cybersecurity", "stamina"],
-        "ans": 0,
+        "opts": ["biodiversity", "cybersecurity", "deforestation", "stamina"],
+        "ans": 2,
         "exp": "<b>deforestation</b> (n - Unit 3): nạn phá rừng."
     },
     {
         "q": "19. [Ôn tập Unit 4] Sitting at a computer all day without breaks leads to a ________ lifestyle.",
-        "opts": ["sedentary", "balanced", "renewable", "virtual"],
-        "ans": 0,
+        "opts": ["balanced", "sedentary", "renewable", "virtual"],
+        "ans": 1,
         "exp": "<b>sedentary</b> (adj - Unit 4): tĩnh tại, ít vận động."
     },
     {
         "q": "20. [Ôn tập Unit 4] Smartwatches can track heart rate and encourage users to do a daily ________.",
-        "opts": ["workout", "lecture", "emission", "privacy"],
-        "ans": 0,
+        "opts": ["lecture", "emission", "privacy", "workout"],
+        "ans": 3,
         "exp": "<b>workout</b> (n - Unit 4): buổi tập luyện thể dục."
     }
 ]
@@ -280,20 +280,20 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Experts predict that artificial intelligence ________ routine office jobs within the next twenty years.",
-        "opts": ["automates", "will automate", "automated", "has automated"],
-        "ans": 1,
+        "opts": ["will automate", "automates", "automated", "has automated"],
+        "ans": 0,
         "exp": "Dự đoán tương lai với 'Experts predict' và 'within the next twenty years' -> <b>will automate</b>."
     },
     {
         "q": "2. If you ________ your password with strangers, hackers will easily access your private account.",
-        "opts": ["share", "will share", "shared", "sharing"],
-        "ans": 0,
+        "opts": ["will share", "shared", "share", "sharing"],
+        "ans": 2,
         "exp": "Mệnh đề 'If' trong câu điều kiện loại 1 luôn chia ở thì Hiện tại đơn -> <b>share</b>."
     },
     {
         "q": "3. Look at the official announcement! Our university ________ a new virtual library platform next Monday.",
-        "opts": ["is going to launch", "launched", "has launched", "launch"],
-        "ans": 0,
+        "opts": ["launched", "has launched", "is going to launch", "launch"],
+        "ans": 2,
         "exp": "Kế hoạch đã được ấn định và thông báo trước ('next Monday') -> <b>is going to launch</b>."
     },
     {
@@ -310,8 +310,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "6. If students use e-learning platforms effectively, they ________ their academic performance.",
-        "opts": ["improve", "will improve", "improved", "would improve"],
-        "ans": 1,
+        "opts": ["improve", "improved", "would improve", "will improve"],
+        "ans": 3,
         "exp": "Mệnh đề chính của câu điều kiện loại 1 -> <b>will improve</b>."
     },
     {
@@ -334,8 +334,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "10. I think scientific breakthroughs in renewable energy ________ reduce global carbon emissions soon.",
-        "opts": ["will help", "helped", "is helping", "have helped"],
-        "ans": 0,
+        "opts": ["helped", "is helping", "have helped", "will help"],
+        "ans": 3,
         "exp": "Cấu trúc nêu dự đoán 'I think ... soon' -> Dùng tương lai đơn: <b>will help</b>."
     }
 ]

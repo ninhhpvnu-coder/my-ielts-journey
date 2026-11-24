@@ -157,20 +157,20 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Modern ________ relies heavily on machinery and scientific irrigation to feed eight billion people.",
-        "opts": ["agriculture", "apparatus", "legislation", "turbine"],
-        "ans": 0,
+        "opts": ["apparatus", "legislation", "turbine", "agriculture"],
+        "ans": 3,
         "exp": "<b>agriculture</b> (n): ngành nông nghiệp."
     },
     {
         "q": "2. Farmers in mountainous regions build terraced fields on steep slopes in order to ________ wet rice.",
-        "opts": ["cultivate", "modify", "filter", "transmit"],
-        "ans": 0,
+        "opts": ["modify", "filter", "cultivate", "transmit"],
+        "ans": 2,
         "exp": "<b>cultivate</b> (v): canh tác, trồng trọt cây lương thực."
     },
     {
         "q": "3. Favourable weather conditions throughout the spring resulted in an abundant wheat ________ this autumn.",
-        "opts": ["harvest", "drought", "famine", "shortage"],
-        "ans": 0,
+        "opts": ["drought", "famine", "shortage", "harvest"],
+        "ans": 3,
         "exp": "<b>abundant harvest</b> (n): vụ mùa thu hoạch bội thu."
     },
     {
@@ -181,8 +181,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "5. When rain washes excess chemical ________ from farmlands into rivers, it causes water pollution.",
-        "opts": ["fertilizers", "yields", "droughts", "shortages"],
-        "ans": 0,
+        "opts": ["yields", "droughts", "shortages", "fertilizers"],
+        "ans": 3,
         "exp": "<b>chemical fertilizers</b> (n): phân bón hóa học."
     },
     {
@@ -193,38 +193,38 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "7. Demand for ________ fruit and vegetables has grown rapidly as consumers worry about chemical residues.",
-        "opts": ["organic", "solar", "sedentary", "chronic"],
-        "ans": 0,
+        "opts": ["solar", "organic", "sedentary", "chronic"],
+        "ans": 1,
         "exp": "<b>organic</b> (adj): hữu cơ (không dùng hóa chất tổng hợp)."
     },
     {
         "q": "8. Vast areas of tropical forest have been cleared to create grazing land for cattle and other ________.",
-        "opts": ["livestock", "famine", "yield", "soil"],
-        "ans": 0,
+        "opts": ["famine", "yield", "livestock", "soil"],
+        "ans": 2,
         "exp": "<b>livestock</b> (n): gia súc, vật nuôi trang trại."
     },
     {
         "q": "9. International aid agencies delivered emergency grain supplies to prevent a catastrophic ________.",
-        "opts": ["famine", "harvest", "yield", "irrigation"],
-        "ans": 0,
+        "opts": ["harvest", "yield", "famine", "irrigation"],
+        "ans": 2,
         "exp": "<b>famine</b> (n): nạn đói diện rộng."
     },
     {
         "q": "10. Genetically engineered seeds can produce a much higher ________ per hectare than traditional varieties.",
-        "opts": ["yield", "shortage", "drought", "pesticide"],
-        "ans": 0,
+        "opts": ["shortage", "yield", "drought", "pesticide"],
+        "ans": 1,
         "exp": "<b>crop yield</b> (n): năng suất, sản lượng thu hoạch."
     },
     {
         "q": "11. Crop rotation and natural composting are key elements of ________ agriculture that protect nature.",
-        "opts": ["sustainable", "infectious", "continuous", "juvenile"],
-        "ans": 0,
+        "opts": ["infectious", "sustainable", "continuous", "juvenile"],
+        "ans": 1,
         "exp": "<b>sustainable agriculture</b>: nền nông nghiệp bền vững."
     },
     {
         "q": "12. Biotechnologists can ________ the DNA of rice plants to make them resistant to pests and salty water.",
-        "opts": ["modify", "cultivate", "harvest", "filter"],
-        "ans": 0,
+        "opts": ["cultivate", "harvest", "modify", "filter"],
+        "ans": 2,
         "exp": "<b>modify</b> (v): biến đổi, chỉnh sửa gen."
     },
     {
@@ -241,14 +241,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "15. Rising temperatures and crop failures could lead to an acute food ________ in many poor nations.",
-        "opts": ["shortage", "fertilizer", "turbine", "vaccine"],
-        "ans": 0,
+        "opts": ["fertilizer", "shortage", "turbine", "vaccine"],
+        "ans": 1,
         "exp": "<b>acute food shortage</b> (n): sự thiếu hụt lương thực trầm trọng."
     },
     {
         "q": "16. [Ôn tập Unit 17] In a geothermal plant, mechanical motion is ________ into electrical current by a generator.",
-        "opts": ["converted", "cultivated", "harvested", "diagnosed"],
-        "ans": 0,
+        "opts": ["cultivated", "harvested", "converted", "diagnosed"],
+        "ans": 2,
         "exp": "<b>convert A into B</b> (Unit 17): chuyển đổi năng lượng."
     },
     {
@@ -259,20 +259,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "18. [Ôn tập Unit 16] Taking antibiotics without a doctor's ________ can create drug-resistant bacteria.",
-        "opts": ["prescription", "apparatus", "surveillance", "verdict"],
-        "ans": 0,
+        "opts": ["apparatus", "surveillance", "verdict", "prescription"],
+        "ans": 3,
         "exp": "<b>prescription</b> (Unit 16): đơn thuốc của bác sĩ."
     },
     {
         "q": "19. [Ôn tập Unit 15] Prisons should provide vocational training to ________ offenders and reduce repeat crime.",
-        "opts": ["rehabilitate", "enforce", "extract", "cultivate"],
-        "ans": 0,
+        "opts": ["enforce", "extract", "cultivate", "rehabilitate"],
+        "ans": 3,
         "exp": "<b>rehabilitate</b> (Unit 15): cải tạo, phục hồi cho người lầm lỗi."
     },
     {
         "q": "20. [Ôn tập Unit 13] Misleading advertisements often try to ________ consumers into buying unhealthy snacks.",
-        "opts": ["manipulate", "generate", "filter", "immunize"],
-        "ans": 0,
+        "opts": ["generate", "manipulate", "filter", "immunize"],
+        "ans": 1,
         "exp": "<b>manipulate</b> (Unit 13): thao túng, lôi kéo người tiêu dùng."
     }
 ]
@@ -280,20 +280,20 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Over the past three decades, the excessive use of chemical fertilizers ________ the quality of arable soil.",
-        "opts": ["degrades", "degraded", "has degraded", "is degrading"],
-        "ans": 2,
+        "opts": ["degrades", "degraded", "is degrading", "has degraded"],
+        "ans": 3,
         "exp": "Cụm thời gian 'Over the past three decades' -> chia Hiện tại Hoàn thành: <b>has degraded</b>."
     },
     {
         "q": "2. Agricultural scientists ________ drought-tolerant crop varieties for years, and their trials are still ongoing.",
-        "opts": ["developed", "have been developing", "are developed", "were developing"],
-        "ans": 1,
+        "opts": ["developed", "are developed", "have been developing", "were developing"],
+        "ans": 2,
         "exp": "Hành động kéo dài nhiều năm ('for years') và vẫn đang tiếp diễn ('still ongoing') -> HTHT Tiếp diễn: <b>have been developing</b>."
     },
     {
         "q": "3. Severe declines in wild honeybee populations largely stem ________ the widespread spraying of toxic pesticides.",
-        "opts": ["to", "in", "from", "with"],
-        "ans": 2,
+        "opts": ["to", "from", "in", "with"],
+        "ans": 1,
         "exp": "Cấu trúc Nhân - Quả C1: <code>stem from + Nguyên nhân</code> (bắt nguồn từ...) -> <b>from</b>."
     },
     {
@@ -310,14 +310,14 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "6. Since the Green Revolution began in the 1960s, global grain yields ________ more than threefold.",
-        "opts": ["increased", "have increased", "have been increasing", "increase"],
-        "ans": 1,
+        "opts": ["increased", "have been increasing", "increase", "have increased"],
+        "ans": 3,
         "exp": "Mốc thời gian 'Since + QKĐ' và có con số kết quả định lượng ('more than threefold') -> Hiện tại Hoàn thành: <b>have increased</b>."
     },
     {
         "q": "7. Large herds of livestock ________ in cramped factory farms, which increases the risk of infectious diseases.",
-        "opts": ["is raised", "are raised", "has raised", "have been raising"],
-        "ans": 1,
+        "opts": ["are raised", "is raised", "has raised", "have been raising"],
+        "ans": 0,
         "exp": "Danh từ 'livestock' (gia súc) luôn mang nghĩa số nhiều -> Bị động Hiện tại đơn số nhiều: <b>are raised</b>."
     },
     {
@@ -334,8 +334,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "10. Switching to sustainable organic farming helps prevent fertile soil from ________ by heavy seasonal rains.",
-        "opts": ["eroding", "being eroded", "eroded", "to erode"],
-        "ans": 1,
+        "opts": ["eroding", "eroded", "to erode", "being eroded"],
+        "ans": 3,
         "exp": "Sau <code>prevent + O + from + V-ing</code>, có tác nhân bị động 'by heavy seasonal rains' -> dùng <b>being eroded</b>."
     }
 ]

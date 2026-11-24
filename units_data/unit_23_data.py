@@ -156,32 +156,32 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Investigative ________ is essential in a democracy because it exposes political corruption and corporate fraud.",
-        "opts": ["journalism", "patronage", "migration", "desalination"],
-        "ans": 0,
+        "opts": ["patronage", "migration", "journalism", "desalination"],
+        "ans": 2,
         "exp": "<b>investigative journalism</b> (n): báo chí điều tra."
     },
     {
         "q": "2. The championship football match was ________ live to over two hundred million viewers worldwide.",
-        "opts": ["broadcast", "censored", "distorted", "shrunk"],
-        "ans": 0,
+        "opts": ["censored", "distorted", "broadcast", "shrunk"],
+        "ans": 2,
         "exp": "<b>broadcast live</b> (v - V3 của broadcast vẫn là broadcast): được phát sóng trực tiếp."
     },
     {
         "q": "3. Environmental disasters often receive far less media ________ than celebrity weddings and divorces.",
-        "opts": ["coverage", "credibility", "algorithm", "fraction"],
-        "ans": 0,
+        "opts": ["credibility", "coverage", "algorithm", "fraction"],
+        "ans": 1,
         "exp": "<b>media coverage</b> (n - không đếm được): sự đưa tin, thời lượng phủ sóng truyền thông."
     },
     {
         "q": "4. A reputable news channel must report the facts fairly without showing any political or commercial ________.",
-        "opts": ["bias", "coverage", "genre", "pension"],
-        "ans": 0,
+        "opts": ["coverage", "genre", "pension", "bias"],
+        "ans": 3,
         "exp": "<b>political / media bias</b> (n): sự thiên vị, định kiến."
     },
     {
         "q": "5. Good reporters strive to remain ________ by interviewing experts from both sides of a debate.",
-        "opts": ["objective", "sensational", "tangible", "sedentary"],
-        "ans": 0,
+        "opts": ["sensational", "tangible", "objective", "sedentary"],
+        "ans": 2,
         "exp": "<b>remain objective</b> (adj): giữ thái độ khách quan."
     },
     {
@@ -192,38 +192,38 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "7. Professional editors always ________ the accuracy of statistics and quotes before publishing an article.",
-        "opts": ["verify", "distort", "exaggerate", "portray"],
-        "ans": 0,
+        "opts": ["distort", "exaggerate", "portray", "verify"],
+        "ans": 3,
         "exp": "<b>verify</b> (v): xác minh, kiểm chứng sự thật."
     },
     {
         "q": "8. Taking a politician's words out of context can completely ________ the original meaning of their speech.",
-        "opts": ["distort", "verify", "enrich", "conserve"],
-        "ans": 0,
+        "opts": ["verify", "distort", "enrich", "conserve"],
+        "ans": 1,
         "exp": "<b>distort</b> (v): bóp méo, xuyên tạc sự thật."
     },
     {
         "q": "9. Unethical bloggers often ________ minor health risks to frighten readers into buying their products.",
-        "opts": ["exaggerate", "verify", "allocate", "purify"],
-        "ans": 0,
+        "opts": ["verify", "exaggerate", "allocate", "purify"],
+        "ans": 1,
         "exp": "<b>exaggerate</b> (v): phóng đại, thổi phồng."
     },
     {
         "q": "10. Traditional print newspapers enjoy higher public ________ than anonymous social media accounts.",
-        "opts": ["credibility", "disinformation", "paparazzi", "fertility"],
-        "ans": 0,
+        "opts": ["disinformation", "paparazzi", "fertility", "credibility"],
+        "ans": 3,
         "exp": "<b>credibility</b> (n): độ tin cậy, uy tín."
     },
     {
         "q": "11. Aggressive ________ waited outside the hospital with telephoto cameras to take photos of the actress.",
-        "opts": ["paparazzi", "algorithms", "editorials", "sculptures"],
-        "ans": 0,
+        "opts": ["algorithms", "editorials", "paparazzi", "sculptures"],
+        "ans": 2,
         "exp": "<b>paparazzi</b> (n - số nhiều): thợ săn ảnh người nổi tiếng."
     },
     {
         "q": "12. Every article in our magazine must pass strict ________ fact-checking by senior editors.",
-        "opts": ["editorial", "sensational", "demographic", "ecological"],
-        "ans": 0,
+        "opts": ["sensational", "demographic", "ecological", "editorial"],
+        "ans": 3,
         "exp": "<b>editorial standards / fact-checking</b> (adj): thuộc ban biên tập."
     },
     {
@@ -234,14 +234,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "14. During election campaigns, foreign hackers sometimes use fake accounts to spread ________ and confuse voters.",
-        "opts": ["disinformation", "credibility", "journalism", "expectancy"],
-        "ans": 0,
+        "opts": ["credibility", "disinformation", "journalism", "expectancy"],
+        "ans": 1,
         "exp": "<b>spread disinformation</b> (n): phát tán thông tin sai lệch/tin giả."
     },
     {
         "q": "15. Democratic governments must be open and ________ about how public tax money is spent.",
-        "opts": ["transparent", "sensational", "endangered", "chronic"],
-        "ans": 0,
+        "opts": ["sensational", "transparent", "endangered", "chronic"],
+        "ans": 1,
         "exp": "<b>transparent</b> (adj): minh bạch, rõ ràng."
     },
     {
@@ -252,8 +252,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "17. [Ôn tập Unit 21] As the population ages, a shrinking ________ must support a growing number of retirees.",
-        "opts": ["workforce", "algorithm", "sculpture", "turbine"],
-        "ans": 0,
+        "opts": ["algorithm", "sculpture", "workforce", "turbine"],
+        "ans": 2,
         "exp": "<b>shrinking workforce</b> (Unit 21): lực lượng lao động bị thu hẹp."
     },
     {
@@ -264,8 +264,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "19. [Ôn tập Unit 18] Farmers use natural compost and crop rotation in ________ agriculture to protect soil fertility.",
-        "opts": ["sustainable", "sensational", "juvenile", "solar"],
-        "ans": 0,
+        "opts": ["sensational", "juvenile", "solar", "sustainable"],
+        "ans": 3,
         "exp": "<b>sustainable agriculture</b> (Unit 18): nông nghiệp bền vững."
     },
     {
@@ -279,44 +279,44 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Media critics often accuse tabloid newspapers ________ sensational headlines to attract clicks.",
-        "opts": ["to use", "for using", "of using", "with using"],
-        "ans": 2,
+        "opts": ["of using", "to use", "for using", "with using"],
+        "ans": 0,
         "exp": "Cấu trúc: <code>accuse + Object + of + V-ing</code> (cáo buộc ai làm gì) -> <b>of using</b>."
     },
     {
         "q": "2. Psychologists blame social media algorithms ________ teenagers' declining attention spans.",
-        "opts": ["of", "for", "with", "to"],
-        "ans": 1,
+        "opts": ["of", "with", "for", "to"],
+        "ans": 2,
         "exp": "Cấu trúc: <code>blame + Object + for + Noun / V-ing</code> (đổ lỗi cho ai/cái gì về...) -> <b>for</b>."
     },
     {
         "q": "3. Note the irregular past participle of 'broadcast': The emergency weather warning ________ live across all channels last night.",
-        "opts": ["broadcasted", "was broadcast", "was broadcasting", "has broadcasted"],
-        "ans": 1,
+        "opts": ["broadcasted", "was broadcasting", "has broadcasted", "was broadcast"],
+        "ans": 3,
         "exp": "Động từ 'broadcast' giữ nguyên ở cả 3 cột (broadcast - broadcast - broadcast). Bị động quá khứ đơn ('last night') -> <b>was broadcast</b>."
     },
     {
         "q": "4. Note that 'news' and 'coverage' are uncountable: Extensive media coverage ________ given to the climate summit yesterday.",
-        "opts": ["were", "was", "are", "have been"],
-        "ans": 1,
+        "opts": ["was", "were", "are", "have been"],
+        "ans": 0,
         "exp": "Danh từ 'coverage' (sự đưa tin) không đếm được -> chia động từ số ít ở quá khứ: <b>was</b>."
     },
     {
         "q": "5. ________ is widely reported that fake news spreads six times faster on social media than verified facts.",
-        "opts": ["There", "It", "What", "This"],
-        "ans": 1,
+        "opts": ["There", "What", "It", "This"],
+        "ans": 2,
         "exp": "Cấu trúc bị động khách quan với chủ ngữ giả: <code>It is widely reported that + S + V</code> -> <b>It</b>."
     },
     {
         "q": "6. Intrusive paparazzi are frequently accused of ________ the privacy of celebrities and their children.",
-        "opts": ["invade", "to invade", "invading", "invaded"],
-        "ans": 2,
+        "opts": ["invading", "invade", "to invade", "invaded"],
+        "ans": 0,
         "exp": "Sau bị động <code>be accused of</code> + <b>V-ing (invading)</b>."
     },
     {
         "q": "7. ________ the high speed of social media news, many unverified rumours lack credibility.",
-        "opts": ["Although", "Even though", "Despite", "Whereas"],
-        "ans": 2,
+        "opts": ["Although", "Despite", "Even though", "Whereas"],
+        "ans": 1,
         "exp": "Ôn tập Unit 22: Theo sau là cụm danh từ ('the high speed of social media news') -> dùng <b>Despite</b>."
     },
     {
@@ -327,8 +327,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "9. Unless social media platforms regulate disinformation, public trust in journalism ________ to decline.",
-        "opts": ["continues", "continued", "will continue", "would continue"],
-        "ans": 2,
+        "opts": ["continues", "continued", "would continue", "will continue"],
+        "ans": 3,
         "exp": "Ôn tập Unit 19: Câu điều kiện loại 1 với <code>Unless + HTĐ, S + will + V</code> -> <b>will continue</b>."
     },
     {

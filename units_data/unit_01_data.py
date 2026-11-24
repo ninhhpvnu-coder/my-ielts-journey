@@ -159,8 +159,8 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. My morning ________ includes 30 minutes of jogging and eating a healthy breakfast.",
-        "opts": ["habit", "routine", "lifestyle", "goal"],
-        "ans": 1,
+        "opts": ["routine", "habit", "lifestyle", "goal"],
+        "ans": 0,
         "exp": "<b>routine</b> (n): lịch trình, trình tự sinh hoạt thường nhật ('morning routine')."
     },
     {
@@ -171,50 +171,50 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "3. Every student should learn how to become a responsible global ________.",
-        "opts": ["citizen", "neighborhood", "routine", "opportunity"],
-        "ans": 0,
+        "opts": ["neighborhood", "routine", "opportunity", "citizen"],
+        "ans": 3,
         "exp": "<b>citizen</b> (n): công dân. Collocation: 'global citizen' = công dân toàn cầu."
     },
     {
         "q": "4. If you want to achieve IELTS 5.5, you must ________ a clear study goal.",
-        "opts": ["break", "set", "take", "make"],
-        "ans": 1,
+        "opts": ["break", "take", "set", "make"],
+        "ans": 2,
         "exp": "Collocation chuẩn: <b>set a goal</b> = đặt ra mục tiêu phấn đấu."
     },
     {
         "q": "5. Many young people in our ________ take part in cleaning public parks on Sundays.",
-        "opts": ["lifestyle", "neighborhood", "habit", "routine"],
-        "ans": 1,
+        "opts": ["neighborhood", "lifestyle", "habit", "routine"],
+        "ans": 0,
         "exp": "<b>neighborhood</b> (n): khu dân cư, khu phố nơi mình sinh sống."
     },
     {
         "q": "6. It takes at least 21 days to break a bad ________ like staying up late.",
-        "opts": ["goal", "citizen", "habit", "support"],
-        "ans": 2,
+        "opts": ["goal", "citizen", "support", "habit"],
+        "ans": 3,
         "exp": "<b>habit</b> (n): thói quen cá nhân. Collocation: 'break a bad habit' = từ bỏ thói quen xấu."
     },
     {
         "q": "7. Cycling to school instead of using motorbikes helps promote a greener ________.",
-        "opts": ["routine", "lifestyle", "neighborhood", "opportunity"],
-        "ans": 1,
+        "opts": ["routine", "neighborhood", "opportunity", "lifestyle"],
+        "ans": 3,
         "exp": "<b>lifestyle</b> (n): lối sống xanh và lành mạnh ('greener lifestyle')."
     },
     {
         "q": "8. We are holding a workshop to help students ________ their English pronunciation.",
-        "opts": ["improve", "participate", "volunteer", "belong"],
-        "ans": 0,
+        "opts": ["participate", "improve", "volunteer", "belong"],
+        "ans": 1,
         "exp": "<b>improve</b> (v): cải thiện, nâng cao kỹ năng."
     },
     {
         "q": "9. Students are strongly encouraged to participate ________ community service.",
-        "opts": ["on", "at", "with", "in"],
-        "ans": 3,
+        "opts": ["on", "in", "at", "with"],
+        "ans": 1,
         "exp": "Cụm động từ cố định: <b>participate in</b> = take part in (tham gia vào)."
     },
     {
         "q": "10. The United Nations works for ________ development across developing countries.",
-        "opts": ["sustainable", "routine", "international", "habitual"],
-        "ans": 0,
+        "opts": ["routine", "international", "habitual", "sustainable"],
+        "ans": 3,
         "exp": "<b>sustainable</b> (adj): bền vững. 'Sustainable development' = phát triển bền vững."
     },
     {
@@ -237,8 +237,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "14. UNESCO is an ________ organization that promotes global education and culture.",
-        "opts": ["international", "environmental", "sustainable", "habitual"],
-        "ans": 0,
+        "opts": ["environmental", "sustainable", "international", "habitual"],
+        "ans": 2,
         "exp": "<b>international</b> (adj): thuộc về quốc tế, toàn cầu."
     },
     {
@@ -261,8 +261,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "18. Over 200 youth volunteers took ________ in the tree-planting festival yesterday.",
-        "opts": ["goal", "part", "place", "time"],
-        "ans": 1,
+        "opts": ["goal", "place", "part", "time"],
+        "ans": 2,
         "exp": "Collocation: <b>take part in</b> = participate in (tham gia vào)."
     },
     {
@@ -273,8 +273,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "20. Being an active member of your local ________ helps you build strong friendships.",
-        "opts": ["community", "environment", "goal", "routine"],
-        "ans": 0,
+        "opts": ["environment", "goal", "routine", "community"],
+        "ans": 3,
         "exp": "<b>local community</b>: cộng đồng cư dân tại địa phương."
     }
 ]
@@ -282,20 +282,20 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Listen! The children ________ a traditional song in the community center.",
-        "opts": ["sing", "are singing", "sings", "is singing"],
-        "ans": 1,
+        "opts": ["are singing", "sing", "sings", "is singing"],
+        "ans": 0,
         "exp": "Dấu hiệu 'Listen!' báo hiệu hành động đang diễn ra ngay lúc nói -> Hiện tại tiếp diễn: <b>are singing</b>."
     },
     {
         "q": "2. Nam usually ________ to school by bike, but this week he ________ the public bus.",
-        "opts": ["goes / is taking", "is going / takes", "goes / takes", "is going / is taking"],
-        "ans": 0,
+        "opts": ["is going / takes", "goes / is taking", "goes / takes", "is going / is taking"],
+        "ans": 1,
         "exp": "'usually' chỉ thói quen (Hiện tại đơn: <b>goes</b>); 'this week' chỉ hành động tạm thời (Hiện tại tiếp diễn: <b>is taking</b>)."
     },
     {
         "q": "3. I'm sorry, I cannot hear you clearly because I ________ what you are saying.",
-        "opts": ["am not understanding", "don't understand", "doesn't understand", "not understand"],
-        "ans": 1,
+        "opts": ["don't understand", "am not understanding", "doesn't understand", "not understand"],
+        "ans": 0,
         "exp": "'understand' là động từ chỉ nhận thức (Stative Verb), không chia tiếp diễn -> <b>don't understand</b>."
     },
     {
@@ -306,8 +306,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "5. Peter is very untidy! He ________ his plastic bottles on the floor!",
-        "opts": ["always leaves", "is always leaving", "leaves always", "always is leaving"],
-        "ans": 1,
+        "opts": ["always leaves", "leaves always", "always is leaving", "is always leaving"],
+        "ans": 3,
         "exp": "Cấu trúc <b>be + always + V-ing</b> dùng để phàn nàn về một thói quen xấu gây khó chịu."
     },
     {
@@ -318,8 +318,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "7. Organic vegetables from our community garden ________ fresh and delicious.",
-        "opts": ["taste", "are tasting", "tastes", "is tasting"],
-        "ans": 0,
+        "opts": ["are tasting", "tastes", "taste", "is tasting"],
+        "ans": 2,
         "exp": "'taste' mô tả đặc tính vị giác (Stative Verb), chủ ngữ số nhiều 'vegetables' -> <b>taste</b>."
     },
     {
@@ -330,14 +330,14 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "9. Every citizen ________ a duty to protect the natural environment.",
-        "opts": ["have", "is having", "has", "having"],
-        "ans": 2,
+        "opts": ["have", "has", "is having", "having"],
+        "ans": 1,
         "exp": "'Every + danh từ số ít' đi với động từ số ít ở Hiện tại đơn (mang nghĩa sở hữu/bổn phận) -> <b>has</b>."
     },
     {
         "q": "10. Right now, more and more teenagers ________ in sustainable lifestyle campaigns.",
-        "opts": ["participate", "participates", "are participating", "is participating"],
-        "ans": 2,
+        "opts": ["participate", "participates", "is participating", "are participating"],
+        "ans": 3,
         "exp": "'Right now' và xu hướng 'more and more' -> Chia Hiện tại tiếp diễn: <b>are participating</b>."
     }
 ]

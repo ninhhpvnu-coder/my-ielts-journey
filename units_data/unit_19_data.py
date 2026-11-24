@@ -158,26 +158,26 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. The Amur leopard is listed as critically ________ because fewer than 100 individuals survive in the wild.",
-        "opts": ["endangered", "ecological", "sustainable", "organic"],
-        "ans": 0,
+        "opts": ["ecological", "sustainable", "organic", "endangered"],
+        "ans": 3,
         "exp": "<b>critically endangered</b> (adj): có nguy cơ tuyệt chủng ở mức cực kỳ nguy cấp."
     },
     {
         "q": "2. Conservationists warn that many sea turtle populations are on the brink of ________ due to plastic pollution.",
-        "opts": ["extinction", "sanctuary", "captivity", "deforestation"],
-        "ans": 0,
+        "opts": ["sanctuary", "extinction", "captivity", "deforestation"],
+        "ans": 1,
         "exp": "<b>on the brink of extinction</b>: bên bờ vực tuyệt chủng."
     },
     {
         "q": "3. Despite international bans on the ivory trade, armed gangs still ________ elephants in national parks.",
-        "opts": ["poach", "breed", "reintroduce", "cultivate"],
-        "ans": 0,
+        "opts": ["breed", "reintroduce", "poach", "cultivate"],
+        "ans": 2,
         "exp": "<b>poach</b> (v): săn bắn trộm trái phép."
     },
     {
         "q": "4. As an apex ________ at the top of the food chain, the grey wolf regulates deer populations in the forest.",
-        "opts": ["predator", "prey", "coral", "sanctuary"],
-        "ans": 0,
+        "opts": ["prey", "coral", "predator", "sanctuary"],
+        "ans": 2,
         "exp": "<b>apex predator</b> (n): loài săn mồi đầu bảng."
     },
     {
@@ -188,8 +188,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "6. Oil spills and discarded fishing nets pose a severe danger to whales, dolphins, and other ________ mammals.",
-        "opts": ["marine", "solar", "initial", "chronic"],
-        "ans": 0,
+        "opts": ["solar", "initial", "chronic", "marine"],
+        "ans": 3,
         "exp": "<b>marine mammals / ecosystems</b> (adj): thuộc về biển, đại dương."
     },
     {
@@ -200,44 +200,44 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "8. Orphaned orangutans rescued from illegal logging sites are cared for at a forest ________ in Borneo.",
-        "opts": ["sanctuary", "extinction", "threat", "predator"],
-        "ans": 0,
+        "opts": ["extinction", "sanctuary", "threat", "predator"],
+        "ans": 1,
         "exp": "<b>wildlife sanctuary</b> (n): khu bảo tồn, trung tâm cứu hộ động vật hoang dã."
     },
     {
         "q": "9. Widespread ________ in the Amazon basin destroys wildlife habitats and accelerates global warming.",
-        "opts": ["deforestation", "irrigation", "captivity", "prescription"],
-        "ans": 0,
+        "opts": ["irrigation", "captivity", "prescription", "deforestation"],
+        "ans": 3,
         "exp": "<b>deforestation</b> (n): nạn phá rừng."
     },
     {
         "q": "10. Marine biologists argue that intelligent killer whales should not be kept in ________ for circus shows.",
-        "opts": ["captivity", "extinction", "sanctuary", "species"],
-        "ans": 0,
+        "opts": ["extinction", "sanctuary", "captivity", "species"],
+        "ans": 2,
         "exp": "<b>keep in captivity</b> (n): nuôi nhốt trong lồng/bể."
     },
     {
         "q": "11. Giant pandas are notoriously difficult to ________ in zoos, making every newborn cub a major success.",
-        "opts": ["breed", "poach", "filter", "extract"],
-        "ans": 0,
+        "opts": ["poach", "breed", "filter", "extract"],
+        "ans": 1,
         "exp": "<b>breed</b> (v): nhân giống, sinh sản."
     },
     {
         "q": "12. Biologists discovered three previously unknown ________ of frogs during their expedition in the rainforest.",
-        "opts": ["species", "threats", "preys", "corals"],
-        "ans": 0,
+        "opts": ["threats", "preys", "species", "corals"],
+        "ans": 2,
         "exp": "<b>species</b> (n): loài sinh vật."
     },
     {
         "q": "13. Removing sharks from the ocean causes a domino effect that disrupts the fragile ________ balance.",
-        "opts": ["ecological", "sedentary", "continuous", "juvenile"],
-        "ans": 0,
+        "opts": ["sedentary", "ecological", "continuous", "juvenile"],
+        "ans": 1,
         "exp": "<b>ecological balance</b>: sự cân bằng sinh thái."
     },
     {
         "q": "14. Rising sea temperatures and overfishing pose an existential ________ to cold-water marine life.",
-        "opts": ["threat", "prey", "breed", "yield"],
-        "ans": 0,
+        "opts": ["prey", "breed", "yield", "threat"],
+        "ans": 3,
         "exp": "<b>pose a grave / existential threat to</b>: gây ra mối đe dọa nghiêm trọng cho..."
     },
     {
@@ -254,8 +254,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "17. [Ôn tập Unit 18] Spraying chemical ________ on fields kills pests but also harms wild honeybees.",
-        "opts": ["pesticides", "fertilizers", "irrigations", "yields"],
-        "ans": 0,
+        "opts": ["fertilizers", "pesticides", "irrigations", "yields"],
+        "ans": 1,
         "exp": "<b>pesticides</b> (Unit 18): thuốc trừ sâu."
     },
     {
@@ -266,14 +266,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "19. [Ôn tập Unit 16] Childhood ________ programs have successfully eradicated polio in most countries.",
-        "opts": ["vaccination", "deforestation", "surveillance", "irrigation"],
-        "ans": 0,
+        "opts": ["deforestation", "surveillance", "vaccination", "irrigation"],
+        "ans": 2,
         "exp": "<b>vaccination programs</b> (Unit 16): chương trình tiêm chủng vắc-xin."
     },
     {
         "q": "20. [Ôn tập Unit 15] Strict anti-poaching ________ must be enforced to punish wildlife traffickers.",
-        "opts": ["legislation", "apparatus", "livestock", "burnout"],
-        "ans": 0,
+        "opts": ["apparatus", "livestock", "burnout", "legislation"],
+        "ans": 3,
         "exp": "<b>legislation</b> (Unit 15): luật pháp, hệ thống đạo luật."
     }
 ]
@@ -281,32 +281,32 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Every year, thousands of endangered sea turtles ________ accidentally in commercial fishing nets.",
-        "opts": ["catch", "are catching", "are caught", "have caught"],
-        "ans": 2,
+        "opts": ["catch", "are caught", "are catching", "have caught"],
+        "ans": 1,
         "exp": "Trạng từ 'Every year' + chủ ngữ số nhiều chịu tác động -> Bị động Hiện tại đơn: <b>are caught</b>."
     },
     {
         "q": "2. Right now, vast areas of tropical rainforest ________ down to create grazing land for cattle.",
-        "opts": ["cut", "are cutting", "are being cut", "have cut"],
-        "ans": 2,
+        "opts": ["are being cut", "cut", "are cutting", "have cut"],
+        "ans": 0,
         "exp": "Trạng từ 'Right now' + rừng đang bị chặt phá -> Bị động Hiện tại Tiếp diễn: <b>are being cut</b>."
     },
     {
         "q": "3. Over the past fifty years, nearly 60% of global coral reefs ________ by ocean warming and pollution.",
-        "opts": ["damaged", "were damaged", "have been damaged", "are damaging"],
-        "ans": 2,
+        "opts": ["damaged", "were damaged", "are damaging", "have been damaged"],
+        "ans": 3,
         "exp": "Cụm thời gian 'Over the past fifty years' + bị động -> Bị động Hiện tại Hoàn thành: <b>have been damaged</b>."
     },
     {
         "q": "4. Unless strict anti-poaching laws ________ immediately, the Javan rhino will become extinct within a decade.",
-        "opts": ["are not enforced", "enforce", "are enforced", "will be enforced"],
-        "ans": 2,
+        "opts": ["are not enforced", "enforce", "will be enforced", "are enforced"],
+        "ans": 3,
         "exp": "Sau <b>Unless</b> dùng Hiện tại đơn khẳng định mang nghĩa bị động -> <b>are enforced</b>."
     },
     {
         "q": "5. Note that 'species' can be singular or plural: This rare snow leopard species ________ only in the Himalayas.",
-        "opts": ["find", "is found", "are found", "have been found"],
-        "ans": 1,
+        "opts": ["find", "are found", "is found", "have been found"],
+        "ans": 2,
         "exp": "Có từ hạn định số ít 'This rare... species' -> chia bị động số ít: <b>is found</b>."
     },
     {
@@ -317,20 +317,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "7. Heavier prison penalties must ________ on illegal poachers and wildlife traffickers to deter crime.",
-        "opts": ["impose", "be imposing", "be imposed", "have imposed"],
-        "ans": 2,
+        "opts": ["be imposed", "impose", "be imposing", "have imposed"],
+        "ans": 0,
         "exp": "Bị động với Modal Verb: <code>must be + V3/ed</code> -> <b>be imposed</b>."
     },
     {
         "q": "8. Having ________ in a marine sanctuary for two years, the injured dolphin was finally released into the ocean.",
-        "opts": ["cared for", "been cared for", "caring for", "being cared for"],
-        "ans": 1,
+        "opts": ["cared for", "caring for", "been cared for", "being cared for"],
+        "ans": 2,
         "exp": "Phân từ hoàn thành bị động (Sau khi đã được chăm sóc 2 năm): <code>Having been + V3/ed</code> -> <b>been cared for</b>."
     },
     {
         "q": "9. Rapid deforestation strips tigers of their natural prey, ________ them to attack farm livestock.",
-        "opts": ["force", "forced", "forcing", "which is forced"],
-        "ans": 2,
+        "opts": ["forcing", "force", "forced", "which is forced"],
+        "ans": 0,
         "exp": "Mệnh đề phân từ hiện tại chỉ kết quả (<code>, V-ing</code>) -> <b>forcing</b>."
     },
     {

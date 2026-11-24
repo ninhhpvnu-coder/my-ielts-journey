@@ -158,26 +158,26 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Parliament passed new environmental ________ to ban single-use toxic chemicals.",
-        "opts": ["legislation", "offender", "victim", "verdict"],
-        "ans": 0,
+        "opts": ["offender", "legislation", "victim", "verdict"],
+        "ans": 1,
         "exp": "<b>legislation</b> (n - không đếm được): luật pháp, đạo luật."
     },
     {
         "q": "2. Driving under the influence of alcohol is a serious ________ that endangers innocent lives.",
-        "opts": ["offense", "deterrent", "justice", "poverty"],
-        "ans": 0,
+        "opts": ["deterrent", "justice", "offense", "poverty"],
+        "ans": 2,
         "exp": "<b>commit a serious offense</b>: phạm một tội nghiêm trọng."
     },
     {
         "q": "3. Visible police patrols on city streets act as a powerful ________ against robbery.",
-        "opts": ["deterrent", "verdict", "victim", "offender"],
-        "ans": 0,
+        "opts": ["verdict", "victim", "offender", "deterrent"],
+        "ans": 3,
         "exp": "<b>act as a deterrent against</b>: đóng vai trò là biện pháp răn đe chống lại..."
     },
     {
         "q": "4. Vocational classes in prison help ________ inmates so they can work legally after release.",
-        "opts": ["rehabilitate", "enforce", "plummet", "manipulate"],
-        "ans": 0,
+        "opts": ["enforce", "rehabilitate", "plummet", "manipulate"],
+        "ans": 1,
         "exp": "<b>rehabilitate</b> (v): cải tạo, phục hồi nhân phẩm và kỹ năng."
     },
     {
@@ -188,20 +188,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "6. Youth clubs and free sports facilities play a vital role in reducing ________ delinquency.",
-        "opts": ["juvenile", "affordable", "dramatic", "nuclear"],
-        "ans": 0,
+        "opts": ["affordable", "dramatic", "nuclear", "juvenile"],
+        "ans": 3,
         "exp": "<b>juvenile delinquency / crime</b>: tội phạm vị thành niên."
     },
     {
         "q": "7. High-definition ________ cameras at banks and train stations help police identify suspects quickly.",
-        "opts": ["surveillance", "poverty", "verdict", "warranty"],
-        "ans": 0,
+        "opts": ["poverty", "verdict", "surveillance", "warranty"],
+        "ans": 2,
         "exp": "<b>surveillance cameras</b>: camera giám sát an ninh."
     },
     {
         "q": "8. The maximum ________ for hacking into government databases is ten years in prison.",
-        "opts": ["penalty", "deterrent", "victim", "revenue"],
-        "ans": 0,
+        "opts": ["deterrent", "victim", "revenue", "penalty"],
+        "ans": 3,
         "exp": "<b>penalty</b> (n): hình phạt, mức phạt."
     },
     {
@@ -212,32 +212,32 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "10. Phishing emails and online identity theft are common forms of modern ________.",
-        "opts": ["cybercrime", "surveillance", "legislation", "Burnout"],
-        "ans": 0,
+        "opts": ["surveillance", "legislation", "Burnout", "cybercrime"],
+        "ans": 3,
         "exp": "<b>cybercrime</b> (n): tội phạm mạng."
     },
     {
         "q": "11. The charity provides free legal advice and counseling to any ________ of domestic violence.",
-        "opts": ["victim", "offender", "competitor", "candidate"],
-        "ans": 0,
+        "opts": ["offender", "victim", "competitor", "candidate"],
+        "ans": 1,
         "exp": "<b>victim</b> (n): nạn nhân."
     },
     {
         "q": "12. After three days of deliberation, the jury returned a 'not guilty' ________.",
-        "opts": ["verdict", "penalty", "offense", "deterrent"],
-        "ans": 0,
+        "opts": ["penalty", "offense", "verdict", "deterrent"],
+        "ans": 2,
         "exp": "<b>reach / return a verdict</b>: đưa ra phán quyết của tòa."
     },
     {
         "q": "13. Educating citizens about strong passwords can ________ hackers from stealing bank accounts.",
-        "opts": ["prevent", "enforce", "endorse", "surpass"],
-        "ans": 0,
+        "opts": ["enforce", "endorse", "prevent", "surpass"],
+        "ans": 2,
         "exp": "<b>prevent sb from V-ing</b>: ngăn chặn ai làm gì."
     },
     {
         "q": "14. Investing in public education and job creation helps lift disadvantaged families out of ________.",
-        "opts": ["poverty", "surveillance", "justice", "loyalty"],
-        "ans": 0,
+        "opts": ["surveillance", "poverty", "justice", "loyalty"],
+        "ans": 1,
         "exp": "<b>lift out of poverty</b>: thoát khỏi cảnh nghèo đói."
     },
     {
@@ -248,14 +248,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "16. [Ôn tập Unit 14] Two-factor authentication protects every online banking ________ from cybercrime.",
-        "opts": ["transaction", "storefront", "demographic", "upbringing"],
-        "ans": 0,
+        "opts": ["storefront", "demographic", "transaction", "upbringing"],
+        "ans": 2,
         "exp": "<b>transaction</b> (Unit 14): giao dịch."
     },
     {
         "q": "17. [Ôn tập Unit 13] Consumer protection laws ban false commercials that try to ________ buyers.",
-        "opts": ["manipulate", "rehabilitate", "stabilize", "commute"],
-        "ans": 0,
+        "opts": ["rehabilitate", "manipulate", "stabilize", "commute"],
+        "ans": 1,
         "exp": "<b>manipulate</b> (Unit 13): thao túng, lừa dối."
     },
     {
@@ -266,8 +266,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "19. [Ôn tập Unit 11] Prisoners who gain a vocational ________ have a much better chance of finding a job.",
-        "opts": ["qualification", "proportion", "commercial", "sibling"],
-        "ans": 0,
+        "opts": ["proportion", "commercial", "sibling", "qualification"],
+        "ans": 3,
         "exp": "<b>qualification</b> (Unit 11): bằng cấp, chứng chỉ nghề."
     },
     {
@@ -281,44 +281,44 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Strict cybersecurity legislation must ________ to protect citizens from online scams.",
-        "opts": ["enforce", "be enforced", "enforcing", "enforced"],
-        "ans": 1,
+        "opts": ["be enforced", "enforce", "enforcing", "enforced"],
+        "ans": 0,
         "exp": "Bị động với động từ khuyết thiếu: <code>must + be + V3/ed (be enforced)</code>."
     },
     {
         "q": "2. High-definition surveillance cameras are installed in city centres in order ________ street crime.",
-        "opts": ["deter", "to deter", "deterring", "deterred"],
-        "ans": 1,
+        "opts": ["deter", "deterring", "to deter", "deterred"],
+        "ans": 2,
         "exp": "Cấu trúc chỉ mục đích <code>in order to + V (nguyên mẫu)</code> -> <b>to deter</b>."
     },
     {
         "q": "3. Heavy financial penalties prevent industrial corporations from ________ toxic waste into rivers.",
-        "opts": ["dump", "to dump", "dumping", "dumped"],
-        "ans": 2,
+        "opts": ["dump", "to dump", "dumped", "dumping"],
+        "ans": 3,
         "exp": "Cấu trúc <code>prevent + Object + from + V-ing</code> -> <b>dumping</b>."
     },
     {
         "q": "4. Prisons provide vocational training courses ________ former offenders can earn an honest living.",
-        "opts": ["so that", "in order to", "because of", "despite"],
-        "ans": 0,
+        "opts": ["in order to", "because of", "so that", "despite"],
+        "ans": 2,
         "exp": "Theo sau là một mệnh đề đầy đủ ('former offenders can earn...') chỉ mục đích -> dùng <b>so that</b>."
     },
     {
         "q": "5. Governments should invest in youth sports centres, thereby ________ juvenile delinquency.",
-        "opts": ["reduce", "to reduce", "reducing", "reduced"],
-        "ans": 2,
+        "opts": ["reducing", "reduce", "to reduce", "reduced"],
+        "ans": 0,
         "exp": "Cấu trúc trạng từ kết quả C1: <code>, thereby + V-ing</code> (qua đó làm giảm...) -> <b>reducing</b>."
     },
     {
-        "q": "6. Note that " + "legislation" + " is an uncountable noun: New legislation ________ passed last month to combat cybercrime.",
-        "opts": ["was", "were", "have been", "are"],
-        "ans": 0,
+        "q": "6. Note that legislation is an uncountable noun: New legislation ________ passed last month to combat cybercrime.",
+        "opts": ["were", "was", "have been", "are"],
+        "ans": 1,
         "exp": "Danh từ không đếm được 'legislation' chia động từ số ít ở quá khứ ('last month') -> <b>was</b>."
     },
     {
         "q": "7. First-time juvenile offenders ought to ________ through education rather than sent to adult prisons.",
-        "opts": ["rehabilitate", "be rehabilitated", "rehabilitating", "rehabilitated"],
-        "ans": 1,
+        "opts": ["rehabilitate", "rehabilitating", "rehabilitated", "be rehabilitated"],
+        "ans": 3,
         "exp": "Cấu trúc bị động với <code>ought to + be + V3/ed</code> -> <b>be rehabilitated</b>."
     },
     {
@@ -335,8 +335,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "10. Between 2015 and 2025, reported cases of online fraud surged ________ 45%, whereas street robbery declined.",
-        "opts": ["by", "at", "of", "between"],
-        "ans": 0,
+        "opts": ["at", "by", "of", "between"],
+        "ans": 1,
         "exp": "Ôn tập giới từ số liệu Task 1 (Unit 12): Tăng thêm một khoảng bao nhiêu % -> <code>surged by 45%</code>."
     }
 ]

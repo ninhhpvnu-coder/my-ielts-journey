@@ -157,38 +157,38 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. The old shoe factory on the riverfront was ________ to make way for a public park.",
-        "opts": ["demolished", "constructed", "expanded", "nurtured"],
-        "ans": 0,
+        "opts": ["constructed", "demolished", "expanded", "nurtured"],
+        "ans": 1,
         "exp": "<b>demolished</b> (v): bị phá dỡ, san phẳng ('demolished to make way for')."
     },
     {
         "q": "2. First-year university students usually live in shared campus ________.",
-        "opts": ["accommodation", "skyscraper", "pedestrian", "suburb"],
-        "ans": 0,
+        "opts": ["skyscraper", "pedestrian", "accommodation", "suburb"],
+        "ans": 2,
         "exp": "<b>accommodation</b> (n - không đếm được): chỗ ở, ký túc xá sinh viên."
     },
     {
         "q": "3. The historic post office was not knocked down; instead, it was ________ into a community museum.",
-        "opts": ["converted", "demolished", "polluted", "automated"],
-        "ans": 0,
+        "opts": ["demolished", "converted", "polluted", "automated"],
+        "ans": 1,
         "exp": "<b>converted into</b>: được chuyển đổi công năng thành..."
     },
     {
         "q": "4. A quiet ________ area with 200 family houses has been built in the northeast of the town.",
-        "opts": ["residential", "artificial", "virtual", "influential"],
-        "ans": 0,
+        "opts": ["artificial", "virtual", "residential", "influential"],
+        "ans": 2,
         "exp": "<b>residential area</b>: khu dân cư."
     },
     {
         "q": "5. The city council decided to ________ the central library rather than build a completely new one.",
-        "opts": ["renovate", "demolish", "contaminate", "consume"],
-        "ans": 0,
+        "opts": ["demolish", "contaminate", "renovate", "consume"],
+        "ans": 2,
         "exp": "<b>renovate</b> (v): trùng tu, cải tạo cho mới."
     },
     {
         "q": "6. Because traffic was too heavy, the main shopping street was turned into a car-free ________ zone.",
-        "opts": ["pedestrian", "suburb", "skyscraper", "household"],
-        "ans": 0,
+        "opts": ["suburb", "pedestrian", "skyscraper", "household"],
+        "ans": 1,
         "exp": "<b>pedestrian zone</b>: khu phố đi bộ."
     },
     {
@@ -199,20 +199,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "8. Many young couples cannot buy flats in the city centre and need more ________ housing.",
-        "opts": ["affordable", "endangered", "sedentary", "extended"],
-        "ans": 0,
+        "opts": ["endangered", "sedentary", "extended", "affordable"],
+        "ans": 3,
         "exp": "<b>affordable housing</b>: nhà ở có giá cả phải chăng."
     },
     {
         "q": "9. Over the last ten years, the airport has ________ its terminal to handle twice as many passengers.",
-        "opts": ["expanded", "demolished", "recycled", "prevented"],
-        "ans": 0,
+        "opts": ["demolished", "recycled", "expanded", "prevented"],
+        "ans": 2,
         "exp": "<b>expanded</b> (v): mở rộng quy mô, diện tích."
     },
     {
         "q": "10. Our new flat in the ________ has three spacious bedrooms and a lovely back garden.",
-        "opts": ["suburbs", "skyscrapers", "facilities", "pedestrians"],
-        "ans": 0,
+        "opts": ["skyscrapers", "facilities", "pedestrians", "suburbs"],
+        "ans": 3,
         "exp": "<b>in the suburbs</b>: ở vùng ngoại ô."
     },
     {
@@ -223,26 +223,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "12. The financial district is famous for its glass ________ that have over fifty floors.",
-        "opts": ["skyscrapers", "suburbs", "siblings", "habitats"],
-        "ans": 0,
+        "opts": ["suburbs", "siblings", "habitats", "skyscrapers"],
+        "ans": 3,
         "exp": "<b>skyscrapers</b> (n): những tòa nhà chọc trời."
     },
     {
         "q": "13. Although the apartment is slightly far from work, the living room is bright and ________.",
-        "opts": ["spacious", "adjacent", "virtual", "accessible"],
-        "ans": 0,
+        "opts": ["adjacent", "virtual", "spacious", "accessible"],
+        "ans": 2,
         "exp": "<b>spacious</b> (adj): rộng rãi, thoáng đãng."
     },
     {
         "q": "14. The town has invested millions of pounds to ________ its old hospital and sports ________.",
-        "opts": ["modernize / facilities", "demolish / suburbs", "convert / pedestrians", "expand / siblings"],
-        "ans": 0,
+        "opts": ["demolish / suburbs", "convert / pedestrians", "expand / siblings", "modernize / facilities"],
+        "ans": 3,
         "exp": "<b>modernize ... facilities</b>: hiện đại hóa cơ sở vật chất."
     },
     {
         "q": "15. In the south of the map, the green farmland has been replaced by a modern ________ estate.",
-        "opts": ["residential", "nuclear", "sedentary", "renewable"],
-        "ans": 0,
+        "opts": ["nuclear", "residential", "sedentary", "renewable"],
+        "ans": 1,
         "exp": "<b>residential estate</b>: khu đô thị / khu nhà ở dân cư."
     },
     {
@@ -253,8 +253,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "17. [Ôn tập Unit 6] Mutual respect helps different generations live together in ________.",
-        "opts": ["harmony", "conflict", "addiction", "obesity"],
-        "ans": 0,
+        "opts": ["conflict", "harmony", "addiction", "obesity"],
+        "ans": 1,
         "exp": "<b>live in harmony</b> (Unit 6): sống hòa thuận."
     },
     {
@@ -271,8 +271,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "20. [Ôn tập Unit 2] University students must submit their final architecture ________ before Friday.",
-        "opts": ["assignment", "accommodation", "recreation", "citizen"],
-        "ans": 0,
+        "opts": ["accommodation", "recreation", "citizen", "assignment"],
+        "ans": 3,
         "exp": "<b>assignment</b> (Unit 2): bài tập lớn ở đại học."
     }
 ]
@@ -280,20 +280,20 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Since 2010, three new residential towers ________ in the northwest of the city.",
-        "opts": ["constructed", "have constructed", "have been constructed", "are constructing"],
-        "ans": 2,
+        "opts": ["have been constructed", "constructed", "have constructed", "are constructing"],
+        "ans": 0,
         "exp": "Dấu hiệu 'Since 2010' + chủ ngữ 'three new residential towers' chịu tác động -> Hiện tại hoàn thành bị động: <b>have been constructed</b>."
     },
     {
         "q": "2. Over the past twenty years, the small fishing village ________ into a busy tourist resort.",
-        "opts": ["transformed", "has transformed", "is transforming", "transforms"],
-        "ans": 1,
+        "opts": ["transformed", "is transforming", "has transformed", "transforms"],
+        "ans": 2,
         "exp": "Dấu hiệu 'Over the past twenty years' + chủ ngữ số ít 'village' -> <b>has transformed</b>."
     },
     {
         "q": "3. The old market in the town centre was demolished ________ make way for a pedestrian plaza.",
-        "opts": ["to", "for", "by", "with"],
-        "ans": 0,
+        "opts": ["for", "to", "by", "with"],
+        "ans": 1,
         "exp": "Cấu trúc chuẩn mô tả Map: <b>demolished to make way for...</b> (bị phá dỡ để nhường chỗ cho...)."
     },
     {
@@ -310,20 +310,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "6. Recently, the local authorities ________ the historic theatre and added a riverside café.",
-        "opts": ["renovated", "have renovated", "have been renovated", "renovates"],
-        "ans": 1,
+        "opts": ["have renovated", "renovated", "have been renovated", "renovates"],
+        "ans": 0,
         "exp": "Dấu hiệu 'Recently' + chủ ngữ chủ động 'the local authorities' -> <b>have renovated</b>."
     },
     {
         "q": "7. The industrial warehouse on the east bank has been converted ________ an indoor sports facility.",
-        "opts": ["into", "for", "with", "on"],
-        "ans": 0,
+        "opts": ["for", "with", "on", "into"],
+        "ans": 3,
         "exp": "Cấu trúc <b>converted into</b>: được chuyển đổi công năng thành..."
     },
     {
         "q": "8. Note that 'accommodation' is an uncountable noun, so we say: Student accommodation ________ expensive here.",
-        "opts": ["are", "is", "were", "have been"],
-        "ans": 1,
+        "opts": ["are", "were", "have been", "is"],
+        "ans": 3,
         "exp": "'Accommodation' là danh từ không đếm được -> Động từ chia số ít: <b>is</b>."
     },
     {

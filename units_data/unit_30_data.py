@@ -161,44 +161,44 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "2. Economists fear that factory automation could ________ millions of low-skilled assembly-line workers.",
-        "opts": ["displace", "augment", "reskill", "coexist"],
-        "ans": 0,
+        "opts": ["augment", "reskill", "coexist", "displace"],
+        "ans": 3,
         "exp": "<b>displace workers</b> (v): thay thế chỗ, đẩy người lao động ra khỏi công việc cũ."
     },
     {
         "q": "3. AI software is designed to ________ doctors' diagnostic abilities rather than replace human physicians.",
-        "opts": ["augment", "displace", "erode", "impair"],
-        "ans": 0,
+        "opts": ["displace", "augment", "erode", "impair"],
+        "ans": 1,
         "exp": "<b>augment</b> (v): bổ trợ, nâng cao năng lực con người."
     },
     {
         "q": "4. Digital cameras and smartphones quickly rendered traditional film cameras ________ in the early 2000s.",
-        "opts": ["obsolete", "autonomous", "transformative", "equitable"],
-        "ans": 0,
+        "opts": ["autonomous", "transformative", "equitable", "obsolete"],
+        "ans": 3,
         "exp": "<b>render sth obsolete</b> (adj): khiến cái gì trở nên lỗi thời."
     },
     {
         "q": "5. Governments must fund adult education programmes to ________ middle-aged workers for the digital economy.",
-        "opts": ["reskill", "displace", "clone", "outsource"],
-        "ans": 0,
+        "opts": ["displace", "clone", "reskill", "outsource"],
+        "ans": 2,
         "exp": "<b>reskill the workforce</b> (v): đào tạo lại kỹ năng mới cho người lao động."
     },
     {
         "q": "6. Automating repetitive paperwork allows employees to focus on creative tasks, boosting overall ________.",
-        "opts": ["productivity", "surveillance", "evasion", "debris"],
-        "ans": 0,
+        "opts": ["surveillance", "productivity", "evasion", "debris"],
+        "ans": 1,
         "exp": "<b>boost productivity</b> (n): nâng cao năng suất lao động."
     },
     {
         "q": "7. Privacy advocates warn that facial recognition ________ in public streets can infringe on civil liberties.",
-        "opts": ["surveillance", "governance", "synthesis", "correlation"],
-        "ans": 0,
+        "opts": ["governance", "synthesis", "correlation", "surveillance"],
+        "ans": 3,
         "exp": "<b>facial recognition surveillance</b> (n): sự giám sát bằng nhận diện khuôn mặt."
     },
     {
         "q": "8. Comparing the line graph and the table reveals a clear positive ________ between education spending and GDP growth.",
-        "opts": ["correlation", "surveillance", "deficit", "mutation"],
-        "ans": 0,
+        "opts": ["surveillance", "correlation", "deficit", "mutation"],
+        "ans": 1,
         "exp": "<b>a positive correlation between A and B</b> (n): mối tương quan thuận giữa 2 biểu đồ/biến số."
     },
     {
@@ -209,38 +209,38 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "10. The mixed charts show the ________ expansion of solar power and electric vehicle sales between 2015 and 2025.",
-        "opts": ["simultaneous", "obsolete", "converse", "hereditary"],
-        "ans": 0,
+        "opts": ["obsolete", "converse", "hereditary", "simultaneous"],
+        "ans": 3,
         "exp": "<b>simultaneous</b> (adj): diễn ra đồng thời cùng một lúc."
     },
     {
         "q": "11. Future classrooms will teach students how to ________ and collaborate ethically with artificial intelligence.",
-        "opts": ["coexist", "displace", "eradicate", "homogenize"],
-        "ans": 0,
+        "opts": ["displace", "eradicate", "coexist", "homogenize"],
+        "ans": 2,
         "exp": "<b>coexist with</b> (v): cùng tồn tại, chung sống hài hòa."
     },
     {
         "q": "12. New legislation is needed to hold software corporations legally ________ when their AI algorithms cause harm.",
-        "opts": ["accountable", "autonomous", "obsolete", "affluent"],
-        "ans": 0,
+        "opts": ["autonomous", "accountable", "obsolete", "affluent"],
+        "ans": 1,
         "exp": "<b>hold sb legally accountable</b> (adj): buộc ai phải chịu trách nhiệm trước pháp luật."
     },
     {
         "q": "13. World leaders met in Geneva to establish an international ________ framework for artificial intelligence safety.",
-        "opts": ["governance", "surveillance", "philanthropy", "propulsion"],
-        "ans": 0,
+        "opts": ["surveillance", "philanthropy", "governance", "propulsion"],
+        "ans": 2,
         "exp": "<b>AI governance framework</b> (n): khung quản trị và điều tiết AI."
     },
     {
         "q": "14. The most effective medical care is a ________ of cutting-edge AI diagnostics and human compassion.",
-        "opts": ["synthesis", "deficit", "disparity", "fraction"],
-        "ans": 0,
+        "opts": ["deficit", "synthesis", "disparity", "fraction"],
+        "ans": 1,
         "exp": "<b>a synthesis of A and B</b> (n): sự kết hợp/tổng hợp hài hòa giữa A và B."
     },
     {
         "q": "15. Generative AI is having a ________ impact on how software, medicine, and scientific research are conducted.",
-        "opts": ["transformative", "detrimental", "sedentary", "indigenous"],
-        "ans": 0,
+        "opts": ["detrimental", "sedentary", "transformative", "indigenous"],
+        "ans": 2,
         "exp": "<b>transformative impact</b> (adj): tác động chuyển đổi mang tính cách mạng."
     },
     {
@@ -251,8 +251,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "17. [Ôn tập Unit 28] Equitable access to quality public education is the main driver of upward social ________.",
-        "opts": ["mobility", "evasion", "deficit", "debris"],
-        "ans": 0,
+        "opts": ["evasion", "deficit", "mobility", "debris"],
+        "ans": 2,
         "exp": "<b>upward social mobility</b> (Unit 28): sự dịch chuyển tầng lớp xã hội đi lên."
     },
     {
@@ -263,8 +263,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "19. [Ôn tập Unit 25] Volunteering to help strangers without any financial incentive demonstrates human ________.",
-        "opts": ["altruism", "egoism", "isolation", "insomnia"],
-        "ans": 0,
+        "opts": ["egoism", "isolation", "insomnia", "altruism"],
+        "ans": 3,
         "exp": "<b>altruism</b> (Unit 25): lòng vị tha."
     },
     {
@@ -284,20 +284,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "2. Subject-Verb Agreement Trap 2: A large number of routine clerical jobs ________ been rendered obsolete by automation.",
-        "opts": ["has", "have", "is", "was"],
-        "ans": 1,
+        "opts": ["has", "is", "have", "was"],
+        "ans": 2,
         "exp": "Cấu trúc <b>A (large) number of + N (số nhiều)</b> (= Many) luôn chia động từ <b>SỐ NHIỀU</b> -> <b>have</b>."
     },
     {
         "q": "3. Subject-Verb Agreement Trap 3: The Minister of Science, along with twenty AI researchers, ________ attending the governance summit today.",
-        "opts": ["are", "were", "is", "have been"],
-        "ans": 2,
+        "opts": ["are", "were", "have been", "is"],
+        "ans": 3,
         "exp": "Khi có <code>along with / as well as</code>, động từ chia theo <b>chủ ngữ đầu tiên</b> ('The Minister of Science' — số ít) -> <b>is</b>."
     },
     {
         "q": "4. Task 1 Mixed Charts Transition: ________ to the accompanying bar chart, software engineering recorded the highest salary growth.",
-        "opts": ["Turn", "Turned", "Turning", "To turning"],
-        "ans": 2,
+        "opts": ["Turning", "Turn", "Turned", "To turning"],
+        "ans": 0,
         "exp": "Cụm chuyển đoạn chuẩn Band 8.0 khi chuyển sang biểu đồ thứ 2 trong bài Mixed Charts: <b>Turning to the bar chart / table, ...</b>"
     },
     {
@@ -308,32 +308,32 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "6. Conditional Inversion (Review Unit 28): ________ tech corporations not held legally accountable, public trust in AI would collapse.",
-        "opts": ["Should", "Were", "Had", "Unless"],
-        "ans": 1,
+        "opts": ["Should", "Had", "Were", "Unless"],
+        "ans": 2,
         "exp": "Đảo ngữ câu điều kiện loại 2 bị động ('If tech corporations were not held...') -> <b>Were</b>."
     },
     {
         "q": "7. Fronted Participle Clause (Review Unit 27): ________ by significant productivity gains, banks have invested billions in autonomous algorithms.",
-        "opts": ["Encourage", "Encouraging", "Encouraged", "Having encouraged"],
-        "ans": 2,
+        "opts": ["Encouraged", "Encourage", "Encouraging", "Having encouraged"],
+        "ans": 0,
         "exp": "Chủ ngữ 'banks' chịu tác động (Được khích lệ bởi...) -> dùng phân từ quá khứ <b>Encouraged</b>."
     },
     {
         "q": "8. Present Subjunctive (Review Unit 26): It is imperative that global AI governance ________ established before autonomous weapons proliferate.",
-        "opts": ["is", "are", "be", "was"],
-        "ans": 2,
+        "opts": ["is", "are", "was", "be"],
+        "ans": 3,
         "exp": "Thức giả định bị động: <code>It is imperative that + S + (should) be + V3/ed</code> -> <b>be</b>."
     },
     {
         "q": "9. Double Comparative (Review Unit 24): The more tasks artificial intelligence automates, ________ important human empathy and creativity become.",
-        "opts": ["more", "the more", "the most", "most"],
-        "ans": 1,
+        "opts": ["more", "the most", "the more", "most"],
+        "ans": 2,
         "exp": "Cấu trúc So sánh kép: <code>The more..., the more...</code> -> <b>the more</b>."
     },
     {
         "q": "10. Concession (Review Unit 22): ________ the risk of short-term job displacement, AI will ultimately augment human prosperity.",
-        "opts": ["Although", "Even though", "Despite", "Whereas"],
-        "ans": 2,
+        "opts": ["Although", "Even though", "Whereas", "Despite"],
+        "ans": 3,
         "exp": "Đi trước cụm danh từ ('the risk of short-term job displacement') -> dùng <b>Despite</b>."
     }
 ]

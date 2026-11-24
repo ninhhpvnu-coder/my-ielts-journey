@@ -156,26 +156,26 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. The Indus Valley and Mesopotamia were two of the earliest human ________ in world history.",
-        "opts": ["civilizations", "exhibitions", "itineraries", "vehicles"],
-        "ans": 0,
+        "opts": ["exhibitions", "itineraries", "civilizations", "vehicles"],
+        "ans": 2,
         "exp": "<b>ancient/human civilizations</b>: các nền văn minh nhân loại."
     },
     {
         "q": "2. A team of archaeologists spent three summers working to ________ the buried city of Pompeii.",
-        "opts": ["excavate", "subsidize", "commute", "automate"],
-        "ans": 0,
+        "opts": ["subsidize", "excavate", "commute", "automate"],
+        "ans": 1,
         "exp": "<b>excavate</b> (v): khai quật khảo cổ."
     },
     {
         "q": "3. Gold jewellery and clay pots are precious ________ that show how people lived thousands of years ago.",
-        "opts": ["artifacts", "passengers", "skyscrapers", "siblings"],
-        "ans": 0,
+        "opts": ["passengers", "skyscrapers", "artifacts", "siblings"],
+        "ans": 2,
         "exp": "<b>artifacts</b> (n): các cổ vật, hiện vật lịch sử."
     },
     {
         "q": "4. The Imperial Citadel of Thang Long was built across several royal ________ in Vietnamese history.",
-        "opts": ["dynasties", "delays", "suburbs", "adolescence"],
-        "ans": 0,
+        "opts": ["delays", "suburbs", "dynasties", "adolescence"],
+        "ans": 2,
         "exp": "<b>royal dynasties</b>: các triều đại phong kiến."
     },
     {
@@ -192,26 +192,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "7. Thousands of tourists climb the mountain trail to photograph the stone ________ of Machu Picchu.",
-        "opts": ["ruins", "devices", "emissions", "conflicts"],
-        "ans": 0,
+        "opts": ["devices", "ruins", "emissions", "conflicts"],
+        "ans": 1,
         "exp": "<b>ancient ruins</b>: các tàn tích, phế tích cổ."
     },
     {
         "q": "8. DNA testing helps scientists trace the ________ and migration routes of our early human ________.",
-        "opts": ["origin / ancestors", "delay / passengers", "privacy / platforms", "stamina / workouts"],
-        "ans": 0,
+        "opts": ["delay / passengers", "origin / ancestors", "privacy / platforms", "stamina / workouts"],
+        "ans": 1,
         "exp": "<b>trace the origin</b> (truy tìm nguồn gốc) của <b>ancestors</b> (tổ tiên)."
     },
     {
         "q": "9. The newly restored royal crown is now on public ________ in the central hall of the museum.",
-        "opts": ["display", "commute", "excursion", "harmony"],
-        "ans": 0,
+        "opts": ["commute", "excursion", "harmony", "display"],
+        "ans": 3,
         "exp": "<b>on public display</b>: được trưng bày cho công chúng chiêm ngưỡng."
     },
     {
         "q": "10. In 1799, soldiers in Egypt ________ the Rosetta Stone, which helped scholars read hieroglyphs.",
-        "opts": ["discovered", "demolished", "subsidized", "polluted"],
-        "ans": 0,
+        "opts": ["demolished", "subsidized", "polluted", "discovered"],
+        "ans": 3,
         "exp": "<b>discovered</b> (v): khám phá, phát hiện ra."
     },
     {
@@ -228,14 +228,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "13. ________ Greek philosophers such as Socrates and Plato still influence modern education today.",
-        "opts": ["Ancient", "Virtual", "Nuclear", "Punctual"],
-        "ans": 0,
+        "opts": ["Virtual", "Nuclear", "Ancient", "Punctual"],
+        "ans": 2,
         "exp": "<b>Ancient Greek</b>: Hy Lạp cổ đại."
     },
     {
         "q": "14. Virtual reality headsets allow museums to ________ fragile manuscripts without exposing them to light.",
-        "opts": ["display", "excavate", "demolish", "contaminate"],
-        "ans": 0,
+        "opts": ["excavate", "display", "demolish", "contaminate"],
+        "ans": 1,
         "exp": "<b>display</b> (v): trưng bày, hiển thị."
     },
     {
@@ -246,32 +246,32 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "16. [Ôn tập Chặng 2 - Unit 9] Visitors must be ________ when entering ancient temples and heritage sites.",
-        "opts": ["respectful", "sedentary", "artificial", "extended"],
-        "ans": 0,
+        "opts": ["sedentary", "artificial", "extended", "respectful"],
+        "ans": 3,
         "exp": "<b>respectful</b> (Unit 9): có thái độ tôn trọng."
     },
     {
         "q": "17. [Ôn tập Chặng 2 - Unit 8] A reliable underground metro ________ makes it easy to reach the city museum.",
-        "opts": ["network", "upbringing", "souvenir", "conflict"],
-        "ans": 0,
+        "opts": ["upbringing", "souvenir", "conflict", "network"],
+        "ans": 3,
         "exp": "<b>metro network</b> (Unit 8): mạng lưới tàu điện ngầm."
     },
     {
         "q": "18. [Ôn tập Chặng 2 - Unit 7] Instead of being demolished, the old railway station was ________ into a history museum.",
-        "opts": ["converted", "commuted", "nurtured", "excavated"],
-        "ans": 0,
+        "opts": ["commuted", "nurtured", "converted", "excavated"],
+        "ans": 2,
         "exp": "<b>converted into</b> (Unit 7): được chuyển đổi công năng thành..."
     },
     {
         "q": "19. [Ôn tập Chặng 2 - Unit 6] Grandparents pass down stories about family ________ to the younger generation.",
-        "opts": ["ancestors", "emissions", "vehicles", "devices"],
-        "ans": 0,
+        "opts": ["emissions", "ancestors", "vehicles", "devices"],
+        "ans": 1,
         "exp": "<b>ancestors</b> (Unit 10 & Unit 6): tổ tiên trong dòng họ."
     },
     {
         "q": "20. [Ôn tập Chặng 1 - Unit 3] National parks help ________ both natural biodiversity and ancient forest ruins.",
-        "opts": ["preserve", "automate", "delay", "demolish"],
-        "ans": 0,
+        "opts": ["automate", "delay", "demolish", "preserve"],
+        "ans": 3,
         "exp": "<b>preserve</b> (Unit 3): bảo tồn, gìn giữ."
     }
 ]
@@ -279,14 +279,14 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. While engineers ________ a new metro tunnel in Rome, they discovered the ruins of an ancient bathhouse.",
-        "opts": ["dug", "were digging", "are digging", "have dug"],
-        "ans": 1,
+        "opts": ["were digging", "dug", "are digging", "have dug"],
+        "ans": 0,
         "exp": "Hành động đang diễn ra trong quá khứ sau 'While' làm nền cho hành động 'discovered' cắt ngang -> Quá khứ tiếp diễn: <b>were digging</b>."
     },
     {
         "q": "2. Archaeologists ________ over five hundred gold artifacts when they opened the royal tomb in 1922.",
-        "opts": ["found", "were finding", "have found", "find"],
-        "ans": 0,
+        "opts": ["were finding", "have found", "find", "found"],
+        "ans": 3,
         "exp": "Sự kiện lịch sử có mốc thời gian xác định 'in 1922' -> Quá khứ đơn: <b>found</b>."
     },
     {
@@ -297,44 +297,44 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "4. What ________ the archaeologist looking for when she entered the underground cave?",
-        "opts": ["did", "was", "were", "has"],
-        "ans": 1,
+        "opts": ["did", "were", "was", "has"],
+        "ans": 2,
         "exp": "Câu hỏi thì Quá khứ tiếp diễn với chủ ngữ số ít 'the archaeologist' + 'looking for' -> <b>was</b>."
     },
     {
         "q": "5. Many magnificent stone temples were constructed ________ the reign of the Khmer Empire.",
-        "opts": ["during", "while", "when", "since"],
-        "exp": "Đi với cụm danh từ 'the reign of...' -> Dùng giới từ <b>during</b> (trong suốt thời kỳ trị vì của...).",
-        "ans": 0
+        "opts": ["while", "during", "when", "since"],
+        "ans": 1,
+        "exp": "Đi với cụm danh từ 'the reign of...' -> Dùng giới từ <b>during</b> (trong suốt thời kỳ trị vì của...)."
     },
     {
         "q": "6. While one team was cleaning the ancient pottery, another team ________ the temple walls.",
-        "opts": ["photographed", "was photographing", "has photographed", "photographs"],
-        "ans": 1,
+        "opts": ["photographed", "has photographed", "was photographing", "photographs"],
+        "ans": 2,
         "exp": "Hai hành động kéo dài song song cùng lúc trong quá khứ nối bằng 'While' -> <b>was photographing</b>."
     },
     {
         "q": "7. The palace was destroyed by an earthquake in 1690; ________, the royal dynasty moved the capital south.",
-        "opts": ["subsequently", "prior to", "during", "because of"],
-        "ans": 0,
+        "opts": ["prior to", "during", "because of", "subsequently"],
+        "ans": 3,
         "exp": "Sau dấu chấm phẩy (;), trước dấu phẩy (,) chỉ sự việc diễn ra tiếp theo sau đó -> <b>subsequently</b>."
     },
     {
         "q": "8. Local fishermen were repairing their nets when they ________ a bronze statue on the seabed.",
-        "opts": ["spotted", "were spotting", "spot", "have spotted"],
-        "ans": 0,
+        "opts": ["were spotting", "spot", "spotted", "have spotted"],
+        "ans": 2,
         "exp": "Hành động ngắn cắt ngang sau 'when' -> Quá khứ đơn: <b>spotted</b>."
     },
     {
         "q": "9. Three thousand years ago, early civilizations ________ along fertile river valleys.",
-        "opts": ["developed", "were developing", "have developed", "develop"],
-        "ans": 0,
+        "opts": ["were developing", "have developed", "develop", "developed"],
+        "ans": 3,
         "exp": "Mốc thời gian quá khứ hoàn tất 'Three thousand years ago' -> Quá khứ đơn: <b>developed</b>."
     },
     {
         "q": "10. Because the fragile scroll had been buried for centuries, experts ________ it very carefully.",
-        "opts": ["unrolled", "are unrolling", "have unrolled", "will unroll"],
-        "ans": 0,
+        "opts": ["are unrolling", "unrolled", "have unrolled", "will unroll"],
+        "ans": 1,
         "exp": "Mệnh đề phụ chia ở Quá khứ hoàn thành ('had been buried') -> Mệnh đề chính chia ở Quá khứ đơn: <b>unrolled</b>."
     }
 ]

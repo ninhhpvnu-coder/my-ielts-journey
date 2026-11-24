@@ -163,50 +163,50 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "2. Every credit card ________ on our website is protected by two-factor authentication.",
-        "opts": ["transaction", "competitor", "warranty", "impulse"],
-        "ans": 0,
+        "opts": ["competitor", "warranty", "impulse", "transaction"],
+        "ans": 3,
         "exp": "<b>transaction</b> (n): giao dịch thanh toán."
     },
     {
         "q": "3. Many customers are willing to pay an extra fee for same-day home ________.",
-        "opts": ["delivery", "preference", "demographic", "inflation"],
-        "ans": 0,
+        "opts": ["preference", "delivery", "demographic", "inflation"],
+        "ans": 1,
         "exp": "<b>same-day delivery</b>: dịch vụ giao hàng trong ngày."
     },
     {
         "q": "4. Despite higher shipping fees, working parents love the ________ of ordering household goods from home.",
-        "opts": ["convenience", "storefront", "competitor", "loyalty"],
-        "ans": 0,
+        "opts": ["storefront", "competitor", "loyalty", "convenience"],
+        "ans": 3,
         "exp": "<b>convenience</b> (n): sự tiện lợi."
     },
     {
         "q": "5. Rising city centre rent has forced many independent bookshops to close their physical ________.",
-        "opts": ["storefronts", "transactions", "warranties", "forecasts"],
-        "ans": 0,
+        "opts": ["transactions", "warranties", "storefronts", "forecasts"],
+        "ans": 2,
         "exp": "<b>physical storefronts</b>: các cửa hàng mặt tiền thực tế."
     },
     {
         "q": "6. By offering lower prices and faster shipping, the new company quickly overtook its main ________.",
-        "opts": ["competitor", "colleague", "candidate", "passenger"],
-        "ans": 0,
+        "opts": ["colleague", "candidate", "passenger", "competitor"],
+        "ans": 3,
         "exp": "<b>competitor</b> (n): đối thủ cạnh tranh."
     },
     {
         "q": "7. During the November shopping festival, the company generated record ________ of $400 million.",
-        "opts": ["revenue", "warranty", "overtime", "upbringing"],
-        "ans": 0,
+        "opts": ["warranty", "overtime", "upbringing", "revenue"],
+        "ans": 3,
         "exp": "<b>generate revenue</b>: tạo ra doanh thu."
     },
     {
         "q": "8. In the 20-to-30 age group, mobile app users ________ desktop shoppers by more than three to one.",
-        "opts": ["outnumbered", "fluctuated", "stabilized", "boycotted"],
-        "ans": 0,
+        "opts": ["fluctuated", "outnumbered", "stabilized", "boycotted"],
+        "ans": 1,
         "exp": "<b>outnumber</b> (v): đông hơn, vượt trội hơn về số lượng."
     },
     {
         "q": "9. Analysts predict that digital retail sales will ________ physical store sales in the next five years.",
-        "opts": ["surpass", "plummet", "endorse", "nurture"],
-        "ans": 0,
+        "opts": ["plummet", "endorse", "surpass", "nurture"],
+        "ans": 2,
         "exp": "<b>surpass</b> (v): vượt qua."
     },
     {
@@ -223,26 +223,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "12. Large supermarket chains ________ food retail in urban areas, leaving little room for small grocers.",
-        "opts": ["dominate", "fluctuate", "recruit", "commute"],
-        "ans": 0,
+        "opts": ["fluctuate", "dominate", "recruit", "commute"],
+        "ans": 1,
         "exp": "<b>dominate</b> (v): thống lĩnh, chiếm ưu thế áp đảo."
     },
     {
         "q": "13. The over-65 age ________ still prefers speaking to a helpful shop assistant face to face.",
-        "opts": ["demographic", "transaction", "revenue", "warranty"],
-        "ans": 0,
+        "opts": ["transaction", "demographic", "revenue", "warranty"],
+        "ans": 1,
         "exp": "<b>age demographic</b>: nhóm nhân khẩu học theo độ tuổi."
     },
     {
         "q": "14. Surveys show a clear consumer ________ for eco-friendly packaging and recyclable delivery boxes.",
-        "opts": ["preference", "competitor", "storefront", "burnout"],
-        "ans": 0,
+        "opts": ["competitor", "storefront", "burnout", "preference"],
+        "ans": 3,
         "exp": "<b>consumer preference for</b>: sự ưa chuộng của người tiêu dùng đối với..."
     },
     {
         "q": "15. This washing machine comes with a three-year manufacturer's ________ that covers all repair costs.",
-        "opts": ["warranty", "transaction", "revenue", "budget"],
-        "ans": 0,
+        "opts": ["transaction", "revenue", "warranty", "budget"],
+        "ans": 2,
         "exp": "<b>warranty</b> (n): chế độ bảo hành."
     },
     {
@@ -259,20 +259,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "18. [Ôn tập Unit 12] Between 2015 and 2025, the ________ of people shopping on smartphones surged.",
-        "opts": ["proportion", "qualification", "celebrity", "sibling"],
-        "ans": 0,
+        "opts": ["qualification", "proportion", "celebrity", "sibling"],
+        "ans": 1,
         "exp": "<b>proportion</b> (Unit 12): tỷ lệ, tỷ trọng."
     },
     {
         "q": "19. [Ôn tập Unit 11] Delivery drivers face a very heavy ________ during the year-end holiday season.",
-        "opts": ["workload", "remuneration", "promotion", "ambition"],
-        "ans": 0,
+        "opts": ["remuneration", "promotion", "workload", "ambition"],
+        "ans": 2,
         "exp": "<b>heavy workload</b> (Unit 11): khối lượng công việc nặng nề."
     },
     {
         "q": "20. [Ôn tập Unit 5] Strong ________ measures are essential to protect customers' credit card data online.",
-        "opts": ["cybersecurity", "biodiversity", "architecture", "nutrition"],
-        "ans": 0,
+        "opts": ["biodiversity", "architecture", "cybersecurity", "nutrition"],
+        "ans": 2,
         "exp": "<b>cybersecurity</b> (Unit 5): an ninh mạng."
     }
 ]
@@ -280,26 +280,26 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. In 2025, online retail transactions accounted ________ 65% of total book sales.",
-        "opts": ["for", "of", "at", "by"],
-        "ans": 0,
+        "opts": ["of", "at", "by", "for"],
+        "ans": 3,
         "exp": "Cụm động từ cố định trong Task 1: <code>account for + số liệu %</code> (chiếm bao nhiêu %)."
     },
     {
         "q": "2. E-commerce preferences in the 18–29 and 30–49 age groups stood at 75% and 60% ________.",
-        "opts": ["respective", "respectively", "respectful", "respecting"],
-        "ans": 1,
+        "opts": ["respective", "respectful", "respecting", "respectively"],
+        "ans": 3,
         "exp": "Đứng cuối câu số liệu để chỉ sự tương ứng lần lượt -> dùng trạng từ <b>respectively</b>."
     },
     {
         "q": "3. Among teenagers, ordering clothes online was twice as ________ as shopping in physical storefronts.",
-        "opts": ["popular", "more popular", "most popular", "popularly"],
-        "ans": 0,
+        "opts": ["more popular", "most popular", "popular", "popularly"],
+        "ans": 2,
         "exp": "Cấu trúc so sánh gấp bội <code>twice as + Adj (nguyên mẫu) + as</code> -> <b>popular</b>."
     },
     {
         "q": "4. Smartphones dominated digital shopping in 2025, ________ for 70% of all retail transactions.",
-        "opts": ["account", "accounted", "accounting", "accounts"],
-        "ans": 2,
+        "opts": ["account", "accounting", "accounted", "accounts"],
+        "ans": 1,
         "exp": "Mệnh đề phân từ hiện tại rút gọn sau dấu phẩy (chủ động): <code>, accounting for 70%...</code>"
     },
     {
@@ -310,32 +310,32 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "6. In the over-60 demographic, in-store buyers outnumbered online buyers ________ three to one (75% vs 25%).",
-        "opts": ["by", "at", "to", "for"],
-        "ans": 0,
+        "opts": ["at", "to", "by", "for"],
+        "ans": 2,
         "exp": "Cấu trúc <code>outnumber [B] by [tỷ lệ]</code> -> dùng giới từ <b>by</b>."
     },
     {
         "q": "7. Fashion was the most popular online category for young women, ________ electronics ranked first among men.",
-        "opts": ["while", "so", "because of", "unless"],
-        "ans": 0,
+        "opts": ["so", "while", "because of", "unless"],
+        "ans": 1,
         "exp": "Liên từ <b>while</b> nối 2 mệnh đề so sánh song song trong Task 1."
     },
     {
         "q": "8. The proportion of revenue generated by physical storefronts was significantly ________ than that of online apps.",
-        "opts": ["low", "lower", "lowest", "more low"],
-        "ans": 1,
+        "opts": ["low", "lowest", "more low", "lower"],
+        "ans": 3,
         "exp": "So sánh hơn với tính từ ngắn 'low' (có 'than' và trạng từ nhấn mạnh 'significantly') -> <b>lower</b>."
     },
     {
         "q": "9. Customers show a strong preference ________ retailers that offer free returns and a two-year warranty.",
-        "opts": ["for", "with", "at", "by"],
-        "ans": 0,
+        "opts": ["with", "at", "for", "by"],
+        "ans": 2,
         "exp": "Danh từ <code>preference</code> đi với giới từ <b>for</b> (<i>a preference for sth</i>)."
     },
     {
         "q": "10. If local storefronts ________ free home delivery, they could compete more effectively with giant websites.",
-        "opts": ["offer", "offered", "will offer", "have offered"],
-        "ans": 1,
+        "opts": ["offered", "offer", "will offer", "have offered"],
+        "ans": 0,
         "exp": "Ôn tập Câu điều kiện loại 2 (Unit 13): Mệnh đề chính có 'could compete' -> mệnh đề If chia quá khứ đơn <b>offered</b>."
     }
 ]

@@ -155,14 +155,14 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Economic ________ has allowed consumers to buy fresh fruit and electronics from across the planet.",
-        "opts": ["globalization", "isolation", "deprivation", "propulsion"],
-        "ans": 0,
+        "opts": ["isolation", "deprivation", "globalization", "propulsion"],
+        "ans": 2,
         "exp": "<b>economic globalization</b> (n): toàn cầu hóa kinh tế."
     },
     {
         "q": "2. Giant ________ corporations like Apple and Samsung operate research centres and factories in dozens of countries.",
-        "opts": ["multinational", "indigenous", "celestial", "lunar"],
-        "ans": 0,
+        "opts": ["indigenous", "multinational", "celestial", "lunar"],
+        "ans": 1,
         "exp": "<b>multinational corporations</b>: các tập đoàn đa quốc gia."
     },
     {
@@ -179,50 +179,50 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "5. Vietnam is one of the world's leading nations that ________ agricultural products such as coffee and cashew nuts.",
-        "opts": ["export", "import", "homogenize", "impair"],
-        "ans": 0,
+        "opts": ["import", "export", "homogenize", "impair"],
+        "ans": 1,
         "exp": "<b>export</b> (v): xuất khẩu hàng hóa ra thế giới."
     },
     {
         "q": "6. Because Japan lacks natural oil reserves, it must ________ almost all of its fossil fuels from abroad.",
-        "opts": ["import", "export", "outsource", "standardize"],
-        "ans": 0,
+        "opts": ["export", "import", "outsource", "standardize"],
+        "ans": 1,
         "exp": "<b>import</b> (v): nhập khẩu từ nước ngoài."
     },
     {
         "q": "7. Sociologists worry that identical shopping malls and fast-food chains will ________ cities around the world.",
-        "opts": ["homogenize", "enrich", "stimulate", "pioneer"],
-        "ans": 0,
+        "opts": ["enrich", "stimulate", "pioneer", "homogenize"],
+        "ans": 3,
         "exp": "<b>homogenize</b> (v): đồng nhất hóa (làm mọi nơi trở nên giống hệt nhau)."
     },
     {
         "q": "8. Second-generation immigrants usually speak the local language fluently and ________ easily into society.",
-        "opts": ["assimilate", "erode", "outsource", "distort"],
-        "ans": 0,
+        "opts": ["erode", "outsource", "assimilate", "distort"],
+        "ans": 2,
         "exp": "<b>assimilate into</b> (v): hòa nhập, đồng hóa vào xã hội."
     },
     {
         "q": "9. International festivals celebrate cultural ________ by showcasing traditional costumes, music, and cuisine.",
-        "opts": ["diversity", "egoism", "scarcity", "debris"],
-        "ans": 0,
+        "opts": ["egoism", "scarcity", "debris", "diversity"],
+        "ans": 3,
         "exp": "<b>cultural diversity</b> (n): sự đa dạng văn hóa."
     },
     {
         "q": "10. Uncontrolled mass tourism and foreign media can gradually ________ traditional family values in rural villages.",
-        "opts": ["erode", "foster", "conserve", "verify"],
-        "ans": 0,
+        "opts": ["foster", "conserve", "verify", "erode"],
+        "ans": 3,
         "exp": "<b>erode traditional values / identity</b> (v): làm xói mòn, mai một giá trị truyền thống."
     },
     {
         "q": "11. Opening up to international trade has lifted millions out of poverty and brought economic ________.",
-        "opts": ["prosperity", "deprivation", "fatigue", "extinction"],
-        "ans": 0,
+        "opts": ["deprivation", "fatigue", "prosperity", "extinction"],
+        "ans": 2,
         "exp": "<b>economic prosperity</b> (n): sự thịnh vượng kinh tế."
     },
     {
         "q": "12. Human rights groups campaign against fast-fashion factories that force labourers to work in dangerous ________.",
-        "opts": ["sweatshops", "galleries", "sanctuaries", "reservoirs"],
-        "ans": 0,
+        "opts": ["galleries", "sweatshops", "sanctuaries", "reservoirs"],
+        "ans": 1,
         "exp": "<b>sweatshops</b> (n): công xưởng bóc lột sức lao động."
     },
     {
@@ -233,20 +233,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "14. Shipping containers were designed to ________ cargo sizes so goods can be transferred between ships and trains easily.",
-        "opts": ["standardize", "erode", "censor", "poach"],
-        "ans": 0,
+        "opts": ["erode", "censor", "standardize", "poach"],
+        "ans": 2,
         "exp": "<b>standardize</b> (v): tiêu chuẩn hóa."
     },
     {
         "q": "15. Recording folk songs and teaching local dialects in schools help preserve ________ cultures from disappearing.",
-        "opts": ["indigenous", "multinational", "astronomical", "sensational"],
-        "ans": 0,
+        "opts": ["multinational", "indigenous", "astronomical", "sensational"],
+        "ans": 1,
         "exp": "<b>indigenous cultures / languages</b> (adj): văn hóa/ngôn ngữ bản địa."
     },
     {
         "q": "16. [Ôn tập Unit 26] It is ________ that space agencies cooperate to clear dangerous orbital debris.",
-        "opts": ["imperative", "lunar", "tangible", "organic"],
-        "ans": 0,
+        "opts": ["lunar", "tangible", "imperative", "organic"],
+        "ans": 2,
         "exp": "<b>It is imperative that...</b> (Unit 26): cấp bách, bắt buộc."
     },
     {
@@ -263,14 +263,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "19. [Ôn tập Unit 23] Tabloid newspapers often ________ minor celebrity scandals to attract online clicks.",
-        "opts": ["exaggerate", "verify", "standardize", "purify"],
-        "ans": 0,
+        "opts": ["verify", "standardize", "purify", "exaggerate"],
+        "ans": 3,
         "exp": "<b>exaggerate</b> (Unit 23): phóng đại, thổi phồng."
     },
     {
         "q": "20. [Ôn tập Unit 21] By 2050, the working-age ________ in many developed nations is projected to shrink.",
-        "opts": ["workforce", "pension", "algorithm", "sculpture"],
-        "ans": 0,
+        "opts": ["pension", "algorithm", "sculpture", "workforce"],
+        "ans": 3,
         "exp": "<b>workforce</b> (Unit 21): lực lượng lao động."
     }
 ]
@@ -278,8 +278,8 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Reduced Relative Clause (Active): Multinational corporations ________ in developing countries create millions of manufacturing jobs.",
-        "opts": ["operate", "operated", "operating", "which operating"],
-        "ans": 2,
+        "opts": ["operate", "operating", "operated", "which operating"],
+        "ans": 1,
         "exp": "Rút gọn MĐQH chủ động ('which operate') thành <b>V-ing (operating)</b>."
     },
     {
@@ -290,38 +290,38 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "3. Fronted Participle Clause (Passive): ________ by lower wages and tax incentives, foreign firms invest heavily in Southeast Asia.",
-        "opts": ["Attract", "Attracting", "Attracted", "Having attracted"],
-        "ans": 2,
+        "opts": ["Attract", "Attracting", "Having attracted", "Attracted"],
+        "ans": 3,
         "exp": "Chủ ngữ 'foreign firms' chịu tác động (<b>Được thu hút bởi...</b>) -> dùng phân từ quá khứ <b>V3/ed (Attracted)</b> ở đầu câu."
     },
     {
         "q": "4. Fronted Participle Clause (Active): ________ the erosion of indigenous languages, UNESCO launched a global preservation fund.",
-        "opts": ["Fear", "Fearing", "Feared", "To fearing"],
-        "ans": 1,
+        "opts": ["Fear", "Feared", "Fearing", "To fearing"],
+        "ans": 2,
         "exp": "Chủ ngữ 'UNESCO' thực hiện hành động chủ động (<b>Lo ngại sự mai một...</b>) -> dùng phân từ hiện tại <b>V-ing (Fearing)</b>."
     },
     {
         "q": "5. Reduced Relative Clause after Superlative: Britain was the first nation ________ industrial manufacturing in the 18th century.",
-        "opts": ["develop", "developing", "developed", "to develop"],
-        "ans": 3,
+        "opts": ["to develop", "develop", "developing", "developed"],
+        "ans": 0,
         "exp": "Sau cụm số thứ tự / so sánh nhất (<code>the first nation...</code>), MĐQH được rút gọn thành <b>to + V (to develop)</b>."
     },
     {
         "q": "6. ________ trade tariffs between ASEAN members has significantly boosted regional prosperity.",
-        "opts": ["Abolish", "Abolished", "Abolishing", "By abolish"],
-        "ans": 2,
+        "opts": ["Abolish", "Abolishing", "Abolished", "By abolish"],
+        "ans": 1,
         "exp": "Danh động từ <b>V-ing (Abolishing)</b> làm chủ ngữ của câu (động từ chính là 'has boosted' số ít)."
     },
     {
         "q": "7. It is essential that every multinational corporation ________ ethical labour standards instead of using sweatshops.",
-        "opts": ["upholds", "uphold", "upheld", "upholding"],
-        "ans": 1,
+        "opts": ["uphold", "upholds", "upheld", "upholding"],
+        "ans": 0,
         "exp": "Ôn tập Thức giả định (Unit 26): <code>It is essential that + S + V (nguyên mẫu)</code> -> <b>uphold</b>."
     },
     {
         "q": "8. By 2035, global e-commerce exports ________ to double in value compared to 2020.",
-        "opts": ["project", "projected", "are projected", "will project"],
-        "ans": 2,
+        "opts": ["are projected", "project", "projected", "will project"],
+        "ans": 0,
         "exp": "Ôn tập Unit 21: Cấu trúc dự báo <code>are projected to + V</code>."
     },
     {
@@ -332,8 +332,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "10. The more interdependent national economies become, ________ vital international cooperation is.",
-        "opts": ["more", "the more", "the most", "most"],
-        "ans": 1,
+        "opts": ["more", "the most", "most", "the more"],
+        "ans": 3,
         "exp": "Ôn tập So sánh kép (Unit 24): <code>The more..., the more...</code> -> <b>the more</b>."
     }
 ]

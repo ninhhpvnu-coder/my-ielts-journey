@@ -157,44 +157,44 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Offshore wind farms can ________ a massive amount of renewable electricity without emitting carbon.",
-        "opts": ["generate", "filter", "diagnose", "poach"],
-        "ans": 0,
+        "opts": ["filter", "diagnose", "poach", "generate"],
+        "ans": 3,
         "exp": "<b>generate electricity / power</b> (v): sản xuất, tạo ra điện năng."
     },
     {
         "q": "2. High-pressure steam is directed into a chamber to spin the blades of a heavy-duty ________.",
-        "opts": ["turbine", "grid", "stage", "symptom"],
-        "ans": 0,
+        "opts": ["grid", "turbine", "stage", "symptom"],
+        "ans": 1,
         "exp": "<b>turbine</b> (n): tua-bin quay để phát điện."
     },
     {
         "q": "3. Many homeowners are installing rooftop ________ panels to reduce their monthly electricity bills.",
-        "opts": ["solar", "chronic", "initial", "juvenile"],
-        "ans": 0,
+        "opts": ["chronic", "solar", "initial", "juvenile"],
+        "ans": 1,
         "exp": "<b>rooftop solar panels</b>: tấm pin năng lượng mặt trời trên mái nhà."
     },
     {
         "q": "4. Inside the powerhouse, mechanical energy from the spinning shaft is ________ into electrical current.",
-        "opts": ["converted", "extracted", "filtered", "undergone"],
-        "ans": 0,
+        "opts": ["extracted", "filtered", "undergone", "converted"],
+        "ans": 3,
         "exp": "<b>convert A into B</b> (v): chuyển đổi dạng năng lượng A thành B."
     },
     {
         "q": "5. High-voltage electricity is ________ across the country through a network of overhead cables.",
-        "opts": ["transmitted", "undergone", "diagnosed", "vaccinated"],
-        "ans": 0,
+        "opts": ["undergone", "diagnosed", "transmitted", "vaccinated"],
+        "ans": 2,
         "exp": "<b>transmit</b> (v): truyền tải điện năng đi xa qua đường dây cáp."
     },
     {
         "q": "6. Any surplus power produced by the plant is fed directly into the national electricity ________.",
-        "opts": ["grid", "turbine", "filter", "verdict"],
-        "ans": 0,
+        "opts": ["turbine", "filter", "verdict", "grid"],
+        "ans": 3,
         "exp": "<b>national electricity grid</b> (n): mạng lưới điện quốc gia."
     },
     {
         "q": "7. Overall, the diagram illustrates a linear manufacturing process consisting of six distinct ________.",
-        "opts": ["stages", "grids", "turbines", "epidemics"],
-        "ans": 0,
+        "opts": ["grids", "turbines", "stages", "epidemics"],
+        "ans": 2,
         "exp": "<b>stage</b> (n): giai đoạn, bước trong sơ đồ quy trình Task 1."
     },
     {
@@ -205,14 +205,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "9. At the ________ stage of the geothermal process, cold water is pumped 4.5 km underground.",
-        "opts": ["initial", "solar", "continuous", "sedentary"],
-        "ans": 0,
+        "opts": ["solar", "continuous", "sedentary", "initial"],
+        "ans": 3,
         "exp": "<b>at the initial stage</b>: ở giai đoạn đầu tiên/ban đầu."
     },
     {
         "q": "10. Before entering the storage tank, the recycled water must ________ strict chemical filtration.",
-        "opts": ["undergo", "transmit", "generate", "distribute"],
-        "ans": 0,
+        "opts": ["transmit", "generate", "undergo", "distribute"],
+        "ans": 2,
         "exp": "<b>undergo + Noun</b> (v): trải qua một quá trình xử lý/kiểm tra."
     },
     {
@@ -223,32 +223,32 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "12. In geothermal plants, intense thermal heat is ________ from deep beneath the Earth's crust.",
-        "opts": ["extracted", "distributed", "transmitted", "filtered"],
-        "ans": 0,
+        "opts": ["distributed", "transmitted", "extracted", "filtered"],
+        "ans": 2,
         "exp": "<b>extract</b> (v): khai thác, rút/chiết xuất từ lòng đất."
     },
     {
         "q": "13. At the end of the process, electricity is ________ to domestic households and industrial factories.",
-        "opts": ["distributed", "undergone", "extracted", "filtered"],
-        "ans": 0,
+        "opts": ["undergone", "distributed", "extracted", "filtered"],
+        "ans": 1,
         "exp": "<b>distribute</b> (v): phân phối đến nơi tiêu thụ."
     },
     {
         "q": "14. The superheated water rises into a condensing ________, where it turns into high-pressure steam.",
-        "opts": ["apparatus", "grid", "stage", "prescription"],
-        "ans": 0,
+        "opts": ["grid", "stage", "apparatus", "prescription"],
+        "ans": 2,
         "exp": "<b>condensing apparatus</b> (n): thiết bị/buồng ngưng tụ chuyên dụng."
     },
     {
         "q": "15. Unlike solar energy, which depends on daylight, geothermal plants provide a ________ supply of power.",
-        "opts": ["continuous", "initial", "sedentary", "infectious"],
-        "ans": 0,
+        "opts": ["initial", "continuous", "sedentary", "infectious"],
+        "ans": 1,
         "exp": "<b>continuous</b> (adj): liên tục 24/24, không bị gián đoạn."
     },
     {
         "q": "16. [Ôn tập Unit 16] A balanced diet and regular exercise help boost your ________ to viral infections.",
-        "opts": ["immunity", "turbine", "apparatus", "legislation"],
-        "ans": 0,
+        "opts": ["turbine", "apparatus", "legislation", "immunity"],
+        "ans": 3,
         "exp": "<b>boost immunity</b> (Unit 16): tăng cường hệ miễn dịch."
     },
     {
@@ -259,8 +259,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "18. [Ôn tập Unit 15] Heavy fines and strict laws act as a powerful ________ against environmental pollution.",
-        "opts": ["deterrent", "offender", "turbine", "symptom"],
-        "ans": 0,
+        "opts": ["offender", "deterrent", "turbine", "symptom"],
+        "ans": 1,
         "exp": "<b>act as a deterrent</b> (Unit 15): đóng vai trò là biện pháp răn đe."
     },
     {
@@ -286,20 +286,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "2. Once the cold water ________ by hot underground rocks, it is pumped back up to the surface.",
-        "opts": ["heats", "is heating", "has been heated", "heated"],
-        "ans": 2,
+        "opts": ["heats", "has been heated", "is heating", "heated"],
+        "ans": 1,
         "exp": "Cấu trúc nối 2 bước quy trình: <code>Once + S + has/have been V3/ed (hoặc is/are V3/ed)</code> -> <b>has been heated</b>."
     },
     {
         "q": "3. Subsequently, mechanical energy from the spinning turbine ________ into electrical current by a generator.",
-        "opts": ["converts", "is converted", "is converting", "converted"],
-        "ans": 1,
+        "opts": ["is converted", "converts", "is converting", "converted"],
+        "ans": 0,
         "exp": "Năng lượng cơ học được chuyển đổi thành điện năng -> Bị động Hiện tại đơn: <b>is converted</b>."
     },
     {
         "q": "4. Before ________ into the national grid, the voltage of the electricity is stepped up by a transformer.",
-        "opts": ["transmitting", "being transmitted", "it transmits", "transmitted"],
-        "ans": 1,
+        "opts": ["being transmitted", "transmitting", "it transmits", "transmitted"],
+        "ans": 0,
         "exp": "Sau giới từ 'Before' + V-ing mang nghĩa bị động (trước khi được truyền tải) -> <b>being transmitted</b>."
     },
     {
@@ -316,26 +316,26 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "7. In the first step, solid impurities ________ out by passing the liquid through a fine sand screen.",
-        "opts": ["filter", "is filtered", "are filtered", "filtering"],
-        "ans": 2,
+        "opts": ["filter", "is filtered", "filtering", "are filtered"],
+        "ans": 3,
         "exp": "Chủ ngữ 'solid impurities' là danh từ số nhiều chịu tác động -> Bị động số nhiều: <b>are filtered</b>."
     },
     {
         "q": "8. The pressurized steam enters the powerhouse, ________ the blades of the steam turbine at high speed.",
-        "opts": ["which is rotated", "rotating", "rotates", "rotated"],
-        "ans": 1,
+        "opts": ["rotating", "which is rotated", "rotates", "rotated"],
+        "ans": 0,
         "exp": "Mệnh đề phân từ hiện tại (<code>, V-ing</code>) chỉ kết quả trực tiếp của hành động trước: làm quay (<b>rotating</b>) cánh tua-bin."
     },
     {
         "q": "9. ________ the condensing stage is complete, the cooled water is pumped back underground to repeat the cycle.",
-        "opts": ["Subsequently", "During", "Once", "Prior to"],
-        "ans": 2,
+        "opts": ["Subsequently", "During", "Prior to", "Once"],
+        "ans": 3,
         "exp": "Cần liên từ nối mệnh đề đầy đủ (S + V): <b>Once</b> (= Sau khi / Ngay khi)."
     },
     {
         "q": "10. At the final stage, clean electricity is sent to the power grid in order ________ to domestic consumers.",
-        "opts": ["to distribute", "to be distributed", "for distributing", "distributing"],
-        "ans": 1,
+        "opts": ["to distribute", "for distributing", "to be distributed", "distributing"],
+        "ans": 2,
         "exp": "Cấu trúc chỉ mục đích mang nghĩa bị động: <code>in order to be + V3/ed</code> (để được phân phối) -> <b>to be distributed</b>."
     }
 ]

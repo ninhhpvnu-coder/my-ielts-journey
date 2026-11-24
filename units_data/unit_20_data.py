@@ -157,14 +157,14 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Over-pumping underground aquifers has led to acute freshwater ________ in many arid countries.",
-        "opts": ["scarcity", "catastrophe", "category", "reservoir"],
-        "ans": 0,
+        "opts": ["catastrophe", "category", "scarcity", "reservoir"],
+        "ans": 2,
         "exp": "<b>acute freshwater scarcity</b> (n): sự khan hiếm nước ngọt trầm trọng."
     },
     {
         "q": "2. The table compares the percentage of total water ________ across three economic sectors in 2025.",
-        "opts": ["consumption", "desalination", "disparity", "flood"],
-        "ans": 0,
+        "opts": ["desalination", "consumption", "disparity", "flood"],
+        "ans": 1,
         "exp": "<b>water consumption</b> (n): lượng tiêu thụ/sử dụng nước."
     },
     {
@@ -175,14 +175,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "4. Water levels in the city's main storage ________ dropped to 30% capacity during the summer heatwave.",
-        "opts": ["reservoir", "category", "disparity", "average"],
-        "ans": 0,
+        "opts": ["category", "disparity", "average", "reservoir"],
+        "ans": 3,
         "exp": "<b>storage reservoir</b> (n): hồ chứa nước dự trữ."
     },
     {
         "q": "5. Untreated chemical waste from factories can ________ underground drinking water supplies for decades.",
-        "opts": ["contaminate", "purify", "conserve", "breed"],
-        "ans": 0,
+        "opts": ["purify", "conserve", "contaminate", "breed"],
+        "ans": 2,
         "exp": "<b>contaminate</b> (v): làm ô nhiễm, làm nhiễm độc nguồn nước."
     },
     {
@@ -193,26 +193,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "7. Washing machines, showers, and cooking account for the bulk of ________ water usage in suburban homes.",
-        "opts": ["domestic", "industrial", "marine", "ecological"],
-        "ans": 0,
+        "opts": ["industrial", "domestic", "marine", "ecological"],
+        "ans": 1,
         "exp": "<b>domestic water usage</b>: sử dụng nước sinh hoạt hộ gia đình."
     },
     {
         "q": "8. In manufacturing-based economies, the ________ sector consumes vast amounts of water for cooling machinery.",
-        "opts": ["industrial", "domestic", "organic", "endangered"],
-        "ans": 0,
+        "opts": ["domestic", "organic", "industrial", "endangered"],
+        "ans": 2,
         "exp": "<b>the industrial sector</b>: khu vực/ngành công nghiệp."
     },
     {
         "q": "9. Scientists warn that failing to limit global warming could trigger an irreversible environmental ________.",
-        "opts": ["catastrophe", "reservoir", "category", "average"],
-        "ans": 0,
+        "opts": ["reservoir", "catastrophe", "category", "average"],
+        "ans": 1,
         "exp": "<b>environmental catastrophe</b> (n): thảm họa môi trường."
     },
     {
         "q": "10. Torrential monsoon rains caused the river to burst its banks, resulting in a devastating ________.",
-        "opts": ["flood", "drought", "scarcity", "disparity"],
-        "ans": 0,
+        "opts": ["drought", "scarcity", "flood", "disparity"],
+        "ans": 2,
         "exp": "<b>devastating flood</b> (n): trận lũ lụt tàn khốc."
     },
     {
@@ -229,14 +229,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "13. Agriculture was the dominant water user in four countries, with the ________ exception of Germany.",
-        "opts": ["notable", "domestic", "industrial", "infectious"],
-        "ans": 0,
+        "opts": ["domestic", "industrial", "infectious", "notable"],
+        "ans": 3,
         "exp": "<b>with the notable exception of</b>: ngoại trừ trường hợp đáng chú ý là... (cấu trúc vàng Task 1 Table)."
     },
     {
         "q": "14. The table reveals a striking ________ between the daily water intake of Australia (340L) and India (60L).",
-        "opts": ["disparity", "reservoir", "catastrophe", "sanctuary"],
-        "ans": 0,
+        "opts": ["reservoir", "catastrophe", "sanctuary", "disparity"],
+        "ans": 3,
         "exp": "<b>a striking disparity between A and B</b>: sự chênh lệch lớn giữa A và B."
     },
     {
@@ -247,32 +247,32 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "16. [Ôn tập Unit 19] Unless strict anti-poaching laws are enforced, Javan rhinos will face ________.",
-        "opts": ["extinction", "desalination", "irrigation", "consumption"],
-        "ans": 0,
+        "opts": ["desalination", "irrigation", "consumption", "extinction"],
+        "ans": 3,
         "exp": "<b>face extinction</b> (Unit 19): đối mặt với sự tuyệt chủng."
     },
     {
         "q": "17. [Ôn tập Unit 18] Adding natural compost helps restore nutrients to degraded ________ without polluting rivers.",
-        "opts": ["soil", "grid", "turbine", "coral"],
-        "ans": 0,
+        "opts": ["grid", "turbine", "soil", "coral"],
+        "ans": 2,
         "exp": "<b>degraded soil</b> (Unit 18): đất trồng bị suy thoái."
     },
     {
         "q": "18. [Ôn tập Unit 17] Once the steam spins the ________, the generator converts mechanical motion into electricity.",
-        "opts": ["turbine", "sanctuary", "pesticide", "prescription"],
-        "ans": 0,
+        "opts": ["sanctuary", "turbine", "pesticide", "prescription"],
+        "ans": 1,
         "exp": "<b>spin the turbine</b> (Unit 17): làm quay tua-bin."
     },
     {
         "q": "19. [Ôn tập Unit 16] Prolonged stress and lack of sleep can weaken your ________ to viral infections.",
-        "opts": ["immunity", "disparity", "captivity", "legislation"],
-        "ans": 0,
+        "opts": ["disparity", "immunity", "captivity", "legislation"],
+        "ans": 1,
         "exp": "<b>immunity</b> (Unit 16): hệ miễn dịch, sức đề kháng."
     },
     {
         "q": "20. [Ôn tập Unit 14] E-commerce has grown rapidly; by contrast, traditional brick-and-mortar ________ have declined.",
-        "opts": ["storefronts", "reservoirs", "predators", "harvests"],
-        "ans": 0,
+        "opts": ["reservoirs", "predators", "harvests", "storefronts"],
+        "ans": 3,
         "exp": "<b>brick-and-mortar storefronts</b> (Unit 14): cửa hàng vật lý truyền thống."
     }
 ]
@@ -280,8 +280,8 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Overall, agriculture dominated water usage in four nations, with the notable ________ of Germany.",
-        "opts": ["disparity", "exception", "category", "average"],
-        "ans": 1,
+        "opts": ["disparity", "category", "exception", "average"],
+        "ans": 2,
         "exp": "Cụm cố định nêu ngoại lệ trong Task 1 Table: <code>with the notable exception of + Noun</code> -> <b>exception</b>."
     },
     {
@@ -298,20 +298,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "4. ________ the industrial category accounted for 52% of water consumption in Germany, it represented only 4% in India.",
-        "opts": ["Despite", "Whereas", "However", "During"],
-        "ans": 1,
+        "opts": ["Despite", "However", "During", "Whereas"],
+        "ans": 3,
         "exp": "Liên từ <b>Whereas</b> (Trong khi...) nối 2 mệnh đề đối lập nhau trực tiếp trong cùng 1 câu phức."
     },
     {
         "q": "5. In Brazil, domestic water consumption stood ________ 20%, which was slightly higher than industrial use (18%).",
-        "opts": ["in", "at", "by", "to"],
-        "ans": 1,
+        "opts": ["in", "by", "to", "at"],
+        "ans": 3,
         "exp": "Cấu trúc báo cáo số liệu tại 1 điểm trong bảng: <code>stand at / stood at + Số liệu</code> -> <b>at</b>."
     },
     {
         "q": "6. At 340 litres per day, Australia's per capita water intake was nearly six times ________ that of India (60 litres).",
-        "opts": ["as high as", "higher", "the highest", "high as"],
-        "ans": 0,
+        "opts": ["higher", "the highest", "as high as", "high as"],
+        "ans": 2,
         "exp": "Cấu trúc so sánh gấp bội: <code>X times + as + Adj + as + that of...</code> -> <b>as high as</b>."
     },
     {
@@ -322,20 +322,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "8. Across all five nations in the table, India recorded ________ daily water consumption per person, at just 60 litres.",
-        "opts": ["lower", "the lowest", "as low as", "most low"],
-        "ans": 1,
+        "opts": ["the lowest", "lower", "as low as", "most low"],
+        "ans": 0,
         "exp": "So sánh trong nhóm 5 quốc gia -> dùng So sánh nhất: <b>the lowest</b>."
     },
     {
         "q": "9. Unless governments invest in flood defences and water conservation, coastal cities ________ catastrophic damage.",
-        "opts": ["suffer", "suffered", "will suffer", "would have suffered"],
-        "ans": 2,
+        "opts": ["suffer", "suffered", "would have suffered", "will suffer"],
+        "ans": 3,
         "exp": "Câu điều kiện loại 1 với <code>Unless + Hiện tại đơn, S + will + V</code> -> <b>will suffer</b>."
     },
     {
         "q": "10. Seawater desalination plants provide a reliable supply of drinking water, ________ they consume vast amounts of electricity.",
-        "opts": ["despite", "although", "consequently", "moreover"],
-        "ans": 1,
+        "opts": ["although", "despite", "consequently", "moreover"],
+        "ans": 0,
         "exp": "Nối 2 mệnh đề đầy đủ chỉ sự nhượng bộ -> dùng liên từ <b>although</b>."
     }
 ]

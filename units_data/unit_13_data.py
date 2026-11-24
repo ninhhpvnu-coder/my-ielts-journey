@@ -156,8 +156,8 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Smart ________ always compare prices and quality before buying electronic devices.",
-        "opts": ["consumers", "commercials", "impulses", "verdicts"],
-        "ans": 0,
+        "opts": ["commercials", "impulses", "verdicts", "consumers"],
+        "ans": 3,
         "exp": "<b>consumers</b> (n): người tiêu dùng."
     },
     {
@@ -168,26 +168,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "3. Emotional storytelling is a powerful marketing tool used to ________ customers to try a new product.",
-        "opts": ["persuade", "plummet", "fluctuate", "excavate"],
-        "ans": 0,
+        "opts": ["plummet", "persuade", "fluctuate", "excavate"],
+        "ans": 1,
         "exp": "<b>persuade sb to V</b>: thuyết phục ai làm gì."
     },
     {
         "q": "4. Famous football players are paid millions of pounds to ________ sportswear and energy drinks.",
-        "opts": ["endorse", "boycott", "demolish", "stabilize"],
-        "ans": 0,
+        "opts": ["boycott", "demolish", "endorse", "stabilize"],
+        "ans": 2,
         "exp": "<b>endorse a product</b>: làm đại diện bảo chứng quảng cáo cho sản phẩm."
     },
     {
         "q": "5. When a popular ________ wears a jacket on social media, it often sells out within hours.",
-        "opts": ["celebrity", "colleague", "offender", "passenger"],
-        "ans": 0,
+        "opts": ["colleague", "celebrity", "offender", "passenger"],
+        "ans": 1,
         "exp": "<b>celebrity</b> (n): người nổi tiếng."
     },
     {
         "q": "6. Placing chocolates near the supermarket checkout counter encourages shoppers to buy them on ________.",
-        "opts": ["impulse", "loyalty", "ambition", "inflation"],
-        "ans": 0,
+        "opts": ["loyalty", "impulse", "ambition", "inflation"],
+        "ans": 1,
         "exp": "<b>buy on impulse</b>: mua hàng bốc đồng / ngẫu hứng tức thời."
     },
     {
@@ -198,20 +198,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "8. Excellent after-sales service helps companies build strong customer ________ over many years.",
-        "opts": ["loyalty", "burnout", "impulse", "inflation"],
-        "ans": 0,
+        "opts": ["burnout", "impulse", "loyalty", "inflation"],
+        "ans": 2,
         "exp": "<b>customer / brand loyalty</b>: lòng trung thành của khách hàng."
     },
     {
         "q": "9. Dishonest advertisements try to ________ viewers by making exaggerated promises about weight loss.",
-        "opts": ["manipulate", "subsidize", "renovate", "nurture"],
-        "ans": 0,
+        "opts": ["subsidize", "renovate", "manipulate", "nurture"],
+        "ans": 2,
         "exp": "<b>manipulate</b> (v): thao túng tâm lý."
     },
     {
         "q": "10. Energy drink manufacturers often ________ their online advertisements at teenagers and gamers.",
-        "opts": ["target", "boycott", "plummet", "recruit"],
-        "ans": 0,
+        "opts": ["boycott", "plummet", "recruit", "target"],
+        "ans": 3,
         "exp": "<b>target (ads) at sb</b>: nhắm mục tiêu quảng cáo vào đối tượng nào."
     },
     {
@@ -228,20 +228,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "13. Public universities should provide high-quality education at an ________ tuition fee for all students.",
-        "opts": ["affordable", "ethical", "upward", "ancient"],
-        "ans": 0,
+        "opts": ["ethical", "upward", "affordable", "ancient"],
+        "ans": 2,
         "exp": "<b>affordable</b> (adj): có mức giá phải chăng, hợp túi tiền."
     },
     {
         "q": "14. Consumers threatened to ________ the clothing company after discovering it used child labor.",
-        "opts": ["boycott", "endorse", "persuade", "surge"],
-        "ans": 0,
+        "opts": ["endorse", "persuade", "surge", "boycott"],
+        "ans": 3,
         "exp": "<b>boycott</b> (v): tẩy chay."
     },
     {
         "q": "15. ________ advertising provides truthful product information without deceiving vulnerable buyers.",
-        "opts": ["Ethical", "Dramatic", "Flexible", "Fragile"],
-        "ans": 0,
+        "opts": ["Dramatic", "Ethical", "Flexible", "Fragile"],
+        "ans": 1,
         "exp": "<b>ethical advertising</b>: quảng cáo có đạo đức, trung thực."
     },
     {
@@ -252,26 +252,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "17. [Ôn tập Unit 12] During the holiday sale season, online shopping expenditure ________ dramatically.",
-        "opts": ["surged", "stabilized", "recruited", "demolished"],
-        "ans": 0,
+        "opts": ["stabilized", "recruited", "demolished", "surged"],
+        "ans": 3,
         "exp": "<b>surged dramatically</b> (Unit 12): tăng vọt mạnh mẽ."
     },
     {
         "q": "18. [Ôn tập Unit 11] Skilled marketing specialists who design successful campaigns often earn a rapid ________.",
-        "opts": ["promotion", "inflation", "congestion", "adolescence"],
-        "ans": 0,
+        "opts": ["inflation", "congestion", "adolescence", "promotion"],
+        "ans": 3,
         "exp": "<b>earn a promotion</b> (Unit 11): được thăng chức."
     },
     {
         "q": "19. [Ôn tập Unit 9] Local authorities must ________ commercial billboards near historic temples.",
-        "opts": ["regulate", "fluctuate", "endorse", "plummet"],
-        "ans": 0,
+        "opts": ["fluctuate", "regulate", "endorse", "plummet"],
+        "ans": 1,
         "exp": "<b>regulate</b> (Unit 9): quản lý, kiểm soát bằng quy định."
     },
     {
         "q": "20. [Ôn tập Unit 3] Buying fewer fast-fashion clothes helps reduce industrial ________ and waste.",
-        "opts": ["pollution", "remuneration", "satisfaction", "qualification"],
-        "ans": 0,
+        "opts": ["remuneration", "satisfaction", "pollution", "qualification"],
+        "ans": 2,
         "exp": "<b>pollution</b> (Unit 3): sự ô nhiễm môi trường."
     }
 ]
@@ -285,8 +285,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "2. If I ________ a famous athlete, I would never endorse unhealthy sugary drinks or fast food.",
-        "opts": ["am", "were", "will be", "have been"],
-        "ans": 1,
+        "opts": ["were", "am", "will be", "have been"],
+        "ans": 0,
         "exp": "Trong câu điều kiện loại 2 chuẩn học thuật, động từ to be ở mệnh đề If dùng <b>were</b> cho mọi ngôi."
     },
     {
@@ -297,26 +297,26 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "4. Consumers would develop stronger brand loyalty if companies ________ more honest about product quality.",
-        "opts": ["are", "were", "will be", "would be"],
-        "ans": 1,
+        "opts": ["are", "will be", "were", "would be"],
+        "ans": 2,
         "exp": "Mệnh đề If đứng sau trong câu điều kiện loại 2 (mệnh đề trước có 'would develop') -> dùng <b>were</b>."
     },
     {
         "q": "5. During online flash sales, millions of shoppers are tempted ________ luxury gadgets on impulse.",
-        "opts": ["purchase", "to purchase", "purchasing", "purchased"],
-        "ans": 1,
+        "opts": ["to purchase", "purchase", "purchasing", "purchased"],
+        "ans": 0,
         "exp": "Cấu trúc bị động <code>be tempted + to V</code> -> <b>to purchase</b>."
     },
     {
         "q": "6. If every citizen ________ unethical brands that pollute the environment, corporations would change their practices.",
-        "opts": ["boycotts", "boycotted", "will boycott", "boycotting"],
-        "ans": 1,
+        "opts": ["boycotts", "will boycott", "boycotted", "boycotting"],
+        "ans": 2,
         "exp": "Câu điều kiện loại 2 giả định ở hiện tại (mệnh đề kết quả có 'would change') -> <b>boycotted</b>."
     },
     {
         "q": "7. Bright packaging and free toys are designed to encourage children ________ their parents for fast food.",
-        "opts": ["pester", "to pester", "pestering", "pestered"],
-        "ans": 1,
+        "opts": ["to pester", "pester", "pestering", "pestered"],
+        "ans": 0,
         "exp": "Cấu trúc <code>encourage + Object + to V</code> -> <b>to pester</b>."
     },
     {
@@ -327,14 +327,14 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "9. Celebrity endorsements often lead teenagers ________ that expensive luxury goods bring happiness.",
-        "opts": ["believe", "to believe", "believing", "believed"],
-        "ans": 1,
+        "opts": ["believe", "believing", "believed", "to believe"],
+        "ans": 3,
         "exp": "Cấu trúc <code>lead + Object + to V</code> (dẫn dắt ai tin/làm điều gì) -> <b>to believe</b>."
     },
     {
         "q": "10. Advertising agencies ________ manipulate consumers' fears should be fined heavily by the government.",
-        "opts": ["which", "where", "whose", "whom"],
-        "ans": 0,
+        "opts": ["where", "whose", "whom", "which"],
+        "ans": 3,
         "exp": "Ôn tập MĐQH (Unit 11): Thay cho danh từ chỉ tổ chức 'Advertising agencies' làm chủ ngữ -> dùng <b>which</b>."
     }
 ]

@@ -158,56 +158,56 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. In the first semester, students are introduced to the university's official ________.",
-        "opts": ["curriculum", "deadline", "routine", "citizen"],
-        "ans": 0,
+        "opts": ["deadline", "routine", "citizen", "curriculum"],
+        "ans": 3,
         "exp": "<b>curriculum</b> (n): chương trình giảng dạy, giáo trình đào tạo tại trường học hoặc đại học."
     },
     {
         "q": "2. Don't leave your project until Friday night because the final ________ is at 5 PM.",
-        "opts": ["institution", "deadline", "seminar", "habit"],
-        "ans": 1,
+        "opts": ["institution", "seminar", "deadline", "habit"],
+        "ans": 2,
         "exp": "<b>deadline</b> (n): hạn chót phải nộp bài hoặc hoàn thành công việc."
     },
     {
         "q": "3. Professor Williams delivered a very informative ________ on digital technology this morning.",
-        "opts": ["assignment", "curriculum", "lecture", "potential"],
-        "ans": 2,
+        "opts": ["assignment", "curriculum", "potential", "lecture"],
+        "ans": 3,
         "exp": "<b>lecture</b> (n): bài giảng, buổi thuyết trình học thuật tại trường đại học."
     },
     {
         "q": "4. Every student must complete and submit a 1,000-word written ________ by next Monday.",
-        "opts": ["routine", "assignment", "discipline", "community"],
-        "ans": 1,
+        "opts": ["routine", "discipline", "assignment", "community"],
+        "ans": 2,
         "exp": "<b>assignment</b> (n): bài tập hoặc nhiệm vụ được giáo viên giao cho học viên."
     },
     {
         "q": "5. Group coursework requires learners to ________ closely with their classmates.",
-        "opts": ["qualify", "collaborate", "revise", "absorb"],
-        "ans": 1,
+        "opts": ["collaborate", "qualify", "revise", "absorb"],
+        "ans": 0,
         "exp": "<b>collaborate</b> (v): cộng tác, làm việc nhóm cùng nhau."
     },
     {
         "q": "6. Reading textbooks actively helps learners ________ difficult theories more easily.",
-        "opts": ["absorb", "qualify", "concentrate", "evaluate"],
-        "ans": 0,
+        "opts": ["qualify", "concentrate", "evaluate", "absorb"],
+        "ans": 3,
         "exp": "<b>absorb</b> (v): tiếp thu, hấp thụ kiến thức vào trí nhớ."
     },
     {
         "q": "7. Online learning demands a high degree of self-________ from every participant.",
-        "opts": ["volunteer", "curriculum", "discipline", "citizen"],
-        "ans": 2,
+        "opts": ["discipline", "volunteer", "curriculum", "citizen"],
+        "ans": 0,
         "exp": "<b>discipline</b> (n): kỷ luật, sự tự giác rèn luyện thói quen học tập."
     },
     {
         "q": "8. Smart students usually ________ their lecture notes weekly rather than cramming before exams.",
-        "opts": ["revise", "collaborate", "qualify", "lecture"],
-        "ans": 0,
+        "opts": ["collaborate", "qualify", "lecture", "revise"],
+        "ans": 3,
         "exp": "<b>revise</b> (v): ôn tập, xem lại bài vở trước kỳ thi."
     },
     {
         "q": "9. Instructors use weekly quizzes to ________ how well students understand each concept.",
-        "opts": ["absorb", "evaluate", "concentrate", "routine"],
-        "ans": 1,
+        "opts": ["evaluate", "absorb", "concentrate", "routine"],
+        "ans": 0,
         "exp": "<b>evaluate</b> (v): đánh giá, định lượng kết quả và sự tiến bộ."
     },
     {
@@ -224,50 +224,50 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "12. If you find the research methodology unclear, you can book an appointment with your course ________.",
-        "opts": ["citizen", "tutor", "volunteer", "lecture"],
-        "ans": 1,
+        "opts": ["tutor", "citizen", "volunteer", "lecture"],
+        "ans": 0,
         "exp": "<b>tutor</b> (n): giảng viên hướng dẫn, cố vấn học tập riêng."
     },
     {
         "q": "13. In a noisy library café, it can be very difficult to ________ on reading lengthy articles.",
-        "opts": ["concentrate", "revise", "collaborate", "qualify"],
-        "ans": 0,
+        "opts": ["revise", "collaborate", "concentrate", "qualify"],
+        "ans": 2,
         "exp": "<b>concentrate</b> (v): tập trung tư tưởng (đi với giới từ 'on')."
     },
     {
         "q": "14. Candidates with strong ________ credentials have a significant advantage in scholarship competitions.",
-        "opts": ["academic", "routine", "sustainable", "potential"],
-        "ans": 0,
+        "opts": ["routine", "academic", "sustainable", "potential"],
+        "ans": 1,
         "exp": "<b>academic</b> (adj): thuộc về học thuật, kết quả học tập ở trường."
     },
     {
         "q": "15. After completing 120 course credits, undergraduates ________ for their bachelor's degree.",
-        "opts": ["qualify", "collaborate", "absorb", "evaluate"],
-        "ans": 0,
+        "opts": ["collaborate", "qualify", "absorb", "evaluate"],
+        "ans": 1,
         "exp": "<b>qualify</b> (v): đủ điều kiện, đủ tiêu chuẩn nhận bằng cấp (đi với 'for')."
     },
     {
         "q": "16. [Ôn tập Unit 1] Having a balanced daily ________ helps students organize their study hours effectively.",
-        "opts": ["deadline", "routine", "lecture", "tutor"],
-        "ans": 1,
+        "opts": ["deadline", "lecture", "routine", "tutor"],
+        "ans": 2,
         "exp": "<b>routine</b> (n - Unit 1): nếp sinh hoạt, thói quen thường nhật diễn ra đều đặn."
     },
     {
         "q": "17. [Ôn tập Unit 1] Students organized a recycling campaign to support their local ________.",
-        "opts": ["curriculum", "community", "assignment", "institution"],
-        "ans": 1,
+        "opts": ["community", "curriculum", "assignment", "institution"],
+        "ans": 0,
         "exp": "<b>community</b> (n - Unit 1): cộng đồng cư dân, khu phố nơi sinh sống."
     },
     {
         "q": "18. [Ôn tập Unit 1] Last weekend, Sarah worked as a ________ helping new international students register.",
-        "opts": ["volunteer", "tutor", "discipline", "potential"],
-        "ans": 0,
+        "opts": ["tutor", "volunteer", "discipline", "potential"],
+        "ans": 1,
         "exp": "<b>volunteer</b> (n - Unit 1): tình nguyện viên cống hiến hỗ trợ người khác."
     },
     {
         "q": "19. [Ôn tập Unit 1] Using digital notes instead of paper notebooks is an eco-friendly and ________ practice.",
-        "opts": ["academic", "sustainable", "demanding", "qualified"],
-        "ans": 1,
+        "opts": ["academic", "demanding", "qualified", "sustainable"],
+        "ans": 3,
         "exp": "<b>sustainable</b> (adj - Unit 1): bền vững, thân thiện với môi trường."
     },
     {
@@ -281,14 +281,14 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Last night, David ________ his computer science assignment before 10 PM.",
-        "opts": ["finishes", "finished", "has finished", "is finishing"],
-        "ans": 1,
+        "opts": ["finishes", "has finished", "finished", "is finishing"],
+        "ans": 2,
         "exp": "Dấu hiệu 'Last night' chỉ thời gian xác định trong quá khứ -> Dùng thì Quá khứ đơn: <b>finished</b>."
     },
     {
         "q": "2. Professor Evans ________ at this higher education institution since 2018.",
-        "opts": ["taught", "teaches", "has taught", "was teaching"],
-        "ans": 2,
+        "opts": ["taught", "teaches", "was teaching", "has taught"],
+        "ans": 3,
         "exp": "Dấu hiệu 'since 2018' chỉ hành động bắt đầu trong quá khứ và kéo dài đến nay -> Dùng thì Hiện tại hoàn thành: <b>has taught</b>."
     },
     {
@@ -298,33 +298,33 @@ GRAMMAR_QUESTIONS = [
         "exp": "Câu hỏi thì Quá khứ đơn với mốc thời gian 'yesterday afternoon' -> Mượn trợ động từ <b>Did</b>."
     },
     {
-        "q": "4. Each undergraduate must complete ________ written assignment every two weeks.",
-        "opts": ["a", "an", "the", "zero article"],
-        "ans": 1,
-        "exp": "Từ 'written assignment' bắt đầu bằng âm phụ âm 'w', nhưng ở đây câu là 'written assignment', khoan: từ đứng sau mạo từ là 'written' (phụ âm) -> dùng 'a written assignment'. Hãy kiểm tra: 'complete a written assignment'."
+        "q": "4. Each undergraduate must write ________ academic essay every two weeks.",
+        "opts": ["an", "a", "the", "zero article"],
+        "ans": 0,
+        "exp": "Từ 'academic' bắt đầu bằng nguyên âm /æ/ -> Dùng mạo từ <b>an</b>."
     },
     {
         "q": "5. Where is the quiet reading room? It is located in ________ central library.",
-        "opts": ["a", "an", "the", "zero article"],
-        "ans": 2,
+        "opts": ["a", "the", "an", "zero article"],
+        "ans": 1,
         "exp": "Thư viện trung tâm 'central library' là địa điểm xác định cụ thể trong khuôn viên trường -> Dùng mạo từ <b>the</b>."
     },
     {
         "q": "6. While the professor ________ the complex theory, all students were listening attentively.",
-        "opts": ["explained", "is explaining", "was explaining", "has explained"],
-        "ans": 2,
+        "opts": ["explained", "was explaining", "is explaining", "has explained"],
+        "ans": 1,
         "exp": "Hành động đang diễn ra trong quá khứ kết hợp với 'While' -> Dùng Quá khứ tiếp diễn: <b>was explaining</b>."
     },
     {
         "q": "7. ________ the research project was demanding, our group finished it before the deadline.",
-        "opts": ["Because", "Although", "Despite", "So"],
-        "ans": 1,
+        "opts": ["Because", "Despite", "So", "Although"],
+        "ans": 3,
         "exp": "Mệnh đề chỉ sự nhượng bộ (mặc dù... nhưng...) đi kèm mệnh đề có S + V -> Dùng liên từ <b>Although</b>."
     },
     {
         "q": "8. Students must maintain self-discipline ________ online courses require independent study.",
-        "opts": ["because", "although", "but", "so that"],
-        "ans": 0,
+        "opts": ["although", "but", "because", "so that"],
+        "ans": 2,
         "exp": "Mệnh đề chỉ nguyên nhân (bởi vì các khóa học online đòi hỏi tự học) -> Dùng liên từ <b>because</b>."
     },
     {
@@ -335,8 +335,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "10. Two days ago, we ________ our tutor to discuss the upcoming exam preparation.",
-        "opts": ["meet", "met", "have met", "are meeting"],
-        "ans": 1,
+        "opts": ["meet", "have met", "met", "are meeting"],
+        "ans": 2,
         "exp": "Dấu hiệu 'Two days ago' chỉ mốc thời gian đã chấm dứt hoàn toàn trong quá khứ -> Dùng Quá khứ đơn: <b>met</b>."
     }
 ]

@@ -156,26 +156,26 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Under a system of progressive ________, billionaires and large corporations pay a higher percentage of their income.",
-        "opts": ["taxation", "evasion", "philanthropy", "debris"],
-        "ans": 0,
+        "opts": ["evasion", "taxation", "philanthropy", "debris"],
+        "ans": 1,
         "exp": "<b>progressive taxation</b> (n): hệ thống thuế lũy tiến."
     },
     {
         "q": "2. Unemployment benefits and state pensions are key pillars of a modern social ________ system.",
-        "opts": ["welfare", "deficit", "tariff", "cosmos"],
-        "ans": 0,
+        "opts": ["deficit", "tariff", "welfare", "cosmos"],
+        "ans": 2,
         "exp": "<b>social welfare system</b> (n): hệ thống phúc lợi/an sinh xã hội."
     },
     {
         "q": "3. Economists warn that extreme income ________ between executives and factory workers can trigger social unrest.",
-        "opts": ["inequality", "mobility", "surplus", "gravity"],
-        "ans": 0,
+        "opts": ["mobility", "surplus", "gravity", "inequality"],
+        "ans": 3,
         "exp": "<b>income / wealth inequality</b> (n): sự bất bình đẳng thu nhập/tài sản."
     },
     {
         "q": "4. Tax revenues allow the state to ________ wealth from luxury sectors to public hospitals and rural schools.",
-        "opts": ["redistribute", "evade", "homogenize", "impair"],
-        "ans": 0,
+        "opts": ["evade", "homogenize", "impair", "redistribute"],
+        "ans": 3,
         "exp": "<b>redistribute wealth</b> (v): tái phân phối của cải."
     },
     {
@@ -186,8 +186,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "6. International charities build clean water wells and clinics in ________ rural villages.",
-        "opts": ["impoverished", "affluent", "privileged", "sensational"],
-        "ans": 0,
+        "opts": ["affluent", "privileged", "sensational", "impoverished"],
+        "ans": 3,
         "exp": "<b>impoverished</b> (adj - C1): nghèo khó, thiếu thốn trầm trọng."
     },
     {
@@ -198,14 +198,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "8. Thanks to strong export growth, the government recorded a budget ________ and invested the extra money in healthcare.",
-        "opts": ["surplus", "deficit", "evasion", "fatigue"],
-        "ans": 0,
+        "opts": ["deficit", "evasion", "surplus", "fatigue"],
+        "ans": 2,
         "exp": "<b>budget surplus</b> (n): thặng dư ngân sách."
     },
     {
         "q": "9. Using illegal offshore bank accounts to hide profits is a serious crime known as tax ________.",
-        "opts": ["evasion", "taxation", "philanthropy", "cohesion"],
-        "ans": 0,
+        "opts": ["taxation", "philanthropy", "evasion", "cohesion"],
+        "ans": 2,
         "exp": "<b>tax evasion</b> (n): hành vi trốn thuế bất hợp pháp."
     },
     {
@@ -216,20 +216,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "11. Free university tuition promotes upward social ________ by allowing working-class children to become doctors and engineers.",
-        "opts": ["mobility", "inequality", "isolation", "deprivation"],
-        "ans": 0,
+        "opts": ["inequality", "mobility", "isolation", "deprivation"],
+        "ans": 1,
         "exp": "<b>upward social mobility</b> (n): sự dịch chuyển tầng lớp xã hội đi lên."
     },
     {
         "q": "12. High-speed railways, bridges, and power grids are essential components of national ________.",
-        "opts": ["infrastructure", "legislation", "philanthropy", "patronage"],
-        "ans": 0,
+        "opts": ["legislation", "philanthropy", "infrastructure", "patronage"],
+        "ans": 2,
         "exp": "<b>national / public infrastructure</b> (n - không đếm được): cơ sở hạ tầng."
     },
     {
         "q": "13. Parliament enacted new ________ to guarantee paid maternity leave for all female employees.",
-        "opts": ["legislation", "evasion", "deficit", "sweatshop"],
-        "ans": 0,
+        "opts": ["evasion", "legislation", "deficit", "sweatshop"],
+        "ans": 1,
         "exp": "<b>enact legislation</b> (n): ban hành luật pháp."
     },
     {
@@ -240,32 +240,32 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "15. Policymakers must ensure a more ________ distribution of medical resources between big cities and rural areas.",
-        "opts": ["equitable", "affluent", "detrimental", "celestial"],
-        "ans": 0,
+        "opts": ["affluent", "equitable", "detrimental", "celestial"],
+        "ans": 1,
         "exp": "<b>equitable</b> (adj - C1): công bằng, bình đẳng về cơ hội."
     },
     {
         "q": "16. [Ôn tập Unit 27] Critics fear that global fast-food and fashion chains will ________ local cultures.",
-        "opts": ["homogenize", "redistribute", "standardize", "purify"],
-        "ans": 0,
+        "opts": ["redistribute", "standardize", "homogenize", "purify"],
+        "ans": 2,
         "exp": "<b>homogenize</b> (Unit 27): đồng nhất hóa văn hóa."
     },
     {
         "q": "17. [Ôn tập Unit 26] By 2040, space agencies will have established a permanent base on the ________ surface.",
-        "opts": ["lunar", "affluent", "equitable", "organic"],
-        "ans": 0,
+        "opts": ["affluent", "equitable", "organic", "lunar"],
+        "ans": 3,
         "exp": "<b>lunar surface</b> (Unit 26): bề mặt Mặt Trăng."
     },
     {
         "q": "18. [Ôn tập Unit 25] Donating blood to save strangers without any financial reward is an act of pure ________.",
-        "opts": ["altruism", "egoism", "evasion", "deficit"],
-        "ans": 0,
+        "opts": ["egoism", "altruism", "evasion", "deficit"],
+        "ans": 1,
         "exp": "<b>altruism</b> (Unit 25): lòng vị tha."
     },
     {
         "q": "19. [Ôn tập Unit 24] Practicing ________ meditation for fifteen minutes daily helps employees cope with stress.",
-        "opts": ["mindfulness", "insomnia", "fatigue", "philanthropy"],
-        "ans": 0,
+        "opts": ["insomnia", "fatigue", "philanthropy", "mindfulness"],
+        "ans": 3,
         "exp": "<b>mindfulness meditation</b> (Unit 24): thiền chánh niệm."
     },
     {
@@ -279,14 +279,14 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Third Conditional: If the government had regulated banking loans in 2007, the financial crisis ________.",
-        "opts": ["would not happen", "will not happen", "would not have happened", "did not happen"],
-        "ans": 2,
+        "opts": ["would not happen", "would not have happened", "will not happen", "did not happen"],
+        "ans": 1,
         "exp": "Câu điều kiện loại 3 (trái với quá khứ): <code>If + S + had V3, S + would not have + V3/ed</code> -> <b>would not have happened</b>."
     },
     {
         "q": "2. Mixed Conditional (Past Cause -> Present Result): If the state had invested in rural schools twenty years ago, those provinces ________ much more prosperous today.",
-        "opts": ["will be", "would be", "would have been", "are"],
-        "ans": 1,
+        "opts": ["will be", "would have been", "are", "would be"],
+        "ans": 3,
         "exp": "Điều kiện hỗn hợp (vế If ở quá khứ 'twenty years ago', vế chính có 'today' ở hiện tại) -> dùng <b>would + V nguyên mẫu (would be)</b>."
     },
     {
@@ -309,8 +309,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "6. Note that 'infrastructure' and 'legislation' are uncountable: Modern transport infrastructure ________ essential for rural economic mobility.",
-        "opts": ["are", "were", "is", "have been"],
-        "ans": 2,
+        "opts": ["are", "were", "have been", "is"],
+        "ans": 3,
         "exp": "Danh từ 'infrastructure' (cơ sở hạ tầng) không đếm được -> chia động từ số ít: <b>is</b>."
     },
     {
@@ -327,14 +327,14 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "9. It is imperative that the government ________ legal loopholes to prevent corporate tax evasion.",
-        "opts": ["closes", "close", "closed", "closing"],
-        "ans": 1,
+        "opts": ["close", "closes", "closed", "closing"],
+        "ans": 0,
         "exp": "Ôn tập Thức giả định (Unit 26): <code>It is imperative that + S + V (nguyên mẫu không chia)</code> -> <b>close</b>."
     },
     {
         "q": "10. What truly promotes upward social mobility ________ equitable access to quality public education.",
-        "opts": ["are", "is", "were", "be"],
-        "ans": 1,
+        "opts": ["are", "were", "is", "be"],
+        "ans": 2,
         "exp": "Ôn tập Câu chẻ (Unit 25): Mệnh đề <code>What...</code> làm chủ ngữ chia động từ số ít -> <b>is</b>."
     }
 ]

@@ -157,20 +157,20 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Planting trees and installing modern sculptures significantly improve the ________ appeal of urban plazas.",
-        "opts": ["aesthetic", "demographic", "sedentary", "infectious"],
-        "ans": 0,
+        "opts": ["demographic", "sedentary", "aesthetic", "infectious"],
+        "ans": 2,
         "exp": "<b>aesthetic appeal / value</b>: vẻ đẹp thẩm mỹ, giá trị thẩm mỹ."
     },
     {
         "q": "2. 'The Tale of Kieu' by Nguyen Du is universally regarded as a ________ of Vietnamese poetry.",
-        "opts": ["masterpiece", "gallery", "patronage", "fraction"],
-        "ans": 0,
+        "opts": ["gallery", "patronage", "fraction", "masterpiece"],
+        "ans": 3,
         "exp": "<b>masterpiece</b> (n): kiệt tác văn học/nghệ thuật."
     },
     {
         "q": "3. Studying classical ________ at school helps students develop strong reading comprehension and empathy.",
-        "opts": ["literature", "sculpture", "irrigation", "desalination"],
-        "ans": 0,
+        "opts": ["sculpture", "literature", "irrigation", "desalination"],
+        "ans": 1,
         "exp": "<b>classical literature</b> (n): văn học cổ điển."
     },
     {
@@ -187,38 +187,38 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "6. Encouraging children to learn a musical instrument or paint helps foster their imagination and ________.",
-        "opts": ["creativity", "scarcity", "extinction", "fertility"],
-        "ans": 0,
+        "opts": ["scarcity", "creativity", "extinction", "fertility"],
+        "ans": 1,
         "exp": "<b>foster creativity</b> (n): nuôi dưỡng sự sáng tạo."
     },
     {
         "q": "7. Stunning mountain landscapes have continued to ________ poets and landscape painters for centuries.",
-        "opts": ["inspire", "censor", "shrink", "contaminate"],
-        "ans": 0,
+        "opts": ["censor", "shrink", "inspire", "contaminate"],
+        "ans": 2,
         "exp": "<b>inspire</b> (v): truyền cảm hứng sáng tác."
     },
     {
         "q": "8. Reading diverse books and attending cultural festivals ________ our minds and broaden our horizons.",
-        "opts": ["enrich", "allocate", "poach", "purify"],
-        "ans": 0,
+        "opts": ["allocate", "poach", "purify", "enrich"],
+        "ans": 3,
         "exp": "<b>enrich our minds / spiritual life</b> (v): làm giàu thêm đời sống tinh thần."
     },
     {
         "q": "9. Protecting traditional folk music and historical monuments is crucial for maintaining our cultural ________.",
-        "opts": ["identity", "disparity", "expectancy", "burden"],
-        "ans": 0,
+        "opts": ["disparity", "expectancy", "identity", "burden"],
+        "ans": 2,
         "exp": "<b>preserve cultural identity</b> (n): giữ gìn bản sắc văn hóa."
     },
     {
         "q": "10. Historical films often ________ the courage and sacrifices of ordinary citizens during wartime.",
-        "opts": ["portray", "censor", "allocate", "convert"],
-        "ans": 0,
+        "opts": ["censor", "allocate", "convert", "portray"],
+        "ans": 3,
         "exp": "<b>portray</b> (v): khắc họa, miêu tả sinh động."
     },
     {
         "q": "11. Jazz, hip-hop, and classical symphony are three completely different musical ________.",
-        "opts": ["genres", "sculptures", "galleries", "fractions"],
-        "ans": 0,
+        "opts": ["sculptures", "genres", "galleries", "fractions"],
+        "ans": 1,
         "exp": "<b>musical / literary genre</b> (n): thể loại âm nhạc/văn học."
     },
     {
@@ -229,8 +229,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "13. Building new hospitals and railways brings immediate, ________ benefits that taxpayers can clearly see.",
-        "opts": ["tangible", "aesthetic", "endangered", "organic"],
-        "ans": 0,
+        "opts": ["aesthetic", "endangered", "organic", "tangible"],
+        "ans": 3,
         "exp": "<b>tangible benefits</b> (adj): những lợi ích hữu hình, thiết thực."
     },
     {
@@ -241,26 +241,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "15. Critics argue that the government should ________ more tax revenue to healthcare rather than opera houses.",
-        "opts": ["allocate", "portray", "shrink", "cultivate"],
-        "ans": 0,
+        "opts": ["portray", "allocate", "shrink", "cultivate"],
+        "ans": 1,
         "exp": "<b>allocate funds/revenue to</b> (v): phân bổ ngân sách cho..."
     },
     {
         "q": "16. [Ôn tập Unit 21] By 2050, the elderly segment is projected to make up roughly a ________ (25%) of the population.",
-        "opts": ["quarter", "fraction", "majority", "gallery"],
-        "ans": 0,
+        "opts": ["fraction", "majority", "quarter", "gallery"],
+        "ans": 2,
         "exp": "<b>a quarter</b> (Unit 21): một phần tư (25%)."
     },
     {
         "q": "17. [Ôn tập Unit 20] Agriculture dominated water usage in four nations, with the ________ exception of Germany.",
-        "opts": ["notable", "tangible", "aesthetic", "domestic"],
-        "ans": 0,
+        "opts": ["tangible", "aesthetic", "notable", "domestic"],
+        "ans": 2,
         "exp": "<b>with the notable exception of</b> (Unit 20): ngoại trừ trường hợp đáng chú ý của..."
     },
     {
         "q": "18. [Ôn tập Unit 19] Injured wild animals are cared for in a protected forest ________ before being released.",
-        "opts": ["sanctuary", "gallery", "reservoir", "turbine"],
-        "ans": 0,
+        "opts": ["gallery", "reservoir", "turbine", "sanctuary"],
+        "ans": 3,
         "exp": "<b>wildlife sanctuary</b> (Unit 19): khu bảo tồn động vật hoang dã."
     },
     {
@@ -271,8 +271,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "20. [Ôn tập Unit 15] Installing surveillance cameras in museums acts as a strong ________ against art theft.",
-        "opts": ["deterrent", "offender", "masterpiece", "verdict"],
-        "ans": 0,
+        "opts": ["offender", "deterrent", "masterpiece", "verdict"],
+        "ans": 1,
         "exp": "<b>act as a deterrent against</b> (Unit 15): đóng vai trò là biện pháp răn đe."
     }
 ]
@@ -280,8 +280,8 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. ________ public healthcare and education require vast funding, governments should still allocate a small budget to the arts.",
-        "opts": ["Despite", "In spite of", "Although", "Because of"],
-        "ans": 2,
+        "opts": ["Despite", "Although", "In spite of", "Because of"],
+        "ans": 1,
         "exp": "Theo sau là một mệnh đề đầy đủ (S + V: 'public healthcare and education require...') -> dùng <b>Although</b>."
     },
     {
@@ -292,26 +292,26 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "3. Many independent theatre actors love their profession in spite of ________ a relatively modest income.",
-        "opts": ["earn", "to earn", "earning", "they earn"],
-        "ans": 2,
+        "opts": ["earn", "earning", "to earn", "they earn"],
+        "ans": 1,
         "exp": "Sau giới từ <code>in spite of</code> dùng <b>V-ing (earning)</b>."
     },
     {
         "q": "4. Despite ________ digital books are convenient, many readers still prefer the smell and feel of printed literature.",
-        "opts": ["that", "the fact that", "of the fact", "although"],
-        "ans": 1,
+        "opts": ["that", "of the fact", "although", "the fact that"],
+        "ans": 3,
         "exp": "Để nối <code>Despite</code> với một mệnh đề (S + V), bắt buộc thêm <b>the fact that</b>."
     },
     {
         "q": "5. Spot the Vietlish trap: Although the sculpture was controversial, ________ it attracted thousands of tourists to the square.",
-        "opts": ["but", "however", "yet", "(no word needed)"],
-        "ans": 3,
+        "opts": ["(no word needed)", "but", "however", "yet"],
+        "ans": 0,
         "exp": "Bẫy kinh điển của người Việt: Đã có <b>Although</b> ở đầu câu thì mệnh đề chính <b>KHÔNG ĐƯỢC</b> dùng 'but/however/yet' -> chọn <b>(no word needed)</b>."
     },
     {
         "q": "6. A small portion of tax revenue ought to ________ to preserve traditional folk music and historic theatres.",
-        "opts": ["allocate", "be allocated", "allocating", "allocated"],
-        "ans": 1,
+        "opts": ["be allocated", "allocate", "allocating", "allocated"],
+        "ans": 0,
         "exp": "Bị động với Modal Verb: <code>ought to be + V3/ed</code> -> <b>be allocated</b>."
     },
     {
@@ -322,20 +322,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "8. Cultural festivals not only enrich spiritual life, ________ they also generate substantial tourism revenue.",
-        "opts": ["and", "but", "so", "or"],
-        "ans": 1,
+        "opts": ["and", "so", "but", "or"],
+        "ans": 2,
         "exp": "Cấu trúc tương quan: <code>not only ... but also ...</code> -> <b>but</b>."
     },
     {
         "q": "9. The National Art Gallery, ________ houses over two thousand priceless masterpieces, was renovated last year.",
-        "opts": ["that", "who", "which", "where"],
-        "ans": 2,
+        "opts": ["that", "who", "where", "which"],
+        "ans": 3,
         "exp": "Mệnh đề quan hệ không xác định (có dấu phẩy) bổ nghĩa cho vật/địa điểm làm chủ ngữ của động từ 'houses' -> dùng <b>which</b>."
     },
     {
         "q": "10. By 2040, the number of virtual museum visitors is projected ________ the number of physical visitors.",
-        "opts": ["surpass", "surpassing", "to surpass", "surpassed"],
-        "ans": 2,
+        "opts": ["surpass", "surpassing", "surpassed", "to surpass"],
+        "ans": 3,
         "exp": "Ôn tập Unit 21: Cấu trúc dự báo <code>is projected to + V (to surpass)</code>."
     }
 ]

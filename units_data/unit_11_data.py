@@ -159,14 +159,14 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Nursing is a demanding ________ that requires both medical knowledge and deep empathy.",
-        "opts": ["profession", "candidate", "promotion", "ambition"],
-        "ans": 0,
+        "opts": ["candidate", "profession", "promotion", "ambition"],
+        "ans": 1,
         "exp": "<b>profession</b> (n): nghề nghiệp chuyên môn đòi hỏi đào tạo bài bản."
     },
     {
         "q": "2. Having a postgraduate ________ and fluent English gives job seekers a strong advantage.",
-        "opts": ["qualification", "burnout", "overtime", "workload"],
-        "ans": 0,
+        "opts": ["burnout", "overtime", "workload", "qualification"],
+        "ans": 3,
         "exp": "<b>qualification</b> (n): bằng cấp, chứng chỉ chuyên môn."
     },
     {
@@ -177,38 +177,38 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "4. Growing hospitals need to ________ more qualified doctors and nurses to serve rural communities.",
-        "opts": ["recruit", "demolish", "excavate", "pollute"],
-        "ans": 0,
+        "opts": ["demolish", "excavate", "pollute", "recruit"],
+        "ans": 3,
         "exp": "<b>recruit</b> (v): tuyển dụng nhân sự."
     },
     {
         "q": "5. Whenever I face a technical problem at the office, my supportive ________ are always ready to help.",
-        "opts": ["colleagues", "candidates", "artifacts", "passengers"],
-        "ans": 0,
+        "opts": ["candidates", "colleagues", "artifacts", "passengers"],
+        "ans": 1,
         "exp": "<b>colleagues</b> (n): những người đồng nghiệp."
     },
     {
         "q": "6. Consistently exceeding sales targets helped him earn a rapid ________ to regional director.",
-        "opts": ["promotion", "burnout", "overtime", "qualification"],
-        "ans": 0,
+        "opts": ["burnout", "promotion", "overtime", "qualification"],
+        "ans": 1,
         "exp": "<b>earn a promotion</b>: đạt được sự thăng chức."
     },
     {
         "q": "7. Top international law firms offer attractive ________ packages to retain their best lawyers.",
-        "opts": ["remuneration", "workload", "burnout", "congestion"],
-        "ans": 0,
+        "opts": ["workload", "burnout", "remuneration", "congestion"],
+        "ans": 2,
         "exp": "<b>remuneration</b> (n - C1): mức lương thưởng, đãi ngộ tài chính."
     },
     {
         "q": "8. Many software engineers appreciate ________ working hours because they can avoid rush-hour traffic.",
-        "opts": ["flexible", "ancient", "fragile", "nuclear"],
-        "ans": 0,
+        "opts": ["ancient", "flexible", "fragile", "nuclear"],
+        "ans": 1,
         "exp": "<b>flexible working hours</b>: giờ làm việc linh hoạt."
     },
     {
         "q": "9. Studies show that a four-day workweek can maintain or even boost overall ________.",
-        "opts": ["productivity", "overtime", "burnout", "candidate"],
-        "ans": 0,
+        "opts": ["overtime", "productivity", "burnout", "candidate"],
+        "ans": 1,
         "exp": "<b>boost productivity</b>: nâng cao năng suất làm việc."
     },
     {
@@ -219,20 +219,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "11. Hiring two new assistants helped reduce the team's excessive ________ during the busy season.",
-        "opts": ["workload", "remuneration", "qualification", "satisfaction"],
-        "ans": 0,
+        "opts": ["remuneration", "qualification", "satisfaction", "workload"],
+        "ans": 3,
         "exp": "<b>workload</b> (n): khối lượng công việc."
     },
     {
         "q": "12. Chronic workplace stress and lack of rest can lead to emotional ________ and depression.",
-        "opts": ["burnout", "promotion", "ambition", "satisfaction"],
-        "ans": 0,
+        "opts": ["promotion", "ambition", "burnout", "satisfaction"],
+        "ans": 2,
         "exp": "<b>burnout</b> (n): sự kiệt sức vì công việc."
     },
     {
         "q": "13. Instead of signing a full-time contract, he works as a ________ translator for several publishers.",
-        "opts": ["freelance", "supportive", "residential", "indigenous"],
-        "ans": 0,
+        "opts": ["supportive", "residential", "indigenous", "freelance"],
+        "ans": 3,
         "exp": "<b>freelance</b> (adj): làm nghề tự do theo dự án."
     },
     {
@@ -243,14 +243,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "15. Young graduates with strong ________ are eager to learn new skills and take on leadership roles.",
-        "opts": ["ambition", "overtime", "burnout", "heritage"],
-        "ans": 0,
+        "opts": ["overtime", "burnout", "heritage", "ambition"],
+        "ans": 3,
         "exp": "<b>ambition</b> (n): hoài bão, khát vọng thăng tiến."
     },
     {
         "q": "16. [Ôn tập Unit 6] Working parents must balance their career ambitions with their family ________.",
-        "opts": ["responsibility", "itinerary", "excavation", "civilization"],
-        "ans": 0,
+        "opts": ["itinerary", "excavation", "responsibility", "civilization"],
+        "ans": 2,
         "exp": "<b>responsibility</b> (Unit 6): trách nhiệm gia đình."
     },
     {
@@ -261,8 +261,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "18. [Ôn tập Unit 8] Working from home twice a week reduces daily ________ time on crowded highways.",
-        "opts": ["commute", "archive", "landmark", "adolescence"],
-        "ans": 0,
+        "opts": ["archive", "landmark", "commute", "adolescence"],
+        "ans": 2,
         "exp": "<b>commute</b> (Unit 8): việc đi lại giữa nhà và nơi làm việc."
     },
     {
@@ -273,8 +273,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "20. [Ôn tập Unit 10] Museum curators need specialized training to ________ historical manuscripts.",
-        "opts": ["preserve", "demolish", "pollute", "subsidize"],
-        "ans": 0,
+        "opts": ["demolish", "pollute", "preserve", "subsidize"],
+        "ans": 2,
         "exp": "<b>preserve</b> (Unit 10): bảo tồn, gìn giữ."
     }
 ]
@@ -288,26 +288,26 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "2. Employees ________ workload is constantly excessive are much more likely to suffer from burnout.",
-        "opts": ["who", "which", "whose", "where"],
-        "ans": 2,
+        "opts": ["whose", "who", "which", "where"],
+        "ans": 0,
         "exp": "Chỉ sự sở hữu đứng trước danh từ 'workload' (khối lượng công việc của nhân viên đó) -> dùng <b>whose</b>."
     },
     {
         "q": "3. Many young people want to work in an environment ________ creativity and innovation are encouraged.",
-        "opts": ["which", "where", "who", "whose"],
-        "ans": 1,
+        "opts": ["which", "who", "where", "whose"],
+        "ans": 2,
         "exp": "Thay cho nơi chốn/môi trường ('in an environment' = in which) và theo sau là mệnh đề S + V đầy đủ -> dùng <b>where</b>."
     },
     {
         "q": "4. Remote working, ________ has become popular worldwide, allows staff to enjoy a flexible schedule.",
-        "opts": ["that", "which", "who", "where"],
-        "ans": 1,
+        "opts": ["that", "who", "where", "which"],
+        "ans": 3,
         "exp": "Mệnh đề quan hệ không xác định (sau dấu phẩy ',') bổ nghĩa cho 'Remote working' (sự vật) -> bắt buộc dùng <b>which</b> (không được dùng 'that')."
     },
     {
         "q": "5. Many office workers have to work unpaid overtime every evening, ________ negatively affects their family life.",
-        "opts": ["which", "that", "who", "where"],
-        "ans": 0,
+        "opts": ["that", "which", "who", "where"],
+        "ans": 1,
         "exp": "Cấu trúc <code>, which + V (số ít)</code> thay thế cho toàn bộ mệnh đề đứng trước dấu phẩy."
     },
     {
@@ -318,26 +318,26 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "7. Mentors ________ guide junior colleagues patiently play a vital role in workplace training.",
-        "opts": ["who", "which", "where", "whose"],
-        "ans": 0,
+        "opts": ["which", "where", "whose", "who"],
+        "ans": 3,
         "exp": "Thay cho danh từ chỉ người 'Mentors' làm chủ ngữ -> dùng <b>who</b>."
     },
     {
         "q": "8. High remuneration alone cannot guarantee job satisfaction in a company ________ employees feel disrespected.",
-        "opts": ["which", "where", "who", "that"],
-        "ans": 1,
+        "opts": ["where", "which", "who", "that"],
+        "ans": 0,
         "exp": "Thay cho trạng ngữ chỉ nơi chốn ('in a company' = where) + mệnh đề 'employees feel disrespected' -> <b>where</b>."
     },
     {
         "q": "9. The software engineer ________ designed our new cybersecurity system received an immediate promotion.",
-        "opts": ["who", "which", "whose", "where"],
-        "ans": 0,
+        "opts": ["which", "whose", "who", "where"],
+        "ans": 2,
         "exp": "Thay cho danh từ chỉ người 'The software engineer' -> <b>who</b>."
     },
     {
         "q": "10. Companies ________ invest in employee wellbeing experience higher productivity and lower staff turnover.",
-        "opts": [" that", "who", "where", "whose"],
-        "ans": 0,
+        "opts": ["who", " that", "where", "whose"],
+        "ans": 1,
         "exp": "Danh từ 'Companies' là tổ chức/sự vật làm chủ ngữ trong mệnh đề xác định -> dùng <b>that</b> (hoặc which)."
     }
 ]

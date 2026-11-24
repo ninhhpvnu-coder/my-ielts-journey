@@ -169,8 +169,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "3. Strong ________ pressure can either push teenagers towards risky behaviour or inspire them to study harder.",
-        "opts": ["peer", "norm", "bond", "genre"],
-        "ans": 0,
+        "opts": ["norm", "bond", "genre", "peer"],
+        "ans": 3,
         "exp": "<b>peer pressure</b> (n): áp lực đồng trang lứa."
     },
     {
@@ -187,50 +187,50 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "6. Critics argue that ruthless competition in modern capitalism promotes selfishness and ________.",
-        "opts": ["egoism", "altruism", "compassion", "cohesion"],
-        "ans": 0,
+        "opts": ["altruism", "compassion", "egoism", "cohesion"],
+        "ans": 2,
         "exp": "<b>egoism</b> (n): chủ nghĩa vị kỷ, tính ích kỷ."
     },
     {
         "q": "7. Doctors and nurses must treat terminally ill patients with both medical skill and deep ________.",
-        "opts": ["compassion", "isolation", "fatigue", "patronage"],
-        "ans": 0,
+        "opts": ["isolation", "compassion", "fatigue", "patronage"],
+        "ans": 1,
         "exp": "<b>compassion</b> (n): lòng trắc ẩn, tình thương cảm."
     },
     {
         "q": "8. Lower registration taxes act as a financial ________ for drivers to switch to electric vehicles.",
-        "opts": ["incentive", "motive", "norm", "burden"],
-        "ans": 0,
+        "opts": ["motive", "norm", "incentive", "burden"],
+        "ans": 2,
         "exp": "<b>financial incentive</b> (n): động lực khuyến khích về tài chính."
     },
     {
         "q": "9. The police detective questioned the suspect to discover the true ________ behind the cybercrime.",
-        "opts": ["motive", "norm", "empathy", "cohesion"],
-        "ans": 0,
+        "opts": ["norm", "motive", "empathy", "cohesion"],
+        "ans": 1,
         "exp": "<b>motive</b> (n): động cơ thúc đẩy hành động."
     },
     {
         "q": "10. Experiments with young infants suggest that human beings have an ________ sense of fairness and kindness.",
-        "opts": ["innate", "ethical", "mutual", "detrimental"],
-        "ans": 0,
+        "opts": ["ethical", "mutual", "detrimental", "innate"],
+        "ans": 3,
         "exp": "<b>innate</b> (adj): bẩm sinh, vốn có từ khi sinh ra."
     },
     {
         "q": "11. Medical researchers must follow strict ________ guidelines to ensure that clinical trials do not harm patients.",
-        "opts": ["ethical", "innate", "sensational", "tangible"],
-        "ans": 0,
+        "opts": ["innate", "sensational", "tangible", "ethical"],
+        "ans": 3,
         "exp": "<b>ethical guidelines / behaviour</b> (adj): thuộc về đạo đức."
     },
     {
         "q": "12. High levels of inequality and distrust can weaken social ________ and lead to civil unrest.",
-        "opts": ["cohesion", "isolation", "egoism", "insomnia"],
-        "ans": 0,
+        "opts": ["isolation", "cohesion", "egoism", "insomnia"],
+        "ans": 1,
         "exp": "<b>social cohesion</b> (n): sự gắn kết xã hội."
     },
     {
         "q": "13. Volunteering at local community gardens helps neighbours form lasting friendships and strong social ________.",
-        "opts": ["bonds", "norms", "motives", "peers"],
-        "ans": 0,
+        "opts": ["norms", "bonds", "motives", "peers"],
+        "ans": 1,
         "exp": "<b>social / family bonds</b> (n): sợi dây gắn kết tình cảm."
     },
     {
@@ -241,38 +241,38 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "15. Every successful marriage and business partnership is founded on ________ trust and respect.",
-        "opts": ["mutual", "innate", "cognitive", "demographic"],
-        "ans": 0,
+        "opts": ["innate", "cognitive", "mutual", "demographic"],
+        "ans": 2,
         "exp": "<b>mutual trust and respect</b> (adj): sự tin tưởng và tôn trọng lẫn nhau."
     },
     {
         "q": "16. [Ôn tập Unit 24] Chronic sleep deprivation is highly ________ to a student's memory and mental health.",
-        "opts": ["detrimental", "altruistic", "mutual", "transparent"],
-        "ans": 0,
+        "opts": ["altruistic", "mutual", "transparent", "detrimental"],
+        "ans": 3,
         "exp": "<b>be detrimental to</b> (Unit 24): có hại nghiêm trọng cho..."
     },
     {
         "q": "17. [Ôn tập Unit 23] Social media algorithms are often blamed for spreading fake news and ________.",
-        "opts": ["disinformation", "credibility", "compassion", "patronage"],
-        "ans": 0,
+        "opts": ["credibility", "compassion", "disinformation", "patronage"],
+        "ans": 2,
         "exp": "<b>disinformation</b> (Unit 23): thông tin sai lệch có chủ đích."
     },
     {
         "q": "18. [Ôn tập Unit 22] Despite not bringing immediate profit, classical literature ________ our spiritual lives.",
-        "opts": ["enriches", "impairs", "distorts", "shrinks"],
-        "ans": 0,
+        "opts": ["impairs", "distorts", "shrinks", "enriches"],
+        "ans": 3,
         "exp": "<b>enrich our spiritual lives</b> (Unit 22): làm phong phú đời sống tinh thần."
     },
     {
         "q": "19. [Ôn tập Unit 21] In 2025, working-age adults accounted for the vast ________ (66%) of the population.",
-        "opts": ["majority", "fraction", "minority", "quarter"],
-        "ans": 0,
+        "opts": ["fraction", "majority", "minority", "quarter"],
+        "ans": 1,
         "exp": "<b>the vast majority of</b> (Unit 21): đại đa số."
     },
     {
         "q": "20. [Ôn tập Unit 20] There was a striking ________ in daily water consumption between rich and poor countries.",
-        "opts": ["disparity", "reservoir", "sanctuary", "sculpture"],
-        "ans": 0,
+        "opts": ["reservoir", "sanctuary", "disparity", "sculpture"],
+        "ans": 2,
         "exp": "<b>a striking disparity</b> (Unit 20): sự chênh lệch lớn."
     }
 ]
@@ -280,8 +280,8 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Cleft Sentence for Emphasis: What ________ a community together during crises is mutual trust and compassion.",
-        "opts": ["bind", "binds", "binding", "are binding"],
-        "ans": 1,
+        "opts": ["binds", "bind", "binding", "are binding"],
+        "ans": 0,
         "exp": "Mệnh đề danh từ mở đầu bằng <b>What</b> làm chủ ngữ luôn chia động từ <b>số ít</b> -> <b>binds</b>."
     },
     {
@@ -292,8 +292,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "3. Teenagers often feel compelled to conform ________ the social norms of their peer group.",
-        "opts": ["in", "at", "to", "for"],
-        "ans": 2,
+        "opts": ["in", "at", "for", "to"],
+        "ans": 3,
         "exp": "Cấu trúc cố định: <code>conform to + Noun</code> (tuân theo, hòa nhập theo quy chuẩn) -> <b>to</b>."
     },
     {
@@ -304,8 +304,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "5. ________ motivates millions of citizens to donate blood anonymously is pure altruism rather than financial gain.",
-        "opts": ["That", "Which", "What", "Who"],
-        "ans": 2,
+        "opts": ["That", "What", "Which", "Who"],
+        "ans": 1,
         "exp": "Câu chẻ nhấn mạnh: <b>What</b> (= The thing that: Điều mà...) + V + is..."
     },
     {
@@ -316,20 +316,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "7. ________ in neighbourhood charity events enables residents to combat social isolation.",
-        "opts": ["Participate", "Participated", "Participating", "To participating"],
-        "ans": 2,
+        "opts": ["Participating", "Participate", "Participated", "To participating"],
+        "ans": 0,
         "exp": "Danh động từ <b>V-ing (Participating)</b> làm chủ ngữ của câu."
     },
     {
         "q": "8. ________ the rise of individualism in modern cities, millions of volunteers still help the elderly every weekend.",
-        "opts": ["Although", "Even though", "Despite", "Whereas"],
-        "ans": 2,
+        "opts": ["Despite", "Although", "Even though", "Whereas"],
+        "ans": 0,
         "exp": "Ôn tập Unit 22: Theo sau là cụm danh từ ('the rise of individualism...') -> dùng <b>Despite</b>."
     },
     {
         "q": "9. Governments provide tax incentives ________ corporations will donate more money to educational charities.",
-        "opts": ["in order to", "so that", "despite", "because of"],
-        "ans": 1,
+        "opts": ["in order to", "despite", "because of", "so that"],
+        "ans": 3,
         "exp": "Ôn tập Unit 15: Theo sau là mệnh đề chỉ mục đích ('corporations will donate...') -> dùng <b>so that</b>."
     },
     {

@@ -170,26 +170,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "3. Modern blood tests allow doctors to ________ diabetes long before serious complications appear.",
-        "opts": ["diagnose", "contaminate", "rehabilitate", "boycott"],
-        "ans": 0,
+        "opts": ["contaminate", "rehabilitate", "diagnose", "boycott"],
+        "ans": 2,
         "exp": "<b>diagnose</b> (v): chẩn đoán bệnh."
     },
     {
         "q": "4. Scientists worked around the clock to develop an effective ________ against the new virus.",
-        "opts": ["vaccine", "symptom", "infection", "epidemic"],
-        "ans": 0,
+        "opts": ["symptom", "infection", "epidemic", "vaccine"],
+        "ans": 3,
         "exp": "<b>develop a vaccine</b>: phát triển vắc-xin phòng bệnh."
     },
     {
         "q": "5. Poor sanitation in the nineteenth century often led to deadly cholera ________ in large cities.",
-        "opts": ["epidemics", "therapies", "cures", "warranties"],
-        "ans": 0,
+        "opts": ["therapies", "epidemics", "cures", "warranties"],
+        "ans": 1,
         "exp": "<b>epidemics</b> (n): các đợt dịch bệnh bùng phát."
     },
     {
         "q": "6. Cleaning wounds carefully with antiseptic liquid prevents bacterial ________.",
-        "opts": ["infection", "longevity", "hygiene", "treatment"],
-        "ans": 0,
+        "opts": ["longevity", "infection", "hygiene", "treatment"],
+        "ans": 1,
         "exp": "<b>prevent bacterial infection</b>: ngăn ngừa nhiễm trùng do vi khuẩn."
     },
     {
@@ -206,56 +206,56 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "9. Advances in modern medicine and clean water have significantly increased human ________ over the past century.",
-        "opts": ["longevity", "infection", "epidemic", "burnout"],
-        "ans": 0,
+        "opts": ["infection", "longevity", "epidemic", "burnout"],
+        "ans": 1,
         "exp": "<b>human longevity</b>: tuổi thọ của con người."
     },
     {
         "q": "10. Strict government laws require ________ companies to test new drugs thoroughly before selling them.",
-        "opts": ["pharmaceutical", "demographic", "residential", "indigenous"],
-        "ans": 0,
+        "opts": ["demographic", "pharmaceutical", "residential", "indigenous"],
+        "ans": 1,
         "exp": "<b>pharmaceutical companies</b>: các công ty dược phẩm."
     },
     {
         "q": "11. Teaching young children basic hand ________ at school reduces the spread of seasonal flu.",
-        "opts": ["hygiene", "therapy", "longevity", "symptom"],
-        "ans": 0,
+        "opts": ["therapy", "longevity", "symptom", "hygiene"],
+        "ans": 3,
         "exp": "<b>hand / personal hygiene</b>: vệ sinh cá nhân."
     },
     {
         "q": "12. Although researchers have not yet found a complete ________ for all forms of cancer, survival rates have surged.",
-        "opts": ["cure", "symptom", "vaccine", "epidemic"],
-        "ans": 0,
+        "opts": ["symptom", "vaccine", "cure", "epidemic"],
+        "ans": 2,
         "exp": "<b>find a cure for</b>: tìm ra phương thuốc chữa khỏi hoàn toàn."
     },
     {
         "q": "13. Eating fresh citrus fruits rich in vitamin C helps boost the body's ________ system during winter.",
-        "opts": ["immune", "chronic", "overcrowded", "ethical"],
-        "ans": 0,
+        "opts": ["chronic", "overcrowded", "immune", "ethical"],
+        "ans": 2,
         "exp": "<b>immune system</b>: hệ miễn dịch."
     },
     {
         "q": "14. Talking to a counselor and undergoing cognitive ________ can help employees recover from severe burnout.",
-        "opts": ["therapy", "hygiene", "infection", "vaccine"],
-        "ans": 0,
+        "opts": ["hygiene", "infection", "vaccine", "therapy"],
+        "ans": 3,
         "exp": "<b>undergo therapy</b>: trải qua liệu pháp điều trị (tâm lý/vật lý)."
     },
     {
         "q": "15. During the winter flu season, emergency rooms in public hospitals often become severely ________.",
-        "opts": ["overcrowded", "preventative", "immune", "pharmaceutical"],
-        "ans": 0,
+        "opts": ["preventative", "overcrowded", "immune", "pharmaceutical"],
+        "ans": 1,
         "exp": "<b>overcrowded</b> (adj): quá tải, đông nghịt bệnh nhân."
     },
     {
         "q": "16. [Ôn tập Unit 15] Strict food safety ________ must be enforced to protect consumers from poisoning.",
-        "opts": ["legislation", "remuneration", "adolescence", "artifact"],
-        "ans": 0,
+        "opts": ["remuneration", "adolescence", "legislation", "artifact"],
+        "ans": 2,
         "exp": "<b>legislation</b> (Unit 15): luật pháp, quy định pháp luật."
     },
     {
         "q": "17. [Ôn tập Unit 12] Government ________ on public healthcare rose from 9% to 16% of the national budget.",
-        "opts": ["expenditure", "storefront", "celebrity", "offender"],
-        "ans": 0,
+        "opts": ["storefront", "celebrity", "expenditure", "offender"],
+        "ans": 2,
         "exp": "<b>government expenditure</b> (Unit 12): chi tiêu ngân sách của chính phủ."
     },
     {
@@ -266,14 +266,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "19. [Ôn tập Unit 4] A ________ lifestyle with too much screen time and no exercise leads to obesity.",
-        "opts": ["sedentary", "flexible", "affordable", "gradual"],
-        "ans": 0,
+        "opts": ["flexible", "affordable", "gradual", "sedentary"],
+        "ans": 3,
         "exp": "<b>sedentary lifestyle</b> (Unit 4): lối sống tĩnh tại, ít vận động."
     },
     {
         "q": "20. [Ôn tập Unit 14] Rural residents often have less access to medical facilities compared to urban ________.",
-        "opts": ["demographics", "transactions", "commercials", "penalties"],
-        "ans": 0,
+        "opts": ["transactions", "commercials", "penalties", "demographics"],
+        "ans": 3,
         "exp": "<b>demographics</b> (Unit 14): các nhóm dân cư / nhân khẩu học."
     }
 ]
@@ -293,20 +293,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "3. Promoting regular exercise and health check-ups ________ reduce the burden on overcrowded hospitals.",
-        "opts": ["help", "helps", "helping", "are helping"],
-        "ans": 1,
+        "opts": ["helps", "help", "helping", "are helping"],
+        "ans": 0,
         "exp": "Chủ ngữ là cụm V-ing ('Promoting regular exercise and health check-ups') luôn tính là <b>ngôi thứ 3 số ít</b> -> <b>helps</b>."
     },
     {
         "q": "4. It is essential for governments ________ free childhood vaccines to prevent deadly epidemics.",
-        "opts": ["provide", "to provide", "providing", "provided"],
-        "ans": 1,
+        "opts": ["provide", "providing", "to provide", "provided"],
+        "ans": 2,
         "exp": "Cấu trúc <code>It is + Adjective (essential) + (for sb) + to V</code> -> <b>to provide</b>."
     },
     {
         "q": "5. It is widely ________ that prevention is much better than cure in public healthcare.",
-        "opts": ["recognize", "recognizing", "recognized", "recognizes"],
-        "ans": 2,
+        "opts": ["recognize", "recognizing", "recognizes", "recognized"],
+        "ans": 3,
         "exp": "Cấu trúc bị động khách quan học thuật: <code>It is widely recognized that...</code>"
     },
     {
@@ -317,26 +317,26 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "7. Patients ________ are diagnosed with chronic illnesses at an early stage respond much better to therapy.",
-        "opts": ["who", "which", "whose", "where"],
-        "ans": 0,
+        "opts": ["which", "whose", "where", "who"],
+        "ans": 3,
         "exp": "Ôn tập MĐQH (Unit 11): Thay cho danh từ chỉ người 'Patients' làm chủ ngữ -> <b>who</b>."
     },
     {
         "q": "8. Public health campaigns educate citizens about personal hygiene, thereby ________ the spread of infections.",
-        "opts": ["curb", "to curb", "curbing", "curbed"],
-        "ans": 2,
+        "opts": ["curb", "curbing", "to curb", "curbed"],
+        "ans": 1,
         "exp": "Ôn tập cấu trúc kết quả C1 (Unit 15): <code>, thereby + V-ing</code> -> <b>curbing</b>."
     },
     {
         "q": "9. Between 2010 and 2025, average human longevity in developing nations increased ________ five years.",
-        "opts": ["by", "at", "of", "between"],
-        "ans": 0,
+        "opts": ["at", "of", "between", "by"],
+        "ans": 3,
         "exp": "Ôn tập giới từ số liệu (Unit 12): Tăng thêm một khoảng bao nhiêu -> <code>increased by five years</code>."
     },
     {
         "q": "10. If people ________ less processed sugar, the rate of chronic diabetes would plummet.",
-        "opts": ["consume", "consumed", "will consume", "have consumed"],
-        "ans": 1,
+        "opts": ["consumed", "consume", "will consume", "have consumed"],
+        "ans": 0,
         "exp": "Ôn tập Câu điều kiện loại 2 (Unit 13): Mệnh đề chính có 'would plummet' -> mệnh đề If chia quá khứ <b>consumed</b>."
     }
 ]

@@ -159,20 +159,20 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. The line graph compares average monthly household ________ on housing, food, and transport.",
-        "opts": ["expenditure", "candidate", "colleague", "artifact"],
-        "ans": 0,
+        "opts": ["candidate", "expenditure", "colleague", "artifact"],
+        "ans": 1,
         "exp": "<b>household expenditure</b>: chi tiêu của hộ gia đình (từ học thuật chuẩn Task 1)."
     },
     {
         "q": "2. Financial advisors recommend saving at least 15% of your monthly ________ in a bank account.",
-        "opts": ["income", "inflation", "peak", "forecast"],
-        "ans": 0,
+        "opts": ["inflation", "peak", "forecast", "income"],
+        "ans": 3,
         "exp": "<b>monthly income</b>: thu nhập hằng tháng."
     },
     {
         "q": "3. Planning a clear weekly ________ helps university students avoid running out of money.",
-        "opts": ["budget", "surge", "proportion", "burnout"],
-        "ans": 0,
+        "opts": ["surge", "budget", "proportion", "burnout"],
+        "ans": 1,
         "exp": "<b>budget</b> (n): ngân sách, kế hoạch chi tiêu."
     },
     {
@@ -183,14 +183,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "5. When ________ is high, the purchasing power of money falls and everyday goods become more expensive.",
-        "opts": ["inflation", "productivity", "satisfaction", "promotion"],
-        "ans": 0,
+        "opts": ["productivity", "satisfaction", "inflation", "promotion"],
+        "ans": 2,
         "exp": "<b>inflation</b> (n): lạm phát."
     },
     {
         "q": "6. Between 2015 and 2020, the price of gold did not stay steady; instead, it ________ between $1,200 and $1,800.",
-        "opts": ["fluctuated", "demolished", "recruited", "nurtured"],
-        "ans": 0,
+        "opts": ["demolished", "recruited", "nurtured", "fluctuated"],
+        "ans": 3,
         "exp": "<b>fluctuate between... and...</b>: dao động lên xuống giữa mức... và mức..."
     },
     {
@@ -201,20 +201,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "8. During the pandemic, demand for home delivery services ________ dramatically across all major cities.",
-        "opts": ["surged", "stabilized", "plummeted", "excavated"],
-        "ans": 0,
+        "opts": ["stabilized", "plummeted", "excavated", "surged"],
+        "ans": 3,
         "exp": "<b>surge dramatically</b>: tăng vọt mạnh mẽ."
     },
     {
         "q": "9. After rising sharply for four years, housing prices finally ________ at around $350,000 in 2025.",
-        "opts": ["stabilized", "fluctuated", "surged", "renovated"],
-        "ans": 0,
+        "opts": ["fluctuated", "surged", "renovated", "stabilized"],
+        "ans": 3,
         "exp": "<b>stabilize at + số liệu</b>: chững lại, ổn định ở mức..."
     },
     {
         "q": "10. Unlike the sudden jump in fuel costs, there was a slow and ________ increase in public bus fares.",
-        "opts": ["gradual", "dramatic", "nuclear", "fragile"],
-        "ans": 0,
+        "opts": ["dramatic", "nuclear", "gradual", "fragile"],
+        "ans": 2,
         "exp": "<b>gradual increase</b>: sự tăng lên từ từ, đều đặn."
     },
     {
@@ -225,20 +225,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "12. Rent and utilities represent the largest ________ of living costs for young workers in London.",
-        "opts": ["proportion", "candidate", "qualification", "dynasty"],
-        "ans": 0,
+        "opts": ["candidate", "proportion", "qualification", "dynasty"],
+        "ans": 1,
         "exp": "<b>the largest proportion of</b>: tỷ trọng lớn nhất của..."
     },
     {
         "q": "13. Overall, the number of electric vehicles registered in Europe showed a strong ________ trend.",
-        "opts": ["upward", "ancient", "extended", "freelance"],
-        "ans": 0,
+        "opts": ["ancient", "extended", "upward", "freelance"],
+        "ans": 2,
         "exp": "<b>an upward trend</b>: xu hướng đi lên / tăng trưởng."
     },
     {
         "q": "14. Cinema attendance reached a ________ of 180 million tickets in 2019 before falling in 2020.",
-        "opts": ["peak", "budget", "income", "forecast"],
-        "ans": 0,
+        "opts": ["budget", "income", "forecast", "peak"],
+        "ans": 3,
         "exp": "<b>reach a peak of + số liệu</b>: đạt đỉnh ở mức..."
     },
     {
@@ -249,20 +249,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "16. [Ôn tập Unit 11] Many graduates look for a profession that offers both fair ________ and job satisfaction.",
-        "opts": ["remuneration", "inflation", "congestion", "excavation"],
-        "ans": 0,
+        "opts": ["inflation", "congestion", "remuneration", "excavation"],
+        "ans": 2,
         "exp": "<b>remuneration</b> (Unit 11): tiền lương, đãi ngộ tài chính."
     },
     {
         "q": "17. [Ôn tập Unit 8] Governments should ________ public transport so low-income commuters can afford daily travel.",
-        "opts": ["subsidize", "plummet", "demolish", "fluctuate"],
-        "ans": 0,
+        "opts": ["plummet", "demolish", "subsidize", "fluctuate"],
+        "ans": 2,
         "exp": "<b>subsidize</b> (Unit 8): trợ giá, hỗ trợ kinh phí."
     },
     {
         "q": "18. [Ôn tập Unit 7] Several old warehouses were ________ into affordable residential apartments.",
-        "opts": ["converted", "peaked", "surged", "forecast"],
-        "ans": 0,
+        "opts": ["peaked", "converted", "surged", "forecast"],
+        "ans": 1,
         "exp": "<b>be converted into</b> (Unit 7): được chuyển đổi công năng thành..."
     },
     {
@@ -273,8 +273,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "20. [Ôn tập Unit 11] Working excessive unpaid overtime every week can lead to severe mental ________.",
-        "opts": ["burnout", "budget", "income", "peak"],
-        "ans": 0,
+        "opts": ["budget", "burnout", "income", "peak"],
+        "ans": 1,
         "exp": "<b>burnout</b> (Unit 11): sự kiệt sức vì công việc."
     }
 ]
@@ -282,8 +282,8 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Between 2010 and 2025, household expenditure on healthcare rose ________ from 8% to 22%.",
-        "opts": ["dramatic", "dramatically", "more dramatic", "dramatics"],
-        "ans": 1,
+        "opts": ["dramatic", "more dramatic", "dramatics", "dramatically"],
+        "ans": 3,
         "exp": "Đứng sau động từ thường 'rose' cần một <b>Trạng từ (Adverb)</b> để bổ nghĩa -> <b>dramatically</b>."
     },
     {
@@ -294,20 +294,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "3. The percentage of income spent on printed books fell ________ 14% in 2010 to 5% in 2025.",
-        "opts": ["from", "by", "at", "in"],
-        "ans": 0,
+        "opts": ["by", "from", "at", "in"],
+        "ans": 1,
         "exp": "Cặp giới từ mô tả điểm đầu và điểm cuối: <code>fall from [A] to [B]</code> -> <b>from</b>."
     },
     {
         "q": "4. Over the ten-year period, monthly spending on renewable electricity increased ________ 18% (from 12% to 30%).",
-        "opts": ["by", "at", "of", "between"],
-        "ans": 0,
+        "opts": ["at", "of", "by", "between"],
+        "ans": 2,
         "exp": "Giới từ chỉ khoảng chênh lệch tăng thêm (30% - 12% = 18%) -> <code>increased by 18%</code>."
     },
     {
         "q": "5. After fluctuating for three years, the inflation rate finally stabilized ________ 2.5% in 2024.",
-        "opts": ["at", "to", "by", "of"],
-        "ans": 0,
+        "opts": ["to", "by", "of", "at"],
+        "ans": 3,
         "exp": "Sau động từ <code>stabilize / stand / peak</code> dùng giới từ <b>at</b> + số liệu cố định."
     },
     {
@@ -318,26 +318,26 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "7. Overall, there was a sharp decline ________ the amount of cash used for daily shopping.",
-        "opts": ["in", "of", "at", "by"],
-        "ans": 0,
+        "opts": ["of", "in", "at", "by"],
+        "ans": 1,
         "exp": "Sau danh từ chỉ sự tăng/giảm (<code>a rise / decline / increase + in + đối tượng</code>) -> dùng giới từ <b>in</b>."
     },
     {
         "q": "8. According to economic forecasts, online retail expenditure ________ to reach 45% by 2030.",
-        "opts": ["is projected", "projects", "projected", "projecting"],
-        "ans": 0,
+        "opts": ["projects", "projected", "is projected", "projecting"],
+        "ans": 2,
         "exp": "Cấu trúc dự báo tương lai chuẩn Task 1: <code>is projected / is forecast + to V</code>."
     },
     {
         "q": "9. In 2010, food expenditure stood at 30%, ________ entertainment accounted for only 10%.",
-        "opts": ["whereas", "because", "therefore", "despite"],
-        "ans": 0,
+        "opts": ["because", "therefore", "whereas", "despite"],
+        "ans": 2,
         "exp": "Liên từ đối chiếu 2 mệnh đề số liệu trái ngược nhau trong cùng 1 năm -> <b>whereas</b>."
     },
     {
         "q": "10. The number of young investors fluctuated ________ 2 million and 3.5 million between 2018 and 2022.",
-        "opts": ["between", "from", "among", "by"],
-        "ans": 0,
+        "opts": ["from", "among", "by", "between"],
+        "ans": 3,
         "exp": "Cấu trúc <code>fluctuate between [A] and [B]</code> (dao động trong khoảng từ A đến B)."
     }
 ]

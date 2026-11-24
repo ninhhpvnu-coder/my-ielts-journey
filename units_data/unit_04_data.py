@@ -158,80 +158,80 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Eating a ________ diet with vegetables, protein, and whole grains keeps your body energized.",
-        "opts": ["sedentary", "balanced", "mental", "stressed"],
-        "ans": 1,
+        "opts": ["balanced", "sedentary", "mental", "stressed"],
+        "ans": 0,
         "exp": "<b>balanced</b> (adj): cân bằng. Collocation: 'a balanced diet' = chế độ ăn uống cân bằng dinh dưỡng."
     },
     {
         "q": "2. Many office workers suffer from neck and back pain because of their ________ lifestyle.",
-        "opts": ["sedentary", "beneficial", "balanced", "renewable"],
-        "ans": 0,
+        "opts": ["beneficial", "sedentary", "balanced", "renewable"],
+        "ans": 1,
         "exp": "<b>sedentary</b> (adj): tĩnh tại, ngồi nhiều ít vận động ('sedentary lifestyle')."
     },
     {
         "q": "3. Marathon runners train for months to build their physical ________ and endurance.",
-        "opts": ["obesity", "stamina", "recreation", "stress"],
-        "ans": 1,
+        "opts": ["stamina", "obesity", "recreation", "stress"],
+        "ans": 0,
         "exp": "<b>stamina</b> (n): sức bền, sự dẻo dai thể lực ('build physical stamina')."
     },
     {
         "q": "4. Eating too much junk food and sugary snacks is a major cause of childhood ________.",
-        "opts": ["immunity", "wellbeing", "obesity", "recreation"],
-        "ans": 2,
+        "opts": ["immunity", "wellbeing", "recreation", "obesity"],
+        "ans": 3,
         "exp": "<b>obesity</b> (n): bệnh béo phì ('childhood obesity')."
     },
     {
         "q": "5. Getting eight hours of sleep and eating citrus fruits can naturally boost your ________.",
-        "opts": ["immunity", "stress", "obesity", "workout"],
-        "ans": 0,
+        "opts": ["stress", "obesity", "immunity", "workout"],
+        "ans": 2,
         "exp": "<b>immunity</b> (n): hệ miễn dịch, sức đề kháng ('boost immunity')."
     },
     {
         "q": "6. Swimming and cycling are highly ________ to cardiovascular health.",
-        "opts": ["sedentary", "beneficial", "contaminated", "endangered"],
-        "ans": 1,
+        "opts": ["sedentary", "contaminated", "endangered", "beneficial"],
+        "ans": 3,
         "exp": "<b>beneficial</b> (adj): có lợi (đi với giới từ 'to': 'beneficial to health')."
     },
     {
         "q": "7. Nutritionists advise teenagers not to ________ too many carbonated soft drinks.",
-        "opts": ["prevent", "consume", "preserve", "recycle"],
-        "ans": 1,
+        "opts": ["consume", "prevent", "preserve", "recycle"],
+        "ans": 0,
         "exp": "<b>consume</b> (v): tiêu thụ, ăn uống nạp vào cơ thể."
     },
     {
         "q": "8. Stretching for ten minutes before a football match helps ________ muscle injuries.",
-        "opts": ["prevent", "consume", "contaminate", "qualify"],
-        "ans": 0,
+        "opts": ["consume", "contaminate", "prevent", "qualify"],
+        "ans": 2,
         "exp": "<b>prevent</b> (v): ngăn ngừa, phòng tránh chấn thương hoặc bệnh tật."
     },
     {
         "q": "9. Listening to classical music or walking in nature helps students relieve exam ________.",
-        "opts": ["stamina", "nutrition", "stress", "diet"],
-        "ans": 2,
+        "opts": ["stamina", "nutrition", "diet", "stress"],
+        "ans": 3,
         "exp": "<b>stress</b> (n): sự căng thẳng. Collocation: 'relieve stress' = giải tỏa căng thẳng."
     },
     {
         "q": "10. Good ________ during childhood lays the foundation for lifelong health.",
-        "opts": ["nutrition", "obesity", "emission", "deforestation"],
-        "ans": 0,
+        "opts": ["obesity", "emission", "deforestation", "nutrition"],
+        "ans": 3,
         "exp": "<b>nutrition</b> (n): chế độ/sự dinh dưỡng."
     },
     {
         "q": "11. Meditation and mindfulness exercises improve both physical and ________ health.",
-        "opts": ["mental", "urban", "sedentary", "academic"],
-        "ans": 0,
+        "opts": ["urban", "sedentary", "mental", "academic"],
+        "ans": 2,
         "exp": "<b>mental health</b>: sức khỏe tinh thần / tâm lý."
     },
     {
         "q": "12. The new community park provides generous space for outdoor ________ and family picnics.",
-        "opts": ["recreation", "obesity", "immunity", "pollution"],
-        "ans": 0,
+        "opts": ["obesity", "recreation", "immunity", "pollution"],
+        "ans": 1,
         "exp": "<b>recreation</b> (n): hoạt động vui chơi giải trí, thư giãn lành mạnh."
     },
     {
         "q": "13. I always complete a 40-minute gym ________ before starting my university classes.",
-        "opts": ["workout", "diet", "wellbeing", "nutrition"],
-        "ans": 0,
+        "opts": ["diet", "workout", "wellbeing", "nutrition"],
+        "ans": 1,
         "exp": "<b>workout</b> (n): buổi tập luyện thể dục thể thao."
     },
     {
@@ -242,14 +242,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "15. Switching to a plant-based ________ rich in fiber can lower cholesterol levels.",
-        "opts": ["diet", "recreation", "workout", "stress"],
-        "ans": 0,
+        "opts": ["recreation", "workout", "diet", "stress"],
+        "ans": 2,
         "exp": "<b>diet</b> (n): chế độ ăn uống ('plant-based diet')."
     },
     {
         "q": "16. [Ôn tập Unit 1] Going for a morning jog has become an essential part of my daily ________.",
-        "opts": ["routine", "deadline", "species", "emission"],
-        "ans": 0,
+        "opts": ["deadline", "routine", "species", "emission"],
+        "ans": 1,
         "exp": "<b>routine</b> (n - Unit 1): lịch trình sinh hoạt hàng ngày."
     },
     {
@@ -260,20 +260,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "18. [Ôn tập Unit 2] Sticking to a daily workout plan requires strong personal ________.",
-        "opts": ["discipline", "biodiversity", "curriculum", "pollution"],
-        "ans": 0,
+        "opts": ["biodiversity", "discipline", "curriculum", "pollution"],
+        "ans": 1,
         "exp": "<b>discipline</b> (n - Unit 2): tính kỷ luật, sự tự giác."
     },
     {
         "q": "19. [Ôn tập Unit 3] Clean air and green parks in ________ areas encourage residents to jog outdoors.",
-        "opts": ["urban", "sedentary", "endangered", "academic"],
-        "ans": 0,
+        "opts": ["sedentary", "endangered", "urban", "academic"],
+        "ans": 2,
         "exp": "<b>urban</b> (adj - Unit 3): thuộc về đô thị, thành phố."
     },
     {
         "q": "20. [Ôn tập Unit 3] Cycling to work not only improves fitness but also reduces carbon ________.",
-        "opts": ["emissions", "workouts", "assignments", "tutors"],
-        "ans": 0,
+        "opts": ["workouts", "assignments", "tutors", "emissions"],
+        "ans": 3,
         "exp": "<b>emissions</b> (n - Unit 3): khí thải carbon."
     }
 ]
@@ -281,20 +281,20 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. How ________ refined sugar do you consume in your coffee every day?",
-        "opts": ["many", "much", "few", "a few"],
-        "ans": 1,
+        "opts": ["many", "few", "much", "a few"],
+        "ans": 2,
         "exp": "'sugar' là danh từ không đếm được (Uncountable Noun) -> Dùng <b>How much</b>."
     },
     {
         "q": "2. Doing a 30-minute workout every morning ________ highly beneficial to your heart.",
-        "opts": ["is", "are", "be", "were"],
-        "ans": 0,
+        "opts": ["are", "is", "be", "were"],
+        "ans": 1,
         "exp": "Chủ ngữ là cụm danh động từ V-ing ('Doing a 30-minute workout') luôn chia động từ số ít -> <b>is</b>."
     },
     {
         "q": "3. If you want to prevent back pain, you ________ sit at your computer for six hours without a break.",
-        "opts": ["should", "shouldn't", "must", "have to"],
-        "ans": 1,
+        "opts": ["shouldn't", "should", "must", "have to"],
+        "ans": 0,
         "exp": "Lời khuyên không nên làm việc có hại cho cột sống -> <b>shouldn't (should not)</b>."
     },
     {
@@ -305,38 +305,38 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "5. Proper nutrition ________ a vital role in boosting children's natural immunity.",
-        "opts": ["play", "plays", "playing", "are playing"],
-        "ans": 1,
+        "opts": ["plays", "play", "playing", "are playing"],
+        "ans": 0,
         "exp": "'nutrition' là danh từ không đếm được (chủ ngữ số ít) -> Động từ thêm -s: <b>plays</b>."
     },
     {
         "q": "6. Professional athletes ________ follow a strict training schedule to maintain their stamina.",
-        "opts": ["must", "shouldn't", "cannot", "may not"],
-        "ans": 0,
+        "opts": ["shouldn't", "cannot", "may not", "must"],
+        "ans": 3,
         "exp": "Sự bắt buộc cần thiết để duy trì thể lực đỉnh cao -> <b>must</b>."
     },
     {
         "q": "7. Adding ________ olive oil and fresh herbs makes a salad both tasty and healthy.",
-        "opts": ["a few", "many", "a little", "several"],
-        "ans": 2,
+        "opts": ["a few", "a little", "many", "several"],
+        "ans": 1,
         "exp": "'olive oil' là chất lỏng (danh từ không đếm được) -> Dùng <b>a little</b> (một chút)."
     },
     {
         "q": "8. Too ________ academic stress can negatively affect a student's sleep and mental wellbeing.",
-        "opts": ["many", "much", "few", "several"],
-        "ans": 1,
+        "opts": ["many", "few", "several", "much"],
+        "ans": 3,
         "exp": "'stress' là danh từ trừu tượng không đếm được -> Dùng <b>too much</b>."
     },
     {
         "q": "9. ________ team sports on weekends helps teenagers build social skills and relieve tension.",
-        "opts": ["Play", "Playing", "Plays", "Played"],
-        "ans": 1,
+        "opts": ["Play", "Plays", "Playing", "Played"],
+        "ans": 2,
         "exp": "Đứng đầu câu làm chủ ngữ cho động từ 'helps' -> Dùng danh động từ V-ing: <b>Playing</b>."
     },
     {
         "q": "10. The fitness coach gave me some very useful ________ on how to prevent knee injuries.",
-        "opts": ["advices", "advice", "an advice", "many advices"],
-        "ans": 1,
+        "opts": ["advices", "an advice", "many advices", "advice"],
+        "ans": 3,
         "exp": "'advice' (lời khuyên) là danh từ KHÔNG đếm được, không bao giờ có 's' hay 'an' -> <b>advice</b>."
     }
 ]

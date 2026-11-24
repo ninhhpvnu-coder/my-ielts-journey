@@ -164,14 +164,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "2. In rural areas, many people still live in an ________ family with grandparents, aunts, and uncles.",
-        "opts": ["extended", "artificial", "accessible", "sedentary"],
-        "ans": 0,
+        "opts": ["artificial", "accessible", "sedentary", "extended"],
+        "ans": 3,
         "exp": "<b>extended family</b>: đại gia đình nhiều thế hệ cùng chung sống."
     },
     {
         "q": "3. Open conversations at the dinner table help reduce the ________ gap between parents and teenagers.",
-        "opts": ["generation", "household", "upbringing", "harmony"],
-        "ans": 0,
+        "opts": ["household", "generation", "upbringing", "harmony"],
+        "ans": 1,
         "exp": "<b>generation gap</b>: khoảng cách thế hệ."
     },
     {
@@ -182,50 +182,50 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "5. Having an older ________ taught me how to share books and cooperate with others from an early age.",
-        "opts": ["sibling", "bond", "citizen", "device"],
-        "ans": 0,
+        "opts": ["bond", "sibling", "citizen", "device"],
+        "ans": 1,
         "exp": "<b>sibling</b> (n): anh hoặc chị/em ruột."
     },
     {
         "q": "6. A warm and disciplined ________ prepares children to face challenges in adulthood.",
-        "opts": ["upbringing", "conflict", "adolescence", "innovation"],
-        "ans": 0,
+        "opts": ["conflict", "upbringing", "adolescence", "innovation"],
+        "ans": 1,
         "exp": "<b>upbringing</b> (n): sự nuôi dạy từ thuở nhỏ."
     },
     {
         "q": "7. During ________, teenagers experience rapid physical and emotional changes.",
-        "opts": ["adolescence", "harmony", "responsibility", "upbringing"],
-        "ans": 0,
+        "opts": ["harmony", "responsibility", "upbringing", "adolescence"],
+        "ans": 3,
         "exp": "<b>adolescence</b> (n): thời kỳ thanh thiếu niên / dậy thì."
     },
     {
         "q": "8. Spending quality time together on weekends builds a strong emotional ________ between parents and children.",
-        "opts": ["bond", "conflict", "household", "sibling"],
-        "ans": 0,
+        "opts": ["conflict", "household", "bond", "sibling"],
+        "ans": 2,
         "exp": "<b>emotional bond</b>: sợi dây gắn kết tình cảm."
     },
     {
         "q": "9. When three generations live together, differences in lifestyle can occasionally cause family ________.",
-        "opts": ["conflict", "harmony", "nurture", "upbringing"],
-        "ans": 0,
+        "opts": ["harmony", "nurture", "upbringing", "conflict"],
+        "ans": 3,
         "exp": "<b>family conflict</b>: sự mâu thuẫn, xung đột trong gia đình."
     },
     {
         "q": "10. Good teachers and parents work together to ________ a child's natural curiosity and kindness.",
-        "opts": ["nurture", "automate", "contaminate", "pollute"],
-        "ans": 0,
+        "opts": ["automate", "nurture", "contaminate", "pollute"],
+        "ans": 1,
         "exp": "<b>nurture</b> (v): nuôi dưỡng, bồi đắp."
     },
     {
         "q": "11. My family has always been very ________ of my dream to study medicine abroad.",
-        "opts": ["supportive", "nuclear", "extended", "virtual"],
-        "ans": 0,
+        "opts": ["nuclear", "extended", "virtual", "supportive"],
+        "ans": 3,
         "exp": "<b>supportive</b> (adj): luôn ủng hộ, khích lệ ('be supportive of')."
     },
     {
         "q": "12. Many university students take part-time jobs so they can become financially ________.",
-        "opts": ["independent", "influential", "extended", "accessible"],
-        "ans": 0,
+        "opts": ["influential", "extended", "independent", "accessible"],
+        "ans": 2,
         "exp": "<b>financially independent</b>: tự lập về tài chính."
     },
     {
@@ -236,8 +236,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "14. Grandparents often play a highly ________ role in passing down cultural traditions to grandchildren.",
-        "opts": ["influential", "nuclear", "sedentary", "artificial"],
-        "ans": 0,
+        "opts": ["nuclear", "influential", "sedentary", "artificial"],
+        "ans": 1,
         "exp": "<b>influential</b> (adj): có tầm ảnh hưởng lớn ('play an influential role')."
     },
     {
@@ -248,14 +248,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "16. [Ôn tập Unit 1] Sharing meals is an important part of our family's daily ________.",
-        "opts": ["routine", "emission", "platform", "habitat"],
-        "ans": 0,
+        "opts": ["emission", "platform", "routine", "habitat"],
+        "ans": 2,
         "exp": "<b>daily routine</b> (Unit 1): thói quen sinh hoạt hằng ngày."
     },
     {
         "q": "17. [Ôn tập Unit 2] Strong self-________ helps students finish homework without parental reminders.",
-        "opts": ["discipline", "biodiversity", "stamina", "privacy"],
-        "ans": 0,
+        "opts": ["biodiversity", "stamina", "discipline", "privacy"],
+        "ans": 2,
         "exp": "<b>self-discipline</b> (Unit 2): tính tự kỷ luật."
     },
     {
@@ -266,14 +266,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "19. [Ôn tập Unit 4] Cooking fresh meals at home provides better ________ than eating fast food.",
-        "opts": ["nutrition", "innovation", "conflict", "deforestation"],
-        "ans": 0,
+        "opts": ["innovation", "conflict", "nutrition", "deforestation"],
+        "ans": 2,
         "exp": "<b>nutrition</b> (Unit 4): chế độ dinh dưỡng."
     },
     {
         "q": "20. [Ôn tập Unit 5] Video calls allow relatives living abroad to ________ with their family every day.",
-        "opts": ["communicate", "automate", "consume", "preserve"],
-        "ans": 0,
+        "opts": ["automate", "consume", "preserve", "communicate"],
+        "ans": 3,
         "exp": "<b>communicate</b> (Unit 5): giao tiếp, trò chuyện."
     }
 ]
@@ -281,38 +281,38 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. Modern nuclear households are usually much ________ than traditional extended families.",
-        "opts": ["small", "smaller", "smallest", "more small"],
-        "ans": 1,
+        "opts": ["smaller", "small", "smallest", "more small"],
+        "ans": 0,
         "exp": "So sánh hơn với tính từ ngắn 'small' có 'than' và trạng từ nhấn mạnh 'much' -> <b>smaller</b>."
     },
     {
         "q": "2. Parents are often the ________ role models during a child's early upbringing.",
-        "opts": ["influential", "more influential", "most influential", "as influential"],
-        "ans": 2,
+        "opts": ["influential", "most influential", "more influential", "as influential"],
+        "ans": 1,
         "exp": "So sánh nhất với tính từ dài 'influential' đứng sau mạo từ 'the' -> <b>most influential</b>."
     },
     {
         "q": "3. Living alone in a big city is not as ________ as living with supportive family members.",
-        "opts": ["comfortable", "more comfortable", "most comfortable", "comfortably"],
-        "ans": 0,
+        "opts": ["more comfortable", "comfortable", "most comfortable", "comfortably"],
+        "ans": 1,
         "exp": "Cấu trúc so sánh bằng phủ định <code>not as + Adj (nguyên mẫu) + as</code> -> <b>comfortable</b>."
     },
     {
         "q": "4. Young adults today tend to become financially ________ than their parents were at the same age.",
-        "opts": ["independent", "more independent", "most independent", "independently"],
-        "ans": 1,
+        "opts": ["more independent", "independent", "most independent", "independently"],
+        "ans": 0,
         "exp": "So sánh hơn của tính từ dài 'independent' (đi với 'than') -> <b>more independent</b>."
     },
     {
         "q": "5. ________ extended families provide daily childcare support, nuclear families offer greater personal privacy.",
-        "opts": ["While", "Because", "Therefore", "Unless"],
-        "ans": 0,
+        "opts": ["Because", "Therefore", "Unless", "While"],
+        "ans": 3,
         "exp": "Liên từ <b>While</b> đứng đầu câu dùng để đối chiếu 2 mặt của 2 mô hình gia đình."
     },
     {
         "q": "6. Resolving family conflicts calmly is far ________ than shouting in anger.",
-        "opts": ["good", "better", "best", "more good"],
-        "ans": 1,
+        "opts": ["good", "best", "better", "more good"],
+        "ans": 2,
         "exp": "Dạng so sánh hơn bất quy tắc của 'good' là <b>better</b> ('far better than')."
     },
     {
@@ -323,20 +323,20 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "8. Sharing household chores equally makes family life significantly ________ and more harmonious.",
-        "opts": ["happy", "happier", "happiest", "more happily"],
-        "ans": 1,
+        "opts": ["happy", "happiest", "more happily", "happier"],
+        "ans": 3,
         "exp": "Tính từ 2 âm tiết tận cùng bằng '-y' (happy) đổi thành '-ier' trong so sánh hơn -> <b>happier</b>."
     },
     {
         "q": "9. For working parents, professional childcare centres are often ________ expensive than help from grandparents.",
-        "opts": ["much more", "many more", "as", "the most"],
-        "ans": 0,
+        "opts": ["many more", "as", "much more", "the most"],
+        "ans": 2,
         "exp": "Nhấn mạnh cấp so sánh hơn với tính từ dài 'expensive' -> <b>much more</b> expensive than."
     },
     {
         "q": "10. Siblings who grow up sharing responsibilities often develop a ________ bond than children who never share.",
-        "opts": ["strong", "stronger", "strongest", "more strong"],
-        "ans": 1,
+        "opts": ["strong", "strongest", "more strong", "stronger"],
+        "ans": 3,
         "exp": "So sánh hơn của tính từ ngắn 'strong' (có 'than') -> <b>stronger</b>."
     }
 ]

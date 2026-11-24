@@ -157,26 +157,26 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. During rush hour, thousands of cars enter the city centre and cause severe traffic ________.",
-        "opts": ["congestion", "hospitality", "upbringing", "adolescence"],
-        "ans": 0,
+        "opts": ["hospitality", "congestion", "upbringing", "adolescence"],
+        "ans": 1,
         "exp": "<b>traffic congestion</b>: sự ùn tắc giao thông, kẹt xe."
     },
     {
         "q": "2. Instead of driving, my father takes the underground train to ________ to his office every day.",
-        "opts": ["commute", "demolish", "nurture", "renovate"],
-        "ans": 0,
+        "opts": ["demolish", "nurture", "commute", "renovate"],
+        "ans": 2,
         "exp": "<b>commute to work/office</b> (v): đi làm hằng ngày từ nhà tới chỗ làm."
     },
     {
         "q": "3. The government should ________ bus and train fares so that students and workers pay less.",
-        "opts": ["subsidize", "congest", "delay", "demolish"],
-        "ans": 0,
+        "opts": ["congest", "delay", "demolish", "subsidize"],
+        "ans": 3,
         "exp": "<b>subsidize</b> (v): trợ giá từ ngân sách nhà nước."
     },
     {
         "q": "4. High-speed trains are a clean and fast ________ to short domestic flights.",
-        "opts": ["alternative", "exhaust", "cyclist", "passenger"],
-        "ans": 0,
+        "opts": ["exhaust", "cyclist", "alternative", "passenger"],
+        "ans": 2,
         "exp": "<b>alternative (to)</b> (n): phương án thay thế."
     },
     {
@@ -193,8 +193,8 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "7. Every ________ on the express bus must wear a seatbelt for safety.",
-        "opts": ["passenger", "vehicle", "railway", "skyscraper"],
-        "ans": 0,
+        "opts": ["vehicle", "passenger", "railway", "skyscraper"],
+        "ans": 1,
         "exp": "<b>passenger</b> (n): hành khách."
     },
     {
@@ -205,44 +205,44 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "9. Swiss trains are famous for being extremely ________; they almost never arrive late.",
-        "opts": ["punctual", "nuclear", "extended", "sedentary"],
-        "ans": 0,
+        "opts": ["nuclear", "extended", "sedentary", "punctual"],
+        "ans": 3,
         "exp": "<b>punctual</b> (adj): đúng giờ."
     },
     {
         "q": "10. Because the metro station is right next to my flat, taking the train is very ________.",
-        "opts": ["convenient", "artificial", "endangered", "virtual"],
-        "ans": 0,
+        "opts": ["artificial", "endangered", "virtual", "convenient"],
+        "ans": 3,
         "exp": "<b>convenient</b> (adj): thuận tiện, tiện lợi."
     },
     {
         "q": "11. An accident on the highway caused a forty-minute ________ for morning commuters.",
-        "opts": ["delay", "bond", "harmony", "breakthrough"],
-        "ans": 0,
+        "opts": ["bond", "delay", "harmony", "breakthrough"],
+        "ans": 1,
         "exp": "<b>delay</b> (n): sự chậm trễ."
     },
     {
         "q": "12. Electric ________ produce zero tailpipe emissions and are much quieter than diesel trucks.",
-        "opts": ["vehicles", "pedestrians", "siblings", "suburbs"],
-        "ans": 0,
+        "opts": ["pedestrians", "siblings", "suburbs", "vehicles"],
+        "ans": 3,
         "exp": "<b>electric vehicles (EVs)</b>: các phương tiện giao thông chạy điện."
     },
     {
         "q": "13. Citizens will only give up their cars if the public bus system is frequent and ________.",
-        "opts": ["reliable", "nuclear", "influential", "adjacent"],
-        "ans": 0,
+        "opts": ["nuclear", "reliable", "influential", "adjacent"],
+        "ans": 1,
         "exp": "<b>reliable</b> (adj): đáng tin cậy, hoạt động ổn định."
     },
     {
         "q": "14. Engineers are building a high-speed ________ that connects the airport with the city centre.",
-        "opts": ["railway", "upbringing", "accommodation", "privacy"],
-        "ans": 0,
+        "opts": ["upbringing", "railway", "accommodation", "privacy"],
+        "ans": 1,
         "exp": "<b>high-speed railway</b>: tuyến đường sắt cao tốc."
     },
     {
         "q": "15. Expanding the underground metro ________ will allow millions of people to travel easily.",
-        "opts": ["network", "conflict", "exhaust", "addiction"],
-        "ans": 0,
+        "opts": ["conflict", "exhaust", "network", "addiction"],
+        "ans": 2,
         "exp": "<b>metro network</b>: mạng lưới tàu điện ngầm."
     },
     {
@@ -253,20 +253,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "17. [Ôn tập Unit 7] The old bus depot was ________ to make way for a modern railway station.",
-        "opts": ["demolished", "nurtured", "communicated", "revised"],
-        "ans": 0,
+        "opts": ["nurtured", "communicated", "demolished", "revised"],
+        "ans": 2,
         "exp": "<b>demolished</b> (Unit 7): bị phá dỡ."
     },
     {
         "q": "18. [Ôn tập Unit 6] In a modern ________ family, both parents often commute to work every day.",
-        "opts": ["nuclear", "extended", "spacious", "renewable"],
-        "ans": 0,
+        "opts": ["extended", "spacious", "renewable", "nuclear"],
+        "ans": 3,
         "exp": "<b>nuclear family</b> (Unit 6): gia đình hạt nhân."
     },
     {
         "q": "19. [Ôn tập Unit 5] Commuters can buy digital train tickets on a smartphone ________.",
-        "opts": ["platform", "habitat", "sibling", "stamina"],
-        "ans": 0,
+        "opts": ["habitat", "sibling", "platform", "stamina"],
+        "ans": 2,
         "exp": "<b>digital platform</b> (Unit 5): nền tảng số."
     },
     {
@@ -286,14 +286,14 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "2. Many office workers prefer taking the metro ________ it is punctual and avoids road congestion.",
-        "opts": ["because of", "owing to", "because", "consequently"],
-        "ans": 2,
+        "opts": ["because of", "owing to", "consequently", "because"],
+        "ans": 3,
         "exp": "Sau chỗ trống là mệnh đề đầy đủ 'it is punctual...' (S + V) -> Dùng liên từ <b>because</b>."
     },
     {
         "q": "3. The city council heavily subsidized bus fares. ________, the number of bus passengers increased by 40%.",
-        "opts": ["Because", "Consequently", "Due to", "Although"],
-        "ans": 1,
+        "opts": ["Because", "Due to", "Although", "Consequently"],
+        "ans": 3,
         "exp": "Đứng đầu câu mới, trước dấu phẩy để chỉ kết quả của câu trước -> <b>Consequently</b> (Do đó / Kết quả là)."
     },
     {
@@ -304,26 +304,26 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "5. Breathing toxic exhaust fumes every day can ________ serious respiratory illnesses.",
-        "opts": ["lead to", "due to", "because of", "as a result"],
-        "ans": 0,
+        "opts": ["due to", "because of", "as a result", "lead to"],
+        "ans": 3,
         "exp": "Sau động từ khuyết thiếu 'can' cần động từ nguyên mẫu: <b>lead to + Noun</b> (dẫn đến)."
     },
     {
         "q": "6. ________ the high cost of city-centre parking, most commuters now leave their private vehicles at home.",
-        "opts": ["Because", "Owing to", "Since", "Therefore"],
-        "ans": 1,
+        "opts": ["Because", "Since", "Owing to", "Therefore"],
+        "ans": 2,
         "exp": "Đi với cụm danh từ 'the high cost of city-centre parking' -> <b>Owing to</b> (= Because of / Due to)."
     },
     {
         "q": "7. Dedicated bike lanes are very safe. ________, more students are cycling to university.",
-        "opts": ["As a result", "Because of", "Due to", "Since"],
-        "ans": 0,
+        "opts": ["Because of", "As a result", "Due to", "Since"],
+        "ans": 1,
         "exp": "Cụm trạng từ nối chỉ kết quả đứng đầu câu trước dấu phẩy -> <b>As a result</b>."
     },
     {
         "q": "8. ________ the new express railway opened last month, daily commuting time has dropped by half.",
-        "opts": ["Since", "Due to", "Because of", "Therefore"],
-        "ans": 0,
+        "opts": ["Due to", "Because of", "Since", "Therefore"],
+        "ans": 2,
         "exp": "Đi với mệnh đề 'the new express railway opened last month' -> <b>Since</b>."
     },
     {
@@ -334,8 +334,8 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "10. Electric buses are quiet and clean; ________, they are an ideal alternative for modern cities.",
-        "opts": ["therefore", "because", "due to", "owing to"],
-        "ans": 0,
+        "opts": ["because", "due to", "therefore", "owing to"],
+        "ans": 2,
         "exp": "Sau dấu chấm phẩy (;), trước dấu phẩy (,) dùng trạng từ liên kết chỉ kết quả -> <b>therefore</b>."
     }
 ]

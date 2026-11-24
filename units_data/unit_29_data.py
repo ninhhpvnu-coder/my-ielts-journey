@@ -157,26 +157,26 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. University medical students must take a course in ________ to understand the moral limits of genetic research.",
-        "opts": ["bioethics", "taxation", "propulsion", "philanthropy"],
-        "ans": 0,
+        "opts": ["taxation", "bioethics", "propulsion", "philanthropy"],
+        "ans": 1,
         "exp": "<b>bioethics</b> (n): đạo đức sinh học."
     },
     {
         "q": "2. Haemophilia and cystic fibrosis are ________ disorders passed down from parents to their children through DNA.",
-        "opts": ["hereditary", "affluent", "lunar", "indigenous"],
-        "ans": 0,
+        "opts": ["affluent", "hereditary", "lunar", "indigenous"],
+        "ans": 1,
         "exp": "<b>hereditary disease / disorder</b> (adj): bệnh di truyền."
     },
     {
         "q": "3. In 1996, Dolly the sheep became the first mammal to be successfully ________ from an adult cell.",
-        "opts": ["cloned", "eradicated", "outsourced", "censored"],
-        "ans": 0,
+        "opts": ["eradicated", "outsourced", "cloned", "censored"],
+        "ans": 2,
         "exp": "<b>clone</b> (v): nhân bản vô tính."
     },
     {
         "q": "4. Many countries prohibit scientists from editing the genes of a human ________ for reproductive purposes.",
-        "opts": ["embryo", "organ", "trait", "surplus"],
-        "ans": 0,
+        "opts": ["organ", "embryo", "trait", "surplus"],
+        "ans": 1,
         "exp": "<b>human embryo</b> (n): phôi thai người."
     },
     {
@@ -187,14 +187,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "6. Exposure to nuclear radiation can cause dangerous genetic ________ in living cells.",
-        "opts": ["mutations", "transplants", "safeguards", "tariffs"],
-        "ans": 0,
+        "opts": ["transplants", "safeguards", "tariffs", "mutations"],
+        "ans": 3,
         "exp": "<b>genetic mutations</b> (n): các đột biến gen."
     },
     {
         "q": "7. Bioprinting technology may soon allow doctors to grow a replacement ________ such as a kidney in the laboratory.",
-        "opts": ["organ", "embryo", "trait", "deficit"],
-        "ans": 0,
+        "opts": ["embryo", "trait", "organ", "deficit"],
+        "ans": 2,
         "exp": "<b>vital / replacement organ</b> (n): cơ quan nội tạng."
     },
     {
@@ -205,20 +205,20 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "9. Eye colour, blood type, and height are physical ________ determined largely by our genetic code.",
-        "opts": ["traits", "organs", "embryos", "frontiers"],
-        "ans": 0,
+        "opts": ["organs", "traits", "embryos", "frontiers"],
+        "ans": 1,
         "exp": "<b>physical / genetic traits</b> (n): các đặc điểm di truyền/hình thể."
     },
     {
         "q": "10. Using genetic engineering to create 'designer babies' is a highly ________ practice condemned by ethicists.",
-        "opts": ["controversial", "equitable", "hereditary", "altruistic"],
-        "ans": 0,
+        "opts": ["equitable", "hereditary", "controversial", "altruistic"],
+        "ans": 2,
         "exp": "<b>highly controversial</b> (adj): gây nhiều tranh cãi."
     },
     {
         "q": "11. Artificial intelligence and biotechnology are advancing at an ________ speed never seen before in history.",
-        "opts": ["unprecedented", "impoverished", "indigenous", "innate"],
-        "ans": 0,
+        "opts": ["impoverished", "indigenous", "unprecedented", "innate"],
+        "ans": 2,
         "exp": "<b>unprecedented</b> (adj - C1): chưa từng có tiền lệ."
     },
     {
@@ -235,26 +235,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "14. Scientists must carefully consider the long-term moral and social ________ of their discoveries.",
-        "opts": ["implications", "mutations", "traits", "sweatshops"],
-        "ans": 0,
+        "opts": ["mutations", "traits", "sweatshops", "implications"],
+        "ans": 3,
         "exp": "<b>ethical / social implications</b> (n): những hệ lụy, tác động sâu xa."
     },
     {
         "q": "15. Unlike traditional medicine, germline gene editing permanently ________ the DNA of future generations.",
-        "opts": ["alters", "eradicates", "clones", "exports"],
-        "ans": 0,
+        "opts": ["eradicates", "clones", "exports", "alters"],
+        "ans": 3,
         "exp": "<b>permanently alter DNA</b> (v): làm biến đổi/thay đổi vĩnh viễn cấu trúc ADN."
     },
     {
         "q": "16. [Ôn tập Unit 28] Progressive ________ helps redistribute wealth from affluent elites to public services.",
-        "opts": ["taxation", "evasion", "bioethics", "propulsion"],
-        "ans": 0,
+        "opts": ["evasion", "taxation", "bioethics", "propulsion"],
+        "ans": 1,
         "exp": "<b>progressive taxation</b> (Unit 28): hệ thống thuế lũy tiến."
     },
     {
         "q": "17. [Ôn tập Unit 27] Multinational corporations often ________ manufacturing jobs to countries with lower labour costs.",
-        "opts": ["outsource", "clone", "erode", "assimilate"],
-        "ans": 0,
+        "opts": ["clone", "erode", "assimilate", "outsource"],
+        "ans": 3,
         "exp": "<b>outsource</b> (Unit 27): thuê ngoài, chuyển dịch sản xuất."
     },
     {
@@ -265,14 +265,14 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "19. [Ôn tập Unit 24] Prolonged workplace stress and sleep deprivation are highly ________ to mental wellbeing.",
-        "opts": ["detrimental", "unprecedented", "hereditary", "feasible"],
-        "ans": 0,
+        "opts": ["unprecedented", "hereditary", "feasible", "detrimental"],
+        "ans": 3,
         "exp": "<b>be detrimental to</b> (Unit 24): có hại nghiêm trọng cho..."
     },
     {
         "q": "20. [Ôn tập Unit 22] Public art galleries and classical literature ________ our spiritual lives and foster creativity.",
-        "opts": ["enrich", "alter", "impair", "distort"],
-        "ans": 0,
+        "opts": ["alter", "impair", "enrich", "distort"],
+        "ans": 2,
         "exp": "<b>enrich our spiritual lives</b> (Unit 22): làm phong phú đời sống tinh thần."
     }
 ]
@@ -286,56 +286,56 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "2. Inversion with 'Only by': Only by enforcing strict bioethical laws ________ the abuse of genetic engineering.",
-        "opts": ["governments can prevent", "can governments prevent", "do governments can prevent", "prevent can governments"],
-        "ans": 1,
+        "opts": ["can governments prevent", "governments can prevent", "do governments can prevent", "prevent can governments"],
+        "ans": 0,
         "exp": "Khi cụm <code>Only by + V-ing</code> đứng đầu câu, mệnh đề chính bắt buộc đảo ngữ: <code>can + S + V (can governments prevent)</code>."
     },
     {
         "q": "3. It-Cleft Sentence: It is therapeutic stem-cell research ________ offers hope to patients waiting for an organ transplant.",
-        "opts": ["who", "where", "that", "what"],
-        "ans": 2,
+        "opts": ["who", "where", "what", "that"],
+        "ans": 3,
         "exp": "Cấu trúc câu chẻ <code>It is/was + [Cụm danh từ chỉ vật] + that + V</code> -> <b>that</b>."
     },
     {
         "q": "4. Nominalisation + Verb Agreement: The rapid advancement of gene-editing technologies ________ sparked intense debate.",
-        "opts": ["have", "has", "are", "were"],
-        "ans": 1,
+        "opts": ["have", "are", "were", "has"],
+        "ans": 3,
         "exp": "Chủ ngữ chính của cụm danh từ hóa là <b>The rapid advancement</b> (danh từ số ít) -> chia động từ số ít: <b>has</b>."
     },
     {
         "q": "5. Note that 'bioethics' (like physics, economics, mathematics) takes a singular verb: Bioethics ________ a compulsory subject for medical researchers.",
-        "opts": ["are", "were", "is", "have been"],
-        "ans": 2,
+        "opts": ["are", "is", "were", "have been"],
+        "ans": 1,
         "exp": "Các danh từ tên ngành khoa học kết thúc bằng <b>-ics</b> (<i>bioethics, economics, physics, genetics</i>) luôn chia động từ <b>số ít</b> -> <b>is</b>."
     },
     {
         "q": "6. Passive Subjunctive (Review Unit 26): Ethics committees demand that written informed consent ________ before any clinical trial.",
-        "opts": ["is obtained", "be obtained", "obtained", "obtaining"],
-        "ans": 1,
+        "opts": ["be obtained", "is obtained", "obtained", "obtaining"],
+        "ans": 0,
         "exp": "Sau động từ <code>demand / insist / recommend that + S + (should) be + V3/ed</code> -> <b>be obtained</b>."
     },
     {
         "q": "7. Conditional Inversion (Review Unit 28): ________ wealthy parents allowed to select genetic traits, social inequality would worsen.",
-        "opts": ["Should", "Were", "Had", "Unless"],
-        "ans": 1,
+        "opts": ["Should", "Had", "Were", "Unless"],
+        "ans": 2,
         "exp": "Đảo ngữ câu điều kiện loại 2 bị động ('If wealthy parents were allowed...') -> đưa <b>Were</b> lên đầu câu."
     },
     {
         "q": "8. Reduced Relative Clause (Review Unit 27): Artificial organs ________ from a patient's own stem cells will not be rejected by the immune system.",
-        "opts": ["grow", "growing", "grown", "which grown"],
-        "ans": 2,
+        "opts": ["grow", "grown", "growing", "which grown"],
+        "ans": 1,
         "exp": "Rút gọn MĐQH bị động ('which are grown') thành <b>V3/ed (grown)</b>."
     },
     {
         "q": "9. Future Perfect (Review Unit 26): By 2050, medical scientists ________ cures for many fatal hereditary disorders.",
-        "opts": ["discover", "are discovering", "will have discovered", "discovered"],
-        "ans": 2,
+        "opts": ["discover", "will have discovered", "are discovering", "discovered"],
+        "ans": 1,
         "exp": "Mốc thời gian <code>By 2050</code> -> chia Tương lai Hoàn thành: <b>will have discovered</b>."
     },
     {
         "q": "10. Neither human reproductive cloning nor non-consensual genetic testing ________ permitted under international law.",
-        "opts": ["are", "is", "were", "have been"],
-        "ans": 1,
+        "opts": ["are", "were", "is", "have been"],
+        "ans": 2,
         "exp": "Cấu trúc 'Neither A nor B' chia theo chủ ngữ gần nhất ('genetic testing' — số ít) -> <b>is</b>."
     }
 ]

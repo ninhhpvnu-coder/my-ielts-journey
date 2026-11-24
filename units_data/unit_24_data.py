@@ -155,32 +155,32 @@ GRAMMAR_THEORY = {
 VOCAB_QUESTIONS = [
     {
         "q": "1. Reading books and solving puzzles play a vital role in stimulating children's ________ development.",
-        "opts": ["cognitive", "detrimental", "sensational", "tangible"],
-        "ans": 0,
+        "opts": ["detrimental", "sensational", "cognitive", "tangible"],
+        "ans": 2,
         "exp": "<b>cognitive development</b>: sự phát triển nhận thức/tư duy của não bộ."
     },
     {
         "q": "2. Many students experience high levels of ________ and nervousness in the week before final exams.",
-        "opts": ["anxiety", "resilience", "mindfulness", "patronage"],
-        "ans": 0,
+        "opts": ["resilience", "anxiety", "mindfulness", "patronage"],
+        "ans": 1,
         "exp": "<b>anxiety</b> (n): sự lo âu, căng thẳng."
     },
     {
         "q": "3. Prolonged loneliness and cyberbullying can lead to clinical ________ among vulnerable teenagers.",
-        "opts": ["depression", "resilience", "wellbeing", "coverage"],
-        "ans": 0,
+        "opts": ["resilience", "wellbeing", "depression", "coverage"],
+        "ans": 2,
         "exp": "<b>clinical depression</b> (n): chứng trầm cảm."
     },
     {
         "q": "4. Talking to a trained counsellor in psychological ________ helps patients recover from emotional stress.",
-        "opts": ["therapy", "deprivation", "fatigue", "algorithm"],
-        "ans": 0,
+        "opts": ["deprivation", "therapy", "fatigue", "algorithm"],
+        "ans": 1,
         "exp": "<b>psychological therapy</b> (n): liệu pháp trị liệu tâm lý."
     },
     {
         "q": "5. Facing small challenges in sports helps young people build mental ________ so they do not give up easily.",
-        "opts": ["resilience", "insomnia", "fatigue", "bias"],
-        "ans": 0,
+        "opts": ["insomnia", "fatigue", "resilience", "bias"],
+        "ans": 2,
         "exp": "<b>build mental resilience</b> (n): xây dựng sức bền tâm lý, khả năng phục hồi."
     },
     {
@@ -197,26 +197,26 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "8. Long-distance lorry drivers must take regular rest breaks to prevent accidents caused by driver ________.",
-        "opts": ["fatigue", "therapy", "wellbeing", "identity"],
-        "ans": 0,
+        "opts": ["therapy", "fatigue", "wellbeing", "identity"],
+        "ans": 1,
         "exp": "<b>mental / driver fatigue</b> (n): sự mệt mỏi rã rời, kiệt sức."
     },
     {
         "q": "9. Interactive science experiments ________ students' curiosity far more effectively than rote memorization.",
-        "opts": ["stimulate", "impair", "distort", "censor"],
-        "ans": 0,
+        "opts": ["impair", "stimulate", "distort", "censor"],
+        "ans": 1,
         "exp": "<b>stimulate curiosity / brain activity</b> (v): kích thích trí tò mò / hoạt động não bộ."
     },
     {
         "q": "10. Staying awake for twenty-four hours can ________ a driver's reaction time as badly as alcohol.",
-        "opts": ["impair", "stimulate", "enrich", "verify"],
-        "ans": 0,
+        "opts": ["stimulate", "enrich", "verify", "impair"],
+        "ans": 3,
         "exp": "<b>impair</b> (v): làm suy giảm, làm tổn hại (nhận thức, trí nhớ, phản xạ)."
     },
     {
         "q": "11. Schools should teach teenagers practical strategies to ________ with academic pressure and exam stress.",
-        "opts": ["cope", "impair", "shrink", "allocate"],
-        "ans": 0,
+        "opts": ["impair", "shrink", "allocate", "cope"],
+        "ans": 3,
         "exp": "<b>cope with stress / pressure</b> (v): đối phó, đương đầu vượt qua căng thẳng."
     },
     {
@@ -227,38 +227,38 @@ VOCAB_QUESTIONS = [
     },
     {
         "q": "13. When employees are given too many urgent deadlines at once, they quickly feel ________ and exhausted.",
-        "opts": ["overwhelmed", "resilient", "objective", "transparent"],
-        "ans": 0,
+        "opts": ["resilient", "objective", "overwhelmed", "transparent"],
+        "ans": 2,
         "exp": "<b>feel overwhelmed by</b> (adj): cảm thấy bị quá tải, choáng ngợp."
     },
     {
         "q": "14. Working night shifts for many years can be highly ________ to a person's physical and mental health.",
-        "opts": ["detrimental", "cognitive", "aesthetic", "sustainable"],
-        "ans": 0,
+        "opts": ["cognitive", "aesthetic", "sustainable", "detrimental"],
+        "ans": 3,
         "exp": "<b>be detrimental to</b> (adj - C1): có hại nghiêm trọng cho..."
     },
     {
         "q": "15. A four-day workweek can improve employees' psychological ________ without reducing company output.",
-        "opts": ["wellbeing", "fatigue", "deprivation", "scarcity"],
-        "ans": 0,
+        "opts": ["fatigue", "deprivation", "scarcity", "wellbeing"],
+        "ans": 3,
         "exp": "<b>psychological / emotional wellbeing</b> (n): sự khỏe mạnh và hạnh phúc tinh thần."
     },
     {
         "q": "16. [Ôn tập Unit 23] Responsible readers always ________ breaking news on trusted websites before sharing it.",
-        "opts": ["verify", "exaggerate", "distort", "impair"],
-        "ans": 0,
+        "opts": ["exaggerate", "distort", "verify", "impair"],
+        "ans": 2,
         "exp": "<b>verify</b> (Unit 23): xác minh, kiểm chứng thông tin."
     },
     {
         "q": "17. [Ôn tập Unit 22] Public sculptures and green parks enhance the ________ appeal of urban neighbourhoods.",
-        "opts": ["aesthetic", "cognitive", "detrimental", "demographic"],
-        "ans": 0,
+        "opts": ["cognitive", "detrimental", "demographic", "aesthetic"],
+        "ans": 3,
         "exp": "<b>aesthetic appeal</b> (Unit 22): vẻ đẹp thẩm mỹ."
     },
     {
         "q": "18. [Ôn tập Unit 21] By 2050, the elderly segment is ________ to double to roughly a quarter of the population.",
-        "opts": ["projected", "censored", "broadcast", "cultivated"],
-        "ans": 0,
+        "opts": ["censored", "projected", "broadcast", "cultivated"],
+        "ans": 1,
         "exp": "<b>be projected to + V</b> (Unit 21): được dự báo sẽ..."
     },
     {
@@ -278,44 +278,44 @@ VOCAB_QUESTIONS = [
 GRAMMAR_QUESTIONS = [
     {
         "q": "1. The more time teenagers spend on smartphones late at night, ________ they suffer from sleep deprivation.",
-        "opts": ["more", "the more", "the most", "most"],
-        "ans": 1,
+        "opts": ["the more", "more", "the most", "most"],
+        "ans": 0,
         "exp": "Cấu trúc So sánh kép: <code>The + comparative + S + V, the + comparative + S + V</code> -> <b>the more</b>."
     },
     {
         "q": "2. Chronic sleep deprivation is highly detrimental ________ a student's cognitive function and memory.",
-        "opts": ["for", "with", "to", "at"],
-        "ans": 2,
+        "opts": ["for", "with", "at", "to"],
+        "ans": 3,
         "exp": "Cấu trúc tính từ C1 cố định: <code>be detrimental to + Noun</code> (có hại cho...) -> <b>to</b>."
     },
     {
         "q": "3. Cognitive behavioural therapy enables patients ________ with severe anxiety and depression effectively.",
-        "opts": ["cope", "coping", "to cope", "coped"],
-        "ans": 2,
+        "opts": ["cope", "to cope", "coping", "coped"],
+        "ans": 1,
         "exp": "Cấu trúc: <code>enable + Object + to V (to cope)</code>."
     },
     {
         "q": "4. Note the difference between 'cope with' and 'deal with': Many freshmen struggle to cope ________ heavy academic workloads.",
-        "opts": ["to", "with", "for", "about"],
-        "ans": 1,
+        "opts": ["to", "for", "with", "about"],
+        "ans": 2,
         "exp": "Động từ 'cope' luôn đi với giới từ <b>with</b> (<code>cope with stress/workloads</code>)."
     },
     {
         "q": "5. ________ earlier schools introduce mindfulness classes, the more resilient students will become.",
-        "opts": ["A", "An", "The", "More"],
-        "ans": 2,
+        "opts": ["A", "The", "An", "More"],
+        "ans": 1,
         "exp": "Mở đầu cấu trúc so sánh kép bắt buộc có mạo từ <b>The</b> + So sánh hơn (<code>The earlier..., the more resilient...</code>)."
     },
     {
         "q": "6. Feeling ________ by endless emails and deadlines, many office workers experience chronic mental fatigue.",
-        "opts": ["overwhelm", "overwhelming", "overwhelmed", "to overwhelm"],
-        "ans": 2,
+        "opts": ["overwhelmed", "overwhelm", "overwhelming", "to overwhelm"],
+        "ans": 0,
         "exp": "Tính từ đuôi <b>-ed (overwhelmed)</b> mô tả cảm xúc bị động của con người (cảm thấy bị quá tải)."
     },
     {
         "q": "7. ________ regular physical exercise stimulates brain activity and reduces the risk of clinical depression.",
-        "opts": ["Take", "Taken", "Taking", "To taking"],
-        "ans": 2,
+        "opts": ["Take", "Taken", "To taking", "Taking"],
+        "ans": 3,
         "exp": "Danh động từ <b>V-ing (Taking)</b> làm chủ ngữ của câu (động từ chính là 'stimulates' chia số ít)."
     },
     {
@@ -326,14 +326,14 @@ GRAMMAR_QUESTIONS = [
     },
     {
         "q": "9. Social media companies are often blamed ________ triggering anxiety among impressionable teenagers.",
-        "opts": ["of", "for", "to", "with"],
-        "ans": 1,
+        "opts": ["of", "to", "for", "with"],
+        "ans": 2,
         "exp": "Ôn tập Unit 23: Cấu trúc bị động <code>be blamed for + V-ing</code> (bị đổ lỗi vì đã gây ra...)."
     },
     {
         "q": "10. Unless companies respect work-life balance, employee burnout ________ to rise across all industries.",
-        "opts": ["continues", "continued", "will continue", "would have continued"],
-        "ans": 2,
+        "opts": ["continues", "continued", "would have continued", "will continue"],
+        "ans": 3,
         "exp": "Câu điều kiện loại 1 với <code>Unless + HTĐ, S + will + V</code> -> <b>will continue</b>."
     }
 ]
